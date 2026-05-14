@@ -1,0 +1,23 @@
+# LaTeX build output
+_build/
+*.pdf
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Editor and IDE
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Nix
+.direnv/
+.envrc
