@@ -31,12 +31,11 @@ jobs:
       - name: Setup cache
         uses: DeterminateSystems/magic-nix-cache-action@v13
 
-      - name: Create build directory
-        run: mkdir -p _build
-
-      - name: Compile LaTeX with latexmk
+      - name: Clean and compile LaTeX with latexmk
         run: |
-          nix develop --command latexmk -f -pdf -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
+          rm -rf _build
+          mkdir -p _build
+          nix develop --command latexmk -pdf -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
