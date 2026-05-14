@@ -25,6 +25,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up UTF-8 locale
+        run: |
+          sudo locale-gen it_IT.UTF-8
+          echo "LANG=it_IT.UTF-8" >> $GITHUB_ENV
+          echo "LC_ALL=it_IT.UTF-8" >> $GITHUB_ENV
+
       - name: Install Nix
         uses: DeterminateSystems/determinate-nix-action@v3.20.0
 
