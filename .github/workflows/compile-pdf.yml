@@ -32,6 +32,9 @@ jobs:
         uses: DeterminateSystems/magic-nix-cache-action@v13
 
       - name: Compile LaTeX
+        env:
+          LANG: C.UTF-8
+          LC_ALL: C.UTF-8
         run: |
           rm -rf _build && mkdir -p _build
           nix develop --command pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
