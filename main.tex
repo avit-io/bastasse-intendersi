@@ -122,6 +122,14 @@
 % --- impagina elementi front matter ---
 \usepackage{titletoc}
 
+% --- TOC: sentence case ovunque (override classicthesis spacedlowsmallcaps) ---
+\renewcommand{\cftpartfont}{\color{CTtitle}}
+\renewcommand{\cftpartaftersnum}{}
+\renewcommand{\cftpartaftersnumb}{}
+\renewcommand{\cftchapfont}{}
+\renewcommand{\cftchappresnum}{}
+\renewcommand{\cftchapaftersnumb}{}
+
 \begin{document}
 
 \frenchspacing
