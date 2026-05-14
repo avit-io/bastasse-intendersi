@@ -3,7 +3,6 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     texlive.combined.scheme-full
-    latexmk
     ghostscript
     python3
     perl

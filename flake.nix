@@ -15,7 +15,7 @@
         {
           default = pkgs.mkShell {
             buildInputs = with pkgs; [
-              texlive.combined.scheme-full
+              (texlive.withPackages (ps: with ps; [ scheme-full latexmk ]))
               ghostscript
               python3
               perl
@@ -24,6 +24,7 @@
             shellHook = ''
               echo "📄 LaTeX development environment"
               echo "texlive: $(pdflatex --version | head -1)"
+              echo "latexmk: $(latexmk -version | head -1)"
             '';
           };
         }
