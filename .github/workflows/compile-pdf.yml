@@ -25,12 +25,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up UTF-8 locale
-        run: |
-          sudo locale-gen it_IT.UTF-8
-          echo "LANG=it_IT.UTF-8" >> $GITHUB_ENV
-          echo "LC_ALL=it_IT.UTF-8" >> $GITHUB_ENV
-
       - name: Install Nix
         uses: DeterminateSystems/determinate-nix-action@v3.20.0
 
@@ -40,8 +34,8 @@ jobs:
       - name: Compile LaTeX
         run: |
           rm -rf _build && mkdir -p _build
-          nix develop --command env LANG=it_IT.UTF-8 LC_ALL=it_IT.UTF-8 pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
-          nix develop --command env LANG=it_IT.UTF-8 LC_ALL=it_IT.UTF-8 pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
+          nix develop --command pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi '\RequirePackage{etoolbox}\AtBeginDocument{\robustify{\spacedallcaps}\robustify{\spacedlowsmallcaps}}\input{main}'
+          nix develop --command pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi '\RequirePackage{etoolbox}\AtBeginDocument{\robustify{\spacedallcaps}\robustify{\spacedlowsmallcaps}}\input{main}'
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
