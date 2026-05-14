@@ -35,6 +35,25 @@ jobs:
         run: |
           rm -rf _build && mkdir -p _build
           nix develop --command pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
+          # classicthesis applica \spacedlowsmallcapsstyle (\lowercase TeX primitivo)
+          # sui titoli \contentsline {part} nel .toc; con inputenc utf8 i byte
+          # UTF-8 dei titoli di parte rompono al secondo pass di pdflatex.
+          # Si normalizzano solo quelle righe in escape LaTeX (PDF identico).
+          python3 <<'PY'
+          import re
+          p='_build/bastasse_intendersi.toc'
+          text=open(p,encoding='utf-8').read()
+          ESC={'à':r"\`a",'è':r"\`e",'é':r"\'e",'ì':r"\`\i ",'í':r"\'\i ",
+               'ò':r"\`o",'ó':r"\'o",'ù':r"\`u",'ú':r"\'u",
+               'À':r"\`A",'È':r"\`E",'É':r"\'E",'Ò':r"\`O",'Ó':r"\'O",
+               'Ù':r"\`U",'Ú':r"\'U",'Ì':r"\`\I ",'Í':r"\'\I "}
+          def fix(m):
+              s=m.group(0)
+              for k,v in ESC.items(): s=s.replace(k,v)
+              return s
+          open(p,'w',encoding='utf-8').write(
+              re.sub(r'\\contentsline \{part\}[^\n]*',fix,text))
+          PY
           nix develop --command pdflatex -interaction=nonstopmode -output-directory=_build -jobname=bastasse_intendersi main.tex
 
       - name: Upload PDF artifact
