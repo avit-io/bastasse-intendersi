@@ -34,9 +34,9 @@ jobs:
       - name: Create build directory
         run: mkdir -p _build
 
-      - name: Compile LaTeX with pdflatex
+      - name: Compile LaTeX with latexmk
         run: |
-          nix-shell shell.nix --command "pdflatex \
+          nix-shell shell.nix --command "latexmk -pdf \
             -interaction=nonstopmode \
             -output-directory=_build \
             -jobname=bastasse_intendersi \
