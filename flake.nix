@@ -19,7 +19,12 @@
               ghostscript
               python3
               perl
+              glibcLocales
             ];
+
+            LOCALE_ARCHIVE = "${pkgs.glibcLocales}/lib/locale/locale-archive";
+            LANG = "en_US.UTF-8";
+            LC_ALL = "en_US.UTF-8";
 
             shellHook = ''
               echo "📄 LaTeX development environment"
