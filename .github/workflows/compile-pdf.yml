@@ -23,10 +23,6 @@ jobs:
 
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v9
-        with:
-          extra-conf: |
-            extra-substituters = https://cache.nixos.org
-            extra-trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypQtVrp8Z0QxIoudbyharYy1cE=
 
       - name: Setup Nix cache
         uses: DeterminateSystems/magic-nix-cache-action@v6
