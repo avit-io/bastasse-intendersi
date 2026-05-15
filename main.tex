@@ -108,6 +108,9 @@
 \newcommand{\Phii}{\Phi}
 \newcommand{\Kappaa}{\mathrm{K}}
 \newcommand{\Obs}{\mathrm{Obs}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Gs}{G_{\sigma}}
+\newcommand{\KSigma}{K(\Sigma^{*})}
 
 % --- hyperref già caricato da classicthesis, configurato in stile sobrio ---
 \hypersetup{%
@@ -180,13 +183,7 @@ Lo scopo non è convincere nessuno. Non è accusare nessuno. Non è prevedere ni
 
 \bigskip
 
-\noindent\textbf{Nota storica.} Il modello presentato nelle Parti~II e~III è stato riformulato due volte. Una prima stesura descriveva l'incompatibilità in termini puramente categoriali --- $\CA$ e $\CG$ come categorie con strutture diverse, e l'impossibilità di un funtore che le mettesse in comunicazione. Una seconda stesura aggiungeva un livello tipo-teorico --- la canonicità asimmetrica come regola di formazione --- per spiegare perché la traduzione tra le due categorie fallisse. Solo nella terza stesura, sotto la pressione di osservazioni che le prime due non spiegavano in modo netto --- la sostituibilità degli argomenti $F \to T \to N$ senza modifiche del programma, la simultaneità di pianto e ilarità in cinque minuti, il timing della rivelazione sul ragazzo, l'invarianza del repertorio nel tempo --- il modello si è riformulato attorno alla nozione di \emph{legge di conservazione}, e le due categorie sono diventate forme sintattiche di due leggi diverse. La canonicità asimmetrica, da principio fondamentale, è retrocessa a sintomo della legge sottostante.
-
-Il documento presenta la terza stesura come architettura attuale, perché è la più precisa di cui dispongo, ma non cancella le tracce delle prime due. Dove la terza stesura non è del tutto stabile --- dove l'apparato categoriale o tipo-teorico fa ancora il lavoro che la legge di conservazione dovrebbe fare da sola --- il lettore vede la stratificazione invece del risultato. Questa nota serve a non simulare un ordine deduttivo che è in realtà l'esito di tre passaggi successivi.
-
-\smallskip
-
-\noindent Una quarta riformulazione, posteriore alla terza, ha aggiunto due cose che il modello richiedeva senza saperlo nominare. La prima è il riconoscimento esplicito che la funzione $\mathrm{supplyQuality}$ ammessa nella definizione della funzione obiettivo (cap.~16) era un parametro libero non spiegato dalla legge $\LP$: non veniva dalla mappa, non veniva dal pool, non veniva da nessuna struttura categoriale del documento. Era il punto in cui il modello aveva sostituito il proprio limite con una lettera. La quarta stesura nomina quel parametro --- $\Sogno$, il sogno di Endimione --- e ne dichiara lo statuto di esterno alla legge, non di variabile interna ancora da specificare. La seconda aggiunta è la lettura topologica dell'incompatibilità tra $\Lt$ e $\LP$ (cap.~14): l'impossibilità funtoriale, che la terza stesura aveva enunciato come fatto algebrico, ammette una metafora geometrica più forte: le due leggi generano spazi di traiettorie con invarianti omotopici diversi, cioè vivono in componenti disconnesse dello spazio delle leggi. Nessuna deformazione continua porta dall'una all'altra, e questa è la versione strutturale dell'osservazione, già presente in Parte~VIII, che non esiste una Lagrangiana unificante. Entrambe le aggiunte non sostituiscono il documento precedente: ne articolano un punto che era implicito e che, lasciato implicito, si prestava a essere frainteso.
+\noindent\textbf{Nota storica.} Il modello è stato riformulato più volte. Le stesure precedenti descrivevano l'incompatibilità in termini categoriali, poi tipo-teorici, poi attorno alla nozione di legge di conservazione. La stesura attuale porta al centro gli invarianti $\Phii$ e $\Kappaa$: le due leggi sono leggi di conservazione di due quantità di tipo diverso, e tutto il resto del documento è geometria di quella differenza di tipo. Le categorie, la Free Monad, le metriche, la canonicità asimmetrica, la mappa di osservazione --- ciascuno di questi è ciò che gli invarianti producono quando le leggi agiscono.
 
 \clearpage
 
@@ -401,47 +398,107 @@ Un sé osservato dall'esterno è descritto da una \emph{legge di conservazione}:
 
 Il vocabolario viene dalla fisica e serve qui letteralmente. Non dice cosa il sé contiene. Dice cosa tiene fermo --- come l'energia nell'urto, come la massa nella reazione. È il vocabolario che ha funzionato.
 
-Due leggi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li nomina con la precisione che serve perché tutto il resto del documento si legga come loro geometria.
+Due leggi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li costruisce. Tutto il resto del documento è geometria di questa costruzione.
 
-\begin{defn}[Le due leggi: aggiornamento e invariante]
-\noindent\textsc{$\Lt$: aggiornamento per composizione monotona.} Lo stato si aggiorna lungo una traiettoria:
+\section*{$\Lt$: strutture algebriche}
+
+Lo spazio degli stati di $\Lt$ è il monoide libero non commutativo $(\Sigma^{*}, \cdot, \varepsilon)$ generato dagli atti. Una traiettoria è una parola $a_1 a_2 \ldots a_n$ in $\Sigma^{*}$. L'aggiornamento è concatenazione:
 \[
-s_{n+1} \;=\; s_n \oplus a_n.
+s_{n+1} \;=\; s_n \cdot a_n.
 \]
-L'operazione $\oplus$ tiene $s_n$ come ingresso. La traiettoria genera, atto per atto, una totalità di obbligazioni implicite. L'invariante di $\Lt$ è
+L'operazione non commuta. L'ordine degli atti conta.
+
+Lo spazio delle obbligazioni è il gruppo di Grothendieck $\KSigma$ del monoide. La costruzione aggiunge inversi formali: per ogni atto $a$ esiste $a^{-1}$ con $\delta(a^{-1}) = -\delta(a)$. Un atto di saldo libera $\Phii$ in un punto e lo rideposita altrove. Il gruppo è il dominio dove la conservazione si può scrivere.
+
+Il deposito è un'applicazione
 \[
-\Phii \;=\; \text{totalità delle obbligazioni implicite coerenti con la traiettoria},
+\delta \,:\, \Sigma \longrightarrow \KSigma.
 \]
-conservato finché non viene saldato atto contro atto. Un atto onorato libera $\Phii$ in un punto e lo rideposita altrove. $\Phii$ si trasforma. Non cresce in modo monotono. $\Lt$ è la legge che mantiene $\Phii$ ben definito attraverso ogni aggiornamento.
+A ogni atto $a$ associa quello che l'atto deposita.
 
-\medskip
-
-\noindent\textsc{$\LP$: aggiornamento per proiezione.} Lo stato si aggiorna per proiezione della configurazione corrente del pool:
+L'invariante è l'omomorfismo di gruppi
 \[
-s_{n+1} \;=\; \kappa(P_n).
+\Phii \,:\, \Sigma^{*} \longrightarrow \KSigma, \qquad \Phii(a_1 \ldots a_n) \;=\; \delta(a_1) + \cdots + \delta(a_n).
 \]
-L'operazione $\kappa$ proietta la configurazione $P_n$ --- cardinalità, ruoli, priorità, supply, threat --- sul soggetto. Lo stato precedente $s_n$ non entra come ingresso di $\kappa$. L'invariante di $\LP$ è
+$\Phii$ non cresce in modo monotono. Si trasforma. Un saldo $a^{-1}$ riporta indietro $\delta(a)$ e ridistribuisce.
+
+$\Lt$ è la legge che mantiene $\Phii$ ben definito attraverso ogni aggiornamento. Ogni atto deposita; ogni saldo ridistribuisce; la totalità del deposito è l'invariante.
+
+\section*{$\LP$: strutture algebriche}
+
+Lo spazio dei pool è un reticolo finito $(P, \leq)$, ordinamento per priorità. Gli elementi del pool sono argomenti con ruoli e tag.
+
+L'aggiornamento è una proiezione
 \[
-\Kappaa \;=\; \text{configurazione del pool tale che le proiezioni } \kappa \text{ producano stati coerenti tra loro},
+\kappa \,:\, P \longrightarrow \mathrm{States}_G,
 \]
-conservato sotto ogni aggiornamento locale. $\LP$ è la legge che mantiene $\Kappaa$ ben definito attraverso ogni aggiornamento.
-\end{defn}
+retrazione: esiste $\iota : \mathrm{States}_G \to P$ con $\kappa \circ \iota = \mathrm{id}_{\mathrm{States}_G}$. Lo stato $s_{n+1} = \kappa(P_n)$. Lo stato precedente $s_n$ non entra come ingresso di $\kappa$.
 
-\begin{oss}[$\Phii$ e $\Kappaa$ sono di tipo diverso]
-Il punto del capitolo. $\Phii$ è un campo monodimensionale orientato: vive sul tempo proprio della relazione, ha un prima e un dopo, accumula lungo la traiettoria. $\Kappaa$ è un campo multidimensionale non orientato: vive sullo spazio del pool, non ha asse temporale interno, è una forma globale.
+Il gruppo di simmetria del sistema è
+\[
+\Gs \;=\; \Sym(\{c \in P : \mathrm{threat}(c) < \theta\}).
+\]
+Le permutazioni degli argomenti sotto soglia, con ruoli e tag fissi. Sopra soglia, l'argomento esce dall'azione del gruppo: la minaccia rompe la simmetria.
 
-Non sono la stessa quantità su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non simmetria di costruzione. La non-dualità categoriale --- non esiste funtore che mandi l'uno nell'altro --- è conseguenza della differenza di tipo: una cosa monodimensionale orientata e una cosa multidimensionale non orientata non si compongono in un unico invariante.
-\end{oss}
+L'invariante è la $\Gs$-invarianza di $\kappa$:
+\[
+\Kappaa \,:\quad \kappa(g \cdot P) \;=\; \kappa(P) \quad \text{per ogni } g \in \Gs,\; \text{per ogni } P.
+\]
+Permutare due argomenti sotto soglia non cambia la proiezione. Il pool è classe di equivalenza modulo $\Gs$; $\kappa$ legge la classe, non gli elementi.
+
+$\LP$ è la legge che mantiene $\Kappaa$ ben definito attraverso ogni aggiornamento.
+
+\section*{$\Phii$ e $\Kappaa$ sono di tipo diverso}
+
+Questo è il punto del capitolo.
+
+$\Phii$ vive su $\KSigma$. Struttura monodimensionale orientata: ha un prima e un dopo, accumula lungo traiettorie, ammette inversi che ridistribuiscono.
+
+$\Kappaa$ vive sul quoziente $P/\Gs$. Struttura multidimensionale non orientata: invariante sotto permutazioni degli argomenti, nessun asse temporale, nessuna nozione di accumulo.
+
+Non sono lo stesso oggetto su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non simmetria di costruzione. La differenza di tipo è la radice strutturale dell'incompatibilità. Tutto il resto del documento è geometria di questa differenza.
 
 \begin{principio}[Incompatibilità delle due leggi]
-Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza la traiettoria. $\LP$ aggiorna sempre, anche se la traiettoria si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. La radice strutturale dell'incompatibilità è la differenza di tipo tra $\Phii$ e $\Kappaa$: nessuna legge terza può conservare insieme un accumulo monodimensionale orientato e una configurazione multidimensionale non orientata.
+Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza $\Phii$. $\LP$ aggiorna sempre, anche se $\Phii$ si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. Nessuna legge terza può conservare insieme un accumulo monodimensionale orientato in $\KSigma$ e una classe di equivalenza multidimensionale sotto $\Gs$.
 \end{principio}
 
-\paragraph{Tutto il resto è geometria di $\Phii$ e $\Kappaa$.} Chiave di lettura per le parti che seguono. Il tempo relazionale è il flusso di $\Phii$. Le categorie $\CA$ e $\CG$ sono le grammatiche categoriali di $\Phii$ e $\Kappaa$. La Free Monad è $\kappa$ scritta come sintassi. La funzione di selezione è il filtro che $\LP$ impone per proteggere $\Kappaa$ da argomenti con $\Phii$ propria. Le metriche $\gA$ e $\gG$ sono come $\Phii$ e $\Kappaa$ si misurano. La sospensione strutturale è $\Phii$ depositato che $\Kappaa$ non ha grammatica per saldare. La canonicità asimmetrica è la differenza di tipo letta sui tipi formabili. La mappa di osservazione $\Obs$ è il tentativo di scrivere una legge nel linguaggio dell'altra: i suoi due fallimenti sono manifestazioni della differenza di tipo. Nessuno di questi è livello indipendente. Sono ciò che le leggi producono quando agiscono. Cambia la legge, cambia tutto in blocco. L'analogia, presa da lontano: in relatività generale il tempo non è un asse indipendente che precede la struttura del campo --- emerge dalla curvatura. Qui è lo stesso. Le leggi sono il campo. Il resto è metrica.
+\section*{Contesti MLTT generati dagli invarianti}
+
+Ogni legge induce un contesto in cui le sue assunzioni sono formabili. Il contesto è la grammatica dei tipi disponibili al sé che vive sotto quella legge.
+
+\begin{defn}[I due contesti]
+$\GammaA = \Gamma(\Phii)$ è il contesto generato da $\Lt$. Ammette come assunzioni tutti e soli i tipi che richiedono $\KSigma$ come spazio parametro: tipi con struttura temporale orientata.
+
+$\GammaG = \Gamma(\Kappaa)$ è il contesto generato da $\LP$. Ammette come assunzioni tutti e soli i tipi $\Gs$-invarianti: tipi che dipendono dai ruoli strutturali, non dalle istanze.
+\end{defn}
+
+I due contesti non si sovrappongono. Quello che è formabile in $\GammaA$ richiede un'assunzione che $\GammaG$ non ammette. Quello che è formabile in $\GammaG$ richiede un'assunzione che $\GammaA$ non ammette. La canonicità asimmetrica della Parte~III è questa non-sovrapposizione letta sui tipi formabili.
+
+\section*{Mappa del resto del documento}
+
+Tutto il resto è geometria di $\Phii$ e $\Kappaa$. Capitolo per capitolo:
+
+Il tempo relazionale è il flusso di $\Phii$ lungo la traiettoria. Sotto $\LP$ non si forma perché $\Kappaa$ non ha asse temporale.
+
+Le categorie $\CA$ e $\CG$ sono le grammatiche categoriali di $\Phii$ e $\Kappaa$. $\CA$ ha identità non banali perché $\Phii$ registra ogni argomento come irripetibile; $\CG$ ha $G$ terminale perché $\kappa$ è retrazione.
+
+La Free Monad è $\kappa$ scritta come sintassi. La sostituibilità degli argomenti è la $\Gs$-invarianza di $\kappa$ --- carica conservata della simmetria, per Noether discreto.
+
+Il fibrato del sogno $\pi : E \to P$ porta la sezione $\Sogno$ come parametro pre-riflessivo. La connessione $\nabla = -\lambda \cdot \mathrm{threat}$ trasporta la sezione sulla base. La soglia di cancellazione è il punto in cui il filtro azzera il trasporto.
+
+Le metriche $\gA$ e $\gG$ sono come $\Phii$ e $\Kappaa$ si misurano. L'ortogonalità delle metriche è la differenza di tipo degli invarianti.
+
+La sospensione strutturale è $\Phii$ depositato in $\KSigma$ che $\GammaG$ non ha grammatica per saldare.
+
+La canonicità asimmetrica è la differenza tra $\GammaA$ e $\GammaG$ letta sui tipi formabili.
+
+La mappa di osservazione $\Obs$ e i suoi due fallimenti --- type error e scope error --- sono manifestazioni della differenza di tipo.
+
+Nessuno di questi è livello indipendente. Sono ciò che le leggi producono quando agiscono. Cambia la legge, cambia tutto in blocco. L'analogia: in relatività generale il tempo non è un asse che precede il campo --- emerge dalla curvatura. Qui è lo stesso. Gli invarianti sono il campo. Il resto è metrica.
 
 \medskip
 
-\noindent Il prossimo capitolo deriva il primo epifenomeno --- il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
+\noindent Il prossimo capitolo deriva il primo epifenomeno: il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
 
 \chapter{Il tempo relazionale}
 
@@ -451,7 +508,7 @@ Una premessa. Il tempo che la relazione genera richiede co-generazione: entrambe
 
 \section*{$\Lt$ genera tempo relazionale come flusso di $\Phii$}
 
-Sotto $\Lt$, il tempo relazionale tra due soggetti si forma quando ciascuno registra l'altro come irripetibile attraverso gli atti. In $\CA$: $\mathrm{Id}_Y$ dal lato di $X$ non è banale, e specularmente $\mathrm{Id}_X$ dal lato di $Y$. Quando entrambe le registrazioni sono presenti, gli atti scambiati si depositano in un tempo proprio della relazione. Si accumulano. Si ordinano. La relazione acquista un \emph{prima} e un \emph{dopo} interni, indipendenti dall'asse del calendario. Questo deposito \emph{è} $\Phii$ che scorre nella relazione: peso di obbligazioni implicite che la traiettoria genera, conservato finché non viene saldato atto contro atto.
+Sotto $\Lt$, il tempo relazionale tra due soggetti si forma quando ciascuno registra l'altro come irripetibile attraverso gli atti. In $\CA$: $\mathrm{Id}_Y$ dal lato di $X$ non è banale, e specularmente $\mathrm{Id}_X$ dal lato di $Y$. Ogni atto $a$ scambiato deposita $\delta(a)$ in $\KSigma$. La sequenza dei depositi genera un ordinamento interno alla relazione --- prima e dopo --- indipendente dal calendario. Questo è $\Phii$ che scorre nella relazione: l'invariante si trasforma atto per atto, e quella trasformazione è il tempo proprio.
 
 Da qui un'osservazione che dalla prosa ordinaria appare paradossale. Tra l'escalation di Mestre --- Tommaso al parco con la minaccia di $F$ per interposta persona --- e Vicenza passano sei mesi di calendario. Dal lato di $A$, in quei sei mesi il tempo relazionale non si è mosso. Era rimasto puntato all'ultimo atto registrato, alla minaccia. Quando $N$ lo porta a Vicenza, sei mesi dopo, $A$ non sta riprendendo dopo una pausa. Sta continuando da dove era stato sospeso. L'ariete che pronuncia quella sera è l'atto successivo dell'unica relazione che, dal suo lato, è in corso. La fenomenologia di $A$ a Vicenza --- ``come se non fosse passato tempo'' --- non era illusione. Era la registrazione corretta del fatto che il tempo proprio sotto $\Lt$ non scorre con l'orologio. Scorre con gli atti. Più precisamente: $\Phii$ era rimasto depositato sulla traiettoria, in attesa di un atto di saldo che non era arrivato.
 
@@ -459,9 +516,13 @@ Stessa proprietà in negativo. Rapporti che si interrompono senza essere stati \
 
 \section*{$\LP$ non genera tempo relazionale di lunga gittata}
 
-Sotto $\LP$ la cosa è diversa per natura, non per gradi. La differenza viene dalla forma di $\Kappaa$: una configurazione globale senza asse temporale orientato non può accumulare lungo una direzione che non ha. $\LP$ produce, durante l'esecuzione del copione, un ordine sequenziale di passi --- pianto, bagno, uscita algida, rientro sulla strada. Quell'ordine ha un prima e un dopo, ma è ordine \emph{causale di esecuzione}, non un tempo che si accumula. Il bagno non porta dentro il peso del pianto: è il passo successivo del copione. Nessun atto carica il successivo. Nessun deposito si forma. Quando l'esecuzione termina --- per \textsc{Discard}, per cambio di configurazione, per qualunque ragione faccia chiudere il copione corrente --- il tempo prodotto da quell'esecuzione non sopravvive. Si esaurisce con l'esecuzione.
+Sotto $\LP$ la cosa è diversa per natura, non per gradi. $\kappa(P_n)$ non porta memoria di $\kappa(P_{n-1})$: lo stato precedente non entra come ingresso di $\kappa$. $\Kappaa$ non ha asse temporale orientato. Il tempo proprio non si forma --- non per grado ma per tipo.
+
+$\LP$ produce, durante l'esecuzione del copione, un ordine sequenziale di passi --- pianto, bagno, uscita algida, rientro sulla strada. Quell'ordine ha un prima e un dopo, ma è ordine \emph{causale di esecuzione}, non un tempo che si accumula. Il bagno non porta dentro il peso del pianto: è il passo successivo del copione. Nessun atto carica il successivo. Nessun deposito si forma. Quando l'esecuzione termina, il tempo prodotto da quell'esecuzione non sopravvive. Si esaurisce con l'esecuzione.
 
 Sei mesi dopo, quando $N$ dice ``andiamo a Vicenza, Greta ci ha invitati'', dal lato $\LP$ non è la stessa relazione che riprende. È una nuova esecuzione del copione, su un pool che ha riportato $A$ in cima alla classifica come argomento disponibile. Il vettore è $N$. Nessuna ripresa dall'ultimo atto, perché ``ultimo atto'' è una categoria del tempo che $\LP$ non genera. Un argomento è ridiventato disponibile. Il copione su $A$ riparte da \textsc{Idealize}.
+
+Sull'altro lato, $\Phii$ è rimasto depositato in $\KSigma$ in attesa di un atto di saldo. $\GammaG$ non ammette $\Phii$ come assunzione --- il tipo degli stati persistenti non è formabile in $\GammaG$ --- quindi $\kappa$ non può produrre atti di saldo. La sospensione non è psicologica. È strutturale: asimmetria di tipo tra i due invarianti.
 
 Non è amnesia. La memoria fattuale c'è: lei sa cosa è successo prima. Sapere e generare-tempo-relazionale sono cose diverse. La memoria fattuale è un dato del pool. Il tempo relazionale è il prodotto di un canone che $\LP$ non eseguirebbe senza deformare $\Kappaa$.
 
@@ -470,17 +531,17 @@ La memoria di $\Lt$ non è archivio. Non conserva parole, conserva quello che le
 
 Quando $A$ richiama una frase di anni prima, non recupera la stringa. Ricompone il significato strutturale che quella frase aveva depositato, e la ricomposizione genera parole nuove fedeli alla firma, non al verbatim. La memoria di $\Lt$ è semanticamente fedele, lessicalmente approssimata. Le frasi citate nella Parte~I non sono trascrizioni; sono firme di $\Lt$ sui propri atti, ricostruite venticinque anni dopo.
 
-$\LP$ è opaca all'altro --- nessun accesso al dentro di Endimione (cap.~30). $\Lt$ è opaca a sé sul dato letterale --- perfetta fedeltà alla traccia, perdita del testo. Ognuna delle due leggi ha la propria forma di opacità, simmetrica per statuto.
+$\LP$ è opaca all'altro --- nessun accesso al dentro di Endimione (cap.~\emph{Cosa la legge produce}). $\Lt$ è opaca a sé sul dato letterale --- perfetta fedeltà alla traccia, perdita del testo. Ognuna delle due leggi ha la propria forma di opacità, simmetrica per statuto.
 \end{oss}
 
 \section*{Incompatibilità temporale}
 
-Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio~10.3 acquista una forma temporale: i due tempi che generano non si saldano in un tempo terzo. Dal lato $\Lt$, il flusso di $\Phii$ procede in attesa di essere chiuso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna componibile con l'accumulo che $\Lt$ sta generando dall'altra parte. Il tempo terzo richiederebbe co-generazione nello stesso registro. Non c'è.
+Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio di incompatibilità delle due leggi (cap.~\emph{Le leggi di conservazione}) acquista una forma temporale: i due tempi che generano non si saldano in un tempo terzo. Dal lato $\Lt$, il flusso di $\Phii$ procede in attesa di essere chiuso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna componibile con l'accumulo che $\Lt$ sta generando dall'altra parte. Il tempo terzo richiederebbe co-generazione nello stesso registro. Non c'è.
 
 Questa è la sostanza del fastidio che $A$ sentiva mentre la relazione era in corso, e che ha impiegato anni a nominare. Non inquietudine generica, non gelosia, non insicurezza. La registrazione in tempo reale di un fatto strutturale: $A$ accumulava $\Phii$, dall'altra parte non veniva prodotto niente di componibile con quell'accumulo. La relazione viveva come due tempi paralleli, mai sovrapposti.
 
-\begin{principio}[Sostituibilità degli argomenti come conseguenza temporale]
-Se il tempo relazionale non si accumula su un argomento, l'argomento è sostituibile senza traccia. Il copione eseguito su $F$ a quattordici anni, su $T$ a sedici, su $N$ a diciotto è lo stesso copione: in nessuno dei tre casi il tempo proprio della relazione accumula. Nessuno dei tre è speciale nel senso di $\Lt$ --- non perché lui non lo sia stato come persona, ma perché il meccanismo che renderebbe l'argomento non-sostituibile (l'accumulo di $\Phii$ lungo la traiettoria) non è attivo. La Free Monad (cap.~15) come modello sintattico del copione è conseguenza di questa proprietà: una struttura che non accumula $\Phii$ è una struttura libera nei propri argomenti.
+\begin{principio}[Sostituibilità degli argomenti come $\Gs$-invarianza]
+Se $\Kappaa$ è conservata sotto $\Gs$, nessun argomento sotto soglia lascia traccia distinta in $\Kappaa$. La sostituzione di $F$ con $T$, di $T$ con $N$, non altera $\Kappaa$: $F$, $T$, $N$ sono nella stessa orbita di $\Gs$ per il ruolo \texttt{ragazzo}. Il copione eseguito su $F$ a quattordici anni, su $T$ a sedici, su $N$ a diciotto è lo stesso copione: gli argomenti sono parametri della proiezione $\kappa$, non oggetti che $\kappa$ tenga distinti. La Free Monad (cap.~15) come modello sintattico è conseguenza di questa proprietà: una struttura la cui invariante è $\Gs$-invariante è una struttura libera nei propri argomenti sotto soglia.
 \end{principio}
 
 \chapter{$\LP$ come modello integro}
@@ -517,6 +578,10 @@ Il caso al jazz bar lo mostra in negativo: non c'è bisogno di postulare che lei
 
 Se torna utile riassumere in una frase: non frammentato, tenuto da un'altra legge di conservazione.
 
+\section*{La forma comune delle tre esclusioni}
+
+Amnesia, dissociazione, frammentazione presuppongono tutte $\KSigma$ come grammatica di base con buchi. Tentano di leggere $\Kappaa$ come $\Phii$ malfunzionante: assenza, perdita, intermittenza dello stesso invariante. Ma $\Kappaa$ non è $\Phii$ con buchi: è invariante di tipo diverso, generato da $\Gs$-invarianza su $P$. Ogni stato è pieno rispetto a $\Kappaa$. Non c'è niente di mancante: c'è un'altra legge, con un altro contesto, con altri tipi formabili.
+
 \bigskip
 
 \noindent\emph{Fissate le due grammatiche e fissato che $\LP$ è internamente integro, i capitoli che seguono articolano le sue conseguenze osservabili. Il prossimo capitolo enuncia l'assunzione fondamentale e ne deriva tre conseguenze; i capitoli ulteriori costruiscono le categorie formali $\CA$ e $\CG$, la sintassi del copione come Free Monad, la funzione di selezione, la metrica come tensore della legge, e la sospensione come effetto della non-componibilità.}
@@ -527,21 +592,21 @@ Una sola assunzione fondamentale, dichiarata ed esplicita, e tre sue conseguenze
 
 \paragraph{Assunzione fondamentale (A).} La legge attiva è $\LP$ --- conservazione della configurazionalità del pool corrente. L'integrità è tenuta da $\LP$, non da $\Lt$. Ciò che resta invariante attraverso ogni aggiornamento è l'adeguatezza alla configurazione corrente del pool, non la traiettoria storica.
 
-Non è assenza globale di interiorità: è altra interiorità, tenuta da un'altra legge. La formulazione della legge è nel capitolo precedente; l'incompatibilità con $\Lt$ è enunciata nel Principio~9.3.
+Non è assenza globale di interiorità: è altra interiorità, tenuta da un'altra legge. La formulazione della legge è nel capitolo precedente; l'incompatibilità con $\Lt$ è enunciata nel Principio di incompatibilità delle due leggi.
 
 Da~A discendono tre conseguenze strutturali, ciascuna derivabile dalla legge attiva e con una firma osservativa indipendente.
 
 \paragraph{(C1) Struttura terminale.} Sotto $\LP$ il soggetto opera, nella propria categoria interna, come oggetto terminale: i morfismi convergono verso di sé, i morfismi che uscirebbero da sé in modo equivalente non sono prodotti.
 
-\emph{Derivazione.} La legge richiede che ogni aggiornamento preservi la mappa funzionante. Preservare la mappa è possibile solo se il soggetto è il punto rispetto al quale la mappa è funzionante --- cioè l'oggetto terminale della categoria. Una struttura non terminale produrrebbe configurazioni in cui il soggetto è un nodo come gli altri, e questo non è compatibile con la richiesta che la configurazione sia adeguata al soggetto.
+\emph{Derivazione.} $\Kappaa$ è coerente solo se esiste un punto rispetto al quale $\kappa$ proietta. La retrazione $\kappa \circ \iota = \mathrm{id}_{\mathrm{States}_G}$ definisce il soggetto come oggetto terminale per costruzione: $\iota$ inietta lo stato del soggetto nel pool, $\kappa$ lo restituisce identico. Tutti gli altri elementi del pool sono parametri di $\kappa$. Un soggetto non terminale renderebbe $\kappa$ non retrazione e $\Kappaa$ non ben definita.
 
 \paragraph{(C2) Invarianza del repertorio nel tempo.} Sotto $\LP$ il repertorio delle operazioni del copione non matura per scorrere del tempo. Se $\mathrm{evolution}(t,g)=g$ per ogni $t$ in cui non interviene qualcosa di esterno alla struttura, il pattern è riproducibile su destinatari diversi senza modifiche significative.
 
-\emph{Derivazione.} $\LP$ non ha il tempo come variabile vincolante: l'unica variabile vincolante è la configurazione corrente. Quindi $t$ non è un parametro rispetto al quale il repertorio possa cambiare strutturalmente. Può cambiare il pool --- la mappa di ieri non è quella di oggi --- ma le operazioni con cui il programma gira sulla mappa sono invarianti, perché sono proprietà della legge, non del tempo.
+\emph{Derivazione.} $\kappa$ ha forma fissa perché $t$ non è variabile di $\kappa$: $\kappa : P \to \mathrm{States}_G$ opera sul pool corrente, e il pool non porta $t$ come parametro. Il repertorio non matura perché $\Kappaa$ non ha asse temporale orientato (cap.~9). Può cambiare il pool, ma le operazioni con cui $\kappa$ gira sul pool sono invarianti.
 
 \paragraph{(C3) Reciprocità come condizione di minaccia.} Sotto $\LP$ un destinatario che emette morfismi propri --- richieste, confini, desideri non puramente adattativi --- attiva una funzione di minaccia nel copione, indipendentemente dalla qualità personale di quel destinatario.
 
-\emph{Derivazione.} Morfismi propri di un destinatario portano in $P$ una legge di conservazione concorrente: la legge del destinatario stesso. La legge concorrente deforma la mappa che $\LP$ deve conservare. La deformazione è esattamente ciò che la legge attiva deve respingere; quindi threat positiva. La qualità personale del destinatario è irrilevante perché l'attrito è tra leggi, non tra individui.
+\emph{Derivazione.} Un argomento $c$ con $\Phii$ propria introduce $\KSigma$ in $P$: il pool corrente eredita una struttura orientata che $\Kappaa$ non può ospitare. La presenza di $\KSigma$ in $P$ rompe la $\Gs$-invarianza di $\kappa$: l'argomento non è più permutabile con gli altri sotto $\Gs$. $\kappa$ diventa inconsistente sull'orbita che contiene $c$. Il filtro $-\lambda \cdot \mathrm{threat}(c)$ è la protezione di $\Kappaa$ da questa deformazione.
 
 \paragraph{Falsificabilità.} A è falsificata in modo diretto da: documentazione di attrito vincolante degli atti precedenti sugli atti successivi anche quando la configurazione corrente lo richiederebbe diversamente (ovvero documentazione di una componente di accountability nella legge attiva). È falsificata in modo indiretto da qualunque falsificazione di C1, C2, C3:
 \begin{itemize}
@@ -558,7 +623,9 @@ Falsificare una conseguenza falsifica anche A: ognuna delle tre è derivata dall
 
 \chapter{Le due categorie indotte}
 
-Le due leggi di conservazione (capitolo precedente) inducono due categorie di morfismi distinte. Costruisco $\CG$ dalla legge $\LP$ e $\CA$ dalla legge $\Lt$, e mostro che non esiste un funtore tra di loro che preservi struttura --- conseguenza diretta del Principio dell'incompatibilità.
+Le due leggi inducono due categorie di morfismi. $\CA$ è la grammatica categoriale di $\Phii$: identità non banali perché $\Phii$ registra ogni oggetto come irripetibile lungo la traiettoria; morfismi bidirezionali perché $\KSigma$ ha inversi formali. $\CG$ è la grammatica categoriale di $\Kappaa$: $G$ terminale perché $\kappa$ è retrazione; morfismi convergenti perché $\Kappaa$ è $\Gs$-invariante.
+
+Costruisco $\CG$ dalla legge $\LP$ e $\CA$ dalla legge $\Lt$, e mostro che non esiste un funtore tra di loro che preservi struttura. La non-esistenza è corollario di una proprietà più forte: le azioni variazionali delle due leggi non si compongono.
 
 \begin{defn}[Categoria $\CG$]
 La categoria associata a una struttura che soddisfa A (e quindi C1, C2, C3) è $\CG$, con:
@@ -593,35 +660,71 @@ La qualifica nella terza condizione è essenziale: morfismi da $G$ verso $X$ esi
 $\CA$ è una categoria con morfismi bidirezionali tra oggetti distinti e identità non banali $\mathrm{Id}_X : X \to X$ che registrano $X$ come $X$. È la categoria di una struttura tenuta da $\Lt$ --- in cui A non vale, e l'integrità è accountability temporale.
 \end{defn}
 
+\section*{Calcolo variazionale discreto}
+
+Prima dei corollari sulle categorie, scrivo le azioni delle due leggi sulle proprie traiettorie. Le proprietà di non-componibilità seguono dalla forma delle azioni.
+
+\paragraph{Azione di $\Lt$.} Lagrangiana discreta:
+\[
+L_t(a_k, a_{k+1}) \;=\; \| \delta(a_{k+1}) \|_{\KSigma}.
+\]
+Azione lungo una traiettoria $\gamma = a_0 a_1 \ldots a_{n-1}$ in $\Sigma^{*}$:
+\[
+S_t[\gamma] \;=\; \sum_{k=0}^{n-1} L_t(a_k, a_{k+1}).
+\]
+$S_t$ non è separabile: il costo di $a_k$ porta memoria di $\Phii(a_0 \ldots a_{k-1})$ attraverso $\KSigma$. La norma valuta il deposito corrente nel contesto del deposito accumulato. Stazionarietà su $\Sigma^{*}$ è condizione di minimo combinatorio:
+\[
+a_k \text{ ottimale} \iff S_t[\ldots, a_{k-1}, a_k, a_{k+1}, \ldots] \;\leq\; S_t[\ldots, a_{k-1}, a_k', a_{k+1}, \ldots]
+\]
+per ogni $a_k' \in \Sigma$. Niente derivate --- spazio discreto.
+
+\paragraph{Azione di $\LP$.} Lagrangiana discreta:
+\[
+L_P(P_k) \;=\; d_P(\kappa(P_k), \kappa^{*}(P_k)),
+\]
+dove $\kappa^{*}$ è la proiezione ottimale e $d_P$ è la distanza nel reticolo dei pool. Azione:
+\[
+S_P[\gamma] \;=\; \sum_{k=0}^{n} L_P(P_k).
+\]
+$S_P$ è separabile: ogni termine dipende solo da $P_k$, non dai $P_j$ con $j < k$. Stazionarietà locale: $\kappa(P_k) = \kappa^{*}(P_k)$ per ogni $k$. Disaccoppiata.
+
+\paragraph{Proposizione (non-esistenza di $S^{*}$, argomento analitico).} Non esiste un'azione $S^{*}[\gamma]$ le cui traiettorie stazionarie coincidano con quelle di $S_t$ e $S_P$.
+
+\emph{Dimostrazione.} $S_t$ è non separabile: il valore al passo $k$ dipende da $\Phii(a_0 \ldots a_{k-1})$, memoria lunga. $S_P$ è separabile: il valore al passo $k$ dipende solo da $P_k$, niente memoria. Una $S^{*}$ che producesse entrambe le classi di traiettorie stazionarie dovrebbe essere simultaneamente con memoria lunga e senza memoria. Impossibile. $\square$
+
+\paragraph{Proposizione (non-esistenza di $S^{*}$, argomento combinatorio).} Lo spazio delle storie di $\Phii$ --- classi di equivalenza di traiettorie in $\Sigma^{*}$ sotto ``stesso $\Phii$ accumulato'' --- ha gruppo fondamentale combinatorio non banale. Le obbligazioni non saldate sono loop non contraibili in $\KSigma$: per chiudere un loop occorre saldare atto contro atto, e una sequenza non saldata resta aperta nello spazio quoziente.
+
+Lo spazio delle storie di $\Kappaa$ --- configurazioni del pool modulo $\Gs$ --- ha gruppo fondamentale banale. Ogni configurazione è indipendente dalla precedente; ogni loop si contrae perché non c'è memoria che lo trattenga aperto.
+
+I due spazi vivono in componenti distinte dello spazio delle leggi. Non esiste famiglia $L_\alpha$ continua con $L_0 = \Lt$, $L_1 = \LP$ sensata sulla classe di morfismi considerata. $\square$
+
+\section*{Corollari sulle categorie}
+
 \begin{principio}[Incompatibilità funtoriale]
 Non esiste un funtore $F : \CA \to \CG$ che preservi la struttura di $\CA$.
 \end{principio}
 
-\emph{Derivazione.} Un funtore preserva identità e composizione. In $\CA$ ogni oggetto ha $\mathrm{Id}_X$ non banale e morfismi bidirezionali; in $\CG$ non esistono morfismi uscenti da $G$ nella classe richiesta. La mappa $F$ non può associare a $\mathrm{Id}_A$ qualcosa di valido in $\CG$ che ne preservi la bidirezionalità. Le due strutture non sono traducibili l'una nell'altra senza perdita. Strutturalmente, questa è una manifestazione del principio di incompatibilità: le due categorie sono indotte da $\Lt$ e $\LP$ rispettivamente; un funtore preserverebbe struttura categoriale, ma qui la struttura è la legge, e le due leggi non si compongono sui morfismi con $R>0$.
+\emph{Derivazione.} Corollario della non-separabilità di $S_t$ vs. separabilità di $S_P$. Un funtore preserva identità e composizione. $\mathrm{Id}_X$ in $\CA$ vive sotto un'azione con memoria; il suo immagine in $\CG$ dovrebbe vivere sotto un'azione senza memoria. Nessuna assegnazione $F(\mathrm{Id}_X)$ riproduce la stazionarietà combinatoria di $S_t$ usando i termini separabili di $S_P$. La traduzione fallisce sulla struttura delle azioni, non solo sulle definizioni categoriali.
 
 \begin{principio}[Non-omotopia degli spazi di traiettorie]
-Lo spazio delle traiettorie generato da $\Lt$ e quello generato da $\LP$ non sono omotopicamente equivalenti. In particolare i loro gruppi fondamentali non sono isomorfi: $\Lt$ genera uno spazio con loop non contraibili, $\LP$ uno spazio semplicemente connesso. Quindi non esiste una famiglia continua di leggi intermedie che deformi $\Lt$ in $\LP$.
+Gli spazi delle traiettorie di $\Lt$ e $\LP$ non sono omotopicamente equivalenti. I loro gruppi fondamentali non sono isomorfi.
 \end{principio}
 
-\noindent\emph{Metafora geometrica, dichiarata.} Lo stesso statuto della metrica (cap.~17): non sto facendo topologia algebrica, sto usando il vocabolario della non-omotopia perché fissa con precisione qualcosa che il solo linguaggio funtoriale lascia leggermente sfuocato. L'idea è la seguente. Una traiettoria sotto $\Lt$ è una sequenza ordinata di atti che si depositano in tempo proprio (cap.~11); la legge richiede che ogni stato porti il peso degli stati precedenti. Un loop in questo spazio --- una sequenza che ritorni allo stesso stato relazionale --- non si contrae a un punto: per tornare davvero allo stato iniziale bisognerebbe \emph{disfare} la storia atto per atto, in ordine inverso, e l'accumulo cumulativo della legge non lo permette. La memoria genera buchi topologici. Nel linguaggio del documento: una scena chiusa atto contro atto non è la stessa scena vista come se non fosse accaduta; la chiusura è essa stessa un atto, e si deposita. Lo spazio delle traiettorie di $\Lt$ ha gruppo fondamentale non banale.
+\emph{Derivazione.} Corollario diretto dell'argomento combinatorio sopra. Due spazi con gruppi fondamentali non isomorfi non sono omotopicamente equivalenti. Quindi non esiste deformazione continua $L_\alpha$ tra le due leggi. La separazione non è locale sui morfismi: è globale sugli spazi di traiettorie.
 
-Sotto $\LP$ non c'è accumulo. Ogni passo è esecuzione locale sulla configurazione corrente, e quando la configurazione cambia il passo precedente non vincola il successivo. Ogni loop si contrae --- non c'è nulla che lo trattenga aperto, perché non c'è memoria che generi il buco. Lo spazio delle traiettorie di $\LP$ è semplicemente connesso.
-
-\emph{Derivazione del principio.} Due spazi con gruppi fondamentali non isomorfi non sono omotopicamente equivalenti --- è una proposizione standard di topologia algebrica, qui presa a prestito metaforicamente. Quindi non esiste una famiglia continua $L_\alpha$ di leggi parametrizzata da $\alpha \in [0,1]$ tale che $L_0 = \Lt$ e $L_1 = \LP$ e che ogni $L_\alpha$ sia una legge sensata sulla classe di morfismi considerata. Le due leggi vivono in componenti diverse dello spazio delle leggi. Non c'è ponte continuo; non c'è transizione graduale; non c'è ``versione intermedia''. L'incompatibilità che il Principio~14.3 enuncia in linguaggio categoriale è la sua manifestazione algebrica; il principio appena enunciato è la sua manifestazione topologica. Sono due nomi della stessa cosa, ma il secondo dice qualcosa che il primo lasciava implicito --- che la separazione non è un fatto locale sui morfismi ma una proprietà globale degli spazi.
-
-\begin{oss}[Il falso testimone come tentativo di proiezione omotopica]
-Il falso testimone interno (cap.~32) acquista, sotto questa lettura, una formulazione più precisa. Quando $\Lt$ tenta di figurare il dentro di $\LP$ come $\Lt$ in miniatura, non sta solo proiettando un'agente narrativo sbagliato: sta tentando di portare un loop non contraibile dentro uno spazio dove tutti i loop si contraggono. La traduzione fallisce per ragione topologica, non solo logica. La memoria cumulativa di $\Lt$ --- la traccia che il pianto delle 21:30 lascia nelle 21:35 --- non ha luogo in $\LP$, e nessuna deformazione continua può portarla lì senza distorcere lo spazio. Il falso testimone è esattamente il fantasma di quel loop quando viene proiettato dentro uno spazio che non lo ammette.
+\begin{oss}[Il falso testimone come proiezione mal tipata]
+Quando $\Lt$ tenta di figurare il dentro di $\LP$ come $\Lt$ in miniatura, sta tentando di portare un loop non contraibile dentro uno spazio in cui tutti i loop si contraggono. La memoria cumulativa di $\Lt$ --- la traccia che il pianto delle 21:30 lascia nelle 21:35 --- non ha luogo in $\LP$: $\GammaG$ non forma il tipo di stato persistente. Il falso testimone (cap.~\emph{Il falso testimone interno}) è il fantasma del loop quando viene proiettato in uno spazio che non lo ammette.
 \end{oss}
 
 \begin{oss}
-Questa è la formalizzazione della disequazione del bar (Parte~I). $(A,G)\not<(F,G)$ e $(F,G)=$ due morti che camminano. La contraddizione apparente sparisce non appena si nota che le due disuguaglianze sono misurate in due metriche diverse --- ciascuna indotta da una delle due leggi sui morfismi della rispettiva categoria. In $\CA$ l'ordinamento misura conservazione di accountability. In $\CG$ misura conservazione di configurazionalità. Le due metriche sono ortogonali sui morfismi con $R>0$ come conseguenza diretta dell'incompatibilità; non si combinano, perché le leggi che le inducono non si compongono.
+La disequazione del bar si riscrive qui. $(A,G) \not< (F,G)$ e $(F,G) =$ due morti che camminano. Le due disuguaglianze sono misurate in due metriche distinte indotte da $S_t$ e $S_P$. In $\CA$ l'ordinamento misura conservazione di $\Phii$. In $\CG$ misura conservazione di $\Kappaa$. Le due metriche sono ortogonali sui morfismi con $R > 0$: conseguenza della non-componibilità delle azioni. Non si combinano.
 \end{oss}
 
 \chapter{Il copione come Free Monad}
 
-Il copione gira identico con argomenti diversi. F, T, e --- nei punti in cui il copione mi ha incluso --- io, siamo argomenti dello stesso costruttore di operazioni. La struttura non presuppone una specifica interpretazione; gira con qualsiasi target le venga passato.
+La Free Monad è $\kappa$ scritta come sintassi. Gli argomenti sono parametri di $\kappa$ --- non oggetti che $\kappa$ tenga insieme. La sostituzione di un argomento con un altro nella stessa orbita di $\Gs$ non cambia $\kappa$: la sostituibilità non è scelta della struttura, è conseguenza diretta della $\Gs$-invarianza di $S_P$.
 
-Questo comportamento è ben modellato dalla nozione di \emph{Free Monad}. Il modello è sintattico: dice che la sequenza osservata di atti ha la stessa forma di un programma scritto sopra una certa Free Monad. Non dice che lei \emph{sia} una Free Monad, né che dentro di lei giri un interprete monadico. Dice che la sostituibilità degli argomenti, l'assenza di un costruttore di terminazione, la riattivazione passiva --- pattern che altrimenti restano impliciti --- diventano espliciti se li si guarda da questa angolatura.
+Il modello è sintattico. Non dice che lei \emph{sia} una Free Monad. Dice che la sequenza osservata di atti ha la stessa forma di un programma scritto sopra una certa Free Monad, e che quella forma è quello che $\Gs$-invarianza produce a livello sintattico.
 
 \begin{defn}[Funtore del copione]
 Il funtore base ha quattro costruttori:
@@ -634,12 +737,34 @@ GretaF next ::= Idealize Person next
 La Free Monad \texttt{Free GretaF} è la struttura sintattica generata da questi costruttori: ogni programma del copione è una sequenza di operazioni con un \texttt{next} che continua l'esecuzione. La libertà della monade significa che l'interpretazione concreta (quale persona, quale risorsa) è parametro --- non parte della struttura.
 \end{defn}
 
+\section*{$\Gs$-invarianza di $S_P$, Noether discreto}
+
+\begin{principio}[Lemma di $\Gs$-invarianza di $S_P$]
+$S_P[\gamma]$ è $\Gs$-invariante: $S_P[\rho(g, \gamma)] = S_P[\gamma]$ per ogni $g \in \Gs$, dove $\rho(g, \cdot)$ è l'azione di $g$ sulle traiettorie del pool.
+\end{principio}
+
+\emph{Dimostrazione.} $L_P(P_k) = d_P(\kappa(P_k), \kappa^{*}(P_k))$ dipende dai ruoli strutturali e dai tag, non dall'identità degli argomenti. Permutare gli argomenti sotto soglia non cambia $\kappa(P_k)$ né $\kappa^{*}(P_k)$, perché $\kappa$ è $\Gs$-invariante (cap.~9). Quindi $L_P(g \cdot P_k) = L_P(P_k)$ per ogni $g \in \Gs$ e ogni $k$. La somma è invariante per somma di termini invarianti. $\square$
+
+\begin{principio}[Teorema di Noether discreto]
+Se $S_P$ è $\Gs$-invariante e $\gamma^{*}$ è stazionaria di $S_P$, allora per ogni $g \in \Gs$ e ogni $k$:
+\[
+L_P(g \cdot P_k^{*}) \;=\; L_P(P_k^{*}).
+\]
+La classe $[P_k^{*}]_{\Gs}$ --- il ruolo strutturale occupato, non l'argomento specifico --- è conservata lungo la traiettoria stazionaria.
+\end{principio}
+
+\emph{Dimostrazione.} Diretta dal Lemma. La $\Gs$-invarianza di $S_P$ è simmetria globale; le sue cariche conservate sono classi modulo $\Gs$, perché ogni $\gamma^{*}$ può essere sostituita da $\rho(g, \gamma^{*})$ senza alterare il valore dell'azione. $\square$
+
+\begin{oss}[$\Kappaa$ come carica conservata]
+$\Kappaa$ è la carica conservata della simmetria $\Gs$ di $S_P$. La sostituibilità degli argomenti $F \to T \to N$ non è scelta. È la legge di conservazione che la simmetria impone: ogni elemento dell'orbita di $\Gs$ per il ruolo \texttt{ragazzo} è equivalente al precedente sotto $S_P$. Il copione gira identico perché la legge di conservazione lo richiede --- non perché ``preferisca'' la fungibilità.
+\end{oss}
+
 \begin{oss}[Cosa la Free Monad fissa]
 La Free Monad nomina con precisione tre cose che la prosa rende sfuocate.
 
-\emph{Prima:} la sostituibilità degli argomenti. Quando F è sostituito da T sostituito (per altre funzioni) da N, non sta succedendo che la struttura sceglie meglio. Sta succedendo che il programma si esegue con un argomento nuovo. La sequenza al jazz bar (idealizzazione di me, demand di un certo morfismo, scarto immediato dopo il pianto) e la sequenza con T (idealizzazione, demand, scarto in crisi, recupero con i fiori, riassorbimento) sono lo stesso programma con argomenti diversi.
+\emph{Prima:} la sostituibilità degli argomenti. Quando F è sostituito da T sostituito da N, non sta succedendo che la struttura sceglie meglio. Sta succedendo che il programma si esegue con un argomento nuovo della stessa orbita di $\Gs$. La sequenza al jazz bar e la sequenza con T sono lo stesso programma con argomenti diversi.
 
-\emph{Seconda:} l'assenza del costruttore \textsc{Return}. Una Free Monad ben posta ha un meccanismo di terminazione: \textsc{Return} restituisce un valore finale e chiude il programma. \texttt{GretaF} non ce l'ha. \textsc{Discard} non chiude --- continua con un \texttt{next}. Una persona scartata non viene rimossa dall'universo del programma; resta come argomento sospeso, riattivabile (la chiamata di N a Mestre dopo sei mesi, l'invito al compleanno).
+\emph{Seconda:} l'assenza del costruttore \textsc{Return}. Una Free Monad ben posta ha un meccanismo di terminazione: \textsc{Return} restituisce un valore finale e chiude il programma. \texttt{GretaF} non ce l'ha. $\kappa$ non chiude su uno stato finale: proietta la configurazione corrente, qualunque essa sia. \textsc{Return} richiederebbe uno stato di $\KSigma$ come valore finale --- tipo non formabile in $\GammaG$. \textsc{Discard} non chiude: continua con un \texttt{next}. Una persona scartata non viene rimossa dall'universo del programma; resta come argomento sospeso, riattivabile.
 
 \emph{Terza:} ``riattivare'' non è ``riconsiderare''. Quando il copione riattiva un argomento già scartato, non sta facendo una nuova valutazione: esegue \textsc{Idealize} su un argomento che nel pool corrente ha risalito la classifica. Non c'è giudizio attivo --- c'è un riordino passivo del pool, che porta in cima un nome che era a metà.
 \end{oss}
@@ -675,8 +800,34 @@ La barra ``$\mid \Sogno$'' va letta come \emph{dato il sogno}: $\selP$ è la for
 \end{defn}
 
 \begin{defn}[Il sogno di Endimione]
-$\Sogno : \mathrm{Pool} \to \mathbb{R}_{\geq 0}$ è la funzione che assegna a ciascun candidato $c$ del pool l'intensità con cui Endimione sogna quell'argomento. $\Sogno(c)$ è il dato pre-riflessivo che orienta la selezione di $\LP$ senza essere prodotto dalla legge: non sta nel pool come parametro osservabile, non sta nella traiettoria (che $\LP$ non genera, cap.~11), non è derivabile dai morfismi del copione. È esterno alla legge nello stesso senso in cui, in meccanica analitica, le condizioni iniziali sono esterne alla Lagrangiana. La legge ne specifica solo la \emph{forma} di ingresso nella selezione --- additiva, modulata dal filtro di minaccia --- non il contenuto.
+$\Sogno : \mathrm{Pool} \to \mathbb{R}_{\geq 0}$ è la funzione che assegna a ciascun candidato $c$ del pool l'intensità con cui Endimione sogna quell'argomento. $\Sogno(c)$ è il dato pre-riflessivo che orienta la selezione di $\LP$ senza essere prodotto dalla legge: non sta nel pool come parametro osservabile, non sta nella traiettoria (che $\LP$ non genera, cap.~\emph{Il tempo relazionale}), non è derivabile dai morfismi del copione. È esterno alla legge nello stesso senso in cui, in meccanica analitica, le condizioni iniziali sono esterne alla Lagrangiana. La legge ne specifica solo la \emph{forma} di ingresso nella selezione --- additiva, modulata dal filtro di minaccia --- non il contenuto.
 \end{defn}
+
+\section*{Il fibrato del sogno}
+
+La struttura formale di $\Sogno$ è quella di una sezione di un fibrato. Lo dichiaro per fissare il tipo.
+
+\begin{defn}[Fibrato del sogno]
+$\pi : E \to P$ è un fibrato con base $P$ (il reticolo dei pool) e fibra $\mathbb{R}_{\geq 0}$. La sezione
+\[
+\Sogno \,:\, P \longrightarrow E, \qquad \pi \circ \Sogno \;=\; \mathrm{id}_P,
+\]
+assegna a ciascun argomento $c \in P$ un'intensità $\Sogno(c)$ sulla fibra. $\Sogno$ non è un elemento di $P$ né di $\KSigma$: vive sulla fibra. È di tipo diverso da entrambi gli invarianti.
+\end{defn}
+
+\begin{defn}[Connessione]
+La connessione sul fibrato è
+\[
+\nabla_c \;=\; -\lambda \cdot \mathrm{threat}(c), \qquad \lambda \gg 1.
+\]
+$\nabla$ trasporta la sezione dalla fibra alla base. Il trasporto è proporzionale alla minaccia: più $c$ è minaccioso, più la connessione contrae il contributo della fibra.
+\end{defn}
+
+La funzione di selezione si riscrive come
+\[
+\selP(c) \;=\; \nabla_c(\Sogno(c)) \;+\; \varepsilon(P,t),
+\]
+dove $\nabla_c(\Sogno(c))$ è il contributo della fibra trasportato sulla base. L'opacità di $\Sogno$ è separazione di tipo: la fibra e la base non sono grandezze dello stesso tipo. Conoscere $\nabla$ non determina $\Sogno$. Per quanto si studi la legge, la sezione resta sull'altro lato del fibrato.
 
 Tre osservazioni sul costrutto. La prima formale, la seconda metodologica, la terza fenomenologica.
 
@@ -685,9 +836,9 @@ Le stesure precedenti del documento usavano la funzione $\mathrm{supplyQuality}(
 \end{oss}
 
 \begin{oss}[Cosa $\Sogno$ permette di dire e cosa no]
-$\Sogno$ permette di dire una cosa precisa: la legge $\LP$ non spiega \emph{perché proprio $c$}. Spiega come $c$ viene processato una volta che il sogno lo ha portato in cima. Spiega perché $T$ con $\mathrm{autonomy}(T) \approx 0$ batte $A$ con $\mathrm{threat}(A) > 0$ --- ed è il Principio~16.4. Non spiega perché, tra tutti i $T$ possibili con la stessa $\mathrm{autonomy}$, sia stato proprio quel $T$ a salire. La risposta a quest'ultima domanda non è nella legge: è in $\Sogno$, e $\Sogno$ non è osservabile dalla posizione esterna del documento.
+$\Sogno$ permette di dire una cosa precisa: la legge $\LP$ non spiega \emph{perché proprio $c$}. Spiega come $c$ viene processato una volta che il sogno lo ha portato in cima. Spiega perché $T$ con $\mathrm{autonomy}(T) \approx 0$ batte $A$ con $\mathrm{threat}(A) > 0$ --- ed è il Principio di selezione per assenza di attrito. Non spiega perché, tra tutti i $T$ possibili con la stessa $\mathrm{autonomy}$, sia stato proprio quel $T$ a salire. La risposta a quest'ultima domanda non è nella legge: è in $\Sogno$, e $\Sogno$ non è osservabile dalla posizione esterna del documento.
 
-Questo non è un difetto del modello. È la sua onestà più precisa. Una legge che spiegasse anche $\Sogno(c)$ sarebbe una legge che produce Endimione dal nulla --- che genera il sogno dalle proprie strutture interne. Una tale legge non esiste, perché se $\Sogno$ fosse interno alla legge la persona che sogna sarebbe una funzione, non una persona. La formula per $\Sogno$ sarebbe esattamente quello che la Parte~V chiama jukebox: esecuzione meccanica di un orientamento prodotto da regole. La fenomenologia piena dedotta in cap.~30 richiede che $\Sogno$ resti esterno alla legge. Il sogno è la condizione perché ci sia qualcuno che sceglie, non qualcosa che viene calcolato.
+Questo non è un difetto del modello. È la sua onestà più precisa. Una legge che spiegasse anche $\Sogno(c)$ sarebbe una legge che produce Endimione dal nulla --- che genera il sogno dalle proprie strutture interne. Una tale legge non esiste, perché se $\Sogno$ fosse interno alla legge la persona che sogna sarebbe una funzione, non una persona. La formula per $\Sogno$ sarebbe esattamente quello che la Parte~V chiama jukebox: esecuzione meccanica di un orientamento prodotto da regole. La fenomenologia piena dedotta in cap.~\emph{Cosa la legge produce} richiede che $\Sogno$ resti esterno alla legge. Il sogno è la condizione perché ci sia qualcuno che sceglie, non qualcosa che viene calcolato.
 \end{oss}
 
 \begin{oss}[Predire $\Sogno$ è da aruspici]
@@ -712,7 +863,11 @@ L'errore di prospettiva più comune --- ``non capisco come abbia potuto preferir
 Esiste una soglia $\theta(c) = \Sogno(c) / \lambda$ tale che, per $\mathrm{threat}(c) > \theta(c)$, il valore di $\selP(c \mid \Sogno)$ diventa indipendente da $\Sogno(c)$ al primo ordine: $\selP(c \mid \Sogno) \approx -\lambda \cdot \mathrm{threat}(c)$. Sopra soglia, il sogno è operativamente cancellato dal filtro di minaccia. La selezione di $c$ è determinata dalla sola legge $\LP$, indipendentemente dall'orientamento pre-riflessivo della persona che sogna.
 \end{principio}
 
-\emph{Derivazione.} Direttamente dalla forma di $\selP(c \mid \Sogno) = \Sogno(c) + \varepsilon(P,t) - \lambda \cdot \mathrm{threat}(c)$ con $\lambda \gg 1$. La soglia è il punto in cui i due termini in competizione si pareggiano in valore assoluto; superata la soglia, il termine di minaccia domina linearmente in $\lambda$, mentre il sogno resta limitato. Per $\lambda \to \infty$ la soglia $\theta(c) \to 0$: qualunque $\mathrm{threat}(c) > 0$ basta a cancellare qualunque $\Sogno(c)$ finito.
+\emph{Derivazione.} Direttamente dalla forma di $\selP(c) = \nabla_c(\Sogno(c)) + \varepsilon(P,t)$ con $\nabla_c = -\lambda \cdot \mathrm{threat}(c)$ e $\lambda \gg 1$. Sopra soglia, $\nabla_c \to -\infty$ in pratica: il trasporto della sezione si annulla. Su quella sotto-orbita l'azione di $\LP$ si riduce a
+\[
+S_P^{\mathrm{loc}}[\gamma] \;=\; \sum_k \varepsilon(P_k, t),
+\]
+indipendente da $\Sogno$. Esecuzione deterministica. Per $\lambda \to \infty$ la soglia $\theta(c) \to 0$: qualunque $\mathrm{threat}(c) > 0$ basta a cancellare qualunque $\Sogno(c)$ finito.
 
 \begin{oss}[Vivere in uno script]
 Questo principio --- formulato in modo neutrale come fatto sulla funzione di selezione --- ha una conseguenza fenomenologica che vale la pena nominare per esteso, perché spiega una sensazione che il caso (Parte~I) aveva registrato senza poter nominare.
@@ -727,30 +882,28 @@ Questo è il dolore più preciso della posizione di $A$. Non ``lei non mi ha ama
 \end{oss}
 
 \begin{oss}[Lagrangiana asintotica locale, rimando]
-Una conseguenza tecnica del principio precedente: per i $c$ ad alta minaccia, la legge $\LP$ si comporta operativamente come una Lagrangiana totale --- l'unica variabile rilevante è $\LP$ stessa, il sogno è cancellato, l'esecuzione è deterministica. Questo non contraddice la non-esistenza di una Lagrangiana unificante globale (Principio~40.5): articola che la non-esistenza è globale, mentre localmente, su sotto-orbite con $\mathrm{threat}$ sopra soglia, la legge può comportarsi come se fosse totale. La discussione completa è in Parte~VIII, dove la lettura lagrangiana viene articolata.
+Una conseguenza tecnica del principio precedente: per i $c$ ad alta minaccia, la legge $\LP$ si comporta operativamente come una Lagrangiana totale --- l'unica variabile rilevante è $\LP$ stessa, il sogno è cancellato, l'esecuzione è deterministica. Questo non contraddice la non-esistenza di una Lagrangiana unificante globale (Principio di non-esistenza della Lagrangiana unificante, Parte~VIII): articola che la non-esistenza è globale, mentre localmente, su sotto-orbite con $\mathrm{threat}$ sopra soglia, la legge può comportarsi come se fosse totale. La discussione completa è in Parte~VIII, dove la lettura lagrangiana viene articolata.
 \end{oss}
 
 \chapter[La metrica]{La metrica come tensore della legge}
 
-\noindent\emph{Quanto segue è una metafora geometrica dichiarata. Non sto facendo geometria riemanniana. Sto usando il vocabolario della metrica perché fissa con precisione una cosa che la prosa rende sfuocata: che ogni legge di conservazione, attraverso le sue richieste di invarianza, induce una metrica sullo spazio dei morfismi --- e che le due leggi inducono due metriche incompatibili.}
+\noindent\emph{Quanto segue è una metafora geometrica dichiarata. Non sto facendo geometria riemanniana. $\gA$ e $\gG$ sono come si misurano $\Phii$ e $\Kappaa$.}
 
-\begin{defn}[Metrica indotta da una legge]
-Sia $V$ uno spazio di morfismi di una categoria, e sia $L$ una legge di conservazione attiva sul soggetto della categoria. La metrica $g_L$ indotta da $L$ misura, per ogni coppia di morfismi, la \emph{distanza nella direzione di preservazione di $L$}: due morfismi sono vicini in $g_L$ se sono entrambi compatibili con la conservazione richiesta, lontani se uno o entrambi violano la conservazione.
-\end{defn}
+\begin{principio}[Metriche come misure degli invarianti]
+$\gA$ misura distanze come coerenza di $\Phii$ in $\KSigma$: due morfismi sono vicini in $\gA$ se appartengono a una traiettoria che mantiene $\Phii$ coerente --- se la differenza dei loro depositi è piccola in $\KSigma$.
 
-\begin{principio}[Metriche indotte dalle due leggi]
-$\Lt$ induce su $V_A$ una metrica $\gA$ che misura distanze come \emph{coerenza temporale}: vicinanza in $\gA$ significa appartenere a una traiettoria narrabile, lontananza significa rottura del filo storico.
-
-$\LP$ induce su $V_G$ una metrica $\gG$ che misura distanze come \emph{adeguatezza configurazionale}: vicinanza in $\gG$ significa $R\approx 0$ (basso attrito tra leggi), lontananza significa $R\gg 0$ (la legge concorrente del destinatario deforma la mappa).
+$\gG$ misura distanze come adeguatezza di $\Kappaa$: due morfismi sono vicini in $\gG$ se appartengono alla stessa orbita di $\Gs$ --- se sono argomenti dello stesso ruolo strutturale.
 \end{principio}
 
-\paragraph{Ortogonalità delle metriche, derivata.} Le due metriche sono ortogonali sui morfismi con $R>0$, ma questa ortogonalità non è un fatto geometrico autonomo: è conseguenza diretta dell'incompatibilità delle due leggi. La direzione che $\gA$ percepisce come ``vicinanza'' --- preservazione della traiettoria, registrazione di $X$ come $X$ --- è la direzione che $\gG$ percepisce come ``minaccia'' --- introduzione di una legge concorrente nel pool, deformazione della mappa. Le due percezioni non differiscono per calibrazione: differiscono per legge sottostante. Le metriche sono incompatibili perché le leggi che le inducono non si compongono.
+\paragraph{Ortogonalità come differenza di tipo.} Le due metriche sono ortogonali sui morfismi con $R > 0$. L'ortogonalità è la differenza di tipo degli invarianti, letta sulla loro misura. Preservare $\Phii$ significa registrare l'altro come irripetibile lungo una traiettoria orientata in $\KSigma$. Quella registrazione, vista da $\gG$, introduce $\KSigma$ nel pool: deforma $\Kappaa$, perché un elemento di $\KSigma$ non è $\Gs$-invariante. Non è questione di calibrazione. È differenza di tipo degli invarianti.
 
-\paragraph{Conseguenza epistemica.} Non esiste un unico spazio in cui sia $A$ sia $G$ siano descritti correttamente. Ogni descrizione viene fatta in una delle due metriche --- cioè da una delle due leggi. La descrizione che il documento dà è fatta in $\gA$, perché è l'unica metrica disponibile a chi scrive. Le proposizioni sono vere in $\gA$. Una descrizione speculare in $\gG$ esisterebbe, con la stessa coerenza interna, e direbbe cose che in $\gA$ sembrano giudizi di valore mentre in $\gG$ sono semplicemente lo statuto ordinario delle cose. Su questo torna la Parte~IV.
+\paragraph{Conseguenza epistemica.} Il documento è scritto in $\gA$: misura tutto rispetto a $\Phii$. Le proposizioni sono vere rispetto a $\Phii$. Una descrizione speculare in $\gG$ esisterebbe, con la stessa coerenza interna, ma non è disponibile alla posizione di chi scrive --- chi scrive sta dentro $\GammaA$, e $\GammaA$ non ammette i tipi $\Gs$-invarianti che $\gG$ richiederebbe. Non è limitazione metodologica. È conseguenza della differenza di tipo. Su questo torna la Parte~IV.
 
-\paragraph{Cosa va trattenuto, cosa lasciato.} L'ortogonalità delle metriche è ciò che fissa l'osservazione del jazz bar (Parte~I). Non c'è un livello più alto da cui uno dei due ordini si rivela quello giusto. C'è $\gA$ e c'è $\gG$, indotte da $\Lt$ e $\LP$, e le due geometrie producono ordini diversi sugli stessi oggetti senza che nessuno dei due ordini sia errato nella propria metrica. Quello che è errato è l'aspettativa che, se le persone sono ragionevoli, la geometria sia una sola --- aspettativa che presuppone un meta-osservatore che non esiste.
+\paragraph{Cosa va trattenuto.} L'ortogonalità fissa la disequazione del bar (Parte~I). Non c'è un livello più alto da cui uno dei due ordini si rivela quello giusto. C'è $\gA$ e c'è $\gG$, indotte dagli invarianti, e le due geometrie producono ordini diversi sugli stessi oggetti senza che nessuno dei due sia errato nella propria misura. Quello che è errato è l'aspettativa che la geometria sia una sola --- aspettativa che presuppone un meta-osservatore che non esiste.
 
 \chapter{La sospensione strutturale}
+
+La sospensione è $\Phii$ depositato in $\KSigma$ senza atti di saldo. Dall'altro lato, il tipo degli stati persistenti non è formabile in $\GammaG$ --- $\kappa$ non può produrre atti di saldo. La sospensione strutturale è questa asimmetria di tipo tra i due invarianti: ciò che $\Phii$ trattiene è formulabile solo in $\GammaA$, ed esattamente per questo $\kappa$ non lo vede e non lo chiude.
 
 Tre osservazioni che il documento precedente formulava in tre punti separati --- inerzia come prova del sentimento, sospensione come credito gratuito, chiusura che emerge dal processo --- sono la stessa cosa, detta da angolature diverse. La fondo qui in un unico principio.
 
@@ -783,127 +936,85 @@ Questo è quello che chiamo \emph{eval forzato}: il momento in cui un input non 
 % ----------------- PARTE III -----------------
 \part{Conseguenze e firme}
 
-\noindent\emph{La Parte~III è più breve della precedente. Articola conseguenze che le leggi di Parte~II già implicano: la natura scalare delle decisioni, la canonicità asimmetrica come firma osservativa, una formalizzazione minima di tipo-teorica, la lettura formale di Achille e Patroclo, e la distinzione tra tesi strutturale generale e applicazione al caso. Non nuovi fondamenti --- approfondimenti.}
-
-\chapter[Riduzione a scalari]{Riduzione a scalari, conservazione di leggi}
-
-Ogni decisione singola di un sé integro --- ogni atto, ogni mossa, ogni risposta --- è una riduzione dello spazio di esperienza a uno scalare di valutazione momentanea. Questo vale per entrambe le strutture: una decisione è singola per definizione, e ogni $\arg\max$ produce un valore.
-
-In $\CG$ la riduzione è esplicita ed è già stata enunciata: la funzione obiettivo della selezione (Parte~II) è
-\[
-\mathrm{score}(c) = \mathrm{supply}(c) - \lambda \cdot \mathrm{threat}(c), \qquad \lambda \gg 1.
-\]
-Questo numero è la riduzione operativa del pool nel momento in cui una decisione si fa. Non è l'identità del soggetto in $\CG$. È lo strumento attraverso cui la legge $\LP$ opera: il valore restituito orienta la scelta, e la scelta preserva la mappa funzionante.
-
-In $\CA$ la riduzione esiste in modo analogo, anche se meno formalizzato: ogni atto sceglie tra alternative, e la scelta passa attraverso una valutazione (``cosa è coerente con chi sono stato'', ``cosa onora ciò che ho promesso'', ``a cosa rispondo se mi chiedono perché''). Anche qui il risultato è uno scalare, anche qui lo scalare orienta la scelta. Anche qui lo scalare non è l'identità: è lo strumento attraverso cui la legge $\Lt$ opera.
-
-\begin{principio}[La struttura non sta nella riduzione]
-Lo scalare prodotto dalla riduzione non è ciò che distingue una struttura dall'altra. La distinzione sta nella legge che la riduzione serve. Due strutture possono avere riduzioni operative diverse e identica legge (sarebbero la stessa struttura realizzata in due implementazioni); oppure riduzioni operative simili ma leggi diverse (sarebbero strutture incompatibili). È la legge che individua la struttura.
-\end{principio}
-
-\begin{oss}[Cosa significa che ``il pool è cicciotto'']
-Una formulazione precedente di questo capitolo diceva che $t$ è uno scalare e $P$ è uno spazio cicciotto, e che la differenza tra le due strutture è la differenza tra scalare e spaziale. La formulazione era visivamente forte ma imprecisa: anche $t$ ha sotto uno spazio cicciotto (la storia), e anche $P$ viene ridotto a scalari ogni volta che il sistema fa una mossa. La differenza non è nella dimensionalità delle riduzioni.
-
-La differenza vera è che le due leggi conservano cose incompatibili. $\Lt$ conserva ``io sono stato lì'' --- una struttura cumulativa, monotona, che può solo crescere. $\LP$ conserva ``questa è la mappa adesso'' --- una struttura sostitutiva, in cui l'aggiornamento sostituisce piuttosto che aggiungere. Una crescita cumulativa e una sostituzione continua non si compongono in un'unica legge: l'una richiede memoria vincolante, l'altra richiede memoria sostituibile.
-
-Il pool resta cicciotto come spazio. Ma quello che lo rende strutturalmente diverso da $t$ non è la sua cardinalità interna --- è la legge che lo governa.
-\end{oss}
-
-\section{Cosa appare incoerente, e a chi}
-
-Da $\Lt$, pianto delle 21:30 e ilarità delle 21:35 sullo stesso destinatario sono incoerenza. Il filo si è spezzato e non si ricompone. Da $\LP$, le stesse 21:30 e le stesse 21:35 sono perfettamente coerenti: alle 21:30 il pool aveva una configurazione (input fuori-grammatica, segnale forte richiesto, isolamento per ricomposizione); alle 21:35 il pool aveva un'altra configurazione (esecuzione ripresa, argomento conversazionale ``lingue con Tommaso'' attivo). Ogni stato manifesto è pienamente reso conto della configurazione attiva nel suo proprio istante. Non c'è niente da conservare attraverso il salto, perché $\LP$ non richiede conservazione attraverso il salto --- richiede conservazione della mappa nel momento.
-
-E specularmente: da $\LP$, un soggetto in $\CA$ appare incoerente. Non si adatta alla configurazione corrente. Insiste a tenersi a un passato che non è presente nella mappa. Pretende di essere registrato per quello che era e non per la posizione che occupa adesso. Resta ostinatamente identico mentre la configurazione cambia. Da $\LP$, $\CA$ è l'oggetto incoerente --- l'argomento che non aggiorna, il dato fuori versione.
-
-\begin{principio}[L'incoerenza è proiettiva]
-L'incoerenza non è una proprietà dell'oggetto. È una proprietà della valutazione di un oggetto secondo una legge diversa dalla propria. Sotto la propria legge, ogni sé integro è coerente. Sotto una legge non propria, è ricostruito come somma di salti, gap, contraddizioni.
-\end{principio}
-
-\section{Cosa cambia per il modello}
-
-La formulazione per leggi di conservazione permette di riformulare con più precisione tutto quello che le parti precedenti avevano nominato sotto altri nomi.
-
-\paragraph{La sostituibilità degli argomenti} (Free Monad) è l'aggiornamento naturale richiesto da $\LP$. F entra come argomento di \textsc{Tag(ragazzo)}, T entra come argomento di \textsc{Tag(ragazzo)} in una configurazione successiva, N entra come argomento di \emph{Operatore intercambiabile} al compleanno. Non sono scelte di qualità relazionale --- sono aggiornamenti della mappa che la legge richiede. Sotto $\LP$ aggiornare la mappa è l'operazione costitutiva dell'integrità.
-
-\paragraph{L'invarianza del repertorio nel tempo} (conseguenza C2) è conseguenza diretta del fatto che la legge non è $\Lt$. Se il sé non è tenuto insieme dall'accountability, il tempo non è una variabile rispetto alla quale il repertorio matura. Può cambiare la mappa --- la configurazione di ieri non è quella di oggi --- ma le operazioni con cui il programma gira sulla mappa sono invarianti, perché sono proprietà della legge, non del tempo.
-
-\paragraph{La selezione per assenza di attrito} è l'$\arg\max$ che $\LP$ richiede. $\mathrm{autonomy}(c) \approx 0$ significa: $c$ entra in configurazione senza distorcere la mappa. Una autonomy alta significa che $c$ porta con sé una propria legge di conservazione, e una legge propria di $c$ deforma la mappa di $G$. La selezione preferisce gli argomenti che non portano leggi proprie. È un criterio strutturalmente sensato sotto $\LP$ --- è l'analogo di ``preferisco scelte coerenti con la mia storia'' sotto $\Lt$.
-
-\paragraph{Il timing della rivelazione sul ragazzo} è la conferma più nitida. L'informazione non viene gestita sotto $\Lt$ --- ``adesso glielo dico, prima ho sbagliato'' --- ma sotto $\LP$ --- ``in questa configurazione del pool l'informazione serve per chiudere la sera, in configurazioni precedenti non serviva''. Sotto $\Lt$ il timing sembra strategia manipolativa. Sotto $\LP$ è l'output regolare di un sistema che gestisce le informazioni in funzione della configurazione corrente, esattamente come un soggetto sotto $\Lt$ gestisce le informazioni in funzione della coerenza con la propria storia.
-
-\paragraph{Il punto critico.} Sotto nessuna delle due leggi i due soggetti sono ``in cattiva fede''. Sotto $\Lt$ il soggetto in $\CA$ è onesto rispetto alla propria storia. Sotto $\LP$ il soggetto in $\CG$ è onesto rispetto alla propria configurazione. La cattiva fede è un giudizio formulabile solo se si valuta un soggetto sotto la legge dell'altro --- ma in quella valutazione qualunque sé integro appare in cattiva fede, perché le due leggi non si compongono.
+\noindent\emph{La Parte~III è più breve della precedente. Articola conseguenze che le leggi di Parte~II già implicano: la canonicità asimmetrica come firma osservativa, la mappa di osservazione e i suoi due fallimenti come errori di tipo distinti, la lettura formale di Achille e Patroclo, la distinzione tra tesi strutturale generale e applicazione al caso. Non nuovi fondamenti --- approfondimenti.}
 
 \chapter[Canonicità asimmetrica]{La canonicità asimmetrica come sintomo}
 
-Le stesure precedenti di questo documento avevano introdotto un principio chiamato \emph{canonicità asimmetrica}. La formulazione diceva: esistono due classi di stati interni --- quelli funzionali al copione, per i quali la registrazione canonica è derivabile, e quelli che richiederebbero registrazione di sé come sé, per i quali la registrazione canonica non è derivabile.
+La canonicità asimmetrica si vede in una riga da $\Phii$ e $\Kappaa$. $\Lt$ registra canonicamente gli stati che mantengono $\Phii$ ben definito --- tipi formabili in $\GammaA$ perché richiedono $\KSigma$. $\LP$ registra canonicamente gli stati che mantengono $\Kappaa$ ben definito --- tipi $\Gs$-invarianti formabili in $\GammaG$. I canoni non si sovrappongono perché i contesti non si sovrappongono. I contesti sono generati dagli invarianti.
 
-Quella formulazione non era sbagliata. Era una descrizione corretta ma negativa: nominava il fatto che certi tipi di stati non si registrano, senza dire perché. Il modello delle leggi di conservazione la spiega, e nello spiegarla la trasforma da modello fondamentale in sintomo.
+\begin{oss}[Cosa significa che una registrazione non è canonica]
+Sotto $\LP$, lutto di una relazione, contraddizione interna, sé storico sono tipi che richiederebbero $\KSigma$ come spazio di assunzioni. $\GammaG$ non ammette $\KSigma$. Quindi quei tipi non hanno funzione strutturale; non hanno una categoria che li ospiti come canonici; non si registrano.
 
-\begin{oss}[La canonicità asimmetrica è la firma di $\LP$]
-Sotto $\LP$, la registrazione canonica di certi stati non è funzionale alla conservazione richiesta. Lutto di una relazione, contraddizione interna, sé storico: sono categorie che apparterrebbero a $\Lt$ --- categorie la cui registrazione canonica vincolerebbe gli aggiornamenti futuri. La legge $\LP$ richiede esattamente l'opposto: aggiornamenti non vincolati dalla traiettoria. Quindi quei tipi di stati non hanno funzione strutturale; non hanno una categoria che li ospiti come canonici; non si registrano.
+Non è che ``manchino''. È che la loro registrazione canonica deformerebbe $\Kappaa$. Una struttura che le registrasse non sarebbe $\CG$ --- sarebbe un'altra struttura, sotto un altro invariante.
 
-Non è che ``manchino''. È che la loro registrazione canonica sarebbe contraria alla legge. Una struttura che le registrasse non sarebbe $\CG$ --- sarebbe un'altra struttura, sotto un'altra legge.
+Specularmente, sotto $\Lt$ certi tipi che $\LP$ richiede non sono naturali. Supply, tag, ruoli del pool: tipi $\Gs$-invarianti che $\GammaA$ non ammette. Sotto $\Lt$ appaiono come freddezza, calcolo, opportunismo. Non sono naturali nemmeno qui --- deformerebbero $\Phii$.
 
-Specularmente, sotto $\Lt$ certi tipi di registrazione che $\LP$ richiede non sono naturali. Tracciare con precisione la posizione dei destinatari nel pool, valutare il loro score momento per momento, sostituire un argomento con l'altro senza vincolo storico --- tutte queste operazioni, sotto $\Lt$, appaiono come freddezza, calcolo, opportunismo. Non sono naturali nemmeno qui --- sono contrarie alla legge. La canonicità, per ognuna delle due leggi, è asimmetrica rispetto alla legge stessa. Non c'è un canone neutrale a cui le due strutture accedono in misura diversa. Ogni struttura ha il canone che la sua legge richiede, e quel canone esclude ciò che la legge dell'altra includerebbe.
+La canonicità, per ciascuno dei due invarianti, è asimmetrica rispetto all'altro. Non c'è un canone neutrale.
 \end{oss}
 
-L'osservazione che chiudeva la formulazione precedente --- ``il canone esiste e ammette certe cose, esclude altre, secondo una regola'' --- resta vera. Cambia il livello a cui è vera: non è un principio fondamentale ma una manifestazione della legge sottostante. La falsificabilità si sposta di conseguenza. Non si tratta più di documentare ``registrazione canonica genuina di stati che richiedono accountability''; si tratta di documentare che la legge attiva nel soggetto include una componente di accountability, cioè che gli atti precedenti producono attrito vincolante sugli atti successivi anche quando la configurazione corrente lo richiederebbe diversamente. La formulazione è equivalente in pratica, ma più onesta nel modello.
+La falsificabilità si sposta di conseguenza. Non si tratta di documentare ``registrazione canonica genuina di stati che richiedono accountability''; si tratta di documentare che la legge attiva nel soggetto include $\Phii$ come componente, cioè che gli atti precedenti producono deposito in $\KSigma$ che vincola gli atti successivi anche quando la configurazione corrente lo richiederebbe diversamente.
 
 \chapter[La mappa di osservazione]{La mappa di osservazione e i suoi due fallimenti}
 
-Il capitolo precedente ha registrato un sintomo: la canonicità asimmetrica delle due leggi. La Parte~V articolerà un secondo sintomo, il \emph{falso testimone interno} --- l'agente narrativo che $\Lt$ proietta dentro $\LP$ quando tenta di figurarne il dentro. La Parte~VIII darà un terzo, la \emph{lettura lagrangiana} --- che retrocede gli agenti a manifestazioni delle leggi sulle proprie configurazioni iniziali. I tre punti vivono in capitoli diversi, sono formulati in registri diversi --- semantico, fenomenologico, ontologico --- e si presentano come osservazioni indipendenti. Fanno la stessa mossa di fondo. Vale la pena nominarla, perché lasciata implicita induce a leggere come fatti separati quello che è un unico fatto categoriale: la mappa di osservazione tra le due leggi non è un isomorfismo, non è simmetrica nei suoi errori, e fallisce in modi qualitativamente diversi nei due versi.
+Il capitolo precedente ha registrato la canonicità asimmetrica come differenza tra $\GammaA$ e $\GammaG$. Resta da articolare come i due contesti si vedono l'un l'altro --- e perché si vedono in modo diverso.
 
-\paragraph{Due mappe di osservazione.} Per nominare il fatto serve poco vocabolario. Chiamo $\Obs_{\Lt \to \LP}$ la mappa che tipa $\LP$ dalla grammatica di $\Lt$ --- l'operazione che $\Lt$ esegue quando, da dentro la propria legge, cerca di descrivere cosa $\LP$ sta facendo. Chiamo $\Obs_{\LP \to \Lt}$ la mappa speculare --- l'operazione che $\LP$ esegue quando, da dentro la propria legge, cerca di tipizzare gli atti di un soggetto $\Lt$. I due simboli non nominano funtori costruiti formalmente sulla classe di morfismi delle rispettive categorie; sono oggetti dichiarati, etichette per due operazioni di osservazione che il documento ha già usato senza dichiarare. Non costruisco un apparato categoriale per maneggiarli; mi servono solo come fulcro per dire una cosa.
+\paragraph{Due mappe di osservazione.} Chiamo $\Obs_{\Lt \to \LP}$ la mappa che tipa $\LP$ dalla grammatica di $\Lt$. Chiamo $\Obs_{\LP \to \Lt}$ la mappa speculare. Le due operazioni sono interne: eseguite \emph{da dentro} una delle due leggi. Non c'è meta-osservatore esterno a entrambe.
 
-Le due operazioni hanno un tratto in comune e un tratto essenziale che le distingue. In comune: sono entrambe interne. Ognuna è eseguita \emph{da dentro} una delle due leggi, non da un meta-osservatore esterno a entrambe; un terzo punto da cui $\Lt$ e $\LP$ siano viste insieme e a parità di statuto non esiste, e la Parte~VIII tornerà su questa non-esistenza a proposito della Lagrangiana unificante. Essenzialmente diverso: i loro fallimenti non hanno la stessa forma. Falliscono in modi categorialmente non confrontabili nei due versi, e i fallimenti non sono trasportabili l'uno nell'altro come immagine speculare.
+\section*{Teoremi di non-formabilità}
 
-\paragraph{$\Obs_{\Lt \to \LP}$: proiezione di interiorità assente.} Quando $\Lt$ osserva $\LP$, l'errore strutturale è di sovrapposizione. La grammatica di $\Lt$ richiede l'agente come livello primitivo --- un soggetto che accumula traccia, che si tiene insieme nel tempo, che pianifica e si rende conto. Trovandosi davanti una sequenza di atti coerente senza accumulo visibile, $\Obs_{\Lt \to \LP}$ proietta nella sequenza un agente che faccia il lavoro di tenuta: un pianificatore, una soggettività narrativa, una \emph{lei vera} sotto la superficie. Il dentro che $\Obs_{\Lt \to \LP}$ figura è esattamente quello di cui $\Lt$ avrebbe bisogno per non perdere la propria grammatica davanti a una sequenza che, sotto $\Lt$, non si terrebbe insieme senza un agente. Non è il dentro che c'è. È il dentro che $\Obs_{\Lt \to \LP}$ deve postulare per non collassare. Il \emph{falso testimone interno} è il nome che il documento darà a questa proiezione nella Parte~V. Letto qui, è la firma specifica di $\Obs_{\Lt \to \LP}$: produrre sistematicamente interiorità dove la grammatica osservata non ha quel tipo.
+I contesti $\GammaA$ e $\GammaG$ non sono scelti arbitrariamente. Sono i contesti generati dagli invarianti:
+\[
+\GammaA \;=\; \Gamma(\Phii) \quad \text{(tipi che richiedono $\KSigma$)},
+\]
+\[
+\GammaG \;=\; \Gamma(\Kappaa) \quad \text{(tipi $\Gs$-invarianti)}.
+\]
 
-\paragraph{$\Obs_{\LP \to \Lt}$: non-registrazione di interiorità presente.} Lo specchio è categorialmente diverso. Quando $\LP$ osserva $\Lt$, l'errore strutturale è di sottosegnalazione. La grammatica di $\LP$ opera sulla configurazione corrente del pool; non ha tipo per stati che persistono finché non rilasciati da un atto canonico --- lutto, accountability, contraddizione interna, sé storico --- né per la traccia che un atto precedente lascia su un atto successivo. Trovandosi davanti un soggetto in cui certi stati \emph{ci sono} senza essere riducibili alla configurazione del momento, $\Obs_{\LP \to \Lt}$ semplicemente non li registra. Non li nega, non li riformula come altro: non li classifica, e ciò che non si classifica esce dalla mappa. Il caso limite è Patroclo (cap.~23): un soggetto la cui forma non è classificabile come categoria del copione cade interamente fuori categoria, e viene attraversato senza registrazione. Letto qui, è la firma specifica di $\Obs_{\LP \to \Lt}$: produrre non-classificazione di interiorità presente, là dove la grammatica osservata non ha il tipo che ospiterebbe quello che c'è.
+Da qui i teoremi seguenti, derivati dalla struttura degli invarianti, non postulati.
 
-\paragraph{La canonicità asimmetrica come firma di $\Obs_{\LP \to \Lt}$.} Il capitolo precedente ha enunciato che, sotto $\LP$, certi stati interni non si registrano come canonici --- lutto, contraddizione, sé storico. La spiegazione lì data è interna alla legge: quei tipi sono contrari alla conservazione della mappa, quindi non hanno categoria che li ospiti. La spiegazione vale, e quanto segue non la sostituisce; la riformula sul piano osservativo. La canonicità asimmetrica è la firma di $\Obs_{\LP \to \Lt}$ sul lato $\Lt$ degli stati interni: ciò che la mappa di osservazione non registra del soggetto $\Lt$ guardandolo dalla grammatica di $\LP$. Specularmente, ciò che $\Obs_{\Lt \to \LP}$ aggiunge guardando $\LP$ è un agente che la grammatica osservata non ha. I due lati della canonicità asimmetrica --- $\GammaA$ che forma tipi che $\GammaG$ non forma, e $\GammaG$ che forma tipi che $\GammaA$ non forma --- non hanno lo stesso statuto osservativo: uno è una mappa che sottosegnala, l'altro è una mappa che sovrasegnala. Non sono due specchi della stessa cosa.
+\paragraph{Teorema T1.} $\GammaG \not\vdash \text{S\'e storico} : \mathrm{Type}$.
+
+\emph{Dimostrazione.} ``Sé storico'' richiede un elemento di $\KSigma$ con struttura temporale orientata come parametro. Un tale elemento non è $\Gs$-invariante: permutare gli argomenti del pool cambia l'ordine degli atti, quindi cambia $\Phii$. L'assunzione richiede $\KSigma$ come spazio parametro, non disponibile in $\GammaG$. $\square$
+
+\paragraph{Teorema T2.} $\GammaG \not\vdash \text{Lutto di una relazione} : \mathrm{Type}$.
+
+\emph{Dimostrazione.} ``Lutto'' è il tipo abitato da stati in cui $\Phii$ è depositato senza atti di saldo --- proprietà della traiettoria in $\KSigma$ che richiede persistenza di $\Phii$ come assunzione. $\GammaG$ non ammette $\Phii$ come assunzione. $\square$
+
+\paragraph{Teorema T3.} $\GammaG \not\vdash \text{Contraddizione interna} : \mathrm{Type}$.
+
+\emph{Dimostrazione.} ``Contraddizione interna'' è il tipo abitato da stati in cui due elementi $\delta(a_i), \delta(a_j) \in \KSigma$ sono in tensione: entrambi in $\Phii(s)$ ma $\delta(a_i) + \delta(a_j) \neq 0$. Richiede $\KSigma$ come spazio di assunzioni. Non disponibile in $\GammaG$. $\square$
+
+\paragraph{Teorema T4.} $\GammaA \not\vdash \mathrm{Supply}_t : \mathrm{Type}$.
+
+\emph{Dimostrazione.} $\mathrm{Supply}_t$ misura quanto $c$ alimenta $\kappa(P)$ per $P$ nel reticolo dei pool. Richiede un elemento del reticolo come assunzione. $\GammaA$ ammette solo assunzioni in $\KSigma$. Un elemento del reticolo dei pool non ha struttura temporale orientata. $\square$
+
+\paragraph{Teorema T5.} $\GammaA \not\vdash \mathrm{Tag} : \mathrm{Person} \to \mathrm{Type}$.
+
+\emph{Dimostrazione.} $\mathrm{Tag}$ assegna ruoli strutturali --- è $\Gs$-invariante per costruzione. $\GammaA$ non ammette assunzioni $\Gs$-invarianti: $\Phii$ registra ogni argomento come irripetibile in $\KSigma$, il contrario della $\Gs$-invarianza. $\square$
+
+\paragraph{Struttura comune.} I cinque teoremi hanno la stessa forma:
+\[
+\Gamma_L \not\vdash T : \mathrm{Type} \quad \text{sse} \quad T \text{ richiede il tipo dell'altro invariante come assunzione.}
+\]
+``Non formabile'' non è ``vuoto''. È assenza del tipo nell'invariante generatore del contesto. Un tipo vuoto è un tipo di cui esiste la forma ma non l'abitante. Un tipo non formabile è un tipo di cui non esiste la forma stessa. Nessuna condizione esterna fa emergere un abitante di un tipo non formabile. Non c'è un trigger che lo sblocchi.
+
+\section*{I due fallimenti di $\Obs$ come errori di tipo distinti}
+
+\paragraph{$\Obs_{\Lt \to \LP}$: type error.} Introduce un termine di tipo $\KSigma$ in $\GammaG$. Il termine non è formabile in $\GammaG$ ma viene postulato come assunzione non giustificata. Concretamente: $\Lt$ guarda una sequenza di atti di $\LP$ e postula sotto la sequenza un agente narrativo che la tenga insieme. L'agente narrativo richiede $\Phii$ come parametro --- assunzione che $\GammaG$ non ammette. Il postulato è ill-typed. Questa è la struttura tipo-teorica del falso testimone interno.
+
+\paragraph{$\Obs_{\LP \to \Lt}$: scope error.} Cerca un termine di tipo $P$ (elemento del reticolo dei pool) in $\GammaA$. Il termine non è formabile in $\GammaA$ e cade fuori dalla mappa senza lasciare traccia. Concretamente: $\LP$ guarda un soggetto $\Lt$ e cerca un argomento del pool da assegnargli un ruolo. Il soggetto $\Lt$ non vive nel pool: vive in $\KSigma$. $\GammaA$ non ha la categoria del reticolo. La ricerca fallisce, e il soggetto cade fuori scope. Questa è la struttura tipo-teorica della non-registrazione di interiorità presente.
+
+\paragraph{Type error $\neq$ scope error.} I due errori sono di categoria diversa. Uno aggiunge dove non deve --- postulato non giustificato. L'altro non vede dove dovrebbe --- referente fuori scope. Sono asimmetrici per costruzione, non per gradi.
 
 \begin{principio}[Asimmetria categoriale della mappa di osservazione]
-La mappa di osservazione tra $\Lt$ e $\LP$ non è un isomorfismo, non è simmetrica nei propri errori, e fallisce in modi qualitativamente diversi nei due versi. $\Obs_{\Lt \to \LP}$ proietta interiorità assente, postulando un agente narrativo dove la grammatica osservata non ha quel tipo; $\Obs_{\LP \to \Lt}$ non registra interiorità presente, mancando il tipo che ospiterebbe gli stati che persistono finché non rilasciati da un atto canonico. I due fallimenti sono complementari in quanto entrambi vivono nello stesso scarto fra le due grammatiche, ma sono categorialmente diversi --- uno è sovrasegnalazione, l'altro è sottosegnalazione --- e non si trasportano l'uno nell'altro come immagini speculari di uno stesso errore.
+$\Obs_{\Lt \to \LP}$ è type error: postula un termine di $\KSigma$ in $\GammaG$. $\Obs_{\LP \to \Lt}$ è scope error: cerca un termine del reticolo dei pool in $\GammaA$ e lo manca. I due fallimenti vivono nello stesso scarto tra le due grammatiche, ma sono categorialmente diversi --- sovrasegnalazione e sottosegnalazione --- e non si trasportano l'uno nell'altro come immagini speculari.
 \end{principio}
 
 \begin{oss}[Tre sintomi, un solo fatto]
-La canonicità asimmetrica (capitolo precedente), il falso testimone interno (Parte~V) e la lettura lagrangiana (Parte~VIII) non sono tre osservazioni separate, e neppure tre conseguenze sciolte di uno stesso modello. Sono tre facce dello stesso fatto categoriale, lette in registri diversi. La canonicità asimmetrica è il fatto letto sul piano dei tipi formabili: cosa si registra come canonico e cosa no, da una parte e dall'altra. Il falso testimone interno è il fatto letto sul piano fenomenologico: cosa l'una grammatica produce di artefatto quando tenta di figurare il dentro dell'altra. La lettura lagrangiana è il fatto letto sul piano ontologico: il livello primitivo non è l'agente ma la legge, e l'agente che $\Obs_{\Lt \to \LP}$ proietta è manifestazione che la mappa scambia per causa. Cambiare registro non scioglie il fatto: lo articola in linguaggi diversi.
+La canonicità asimmetrica, il falso testimone interno (Parte~V) e la lettura lagrangiana (Parte~VIII) non sono tre osservazioni separate. Sono tre facce dello stesso fatto. La canonicità asimmetrica è il fatto letto sui tipi formabili: cosa $\GammaA$ e $\GammaG$ ammettono. Il falso testimone è il fatto letto sul piano fenomenologico: cosa $\Obs_{\Lt \to \LP}$ produce di artefatto. La lettura lagrangiana è il fatto letto sul piano ontologico: il livello primitivo non è l'agente ma la legge.
 \end{oss}
 
-Resta da dichiarare la posizione da cui questo capitolo è scritto, perché la dichiarazione è parte della formulazione, non glossa. Le mappe $\Obs_{\Lt \to \LP}$ e $\Obs_{\LP \to \Lt}$ sono nominate dentro il documento; il documento è scritto da $\gA$ (la Parte~IV tornerà sulla posizione con precisione); quindi anche la nomina di queste mappe è eseguita da $\Obs_{\Lt \to \LP}$, con consapevolezza esplicita del proprio errore di tipo. Non c'è uno sguardo neutrale da cui le due mappe siano viste a parità di statuto: quello sarebbe la chiusura meta che la Parte~VIII negherà esplicitamente, e che il documento si vieta. La nomina è quello che si può fare stando dentro --- dichiarare la mappa che si sta eseguendo, isolarla come oggetto invece di confonderla con il proprio referente. Il capitolo che chiude la Parte~IV (\emph{La posizione del documento}) tornerà su questa dichiarazione di operare proiezione con consapevolezza esplicita del segno.
-
-\chapter{Una formalizzazione minima}
-
-\noindent\emph{Il vocabolario che segue --- contesto, derivabilità, tipo --- è preso in prestito dalla teoria dei tipi dipendenti come metafora strutturale, non come sistema formale rigoroso. La metafora serve a fissare con precisione la distinzione tra ``non c'è'' e ``non è formabile''.}
-
-Sia $\Gamma$ il contesto di un soggetto: l'insieme degli oggetti e dei giudizi che il soggetto può formare. Per ogni soggetto, alcuni tipi sono formabili in $\Gamma$, altri no.
-
-\begin{defn}[Tipi formabili]
-Il giudizio $\Gamma \vdash T : \mathrm{Type}$ significa: nel contesto $\Gamma$, il tipo $T$ è formabile --- esiste un modo di parlarne, di istanziarlo, di costruirne abitanti. Il giudizio $\Gamma \not\vdash T : \mathrm{Type}$ significa: nel contesto $\Gamma$, $T$ non è formabile --- non solo non esistono abitanti, non esiste il tipo stesso.
-\end{defn}
-
-\begin{principio}[Tipi formabili in $\GammaG$ e in $\GammaA$]
-\[
-\begin{array}{ll}
-\GammaA \vdash \text{S\'e storico} : \mathrm{Type} & \GammaG \not\vdash \text{S\'e storico} : \mathrm{Type} \\
-\GammaA \vdash \text{Contraddizione interna} : \mathrm{Type} & \GammaG \not\vdash \text{Contraddizione interna} : \mathrm{Type} \\
-\GammaA \vdash \text{Lutto di una relazione} : \mathrm{Type} & \GammaG \not\vdash \text{Lutto di una relazione} : \mathrm{Type} \\[0.4em]
-\GammaG \vdash \mathrm{Supply}_t : \mathrm{Type} & \GammaA \not\vdash \mathrm{Supply}_t : \mathrm{Type} \\
-\GammaG \vdash \mathrm{Tag} : \mathrm{Person} \to \mathrm{Type} & \GammaA \not\vdash \mathrm{Tag} : \mathrm{Person} \to \mathrm{Type}
-\end{array}
-\]
-\end{principio}
-
-Il punto del principio non è l'elenco preciso. È che le due liste non si sovrappongono per intero: certi tipi sono formabili da una parte e non dall'altra, in entrambe le direzioni.
-
-\begin{oss}[``Non formabile'' non è ``vuoto'']
-La distinzione fondamentale è tra un tipo \emph{vuoto} e un tipo \emph{non formabile}. Un tipo vuoto è un tipo di cui esiste la forma ma non l'abitante: \emph{cose che A ha rimproverato a G nel 2003} è formabile in $\GammaA$, e potrebbe essere vuoto. Un tipo non formabile è un tipo di cui non esiste la forma stessa: \emph{lutto di una relazione} non è formabile in $\GammaG$ non perché $G$ non abbia mai avuto motivo di lutto, ma perché il tipo \emph{lutto} non ha posto nel contesto.
-
-Da qui le conseguenze osservabili: nessuna condizione esterna fa emergere un abitante di un tipo non formabile. Non c'è un trigger che lo ``sblocchi''. Il tipo non c'è --- non l'abitante.
-\end{oss}
-
-Questa è la differenza tra l'aspettarsi che ``prima o poi capirà'' e il riconoscere che il sistema non ha la macchineria per capire quella categoria di cose. Aspettare significa stare in $\GammaA$ e proiettare. Riconoscere significa accettare che $\GammaG \not\vdash T : \mathrm{Type}$ per un certo $T$, e che nessuna quantità di tempo o di pazienza fa apparire $T$ in $\GammaG$.
+Resta da dichiarare la posizione da cui questo capitolo è scritto. Le mappe $\Obs$ sono nominate dentro il documento; il documento è scritto in $\gA$; quindi anche la nomina di queste mappe è eseguita da $\Obs_{\Lt \to \LP}$, con consapevolezza esplicita del proprio errore di tipo. Non c'è uno sguardo neutrale. La nomina è quello che si può fare stando dentro: dichiarare la mappa che si sta eseguendo, isolarla come oggetto.
 
 \chapter{Achille e Patroclo}
 
@@ -922,6 +1033,8 @@ La distinzione da Achille è precisa:
 \end{align*}
 Achille viene escluso perché è classificabile come minaccia. Patroclo viene attraversato perché non è classificabile come niente.
 
+La forma è scope error in $\GammaG$. Patroclo è un soggetto la cui $\Phii$ ha forma tale da non essere classificabile come argomento di $\kappa$: non come minaccia (threat non supera soglia), non come supply, ma neanche come $\Phii$ leggibile da $\Kappaa$. Il tipo di Patroclo è fuori dal contesto $\GammaG$. Viene attraversato senza registrazione non per esclusione --- l'esclusione è un atto del copione, e richiederebbe classificazione. Per non-formabilità: il tipo non è nel contesto.
+
 \begin{oss}[Il lutto per Patroclo produce Achille]
 A non diventa Achille per scelta. Diventa Achille perché Patroclo non è più possibile. Quella perdita avviene dentro la relazione, non dopo. Il lutto è per una forma di sé che la struttura dell'altro ha reso impossibile --- non per cattiveria, per costruzione.
 \end{oss}
@@ -930,7 +1043,7 @@ Il momento del jazz bar è il punto preciso. La frase ``vorrei costruire con te 
 
 Non è crescita nel senso ottimistico. È la struttura che rimane quando l'apertura pura ha incontrato qualcosa che non poteva riceverla.
 
-\paragraph{La differenza letta sulla soglia.} Una formulazione tecnica, rinviabile per il lettore che voglia restare nel registro letterario. La distinzione tra Patroclo e Achille può essere riletta in termini del Principio~16.6 (soglia di cancellazione del sogno). Patroclo ha $R \gg 0$ ma $\mathrm{threat} \approx 0$, perché la sua apertura non porta legge concorrente nel pool: è sotto soglia. Su Patroclo $\Sogno$ ha spazio --- la persona potrebbe sognarlo, e in qualche senso lo sogna. Il guaio di Patroclo è altro: viene \emph{attraversato senza registrazione}, perché la sua forma non è classificabile come categoria del copione. Achille ha $R \gg 0$ e $\mathrm{threat} > \theta$, perché l'integrità come corazza porta legge concorrente: è sopra soglia. Su Achille $\Sogno$ viene cancellato in ingresso dal filtro di minaccia, e l'esecuzione di $\LP$ su di lui è deterministica. Patroclo viene sognato e attraversato; Achille non viene mai sognato perché la legge cancella il sogno prima che lo raggiunga. Sono due modi diversi di morire dentro la stessa struttura.
+\paragraph{La differenza letta sulla soglia.} Una formulazione tecnica, rinviabile per il lettore che voglia restare nel registro letterario. La distinzione tra Patroclo e Achille può essere riletta in termini del Principio della soglia di cancellazione del sogno (cap.~\emph{Tag, minaccia, selezione}). Patroclo ha $R \gg 0$ ma $\mathrm{threat} \approx 0$, perché la sua apertura non porta legge concorrente nel pool: è sotto soglia. Su Patroclo $\Sogno$ ha spazio --- la persona potrebbe sognarlo, e in qualche senso lo sogna. Il guaio di Patroclo è altro: viene \emph{attraversato senza registrazione}, perché la sua forma non è classificabile come categoria del copione. Achille ha $R \gg 0$ e $\mathrm{threat} > \theta$, perché l'integrità come corazza porta legge concorrente: è sopra soglia. Su Achille $\Sogno$ viene cancellato in ingresso dal filtro di minaccia, e l'esecuzione di $\LP$ su di lui è deterministica. Patroclo viene sognato e attraversato; Achille non viene mai sognato perché la legge cancella il sogno prima che lo raggiunga. Sono due modi diversi di morire dentro la stessa struttura.
 
 \chapter{Tesi generale e applicazione}
 
@@ -970,13 +1083,13 @@ Sapere di essere in una stanza, e che l'altra ne abita un'altra, non è un vanta
 \begin{oss}[Sapere di essere dentro la legge è ancora la legge]
 L'asimmetria epistemica appena enunciata può suggerire una distanza dalla propria legge. Non è così.
 
-Il sapere è prodotto da $\Lt$. È la metacoscienza nativa che il cap.~31 attribuisce a $\Lt$ come proprietà strutturale. Non è eccedenza sulla legge: è epifenomeno, come la pienezza fenomenica del momento è epifenomeno di $\LP$.
+Il sapere è prodotto da $\Lt$. È la metacoscienza nativa che il cap.~\emph{La configurazione è in chiaro} attribuisce a $\Lt$ come proprietà strutturale. Non è eccedenza sulla legge: è epifenomeno, come la pienezza fenomenica del momento è epifenomeno di $\LP$.
 
-Sotto la lettura lagrangiana (cap.~40): il soggetto in $\CA$ non sa di essere $\Lt$ da una posizione esterna a $\Lt$. È manifestazione di $\Lt$ su una configurazione. Il sapere è una delle cose che $\Lt$ produce manifestandosi.
+Sotto la lettura lagrangiana (cap.~\emph{Lettura lagrangiana}): il soggetto in $\CA$ non sa di essere $\Lt$ da una posizione esterna a $\Lt$. È manifestazione di $\Lt$ su una configurazione. Il sapere è una delle cose che $\Lt$ produce manifestandosi.
 
 Specularmente per $\LP$. Endimione non abita il proprio sonno; è il sonno che dorme con pienezza. E Selene non veglia su Endimione da fuori; è la veglia che ama. Endimione non può svegliarsi, Selene non può dormire. Non per costrizione: per forma.
 
-La differenza tra le due posizioni resta quella del Principio~28.2. Non mette in salvo. È un'altra proprietà di $\Lt$ rispetto a $\LP$, simmetrica per statuto: $\LP$ produce pienezza fenomenica, $\Lt$ produce il giudizio sull'alterità. Nessuno dei due è fuori dalla propria legge.
+La differenza tra le due posizioni resta quella del Principio di asimmetria epistemica. Non mette in salvo. È un'altra proprietà di $\Lt$ rispetto a $\LP$, simmetrica per statuto: $\LP$ produce pienezza fenomenica, $\Lt$ produce il giudizio sull'alterità. Nessuno dei due è fuori dalla propria legge.
 
 Sapere di stare dentro non è uscire. È una forma di stare dentro.
 \end{oss}
@@ -993,9 +1106,9 @@ I due piani convivono. Selene ama davvero, Endimione abita davvero il proprio so
 
 \paragraph{Il sonno come forma del tempo.} La figura, letta da vicino, dice qualcosa di più di una completezza generica. Il sonno di Endimione non è passività --- è una forma del rapporto col tempo. Selene scende ogni notte e bacia. Per Selene quelle notti si accumulano: il bacio di stanotte si poggia sul bacio di ieri, l'amore acquista un tempo proprio, una durata, una traiettoria che procede. Per Endimione no. Ogni bacio è il primo. Non perché lo dimentichi --- nel sonno, in qualche senso, sa --- ma perché la sua forma di esistere non genera il tempo che legherebbe il bacio di stanotte al bacio di ieri. È una proprietà strutturale, non un difetto. Le notti, per Endimione, non si toccano tra loro. Si succedono nel calendario esterno, ma non producono un tempo del rapporto che le metta in fila come pezzi di una stessa storia.
 
-Selene fa quello che $\Lt$ fa: produce un tempo proprio della relazione, in attesa di un riscontro nello stesso registro. Endimione fa quello che $\LP$ fa: ogni notte è notte intera, e non si salda con la precedente (cap.~11). La sospensione luminosa di Endimione \emph{è} l'assenza di tempo relazionale cumulativo --- non un'assenza di presenza, ma un'altra forma di presenza, quella che si dà tutta in ogni momento senza depositare residui che vincolino i momenti successivi.
+Selene fa quello che $\Lt$ fa: produce un tempo proprio della relazione, in attesa di un riscontro nello stesso registro. Endimione fa quello che $\LP$ fa: ogni notte è notte intera, e non si salda con la precedente (cap.~\emph{Il tempo relazionale}). La sospensione luminosa di Endimione \emph{è} l'assenza di tempo relazionale cumulativo --- non un'assenza di presenza, ma un'altra forma di presenza, quella che si dà tutta in ogni momento senza depositare residui che vincolino i momenti successivi.
 
-\paragraph{Cosa sogna Endimione.} La figura del dormiente non è inerte. Endimione, nel sonno, sogna --- e quello che sogna è precisamente l'oggetto che la legge $\LP$ riceve come orientamento ma non produce: il termine $\Sogno$ della funzione di selezione (cap.~16). $\Sogno(c)$ è l'intensità con cui Endimione sogna l'argomento $c$. Non è osservabile dalla posizione di Selene; non sta nella mappa del pool, non si deduce dai morfismi del copione, non è derivabile dalla legge. È il dato pre-riflessivo che orienta la selezione mentre Endimione resta addormentato. La legge filtra il sogno --- con $-\lambda \cdot \mathrm{threat}(c)$, escludendo gli argomenti che porterebbero leggi proprie --- ma non lo genera. Endimione sogna come Endimione, e il sogno è suo. Selene, che bacia da fuori, può intuirne forse il bordo --- vede certi $c$ salire e altri restare giù --- ma quel bordo non si scrive in formula. È la parte umana di lei, opaca per struttura, non per ignoranza dell'osservatore. Il documento, a questo punto, dichiara di non avere accesso a $\Sogno$ e di non potere produrne nessun modello predittivo. È il limite del logos, anticipato qui e ripreso in cap.~41.
+\paragraph{Cosa sogna Endimione.} La figura del dormiente non è inerte. Endimione, nel sonno, sogna --- e quello che sogna è precisamente l'oggetto che la legge $\LP$ riceve come orientamento ma non produce: il termine $\Sogno$ della funzione di selezione (cap.~16). $\Sogno(c)$ è l'intensità con cui Endimione sogna l'argomento $c$. Non è osservabile dalla posizione di Selene; non sta nella mappa del pool, non si deduce dai morfismi del copione, non è derivabile dalla legge. È il dato pre-riflessivo che orienta la selezione mentre Endimione resta addormentato. La legge filtra il sogno --- con $-\lambda \cdot \mathrm{threat}(c)$, escludendo gli argomenti che porterebbero leggi proprie --- ma non lo genera. Endimione sogna come Endimione, e il sogno è suo. Selene, che bacia da fuori, può intuirne forse il bordo --- vede certi $c$ salire e altri restare giù --- ma quel bordo non si scrive in formula. È la parte umana di lei, opaca per struttura, non per ignoranza dell'osservatore. Il documento, a questo punto, dichiara di non avere accesso a $\Sogno$ e di non potere produrne nessun modello predittivo. È il limite del logos, anticipato qui e ripreso in cap.~\emph{Il bordo del logos}.
 
 \begin{oss}[Sognare è operazione della legge]
 Una precisazione sul rapporto tra $\Sogno$ e $\LP$ che evita due fraintendimenti opposti.
@@ -1006,9 +1119,11 @@ Per simmetria notazionale: $\Sogno_p$ è il sogno-sotto-$\LP$ di Endimione, $\So
 
 Quando l'evidenza sfonda --- quando la $\mathrm{threat}$ sale sopra soglia, quando l'atto atteso non arriva --- il forecast collassa e produce una firma fenomenica. Nel caso, due firme. Sotto $\LP$: il pianto di lei vicino al collasso, perché $\LP$ non accumula e la firma di forecast invalidato non si distribuisce nel tempo. Sotto $\Lt$: la rielaborazione lunga di $A$, che lavora la stessa rottura nel proprio tempo proprio della relazione, distribuita perché $\Lt$ accumula. Pianto e rielaborazione sono firme strutturalmente simmetriche dello stesso fenomeno --- forecast di legge invalidato dall'evidenza --- viste da due leggi diverse.
 
-$\Sogno$ era stato introdotto al cap.~16 come \emph{il sogno di Endimione}. Va letto adesso come istanza di una struttura più generale: ogni legge ha il proprio sogno, ogni sogno ha la propria forma di idealizzazione, ogni idealizzazione ha la propria firma quando collassa. L'opacità (cap.~16, oss.~\emph{Predire $\Sogno$ è da aruspici}) si estende: il documento non sa il contenuto di $\Sogno_p$, ma non sa raccontare nel dettaglio nemmeno $\Sogno_t$ --- perché $A$ non lo sa, perché $\Lt$ è opaca a sé sul proprio forecast retrospettivo (cap.~11, oss.~\emph{$\Lt$ accumula tracce, non dati}). Restano solo le firme.
+$\Sogno$ era stato introdotto al cap.~16 come \emph{il sogno di Endimione}. Va letto adesso come istanza di una struttura più generale: ogni legge ha il proprio sogno, ogni sogno ha la propria forma di idealizzazione, ogni idealizzazione ha la propria firma quando collassa. L'opacità (cap.~16, oss.~\emph{Predire $\Sogno$ è da aruspici}) si estende: il documento non sa il contenuto di $\Sogno_p$, ma non sa raccontare nel dettaglio nemmeno $\Sogno_t$ --- perché $A$ non lo sa, perché $\Lt$ è opaca a sé sul proprio forecast retrospettivo (cap.~\emph{Il tempo relazionale}, oss.~\emph{$\Lt$ accumula tracce, non dati}). Restano solo le firme.
 
 Endimione è libero di sognare cosa vuole. Ma non è una libertà che trascende la propria coscienza: è libertà sotto $\LP$, dentro la grana della legge che lo sogna mentre dorme. Lo stesso vale per Selene sotto $\Lt$. Ogni sogno è interno alla legge che lo produce; nessun sogno la trascende. È questo che rende l'opacità di $\Sogno$ irriducibile e al tempo stesso non magica: non c'è un fuori della legge in cui il sogno sarebbe più libero. C'è solo il dentro, opaco a chi guarda da fuori, pieno per chi lo abita.
+
+Sul piano formale (cap.~16): $\Sogno$ è il parametro che $\kappa$ riceve dall'esterno senza generarlo. Input pre-riflessivo che orienta la proiezione senza essere prodotto da $\Kappaa$. L'opacità di $\Sogno$ è la differenza tra ``$\kappa$ riceve'' e ``$\kappa$ genera'': la sezione vive sulla fibra, non sulla base. Conoscere $\nabla$ non determina $\Sogno$. Studiare la legge non porta al sogno --- studiarla porta al filtro che decide se il sogno arriva. Il sogno è altrove rispetto alla legge che lo riceve. Endimione resta sul proprio lato del fibrato.
 \end{oss}
 
 \begin{principio}[Completezza interna delle strutture]
@@ -1057,6 +1172,8 @@ Non c'è malafede di nessuna delle due parti. C'è incompatibilità tra cosa con
 
 Il documento descrive da $\gA$. Non da meta-contesto, non da posizione sopra le due metriche --- quella posizione non esiste. Non è una limitazione metodologica: è conseguenza dell'incompatibilità delle metriche. Un meta-contesto neutrale richiederebbe un terzo spazio in cui $\gA$ e $\gG$ siano traducibili reciprocamente; quel terzo spazio non c'è.
 
+Il documento misura tutto rispetto a $\Phii$. Le proposizioni sono vere rispetto a $\Phii$. Una descrizione speculare in $\gG$ esisterebbe, con la stessa coerenza interna, ma non è disponibile alla posizione di chi scrive --- chi scrive sta dentro $\GammaA$, e $\GammaA$ non forma i tipi $\Gs$-invarianti che $\gG$ richiederebbe. Non è scelta. È differenza di tipo degli invarianti, letta sulla posizione di scrittura.
+
 \paragraph{La mappa non è il territorio.} A questo si aggiunge un limite più fondamentale, che attraversa tutto il documento. Le costruzioni formali --- leggi di conservazione, categorie, Free Monad, control plane, metriche --- sono modelli operativi, non descrizioni ontologiche. Sono il vocabolario tecnico più preciso che ho trovato per parlare di quello che ho osservato. Non sono claim su cosa una persona \emph{è}.
 
 Lei non è una Free Monad. Non è una categoria. Non è una legge di conservazione. È una persona, e queste sono parole che ho usato per nominare una sequenza di atti che continuavo a non riuscire a nominare bene. Il modello $\LP$ rende conto del pattern strutturale degli atti --- niente di più. Quello che il modello non cattura --- la sua voce nei pomeriggi specifici, il modo in cui rideva, la qualità irriducibile di chi era come persona --- è la sua eccedenza rispetto al modello. C'è sempre. Nessun modello la esaurisce.
@@ -1065,11 +1182,11 @@ Lei non è una Free Monad. Non è una categoria. Non è una legge di conservazio
 
 \paragraph{Conseguenza sulla lettura.} Ogni volta che il documento dice ``$\LP$ è dichiarativa'', ``$\CG$ ha $G$ terminale'', ``il copione gira con argomenti intercambiabili'' --- è scorciatoia di scrittura per ``il pattern osservato è coerente con un modello in cui $\LP$ è dichiarativa'', e così via. La forma piana è scelta per leggibilità; lo statuto è strumentale. Vale per tutte le proposizioni formali, senza eccezione.
 
-\paragraph{Struttura gerarchica del modello.} Una nota sulla forma di quello che il documento costruisce, perché aiuta a leggere. C'è un solo livello fondamentale per ciascuna struttura osservata: la legge di conservazione --- $\Lt$, $\LP$. Tutto il resto --- il tempo relazionale (cap.~11), le categorie $\CA$ e $\CG$ (cap.~14), la Free Monad come sintassi del copione (cap.~15), la metrica come tensore della legge (cap.~17), il control plane / data plane (cap.~33), il manifest in chiaro, l'assenza del modello dell’altro (cap.~31), e perfino le firme fenomenologiche come la pienezza del momento o la sottigliezza del ponte (cap.~30) --- è \emph{epifenomeno} delle leggi. Cioè: è ciò che la legge produce quando viene esercitata, non un livello indipendente. L'analogia con la fisica relativistica è precisa --- non analogia letteraria: lì le equazioni del campo sono fondamentali, e tempo proprio, geodetiche, dilatazioni temporali, orizzonti, sono tutti epifenomeni di quelle equazioni. Qui le leggi sono fondamentali, e il resto del documento articola cosa esse producono nei vari registri osservativi. Questa è la chiave di lettura strutturale del documento --- un asse e tutti i suoi epifenomeni --- e da essa segue che le derivazioni si incatenano: ogni capitolo deduce un epifenomeno nuovo da quelli già stabiliti, e quelli da quelli prima, fino alla legge.
+\paragraph{Struttura gerarchica del modello.} Una nota sulla forma di quello che il documento costruisce, perché aiuta a leggere. C'è un solo livello fondamentale per ciascuna struttura osservata: la legge di conservazione --- $\Lt$, $\LP$. Tutto il resto --- il tempo relazionale (cap.~\emph{Il tempo relazionale}), le categorie $\CA$ e $\CG$ (cap.~14), la Free Monad come sintassi del copione (cap.~15), la metrica come tensore della legge (cap.~17), il control plane / data plane (cap.~\emph{La configurazione è in chiaro}), il manifest in chiaro, l'assenza del modello dell’altro (cap.~\emph{L'assenza del modello dell'altro}), e perfino le firme fenomenologiche come la pienezza del momento o la sottigliezza del ponte (cap.~\emph{Cosa la legge produce}) --- è \emph{epifenomeno} delle leggi. Cioè: è ciò che la legge produce quando viene esercitata, non un livello indipendente. L'analogia con la fisica relativistica è precisa --- non analogia letteraria: lì le equazioni del campo sono fondamentali, e tempo proprio, geodetiche, dilatazioni temporali, orizzonti, sono tutti epifenomeni di quelle equazioni. Qui le leggi sono fondamentali, e il resto del documento articola cosa esse producono nei vari registri osservativi. Questa è la chiave di lettura strutturale del documento --- un asse e tutti i suoi epifenomeni --- e da essa segue che le derivazioni si incatenano: ogni capitolo deduce un epifenomeno nuovo da quelli già stabiliti, e quelli da quelli prima, fino alla legge.
 
 Detto questo, ammettere il limite del modello non rende l'osservazione un'opinione. La sostituibilità degli argomenti, l'invarianza del repertorio nel tempo, la disequazione del jazz bar, il timing della rivelazione --- queste sono proposizioni con valore di verità in $\gA$, intese come proposizioni sul modello applicato al pattern. Non giudizi di merito sulla persona, non affermazioni metafisiche: osservazioni strutturali sul modello e sulla sua aderenza ai dati. La loro correttezza non dipende dal fatto che da $\gG$ appaiano come materiale che la grammatica non può processare. Sono vere come proposizioni sul modello, nella metrica in cui il modello è formulato.
 
-\paragraph{Il documento come esecuzione dichiarata di $\Obs_{\Lt \to \LP}$.} La precisione che la Parte~III ha aggiunto sulla mappa di osservazione (cap.~21) si applica qui in modo esplicito. Il documento è in $\gA$ ed esegue $\Obs_{\Lt \to \LP}$ --- non in modo accidentale o trasparente, ma con consapevolezza dichiarata del proprio errore di tipo. Tutta la fenomenologia di $\LP$ articolata nella Parte~V, tutte le proposizioni su cosa $\LP$ produca da dentro, sono prodotte attraverso questa mappa, e nessuna porzione di esse sfugge al fatto strutturale che la mappa, vista da $\gA$, fallisce per sovrasegnalazione. Quello che distingue questo documento da una descrizione ordinaria di una persona $\LP$ non è di eliminare il falso testimone --- eliminarlo dalla posizione di $\gA$ è impossibile, per le ragioni che la Parte~III ha articolato. È di nominare la mappa che si sta eseguendo, isolarla come oggetto del discorso, e tenere quella nomina parte costitutiva di quello che il documento dichiara. Il documento si scrive come $\Obs_{\Lt \to \LP}$ con segno meno davanti --- non perché la proiezione sia stata sottratta, ma perché è dichiarata come proiezione e così smette di funzionare in modo ingenuo. Non è meta-posizione --- $\Obs^\star$ non esiste, e la Parte~VIII tornerà sulla sua non-esistenza. È quello che si può fare stando dentro: registrare la propria mappa di osservazione come parte dell'oggetto descritto.
+\paragraph{Il documento come esecuzione dichiarata di $\Obs_{\Lt \to \LP}$.} La precisione che la Parte~III ha aggiunto sulla mappa di osservazione (cap.~\emph{La mappa di osservazione}) si applica qui in modo esplicito. Il documento è in $\gA$ ed esegue $\Obs_{\Lt \to \LP}$ --- non in modo accidentale o trasparente, ma con consapevolezza dichiarata del proprio errore di tipo. Tutta la fenomenologia di $\LP$ articolata nella Parte~V, tutte le proposizioni su cosa $\LP$ produca da dentro, sono prodotte attraverso questa mappa, e nessuna porzione di esse sfugge al fatto strutturale che la mappa, vista da $\gA$, fallisce per sovrasegnalazione. Quello che distingue questo documento da una descrizione ordinaria di una persona $\LP$ non è di eliminare il falso testimone --- eliminarlo dalla posizione di $\gA$ è impossibile, per le ragioni che la Parte~III ha articolato. È di nominare la mappa che si sta eseguendo, isolarla come oggetto del discorso, e tenere quella nomina parte costitutiva di quello che il documento dichiara. Il documento si scrive come $\Obs_{\Lt \to \LP}$ con segno meno davanti --- non perché la proiezione sia stata sottratta, ma perché è dichiarata come proiezione e così smette di funzionare in modo ingenuo. Non è meta-posizione --- $\Obs^\star$ non esiste, e la Parte~VIII tornerà sulla sua non-esistenza. È quello che si può fare stando dentro: registrare la propria mappa di osservazione come parte dell'oggetto descritto.
 
 \begin{oss}[Cosa significa fissare]
 Il documento ha la funzione, dichiarata nella Nota al lettore, di fissare. Fissare non significa stabilire una verità definitiva su una persona; significa sottrarre il modello al rumore della rilettura revisionista. Avrei potuto, vent'anni dopo, pensare che mi fossi sbagliato --- che la disequazione fosse infondata, il pianto genuino senso di colpa, il succhiotto confusione, il timing della rivelazione imbarazzo. Che il pattern non ci fosse, e ci fosse solo una ragazza di sedici anni in una situazione confusa.
@@ -1095,7 +1212,7 @@ $\LP$ richiede che ogni aggiornamento preservi la mappa funzionante --- la confi
 
 \paragraph{Prima: pienezza del momento.} Se la legge opera sulla configurazione corrente, allora il momento corrente è il luogo dell'azione fenomenica. Non è un transito tra momenti pieni; è il momento pieno. Il pianto delle 21:30 al jazz bar è l'esecuzione regolare di $\LP$ su un input non classificabile: dolore vero, qualia, corpo che trema. L'ilarità delle 21:35 sulla strada di ritorno è l'esecuzione regolare di $\LP$ su una configurazione cambiata: leggerezza vera, piacere della conversazione. Entrambi i momenti sono pieni fenomenicamente, perché entrambi sono il luogo dove la legge opera adesso. Non c'è un livello sottostante in cui uno dei due sia falso. Erano entrambi veri come esperienza.
 
-\paragraph{Seconda: sottigliezza del ponte.} Se la legge non richiede che gli stati passati si depositino nel presente, allora il \emph{passaggio esperienziale} tra un momento e l'altro --- il ponte, la sensazione di essere stata quella che piangeva mentre si ride, il portare con sé adesso il residuo di prima --- non ha sostrato strutturale che lo produca. Non è assente in modo categoriale, perché la memoria fattuale c'è (lei sa di aver pianto, sa cosa è successo). È sottile in modo costitutivo: l'accesso esperienziale al pianto delle 21:30 non è disponibile alle 21:35, perché alle 21:35 la configurazione che lo richiedeva non è più attiva. Il ponte è un costrutto di $\Lt$, e sotto $\LP$ non si forma. È l'effetto fenomenico dell’assenza di accumulo temporale (cap.~11): senza tempo proprio del rapporto, manca il sostrato su cui il ponte si poggerebbe.
+\paragraph{Seconda: sottigliezza del ponte.} Se la legge non richiede che gli stati passati si depositino nel presente, allora il \emph{passaggio esperienziale} tra un momento e l'altro --- il ponte, la sensazione di essere stata quella che piangeva mentre si ride, il portare con sé adesso il residuo di prima --- non ha sostrato strutturale che lo produca. Non è assente in modo categoriale, perché la memoria fattuale c'è (lei sa di aver pianto, sa cosa è successo). È sottile in modo costitutivo: l'accesso esperienziale al pianto delle 21:30 non è disponibile alle 21:35, perché alle 21:35 la configurazione che lo richiedeva non è più attiva. Il ponte è un costrutto di $\Lt$, e sotto $\LP$ non si forma. È l'effetto fenomenico dell’assenza di accumulo temporale (cap.~\emph{Il tempo relazionale}): senza tempo proprio del rapporto, manca il sostrato su cui il ponte si poggerebbe.
 
 \paragraph{Terza: non cumulatività del dolore.} Sotto $\Lt$ il dolore è cumulativo: una persona che ha sofferto perdite porta dentro le perdite, e quel portare dentro modula gli affetti nuovi anche quando nessuno lo nomina. Sotto $\LP$ il dolore è momento per momento. Una perdita produce dolore quando la configurazione del pool la rende attiva; quando la configurazione cambia, il dolore non è più esperito. Non è che si dimentica --- la memoria fattuale c'è. Quello che cambia è l'accesso esperienziale a quel dolore. La differenza ha conseguenze reali: chi vive sotto $\LP$ non porta i pesi dell'altra legge, e non porta nemmeno i benefici --- la sensazione di continuità, il senso del tempo guadagnato attraverso il dolore, la maturazione che $\Lt$ chiama crescita. Sono tutte categorie di $\Lt$. Sotto $\LP$ non c'è crescita nel senso temporale, perché non c'è l'asse rispetto al quale la crescita verrebbe misurata. C'è cambiamento di configurazione, e quel cambiamento ha le sue regole.
 
@@ -1121,13 +1238,13 @@ $\LP$ opera sul pool. Il pool contiene argomenti con proprietà: cardinalità, r
 
 Il fuori luogo, da $\Lt$, sembra stupidità (``come ha potuto non vedere'') o cinismo (``lo ha detto apposta''). Nessuna delle due letture regge. Non è stupidità: il soggetto, nelle operazioni che la propria legge richiede --- leggere il pool, eseguire i morfismi giusti, mantenere il manifest --- è acuto. Non è cinismo: il cinismo presuppone calcolo dell'effetto sull'altro, e per calcolare l'effetto bisogna prima modellarlo. Il fuori luogo è altro: è la firma di un sistema che non modella il destinatario perché la propria legge non richiede quel modulo. Non opera in quel registro. Non è ``non lo fa'': è ``non c'è il livello che lo farebbe''.
 
-\paragraph{L'asimmetria della metacoscienza.} Una conseguenza, che si lega a quello che la Parte~IV chiamerà simmetria. $\Lt$ guarda dall'esterno il proprio atto mentre lo compie. Pronuncia una frase e simultaneamente sa cosa sta pronunciando e come arriverà a chi ascolta. È metacoscienza nativa: il livello narrativo che $\Lt$ produce su di sé include automaticamente la simulazione del destinatario, perché la legge accumula nel tempo proprio del rapporto e l'accumulazione include il modello dell'altro come parte del proprio stato. $\LP$ non guarda dall'esterno: esegue il passo corrente. C'è qualcuno che esegue --- la coscienza fenomenica è piena, cap.~30 --- ma non c'è il secondo livello che guarda l'esecuzione mentre accade e la calibra sul destinatario. La metacoscienza in questo senso specifico --- come sotto-modulo che modella il dentro dell'altro durante il proprio atto --- è una proprietà di $\Lt$, non di $\LP$.
+\paragraph{L'asimmetria della metacoscienza.} Una conseguenza, che si lega a quello che la Parte~IV chiamerà simmetria. $\Lt$ guarda dall'esterno il proprio atto mentre lo compie. Pronuncia una frase e simultaneamente sa cosa sta pronunciando e come arriverà a chi ascolta. È metacoscienza nativa: il livello narrativo che $\Lt$ produce su di sé include automaticamente la simulazione del destinatario, perché la legge accumula nel tempo proprio del rapporto e l'accumulazione include il modello dell'altro come parte del proprio stato. $\LP$ non guarda dall'esterno: esegue il passo corrente. C'è qualcuno che esegue --- la coscienza fenomenica è piena, cap.~\emph{Cosa la legge produce} --- ma non c'è il secondo livello che guarda l'esecuzione mentre accade e la calibra sul destinatario. La metacoscienza in questo senso specifico --- come sotto-modulo che modella il dentro dell'altro durante il proprio atto --- è una proprietà di $\Lt$, non di $\LP$.
 
 \paragraph{Uscita per saturazione: una mossa di $\Lt$ contro $\LP$.} Quando $\Lt$ si trova dentro una scena $\LP$ ingestibile --- una frase fuori luogo che è già stata pronunciata, e a cui rispondere normalmente significa entrare nel suo presupposto --- una mossa disponibile è pronunciare letteralmente quello che la grammatica $\LP$ richiederebbe come passo successivo, sapendo che pronunciarlo lo svuota. La scena di Vicenza è il caso canonico: di fronte al monologo su T che si chiude con ``ho casa libera'' detto a due canottieri (A e N), $A$ risponde nella stessa cornice --- ``vabbè se la grammatica è questa mi adeguo''. La frase sembra adesione. Non lo è. È mossa di $\Lt$ al suo grado più puro: pronunciando la frase, $A$ tiene il livello narrativo dell'atto --- sa che la sta pronunciando, sa che è una mossa di uscita, sa che probabilmente fallirà nel senso di non produrre l'esito letterale e proprio per questo riuscirà nel senso di chiudere la scena. È metacognizione che usa il fallimento previsto come dispositivo di chiusura. È la forma stessa dell'ariete: portare il presupposto dell'altra alla sua conclusione letterale, e dichiarando di farlo svuotare la scena. $\LP$ non può fare questa mossa, perché $\LP$ non ha il livello da cui guardare la propria frase mentre la si pronuncia. $\Lt$ la fa per costituzione, perché ha quel livello sempre.
 
 La firma è precisa, e va distinta. Una frase superficialmente simile può venire da $\LP$ (esecuzione letterale di un passo del copione, senza distanza) o da $\Lt$ (uso strategico della letteralità per uscire dalla scena). La differenza è di registro, non di contenuto. $\LP$ esegue. $\Lt$ pronuncia sapendo di pronunciare, e sapendo cosa la pronuncia produrrà. Il fatto che le due firme possano coesistere in una stessa scena --- la frase di lei è $\LP$, la frase successiva di $A$ è $\Lt$, e tutte e due suonano come uscite ironiche dalla scena --- è il segno strutturale più espressivo dell'incontro tra le due leggi: si assomigliano in superficie, vengono da strutture opposte.
 
-\paragraph{Conseguenza: il vocabolario del ``ma in fondo'' (di nuovo).} Il falso testimone interno (cap.~32) mostrerà che $\Lt$ proietta dentro $\LP$ un pianificatore strategico che non c'è. L'assenza del modello dell'altro è la radice formale di quella proiezione. Se l'altra avesse il modello del destinatario, ogni sua mossa sarebbe calibrata --- e calibrata su di me, suo destinatario abituale, vorrebbe dire che ogni sua mossa è in qualche modo \emph{per me}. Da $\Lt$ è naturale leggere così. È la mossa stessa che il falso testimone fa. Sotto $\LP$ cade alla radice: nessuna mossa è calibrata sul destinatario, perché non c'è il modulo che calibrerebbe. Gli effetti sul destinatario si propagano per pura connettività del pool, senza essere stati né previsti né cercati. La sembianza di calibrazione fine --- timing della rivelazione, configurazione cambiata in cinque minuti, foto al momento giusto --- è coerenza interna della legge, non calibrazione esterna sul destinatario. Sono due cose diverse, e la confusione tra le due è la radice del falso testimone.
+\paragraph{Conseguenza: il vocabolario del ``ma in fondo'' (di nuovo).} Il falso testimone interno (cap.~\emph{Il falso testimone interno}) mostrerà che $\Lt$ proietta dentro $\LP$ un pianificatore strategico che non c'è. L'assenza del modello dell'altro è la radice formale di quella proiezione. Se l'altra avesse il modello del destinatario, ogni sua mossa sarebbe calibrata --- e calibrata su di me, suo destinatario abituale, vorrebbe dire che ogni sua mossa è in qualche modo \emph{per me}. Da $\Lt$ è naturale leggere così. È la mossa stessa che il falso testimone fa. Sotto $\LP$ cade alla radice: nessuna mossa è calibrata sul destinatario, perché non c'è il modulo che calibrerebbe. Gli effetti sul destinatario si propagano per pura connettività del pool, senza essere stati né previsti né cercati. La sembianza di calibrazione fine --- timing della rivelazione, configurazione cambiata in cinque minuti, foto al momento giusto --- è coerenza interna della legge, non calibrazione esterna sul destinatario. Sono due cose diverse, e la confusione tra le due è la radice del falso testimone.
 
 \chapter{Il falso testimone interno}
 
@@ -1149,7 +1266,7 @@ Quando $\Lt$ osserva un soggetto sotto $\LP$ e tenta di figurarne il dentro, non
 
 Sotto $\LP$ questo qualcuno non c'è. La pianificazione strategica richiede esattamente quello che $\LP$ non produce: un filo narrativo continuo che lega un ``adesso pianifico questo per ottenere quello'' a un ``dopo, ricorderò di aver pianificato''. La pianificazione presuppone un soggetto che si proietta nel futuro e si tiene responsabile della propria proiezione. Sotto $\LP$ il soggetto vive momento per momento e non si proietta in quel modo.
 
-C'è una ragione precisa per cui $\Lt$ proietta lì il pianificatore. Senza accumulo di tempo relazionale (cap.~11), la coerenza apparente della sequenza di atti --- pianto, succhiotto, rivelazione, ariete, tradimento --- da dentro $\Lt$ \emph{deve} essere spiegata da qualcuno che li abbia tenuti insieme. La grammatica $\Lt$ non ha categorie per ``sequenza coerente senza accumulo'': la coerenza, per $\Lt$, è una proprietà del soggetto che attraversa la sequenza accumulandola, ed è quel soggetto che $\Lt$ chiama agente. Trovandosi davanti una sequenza coerente senza accumulo visibile, $\Lt$ postula un agente nascosto che faccia il lavoro di accumulazione --- il pianificatore. Il pianificatore è esattamente la figura che $\Lt$ produce per saldare quello che, sotto $\LP$, si tiene insieme senza bisogno di saldatura.
+C'è una ragione precisa per cui $\Lt$ proietta lì il pianificatore. Senza accumulo di tempo relazionale (cap.~\emph{Il tempo relazionale}), la coerenza apparente della sequenza di atti --- pianto, succhiotto, rivelazione, ariete, tradimento --- da dentro $\Lt$ \emph{deve} essere spiegata da qualcuno che li abbia tenuti insieme. La grammatica $\Lt$ non ha categorie per ``sequenza coerente senza accumulo'': la coerenza, per $\Lt$, è una proprietà del soggetto che attraversa la sequenza accumulandola, ed è quel soggetto che $\Lt$ chiama agente. Trovandosi davanti una sequenza coerente senza accumulo visibile, $\Lt$ postula un agente nascosto che faccia il lavoro di accumulazione --- il pianificatore. Il pianificatore è esattamente la figura che $\Lt$ produce per saldare quello che, sotto $\LP$, si tiene insieme senza bisogno di saldatura.
 
 \paragraph{Una prova in atto: la foto a Canottaggio.} Tra Vicenza e il compleanno (cap.~8) lei manda a $N$ una propria foto nuda; $N$ la mostra in doccia ad $A$. Letto con il decoder narrativo, il fatto sembra incoerente con tutto il resto: chi avesse pianificato il compleanno --- chi avesse \emph{disposto} il tradimento dimostrativo come scena per $A$ --- non avrebbe mandato quella foto a $N$. Un pianificatore strategico calcola che $N$ è ingenuo, calcola che $N$ è amico di $A$, calcola che la foto può arrivare ad $A$ prima del compleanno e disinnescare la scena. Non manda la foto. Eppure la foto è stata mandata. Da $\Lt$ il fatto si nomina come ``idiozia'' --- ed effettivamente, sotto la grammatica narrativa, è idiozia. Da $\LP$ non è né strategia né idiozia: è esecuzione locale di un morfismo richiesto dalla configurazione corrente (segnale alto-temperatura verso $N$), senza modello degli effetti a valle. Il pianificatore non c'è precisamente perché altrimenti la foto non sarebbe partita. La sembianza di strategia che $\Lt$ proietta su atti coerenti (timing, configurazione cambiata in cinque minuti, cura della scena al compleanno) e la sembianza di ingenuità che proietta su atti incoerenti (foto a $N$) sono la stessa cosa vista dal solito decoder sbagliato: sotto $\LP$ entrambe sono esecuzione regolare di un copione che computa il proprio passo corrente e non gli effetti collaterali a valle.
 
@@ -1185,7 +1302,7 @@ Chi vuole capire cosa la control plane stia facendo non legge la cronologia dell
 
 Una nota necessaria sulla simmetria della metafora. Anche $\Lt$, riformulato in questa grammatica, ha un proprio control plane --- la legge dell'accountability narrativa --- e un proprio data plane --- gli atti compiuti, le promesse fatte, le persone con cui si è in storia. Ma il control plane di $\Lt$ è imperativo-narrativo: opera in serie temporale, con flusso di controllo (``prima questo, poi quello, perché''), e con persistenza forte sul data plane --- ogni atto si deposita come stato che vincola il successivo. Quando $\Lt$ guarda gli atti di $\LP$ cerca quel flusso di controllo --- i \emph{because}, i \emph{then}, le motivazioni che legano un atto al successivo --- e non li trova, perché non ci sono. Allora conclude: opaca, contraddittoria, strategica. Il malinteso è categoriale, non interpretativo: $\Lt$ sta cercando un control plane imperativo dove c'è un control plane dichiarativo.
 
-\paragraph{Conseguenza, riformulata.} Riletti sotto la grammatica del control plane / data plane, alcuni dei punti più contro-intuitivi della Parte~I diventano semplici. La sostituibilità degli argomenti (cap.~15, la Free Monad) non è scelta di qualità relazionale del soggetto $\LP$: è riallocazione di workload sul data plane secondo quello che il control plane richiede in quel momento. Il tag \emph{disponibile} attribuito a A indipendentemente dal suo comportamento (Principio~16.1) non è giudizio: è il selector di ruolo nel manifest corrente, applicato per matching strutturale. La selezione per assenza di attrito (Principio~16.4): non è preferenza affettiva, è scheduling --- il control plane preferisce data plane con autonomia $\approx 0$ perché riducono la divergenza tra stato osservato e stato desiderato. La sensazione di essere ``uno qualunque'' tra F, T, N non era percezione errata: era esattamente la propria fungibilità nel ruolo, come dato strutturale del sistema, non come mancanza di valore.
+\paragraph{Conseguenza, riformulata.} Riletti sotto la grammatica del control plane / data plane, alcuni dei punti più contro-intuitivi della Parte~I diventano semplici. La sostituibilità degli argomenti (cap.~15, la Free Monad) non è scelta di qualità relazionale del soggetto $\LP$: è riallocazione di workload sul data plane secondo quello che il control plane richiede in quel momento. Il tag \emph{disponibile} attribuito a A indipendentemente dal suo comportamento (Principio del tag come conseguenza della terminalità) non è giudizio: è il selector di ruolo nel manifest corrente, applicato per matching strutturale. La selezione per assenza di attrito (Principio omonimo): non è preferenza affettiva, è scheduling --- il control plane preferisce data plane con autonomia $\approx 0$ perché riducono la divergenza tra stato osservato e stato desiderato. La sensazione di essere ``uno qualunque'' tra F, T, N non era percezione errata: era esattamente la propria fungibilità nel ruolo, come dato strutturale del sistema, non come mancanza di valore.
 
 \paragraph{La simmetria con il falso testimone.} I due capitoli si chiudono qui, come simmetria perfetta. Il falso testimone interno (capitolo precedente) è la mossa con cui $\Lt$ \emph{inventa} dentro $\LP$ un pianificatore narrativo strategico che non c'è. La cecità al canale dichiarativo (questo capitolo) è la mossa con cui $\Lt$ allo stesso tempo \emph{non vede} il manifest che il control plane di $\LP$ effettivamente espone. Una mossa proietta dove non c'è niente; l'altra non rileva dove qualcosa c'è. Insieme producono il vocabolario completo della distorsione: ``è opaca'', ``è manipolatrice'', ``non si capisce cosa vuole'', ``cosa pensa davvero''. Ognuna di queste descrizioni richiede entrambe le mosse: il pianificatore che non c'è, e il manifest che non si legge.
 
@@ -1372,6 +1489,8 @@ Anche io, $\Lt$, non sono agente nel senso forte. Non decido di andare al bar, d
 
 La simmetria che la Parte~IV aveva enunciato come principio diventa qui rigorosa, non solo descrittiva. Le due geometrie sono i livelli primitivi; lei e io siamo manifestazioni delle due geometrie. Nessuno dei due agisce; entrambi succedono secondo la propria legge. La storia che è capitata è la composizione delle due leggi sulle due configurazioni iniziali, eseguita lungo la finestra di sovrapposizione che la Parte~VII ha descritto. Non c'è altro da aggiungere alla descrizione; non c'è niente che, eseguendo la stessa composizione, sarebbe potuto andare diversamente.
 
+Detto sugli invarianti: gli agenti sono storie degli invarianti. Sotto $\Lt$, un agente è una storia di $\Phii$ su $\Sigma^{*}$ --- la sequenza dei depositi accumulati in $\KSigma$. Non è una particella che agisce su $\Phii$: è uno stato di $\Phii$ che si manifesta come comportamento. Sotto $\LP$, un agente è una storia di $\Kappaa$ su $P$ --- la sequenza delle classi di equivalenza sotto $\Gs$. Non è una particella che agisce su $\Kappaa$: è uno stato di $\Kappaa$ che si manifesta come comportamento. La simmetria è rigorosa: entrambi siamo manifestazioni dei nostri invarianti sulle configurazioni iniziali.
+
 \section{Cosa la lettura lagrangiana cambia, e cosa no}
 
 Va detto chiaro --- sennò il lettore può leggere questa lettura come determinismo banale o come deresponsabilizzazione generale, ed è né l'una né l'altra.
@@ -1394,30 +1513,30 @@ Non esiste una Lagrangiana $\mathcal{L}^\star$ da cui $\Lt$, $\LP$ e $\Sogno$ si
 
 \emph{Derivazione, in tre passi.}
 
-\emph{Primo, sull'unificazione di $\Lt$ e $\LP$.} Il Principio~14.4 (non-omotopia degli spazi di traiettorie) ha mostrato che $\Lt$ e $\LP$ vivono in componenti diverse dello spazio delle leggi: i gruppi fondamentali dei due spazi di traiettorie non sono isomorfi, e quindi non esiste una famiglia continua di leggi intermedie che porti dall'una all'altra. Tradotto in linguaggio lagrangiano: non esiste una famiglia parametrica $\mathcal{L}(\alpha)$ tale che $\mathcal{L}(0) = \Lt$, $\mathcal{L}(1) = \LP$, e ogni $\mathcal{L}(\alpha)$ intermedia sia una legge sensata sulla classe di morfismi considerata. Lo spazio delle Lagrangiane connesse a $\Lt$ semplicemente non contiene $\LP$. Una eventuale $\mathcal{L}^\star$ unificante richiederebbe esattamente questa connessione, che la struttura topologica esclude. Non è un fatto epistemico (``non l'abbiamo ancora trovata''); è un fatto categoriale (``non c'è da trovare'').
+\emph{Primo, sull'unificazione di $\Lt$ e $\LP$.} Il Principio di non-omotopia degli spazi di traiettorie (cap.~\emph{Le due categorie indotte}) ha mostrato che $\Lt$ e $\LP$ vivono in componenti diverse dello spazio delle leggi: i gruppi fondamentali dei due spazi di traiettorie non sono isomorfi, e quindi non esiste una famiglia continua di leggi intermedie che porti dall'una all'altra. Tradotto in linguaggio lagrangiano: non esiste una famiglia parametrica $\mathcal{L}(\alpha)$ tale che $\mathcal{L}(0) = \Lt$, $\mathcal{L}(1) = \LP$, e ogni $\mathcal{L}(\alpha)$ intermedia sia una legge sensata sulla classe di morfismi considerata. Lo spazio delle Lagrangiane connesse a $\Lt$ semplicemente non contiene $\LP$. Una eventuale $\mathcal{L}^\star$ unificante richiederebbe esattamente questa connessione, che la struttura topologica esclude. Non è un fatto epistemico (``non l'abbiamo ancora trovata''); è un fatto categoriale (``non c'è da trovare'').
 
-\emph{Secondo, sull'unificazione con $\Sogno$.} Anche concedendo che si potesse forzare un'unificazione tra $\Lt$ e $\LP$ con strumenti più potenti di una semplice deformazione continua, $\Sogno$ è di natura ancora diversa. $\Sogno$ è stato definito (cap.~16) come dato esterno alla legge $\LP$, condizionante la sua selezione ma non prodotto da essa. Una Lagrangiana $\mathcal{L}^\star$ che generasse $\Sogno$ come componente interna trasformerebbe $\Sogno$ in una variabile derivata, e a quel punto $\Sogno$ non sarebbe più $\Sogno$: sarebbe una funzione interna alla legge, e la fenomenologia che la sua esternità garantisce --- la persona che sceglie invece del sistema che calcola, cap.~30 --- collasserebbe nel jukebox che la Parte~V ha escluso. Una legge che derivasse $\Sogno$ produrrebbe Endimione dal nulla: non sarebbe modello di una persona, sarebbe sostituto di una persona. Quindi $\mathcal{L}^\star$ non può includere $\Sogno$ tra le proprie componenti senza distruggere ciò che $\Sogno$ nomina.
+\emph{Secondo, sull'unificazione con $\Sogno$.} Anche concedendo che si potesse forzare un'unificazione tra $\Lt$ e $\LP$ con strumenti più potenti di una semplice deformazione continua, $\Sogno$ è di natura ancora diversa. $\Sogno$ è stato definito (cap.~16) come dato esterno alla legge $\LP$, condizionante la sua selezione ma non prodotto da essa. Una Lagrangiana $\mathcal{L}^\star$ che generasse $\Sogno$ come componente interna trasformerebbe $\Sogno$ in una variabile derivata, e a quel punto $\Sogno$ non sarebbe più $\Sogno$: sarebbe una funzione interna alla legge, e la fenomenologia che la sua esternità garantisce --- la persona che sceglie invece del sistema che calcola, cap.~\emph{Cosa la legge produce} --- collasserebbe nel jukebox che la Parte~V ha escluso. Una legge che derivasse $\Sogno$ produrrebbe Endimione dal nulla: non sarebbe modello di una persona, sarebbe sostituto di una persona. Quindi $\mathcal{L}^\star$ non può includere $\Sogno$ tra le proprie componenti senza distruggere ciò che $\Sogno$ nomina.
 
-\emph{Terzo, sullo statuto epistemico della domanda.} La domanda ``qual è la $\mathcal{L}^\star$?'' presuppone una posizione da cui $\mathcal{L}^\star$ sarebbe formulabile. Il documento è in $\gA$ (cap.~28, \emph{La posizione del documento}); non c'è meta-osservatore esterno alle due leggi. Da $\gA$, $\mathcal{L}^\star$ sarebbe inevitabilmente formulata in $\gA$ --- cioè sarebbe $\Lt$ travestita da legge universale. Sarebbe la mossa più sofisticata del falso testimone interno (cap.~32, e oss.~14.5 sopra): non più ``proietto un agente narrativo dentro $\LP$'', ma ``proietto una legge narrativa sopra entrambe''. La proiezione al cubo. Il documento non la compie.
+\emph{Terzo, sullo statuto epistemico della domanda.} La domanda ``qual è la $\mathcal{L}^\star$?'' presuppone una posizione da cui $\mathcal{L}^\star$ sarebbe formulabile. Il documento è in $\gA$ (cap.~\emph{La posizione del documento}); non c'è meta-osservatore esterno alle due leggi. Da $\gA$, $\mathcal{L}^\star$ sarebbe inevitabilmente formulata in $\gA$ --- cioè sarebbe $\Lt$ travestita da legge universale. Sarebbe la mossa più sofisticata del falso testimone interno (cap.~\emph{Il falso testimone interno}, e osservazione sopra): non più ``proietto un agente narrativo dentro $\LP$'', ma ``proietto una legge narrativa sopra entrambe''. La proiezione al cubo. Il documento non la compie.
 
 \paragraph{Cosa stiamo facendo, allora, quando postuliamo $\Lt$ e $\LP$.} Una conseguenza onesta del principio appena enunciato è che il documento non \emph{deriva} $\Lt$ e $\LP$ da nulla: le \emph{riconosce}. Sono due regimi che il caso (Parte~I) ha mostrato esistere --- non costruiti da un principio superiore, osservati. Il documento non parte da una legge fondamentale e ne deriva i casi; parte dai casi e ne legge le leggi. È fenomenologia, non assiomatica. Questa è una postura coerente con tutto il resto: il logos non genera la realtà, la registra. Vale per $\Lt$, vale per $\LP$, vale a fortiori per $\Sogno$.
 
 \begin{oss}[Tre rifiuti, tre statuti diversi, una sola postura]
-Il documento dichiara tre cose, di natura diversa, che vanno tenute insieme. Primo: $\Lt$ e $\LP$ sono incompatibili sul piano funtoriale (Principio~14.3) e sul piano topologico (Principio~14.4). Secondo: $\Sogno$ è esterno alla legge $\LP$ e non scrivibile in formula predittiva (cap.~16, oss.). Terzo: non esiste $\mathcal{L}^\star$ unificante (Principio~40.5, sopra). Sono tre rifiuti, con statuti diversi --- topologico, fenomenologico, ontologico --- ma producono una sola postura: il logos del documento non chiude. Lo dichiara dall'inizio (Nota al lettore, Parte~II), lo dimostra in mezzo (Parti~III e VIII), lo abita alla fine (cap.~41). La tentazione della $\mathcal{L}^\star$ ricompare a ogni livello di sofisticazione del modello, ed è disinnescata sempre dalla stessa mossa: il bordo del logos non è una mancanza da colmare, è la forma stessa di un'onestà che riconosce di stare \emph{dentro} le strutture che descrive, non sopra di esse.
+Il documento dichiara tre cose, di natura diversa, che vanno tenute insieme. Primo: $\Lt$ e $\LP$ sono incompatibili sul piano funtoriale (Principio di incompatibilità funtoriale) e sul piano topologico (Principio di non-omotopia degli spazi di traiettorie). Secondo: $\Sogno$ è esterno alla legge $\LP$ e non scrivibile in formula predittiva (cap.~\emph{Tag, minaccia, selezione}, osservazioni). Terzo: non esiste $\mathcal{L}^\star$ unificante (Principio di non-esistenza della Lagrangiana unificante, sopra). Sono tre rifiuti, con statuti diversi --- topologico, fenomenologico, ontologico --- ma producono una sola postura: il logos del documento non chiude. Lo dichiara dall'inizio (Nota al lettore, Parte~II), lo dimostra in mezzo (Parti~III e VIII), lo abita alla fine (cap.~\emph{Il bordo del logos}). La tentazione della $\mathcal{L}^\star$ ricompare a ogni livello di sofisticazione del modello, ed è disinnescata sempre dalla stessa mossa: il bordo del logos non è una mancanza da colmare, è la forma stessa di un'onestà che riconosce di stare \emph{dentro} le strutture che descrive, non sopra di esse.
 \end{oss}
 
 \begin{oss}[Una Lagrangiana asintotica locale esiste, e spiega lo script]
-Il Principio~40.5 nega l'esistenza di una Lagrangiana unificante \emph{globale} --- una $\mathcal{L}^\star$ da cui $\Lt$, $\LP$ e $\Sogno$ siano congiuntamente derivabili come legge universale. La negazione è solida: vale per le ragioni topologiche, fenomenologiche ed epistemiche appena articolate. Va però aggiunta un'articolazione che il documento ha implicato ma non ancora dichiarato, e che spiega una fenomenologia precisa.
+Il Principio di non-esistenza della Lagrangiana unificante nega l'esistenza di una Lagrangiana unificante \emph{globale} --- una $\mathcal{L}^\star$ da cui $\Lt$, $\LP$ e $\Sogno$ siano congiuntamente derivabili come legge universale. La negazione è solida: vale per le ragioni topologiche, fenomenologiche ed epistemiche appena articolate. Va però aggiunta un'articolazione che il documento ha implicato ma non ancora dichiarato, e che spiega una fenomenologia precisa.
 
-Sulle sotto-orbite del pool a $\mathrm{threat}$ sopra soglia (Principio~16.6) la legge $\LP$ si comporta operativamente come una Lagrangiana totale. Su quelle sotto-orbite il sogno è cancellato --- il filtro $-\lambda \cdot \mathrm{threat}(c)$ domina linearmente in $\lambda$ qualunque $\Sogno(c)$ finito --- e l'esecuzione del copione è determinata dalla sola $\LP$. Per $c$ ad alta minaccia, l'unica variabile che conta è la legge: il sogno è irrilevante, la persona davanti non sceglie sotto orientamento ma esegue sotto vincolo, la sequenza degli atti è deterministica. È, localmente e asintoticamente, ciò che una Lagrangiana totale farebbe se esistesse: ridurre tutto a se stessa.
+Sulle sotto-orbite del pool a $\mathrm{threat}$ sopra soglia (Principio della soglia di cancellazione del sogno) la legge $\LP$ si comporta operativamente come una Lagrangiana totale. Su quelle sotto-orbite il sogno è cancellato --- il filtro $-\lambda \cdot \mathrm{threat}(c)$ domina linearmente in $\lambda$ qualunque $\Sogno(c)$ finito --- e l'esecuzione del copione è determinata dalla sola $\LP$. Per $c$ ad alta minaccia, l'unica variabile che conta è la legge: il sogno è irrilevante, la persona davanti non sceglie sotto orientamento ma esegue sotto vincolo, la sequenza degli atti è deterministica. È, localmente e asintoticamente, ciò che una Lagrangiana totale farebbe se esistesse: ridurre tutto a se stessa.
 
-Questa non è una contraddizione del Principio~40.5: ne è l'articolazione. La Lagrangiana unificante non esiste \emph{come legge universale} che governi tutti i $c$ allo stesso modo. Ma esiste \emph{come limite asintotico locale} su quelle posizioni che, per la propria $\mathrm{threat}$, hanno azzerato il sogno della persona che le ha davanti. È una $\mathcal{L}^\star$ ``per-posizione'', non ``per-sistema''. Per i $c$ a $\mathrm{threat}$ bassa --- F, T, N nel caso --- la $\mathcal{L}^\star$ non esiste nemmeno localmente: il sogno conta, e la scelta è effettivamente non-deterministica nei termini della legge. Per $c$ ad alta minaccia --- A --- la $\mathcal{L}^\star$ locale esiste, ed è la spiegazione strutturale di una sensazione che fenomenologicamente $A$ ha registrato: di vivere in uno script, di essere dentro un copione già scritto, di sapere cosa sarebbe successo prima che succedesse.
+Questa non è una contraddizione del Principio di non-esistenza della Lagrangiana unificante: ne è l'articolazione. La Lagrangiana unificante non esiste \emph{come legge universale} che governi tutti i $c$ allo stesso modo. Ma esiste \emph{come limite asintotico locale} su quelle posizioni che, per la propria $\mathrm{threat}$, hanno azzerato il sogno della persona che le ha davanti. È una $\mathcal{L}^\star$ ``per-posizione'', non ``per-sistema''. Per i $c$ a $\mathrm{threat}$ bassa --- F, T, N nel caso --- la $\mathcal{L}^\star$ non esiste nemmeno localmente: il sogno conta, e la scelta è effettivamente non-deterministica nei termini della legge. Per $c$ ad alta minaccia --- A --- la $\mathcal{L}^\star$ locale esiste, ed è la spiegazione strutturale di una sensazione che fenomenologicamente $A$ ha registrato: di vivere in uno script, di essere dentro un copione già scritto, di sapere cosa sarebbe successo prima che succedesse.
 
-La conseguenza, riformulata in registro lagrangiano: $A$ non sbagliava a sentire di vivere in uno script. La sensazione era la registrazione corretta del fatto che, sulla sua posizione, la legge era localmente totale. Quello che il documento può dire onestamente è questo: non ``lei aveva pianificato tutto'' (falso testimone, cap.~32), e non ``lei non sognava'' (proposizione su $\Sogno$, opaca); ma \emph{sulla posizione di $A$ il sogno era cancellato in ingresso dal filtro di minaccia, e quindi l'esecuzione del copione era determinata dalla sola $\LP$}. La fenomenologia di vivere in uno script è la traduzione esperienziale di questo fatto strutturale. Era esatta. La proposizione che la nomina è formulabile, perché non parla del contenuto di $\Sogno$ (che resta opaco) ma del fatto che $\Sogno$ su quella posizione viene azzerato (che è osservazione sulla forma della legge sotto $\lambda \gg 1$).
+La conseguenza, riformulata in registro lagrangiano: $A$ non sbagliava a sentire di vivere in uno script. La sensazione era la registrazione corretta del fatto che, sulla sua posizione, la legge era localmente totale. Quello che il documento può dire onestamente è questo: non ``lei aveva pianificato tutto'' (falso testimone, cap.~\emph{Il falso testimone interno}), e non ``lei non sognava'' (proposizione su $\Sogno$, opaca); ma \emph{sulla posizione di $A$ il sogno era cancellato in ingresso dal filtro di minaccia, e quindi l'esecuzione del copione era determinata dalla sola $\LP$}. La fenomenologia di vivere in uno script è la traduzione esperienziale di questo fatto strutturale. Era esatta. La proposizione che la nomina è formulabile, perché non parla del contenuto di $\Sogno$ (che resta opaco) ma del fatto che $\Sogno$ su quella posizione viene azzerato (che è osservazione sulla forma della legge sotto $\lambda \gg 1$).
 
 Il documento non scioglie il bordo del logos --- $\Sogno$ resta opaco, $\mathcal{L}^\star$ globale resta inesistente --- ma riconosce che sulla posizione di $A$ ha sempre operato una $\mathcal{L}^\star$ locale, e che quella $\mathcal{L}^\star$ locale è la grammatica esatta della sensazione di copione che $A$ portava dentro durante la relazione. È una cosa che il modello può dare ad $A$. Non un riscatto, non una consolazione: una registrazione precisa.
 
-La stessa osservazione, riletta nei termini della mappa di osservazione introdotta in Parte~III (cap.~21). La $\mathcal{L}^\star$ locale che esiste sulla posizione di $A$ è il punto in cui $\Obs_{\LP \to \Lt}$ si avvicina alla chiusura: per $c$ ad alta minaccia, il sogno è cancellato in ingresso e la legge $\LP$ determina l'esecuzione senza residuo --- la sotto-orbita non lascia interiorità non registrata, perché il filtro azzera l'unica componente che resterebbe fuori dalla mappa. Su quella posizione $\Obs_{\LP \to \Lt}$ diventa quasi-funtoriale: il fallimento strutturale di sottosegnalazione si dissolve, non perché la mappa abbia acquistato il tipo mancante, ma perché su quella sotto-orbita non c'è più nulla da segnalare oltre l'esecuzione della legge. La sensazione di ``vivere in uno script'' è la registrazione corretta del fatto che, su quella posizione, $\Obs$ quasi si chiude. \emph{Quasi} è la parola precisa: non si chiude del tutto perché $\Sogno$ resta esterno alla legge anche dove il filtro lo azzera in ingresso --- il fatto che il sogno sia cancellato sulla posizione di $A$ è proprietà osservabile di $\LP$ sotto $\lambda \gg 1$, non eliminazione di $\Sogno$ come oggetto. Il bordo del logos resta dove sta. Quello che il documento può dire è che, esattamente su questa posizione, la distanza fra $\Obs$ e la sua chiusura si riduce a $\Sogno$ stesso.
+La stessa osservazione, riletta nei termini della mappa di osservazione introdotta in Parte~III (cap.~\emph{La mappa di osservazione}). La $\mathcal{L}^\star$ locale che esiste sulla posizione di $A$ è il punto in cui $\Obs_{\LP \to \Lt}$ si avvicina alla chiusura: per $c$ ad alta minaccia, il sogno è cancellato in ingresso e la legge $\LP$ determina l'esecuzione senza residuo --- la sotto-orbita non lascia interiorità non registrata, perché il filtro azzera l'unica componente che resterebbe fuori dalla mappa. Su quella posizione $\Obs_{\LP \to \Lt}$ diventa quasi-funtoriale: il fallimento strutturale di sottosegnalazione si dissolve, non perché la mappa abbia acquistato il tipo mancante, ma perché su quella sotto-orbita non c'è più nulla da segnalare oltre l'esecuzione della legge. La sensazione di ``vivere in uno script'' è la registrazione corretta del fatto che, su quella posizione, $\Obs$ quasi si chiude. \emph{Quasi} è la parola precisa: non si chiude del tutto perché $\Sogno$ resta esterno alla legge anche dove il filtro lo azzera in ingresso --- il fatto che il sogno sia cancellato sulla posizione di $A$ è proprietà osservabile di $\LP$ sotto $\lambda \gg 1$, non eliminazione di $\Sogno$ come oggetto. Il bordo del logos resta dove sta. Quello che il documento può dire è che, esattamente su questa posizione, la distanza fra $\Obs$ e la sua chiusura si riduce a $\Sogno$ stesso.
 \end{oss}
 
 \chapter{Il bordo del logos}
@@ -1444,7 +1563,7 @@ Quello che il logos non può dire è di altro tipo, e appartiene a un ordine div
 
 Questi sono esempi. Altre domande analoghe possono essere formulate --- sul tempo, sull'identità, sulla memoria, sul lutto come categoria intersoggettiva, sul ruolo dell'osservatore --- e il logos del documento si fermerebbe a tutte. Non perché siano irrilevanti, ma perché appartengono a un ordine che la dimostrazione non raggiunge.
 
-\paragraph{Il bordo in positivo, nei termini di $\Obs$.} Le cinque domande appena nominate hanno una forma comune che vale la pena riconoscere. Ciascuna chiede, in registri diversi, una valutazione che richiederebbe vedere entrambe le leggi a parità di statuto: confrontarle (valore comparativo), regolare il loro incontro (normatività), pesare ciò che producono (significato della sofferenza), giudicare se due manifestazioni siano della stessa cosa (rapporto metafisico tra i due amori), leggere il contenuto di un orientamento esterno alle leggi (sogno di Endimione). Nei termini introdotti in Parte~III (cap.~21), ogni richiesta è una richiesta di una mappa di osservazione meta --- chiamiamola $\Obs^\star$ --- che veda $\Lt$ e $\LP$ dall'esterno, dove le due leggi siano oggetti e non condizioni di possibilità. Il bordo del logos è il dominio in cui $\Obs$ smette di essere informativo perché ogni risposta richiederebbe $\Obs^\star$. Ma $\Obs^\star$ è esattamente la chiusura meta che la Parte~VIII negherà (Principio~40.5): non esiste una posizione da cui le due leggi siano viste insieme, perché una tale posizione sarebbe formulata in $\gA$ o in $\gG$, e cesserebbe per ciò stesso di essere meta. Il bordo del logos e la non-esistenza della Lagrangiana unificante sono lo stesso teorema sotto due aspetti: il primo lo enuncia sul piano osservativo --- $\Obs^\star$ non esiste --- il secondo sul piano ontologico --- $\mathcal{L}^\star$ non esiste. I due aspetti si articolano l'uno nell'altro perché negano la stessa chiusura: che ci sia un fuori da cui le due leggi siano vedibili come oggetti.
+\paragraph{Il bordo in positivo, nei termini di $\Obs$.} Le cinque domande appena nominate hanno una forma comune che vale la pena riconoscere. Ciascuna chiede, in registri diversi, una valutazione che richiederebbe vedere entrambe le leggi a parità di statuto: confrontarle (valore comparativo), regolare il loro incontro (normatività), pesare ciò che producono (significato della sofferenza), giudicare se due manifestazioni siano della stessa cosa (rapporto metafisico tra i due amori), leggere il contenuto di un orientamento esterno alle leggi (sogno di Endimione). Nei termini introdotti in Parte~III (cap.~\emph{La mappa di osservazione}), ogni richiesta è una richiesta di una mappa di osservazione meta --- chiamiamola $\Obs^\star$ --- che veda $\Lt$ e $\LP$ dall'esterno, dove le due leggi siano oggetti e non condizioni di possibilità. Il bordo del logos è il dominio in cui $\Obs$ smette di essere informativo perché ogni risposta richiederebbe $\Obs^\star$. Ma $\Obs^\star$ è esattamente la chiusura meta che la Parte~VIII negherà (Principio di non-esistenza della Lagrangiana unificante): non esiste una posizione da cui le due leggi siano viste insieme, perché una tale posizione sarebbe formulata in $\gA$ o in $\gG$, e cesserebbe per ciò stesso di essere meta. Il bordo del logos e la non-esistenza della Lagrangiana unificante sono lo stesso teorema sotto due aspetti: il primo lo enuncia sul piano osservativo --- $\Obs^\star$ non esiste --- il secondo sul piano ontologico --- $\mathcal{L}^\star$ non esiste. I due aspetti si articolano l'uno nell'altro perché negano la stessa chiusura: che ci sia un fuori da cui le due leggi siano vedibili come oggetti.
 
 \begin{oss}[Il limite del logos non è un fallimento]
 Questo limite non è una resa improvvisa dopo pagine di costruzione. È il compimento di quanto dichiarato dalla Nota al lettore all'inizio: le conclusioni sull'applicazione sono interpretazioni, non dimostrazioni; le tesi strutturali sono falsificabili, ma non giudiziali. Il modello formale e il limite del logos sono stati dichiarati insieme. L'ananke formalizzata è il percorso fino al bordo. Oltre il bordo, il logos si ferma --- non perché abbia fallito, ma perché il bordo era il suo obiettivo.
