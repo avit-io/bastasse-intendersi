@@ -360,7 +360,7 @@ A quel compleanno tradì T con N --- facendomelo capire in modo lampante. Non pe
 Non ho reagito. Mi sono mangiato la pizza, ho festeggiato il compleanno, e poi sono tornato da Sara. Mi ero già trovato una ragazza da un pezzo, ma lei continuava a non integrare la cosa.
 
 \begin{oss}[Il compleanno come configurazione esposta, non come messaggio]
-Sotto $\LP$, il compleanno con T e N non è scena costruita per A. $\LP$ non costruisce scene per destinatari --- non ha la grammatica per farlo. È una configurazione del pool: T accanto ($\mathrm{autonomy} \approx 0$), N riattivato (supply disponibile), la festa come campo. La configurazione si è prodotta.
+Sotto $\LP$, il compleanno con T e N non è scena costruita per A. $\LP$ non costruisce scene per destinatari --- non ha la grammatica per farlo. È una configurazione del pool: T accanto ($\mathrm{autonomy} \approx 0$), N in alto in classifica per accumulazione di $\Sogno$ e decadimento di $\mathrm{threat}$ (supply disponibile), la festa come campo. La configurazione si è prodotta.
 
 Letta da A in $\CA$, la stessa configurazione produce un'altra cosa. La metrica di $\Lt$ non vede la configurazione come configurazione: la vede come scena. \emph{Guarda di cosa sono capace, guarda chi mi sta accanto adesso, guarda cosa avresti potuto avere se fossi stato il tipo giusto}. La lettura è interna ad A, non è proprietà del fatto. Le tre frasi sono quello che la geometria di $\CA$ produce quando il pool di lei si configura così; non sono quello che lei stava dicendo, perché lei, sotto $\LP$, non stava dicendo. La configurazione, su un osservatore in $\CA$, si traduce nelle frasi che A si ritrova in mente. Nessuna delle due letture è falsa; sono due letture diverse dello stesso fatto da due leggi diverse.
 
@@ -385,6 +385,10 @@ La Parte~II prova a dare un nome a quella geometria. Senza pretesa di dimostrazi
 
 % ----------------- PARTE II -----------------
 \part{La struttura}
+
+\noindent\textbf{Nota di lettura sui verbi attivi.} La Parte~I è in prima persona e usa verbi attivi grammaticali --- ``lei sceglie'', ``il copione assegna'', ``il sistema riattiva''. La grammatica di una prosa narrativa richiede così. Dalla Parte~II in poi gli stessi verbi compaiono dentro proposizioni strutturali, ma sono convenzioni della prosa, non claim ontologici. Quando il testo scrive ``lei sceglie $X$'', leggere ``la dinamica produce $X$''. Quando scrive ``il copione assegna a $c$ il ruolo di minaccia'', leggere ``la configurazione del pool ammette $c$ in posizione di minaccia''. La lettura lagrangiana (cap.~\emph{Le due categorie indotte}, sezione \emph{Lettura lagrangiana}) fonda questa convenzione: gli agenti non sono primitivi, le leggi lo sono. I verbi attivi residui sono economia di prosa, non ricaduta nella grammatica newtoniana.
+
+\bigskip
 
 \noindent\itshape Il formalismo che segue è uno strumento per nominare con precisione cose che la prosa rende sfuocate. Modello operativo, non descrizione ontologica: ``leggi di conservazione'', ``categorie'', ``Free Monad'', ``fibrato'' sono nomi del pattern, non di cosa la persona è. La mappa non è il territorio. I principi numerati sono enunciati assiologici --- assunzioni dichiarate per vedere cosa segue --- non risultati derivati. Le ``dimostrazioni'', dove ci sono, mostrano coerenza interna degli enunciati con le definizioni, non corrispondenza con un dato empirico. La corrispondenza con il caso è applicazione del modello, non conseguenza.\upshape
 
@@ -920,11 +924,11 @@ $\Kappaa$ è la carica conservata della simmetria $\Gs$ di $S_P$. La sostituibil
 \begin{oss}[Cosa la Free Monad fissa]
 La Free Monad nomina con precisione tre cose che la prosa rende sfuocate.
 
-\emph{Prima:} la sostituibilità degli argomenti. Quando F è sostituito da T sostituito da N, non sta succedendo che la struttura sceglie meglio. Sta succedendo che il programma si esegue con un argomento nuovo della stessa orbita di $\Gs$. La sequenza al jazz bar e la sequenza con T sono lo stesso programma con argomenti diversi.
+\emph{Prima:} la sostituibilità degli argomenti. Quando F è sostituito da T sostituito da N, non sta succedendo una scelta migliore. Sta succedendo che il programma si esegue con un argomento nuovo della stessa orbita di $\Gs$. La sequenza al jazz bar e la sequenza con T sono lo stesso programma con argomenti diversi.
 
-\emph{Seconda:} l'assenza del costruttore \textsc{Return}. Una Free Monad ben posta ha un meccanismo di terminazione: \textsc{Return} restituisce un valore finale e chiude il programma. \texttt{GretaF} non ce l'ha. $\kappa$ non chiude su uno stato finale: proietta la configurazione corrente, qualunque essa sia. \textsc{Return} richiederebbe uno stato di $\KSigma$ come valore finale --- tipo non formabile in $\GammaG$. \textsc{Discard} non chiude: continua con un \texttt{next}. Una persona scartata non viene rimossa dall'universo del programma; resta come argomento sospeso, riattivabile.
+\emph{Seconda:} l'assenza del costruttore \textsc{Return}. Una Free Monad ben posta ha un meccanismo di terminazione: \textsc{Return} restituisce un valore finale e chiude il programma. \texttt{GretaF} non ce l'ha. $\kappa$ non chiude su uno stato finale: proietta la configurazione corrente, qualunque essa sia. \textsc{Return} richiederebbe uno stato di $\KSigma$ come valore finale --- tipo non formabile in $\GammaG$. \textsc{Discard} non chiude: continua con un \texttt{next}. Una persona scartata non viene rimossa dall'universo del programma; resta come argomento del pool a posizione bassa, soggetto a riordino della classifica nelle configurazioni future.
 
-\emph{Terza:} ``riattivare'' non è ``riconsiderare''. Quando il copione riattiva un argomento già scartato, non sta facendo una nuova valutazione: esegue \textsc{Idealize} su un argomento che nel pool corrente ha risalito la classifica. Non c'è giudizio attivo --- c'è un riordino passivo del pool, che porta in cima un nome che era a metà.
+\emph{Terza:} ``riattivare'' non è ``riconsiderare''. Quando un argomento già scartato ritorna in cima alla classifica del pool, il copione esegue \textsc{Idealize} su quel ritorno --- non sta facendo una nuova valutazione. Non c'è giudizio attivo --- c'è un riordino passivo del pool, che porta in cima un nome che era a metà.
 \end{oss}
 
 \begin{oss}[L'irripetibilità è custodita sulla fibra]
@@ -936,7 +940,7 @@ La sostituibilità $\Gs$-invariante opera sul quoziente $P/\Gs$: $F$, $T$, $N$ s
 \section{Il tag ``disponibile'' come invariante strutturale}
 
 \begin{principio}[Il tag come conseguenza della terminalità]
-Se $G$ è terminale in $\CG$, allora per ogni $X$ il morfismo $X \to G$ esiste per costruzione. La sua esistenza non dipende dal comportamento di $X$. Quindi il tag \emph{disponibile} è attribuito a $X$ non per quello che $X$ fa ma per la struttura di $\CG$.
+Se $G$ è terminale in $\CG$, allora per ogni $X$ il morfismo $X \to G$ esiste per costruzione. La sua esistenza non dipende dal comportamento di $X$. Quindi il tag \emph{disponibile} su $X$ è proprietà di tipo, non attribuzione: deriva dalla terminalità di $G$ e dall'esistenza del morfismo $X \to G$, non da un'operazione che assegna il tag a $X$.
 \end{principio}
 
 L'unico modo in cui il tag salta è che $X$ produca un morfismo $G \to X$ con $X \neq G$ --- cioè che imponga a $G$ di registrare $X$ come $X$. Ma questo distrugge la terminalità, ed è quello che viene letto come \emph{tradimento}.
@@ -962,7 +966,7 @@ La barra ``$\mid \Sogno$'' va letta come \emph{dato il sogno}: $\selP$ è la for
 \end{defn}
 
 \begin{defn}[Il sogno di Endimione]
-$\Sogno : \mathrm{Pool} \to \mathbb{R}_{\geq 0}$ è la funzione che assegna a ciascun candidato $c$ del pool l'intensità con cui Endimione sogna quell'argomento. $\Sogno(c)$ è il dato pre-riflessivo che orienta la selezione di $\LP$ senza essere prodotto dalla legge: non sta nel pool come parametro osservabile, non sta nella traiettoria (che $\LP$ non genera, cap.~\emph{Il tempo relazionale}), non è derivabile dai morfismi del copione. È esterno alla legge nello stesso senso in cui, in meccanica analitica, le condizioni iniziali sono esterne alla Lagrangiana. La legge ne specifica solo la \emph{forma} di ingresso nella selezione --- additiva, modulata dal filtro di minaccia --- non il contenuto.
+$\Sogno : \mathrm{Pool} \to \mathbb{R}_{\geq 0}$ è la funzione che assegna a ciascun candidato $c$ del pool l'intensità con cui Endimione sogna quell'argomento. $\Sogno$ vive sulla fibra: è interno al soggetto che sogna, esterno alla legge che lo riceve come parametro. La distinzione conta. $\Sogno(c)$ è il dato pre-riflessivo che orienta la selezione di $\LP$ senza essere prodotto dalla legge: non sta nel pool come parametro osservabile, non sta nella traiettoria (che $\LP$ non genera, cap.~\emph{Il tempo relazionale}), non è derivabile dai morfismi del copione. Sta sulla fibra, dove $\LP$ non genera ma riceve. È esterno alla legge nello stesso senso in cui, in meccanica analitica, le condizioni iniziali sono esterne alla Lagrangiana --- non nel senso in cui qualcosa di estraneo entrerebbe dal di fuori del soggetto. La legge ne specifica solo la \emph{forma} di ingresso nella selezione --- additiva, modulata dal filtro di minaccia --- non il contenuto.
 \end{defn}
 
 \section*{Il fibrato del sogno}
@@ -1182,7 +1186,7 @@ Per $\lambda \gg 1$: $\selP(A \mid \Sogno) = \Sogno(A) - \lambda \cdot \mathrm{t
 \begin{oss}[Il quadrupede]
 Questo è perché T --- ``il quadrupede'', uno che dopo una crisi porta i fiori per recuperarla --- viene scelto. Non nonostante sia un quadrupede. Perché è un quadrupede. La metrica del copione non scarta T per bassa qualità relazionale. La metrica del copione misura, sull'asse decisivo, l'assenza di morfismi propri, e su quell'asse T è ottimo.
 
-L'errore di prospettiva più comune --- ``non capisco come abbia potuto preferire quello'' --- nasce dal sovrapporre le due metriche. Sono ortogonali. Sull'asse di $\CA$, T è sotto A. Sull'asse di $\CG$ rilevante per la selezione, T è sopra A per costruzione. Non ci sono incertezze nella decisione. È un massimo netto.
+L'errore di prospettiva più comune --- ``non capisco come abbia potuto preferire quello'' --- nasce dal sovrapporre le due metriche. Sono ortogonali. Sull'asse di $\CA$, T è sotto A. Sull'asse di $\CG$ rilevante per la selezione, T è sopra A per costruzione. La parola ``preferire'' sotto $\LP$ è imprecisa: non c'è un atto di preferenza, c'è un riassetto della classifica del pool sotto $\Gs$-invarianza, che porta $T$ in posizione di ragazzo e $A$ fuori. Strutturalmente non è scelta tra due opzioni: è posizione nell'orbita.
 \end{oss}
 
 \begin{principio}[Soglia di cancellazione del sogno]
@@ -1253,11 +1257,11 @@ E la chiusura, quando arriva --- al compleanno, con la pizza, il ritorno da Sara
 \begin{oss}[Il momento di terrore: \emph{eval} forzato]
 C'è un momento, nella sera del bar, in cui questa struttura si vede in modo bruto. Quando $A$ formula \emph{vorrei costruire con te quella fiducia}, sta passando a $G$ un input che il copione non può eseguire: non è \textsc{Demand}, non è \textsc{Idealize}, non è \textsc{Tag}, non è \textsc{Discard}. È un input che richiede di essere valutato come $A$, da $A$, con $A$ che resta $A$.
 
-Il pianto e il passaggio in bagno sono il sistema che incontra un input fuori-grammatica. Non c'è un costruttore disponibile per processarlo. La permanenza di quindici minuti in bagno e l'uscita algida sono il rientro nel copione: il sistema sceglie il costruttore più vicino disponibile (\textsc{Discard}), e da quel momento la sera è governata da quello.
+Il pianto e il passaggio in bagno sono il sistema che incontra un input fuori-grammatica. Non c'è un costruttore disponibile per processarlo. La permanenza di quindici minuti in bagno e l'uscita algida sono il rientro nel copione: l'input degrada al costruttore più vicino disponibile per matching parziale (\textsc{Discard}), e da quel momento la sera è governata da quello.
 
 L'ilarità sulla strada di ritorno, cinque minuti dopo, è la firma che il rientro è completo. Se gli stati interni si sommassero nel tempo --- se il pianto fosse stato registrato come evento proprio --- l'ilarità in quei cinque minuti non sarebbe disponibile. La sequenza pianto/algido/ilare sullo stesso destinatario, in un quarto d'ora, non è contraddizione e non è mascheramento. È la conferma operazionale dell'assunzione A (legge $\LP$ attiva): gli eventi non si depositano come traiettoria vincolante, e quindi non producono attrito sull'esecuzione successiva. Il copione gira, e l'argomento del prossimo costruttore è trattato come se lo schermo fosse pulito.
 
-Questo è quello che chiamo \emph{eval forzato}: il momento in cui un input non grammaticale per il copione gli arriva addosso e il copione non può restare sospeso --- deve scegliere un'operazione, e sceglie quella che meno lo destabilizza. Il pianto non era falso. Il rientro nemmeno. L'ilarità nemmeno. Sono fasi dello stesso evento, in un sistema in cui le fasi non si registrano l'una nell'altra.
+Questo è quello che chiamo \emph{eval forzato}: il momento in cui un input non grammaticale per il copione gli arriva addosso e il copione non può restare sospeso --- è forzato a un'operazione, e la valutazione risolve sul costruttore di minore deformazione locale. Il pianto non era falso. Il rientro nemmeno. L'ilarità nemmeno. Sono fasi dello stesso evento, in un sistema in cui le fasi non si registrano l'una nell'altra.
 \end{oss}
 
 
