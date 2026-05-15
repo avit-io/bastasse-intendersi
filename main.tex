@@ -50,7 +50,7 @@
 
 % --- diagrammi ---
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{arrows.meta,positioning,decorations.pathmorphing}
 
 % --- grafica e colori (compatibili con ClassicThesis) ---
 \usepackage{graphicx}
@@ -534,6 +534,136 @@ Quando $A$ richiama una frase di anni prima, non recupera la stringa. Ricompone 
 $\LP$ è opaca all'altro --- nessun accesso al dentro di Endimione (cap.~\emph{Cosa la legge produce}). $\Lt$ è opaca a sé sul dato letterale --- perfetta fedeltà alla traccia, perdita del testo. Ognuna delle due leggi ha la propria forma di opacità, simmetrica per statuto.
 \end{oss}
 
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    font=\footnotesize,
+    every node/.style={inner sep=2pt},
+]
+
+% PANNELLO SINISTRO: Lt come traiettoria che accumula
+
+\begin{scope}[shift={(0,0)}]
+
+\node[anchor=south west, font=\small\itshape] at (-0.2,7.6) {Lato $A$ --- legge $\mathcal{L}_t$};
+\node[anchor=south west, font=\scriptsize, text width=6cm, color=black!60]
+  at (-0.2,7.0) {Ogni atto deposita in $K(\Sigma^*)$.\\La traiettoria porta dietro tutto.};
+
+\draw[->, thick, color=black!50] (0,6.4) -- (0,-0.4) node[below, font=\scriptsize, color=black!60] {tempo};
+
+\draw[line width=1.2pt, color=Maroon!85]
+  (0.4,6.0) -- (0.9,5.0) -- (1.4,4.0) -- (2.0,3.0)
+  -- (2.7,2.0) -- (3.1,1.0) -- (3.3,0.0);
+
+\foreach \x/\y/\lab/\peso in {%
+  0.4/6.0/{magone, porta di Asiago}/3,
+  0.9/5.0/{dichiarazione al bar}/5,
+  1.4/4.0/{pianto, algidità, ilarità}/4,
+  2.0/3.0/{rivelazione sulla soglia}/5,
+  2.7/2.0/{ariete a Vicenza}/6,
+  3.1/1.0/{foto a Canottaggio}/4,
+  3.3/0.0/{compleanno}/2}
+{
+  \fill[Maroon!85] (\x,\y) circle (1.4pt + 0.4pt*\peso);
+  \node[right=4pt of {(\x,\y)}, font=\scriptsize, color=black!75] {\lab};
+}
+
+\node[anchor=south, font=\scriptsize, color=black!60] at (-0.6, 6.2) {$\Phi$};
+\draw[color=Maroon!60, line width=4pt, line cap=butt] (-0.6, 6.0) -- (-0.6, 0.0);
+\node[anchor=north, font=\tiny, color=black!50] at (-0.6, -0.05) {accumula};
+
+\node[anchor=north, text width=5.8cm, font=\scriptsize\itshape, color=black!60, align=center]
+  at (2.5, -1.0) {La linea cresce. Ogni passo ricorda i precedenti. Niente si scarica senza saldo atto contro atto.};
+
+\end{scope}
+
+\draw[color=black!15, line width=0.4pt] (6.4, 7.7) -- (6.4, -2.0);
+
+% PANNELLO DESTRO: Lp come sequenza di configurazioni del pool
+
+\begin{scope}[shift={(7.0,0)}]
+
+\node[anchor=south west, font=\small\itshape] at (-0.2,7.6) {Lato $G$ --- legge $\mathcal{L}_P$};
+\node[anchor=south west, font=\scriptsize, text width=6cm, color=black!60]
+  at (-0.2,7.0) {Il pool si riconfigura a ogni passo.\\Niente lega prima e dopo.};
+
+\newcommand{\poolarg}[5]{%
+  \node[fill=#3, rounded corners=4pt, text=white, font=\tiny,
+        minimum width=0.8cm, minimum height=0.34cm] at (#1, #2) {#4};
+  \node[font=\tiny, color=black!50] at (#1, #2-0.32) {#5};
+}
+
+\newcommand{\poolempty}[2]{%
+  \node[draw=black!20, dashed, rounded corners=4pt, font=\tiny, color=black!30,
+        minimum width=0.8cm, minimum height=0.34cm] at (#1, #2) {--};
+  \node[font=\tiny, color=black!30] at (#1, #2-0.32) {vuoto};
+}
+
+\newcommand{\poolbox}[2]{%
+  \node[draw=black!15, line width=0.3pt, rounded corners=2pt,
+        minimum width=6cm, minimum height=0.95cm, anchor=center,
+        fill=Maroon!3] at (2.7, #1) {};
+  \node[font=\tiny, color=black!50, anchor=west] at (-0.3, #1) {\##2};
+}
+
+\poolbox{6.0}{1}
+\poolarg{1.2}{6.05}{Maroon!70}{F}{ragazzo}
+\poolarg{2.7}{6.05}{black!40}{A}{nuovo}
+\poolarg{4.2}{6.05}{black!25}{T}{amico}
+
+\poolbox{5.0}{2}
+\poolarg{1.2}{5.05}{Maroon!70}{F}{ragazzo}
+\poolarg{2.7}{5.05}{Maroon!95}{A}{\color{Maroon!90}threat$>$0}
+\poolarg{4.2}{5.05}{black!25}{T}{amico}
+
+\poolbox{4.0}{3}
+\poolarg{1.2}{4.05}{Maroon!70}{F}{ragazzo}
+\poolarg{2.7}{4.05}{black!40}{Tom}{compagnia}
+\poolarg{4.2}{4.05}{black!20}{A}{scartato}
+
+\poolbox{3.0}{4}
+\poolarg{1.2}{3.05}{Maroon!70}{F}{ragazzo}
+\poolempty{2.7}{3.05}
+\poolarg{4.2}{3.05}{black!20}{A}{chiuso}
+
+\poolbox{2.0}{5}
+\poolarg{1.2}{2.05}{Maroon!70}{T}{ragazzo}
+\poolarg{2.7}{2.05}{black!50}{A}{riattivato}
+\poolarg{4.2}{2.05}{black!25}{N}{amico}
+
+\poolbox{1.0}{6}
+\poolarg{1.2}{1.05}{black!30}{T}{basso}
+\poolarg{2.7}{1.05}{Maroon!85}{N}{supply alto}
+\poolarg{4.2}{1.05}{black!20}{A}{fuori}
+
+\poolbox{0.0}{7}
+\poolarg{1.2}{0.05}{black!30}{T}{basso}
+\poolarg{2.7}{0.05}{Maroon!85}{N}{attivo}
+\poolarg{4.2}{0.05}{black!15}{A}{spettatore}
+
+\node[anchor=north, text width=5.8cm, font=\scriptsize\itshape, color=black!60, align=center]
+  at (2.7, -1.0) {Sette configurazioni intere. Niente accumula. Argomenti diversi nello stesso ruolo: l'orbita di $\Gamma_\sigma$.};
+
+\end{scope}
+
+\end{tikzpicture}
+
+\caption[Traiettorie di $\mathcal{L}_t$ e $\mathcal{L}_P$ a confronto]{%
+Stessa sequenza di sette episodi, letta sotto le due leggi.
+A sinistra, $\mathcal{L}_t$ produce una traiettoria orientata in $K(\Sigma^*)$:
+ogni atto deposita un peso (raggio del punto), e il punto successivo eredita
+quello che il precedente ha lasciato; la barra $\Phi$ accumula lungo tutto
+il percorso. A destra, $\mathcal{L}_P$ produce una successione di proiezioni
+$\kappa(P_k)$: ogni configurazione del pool è intera in sé, e il passaggio
+da $P_k$ a $P_{k+1}$ non porta $P_k$ come ingresso. Si nota come, nei
+riquadri $\mathcal{L}_P$, gli argomenti $F, T, N$ si sostituiscano nello
+stesso ruolo (\emph{ragazzo}) mentre $A$ scivola lungo la classifica del
+pool. È la $\Gamma_\sigma$-invarianza: gli argomenti sotto soglia sono
+permutabili senza che $\kappa$ ne risenta. La differenza tra i due
+pannelli è la differenza di tipo tra $\Phi$ e $\mathrm{K}$.}
+\label{fig:traiettorie}
+\end{figure}
+
 \section*{Incompatibilità temporale}
 
 Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio di incompatibilità delle due leggi (cap.~\emph{Le leggi di conservazione}) acquista una forma temporale: i due tempi che generano non si saldano in un tempo terzo. Dal lato $\Lt$, il flusso di $\Phii$ procede in attesa di essere chiuso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna componibile con l'accumulo che $\Lt$ sta generando dall'altra parte. Il tempo terzo richiederebbe co-generazione nello stesso registro. Non c'è.
@@ -844,6 +974,120 @@ La funzione di selezione si riscrive come
 \selP(c) \;=\; \nabla_c(\Sogno(c)) \;+\; \varepsilon(P,t),
 \]
 dove $\nabla_c(\Sogno(c))$ è il contributo della fibra trasportato sulla base. L'opacità di $\Sogno$ è separazione di tipo: la fibra e la base non sono grandezze dello stesso tipo. Conoscere $\nabla$ non determina $\Sogno$. Per quanto si studi la legge, la sezione resta sull'altro lato del fibrato.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    font=\footnotesize,
+    every node/.style={inner sep=2pt},
+]
+
+% Zona "sopra soglia"
+\fill[Maroon!4] (7.0, -1.7) rectangle (11.5, 5.7);
+
+% Soglia
+\draw[color=Maroon!50, line width=0.6pt, dashed] (7.0, -1.7) -- (7.0, 5.9);
+\node[anchor=south, font=\scriptsize, color=Maroon!75] at (7.0, 5.9) {soglia $\theta$};
+
+\node[anchor=north west, font=\scriptsize\itshape, color=black!55, text width=3.8cm]
+  at (0.2, 5.7) {sotto soglia: $\mathfrak{S}(c)$\\ pesa nella selezione};
+\node[anchor=north east, font=\scriptsize\itshape, color=Maroon!65, text width=3.8cm, align=right]
+  at (11.4, 5.7) {sopra soglia: il filtro\\ $-\lambda\cdot\mathrm{threat}$\\ cancella il sogno};
+
+% Assi
+\draw[->, color=black!50, line width=0.5pt] (0,-0.3) -- (0,5.7)
+  node[above, font=\scriptsize, color=black!60] {fibra $\mathbb{R}_{\geq 0}$};
+\draw[->, color=black!50, line width=0.5pt] (-0.3,0) -- (11.7,0)
+  node[right, font=\scriptsize, color=black!60] {base $P$};
+\node[font=\scriptsize\itshape, color=black!55, rotate=90] at (-0.55, 2.7)
+  {intensità sognata $\mathfrak{S}(c)$};
+
+% Argomenti
+\def\argFx{1.5}
+\def\argTx{3.5}
+\def\argNx{5.5}
+\def\argAx{9.0}
+
+\foreach \x in {\argFx, \argTx, \argNx, \argAx}{
+  \draw[color=black!25, dashed, line width=0.3pt] (\x, 0) -- (\x, 5.3);
+}
+
+\foreach \x/\name in {%
+  \argFx/F,
+  \argTx/T,
+  \argNx/N}
+{
+  \node[fill=black!35, rounded corners=4pt, text=white, font=\tiny,
+        minimum width=0.7cm, minimum height=0.32cm] at (\x, -0.45) {\name};
+}
+\node[fill=Maroon!75, rounded corners=4pt, text=white, font=\tiny,
+      minimum width=0.7cm, minimum height=0.32cm] at (\argAx, -0.45) {A};
+
+\foreach \x/\threat in {%
+  \argFx/{\textsf{threat}=0.3},
+  \argTx/{\textsf{threat}=0.4},
+  \argNx/{\textsf{threat}=0.5}}
+{
+  \node[font=\tiny, color=black!50] at (\x, -0.90) {\threat};
+}
+\node[font=\tiny, color=Maroon!75] at (\argAx, -0.90) {\textsf{threat}=2.0};
+
+\node[font=\scriptsize, color=black!55] at (3.5, -1.40) {argomenti permutabili sotto $\Gamma_\sigma$};
+\node[font=\scriptsize, color=Maroon!75] at (9.0, -1.40) {argomento ad alta minaccia};
+
+% Sezione Sogno
+\draw[color=Maroon!50, line width=0.8pt, dotted]
+  (\argFx, 3.0) .. controls (2.5, 2.0) and (4.5, 1.8) .. (\argNx, 2.8)
+  .. controls (7.0, 3.8) and (8.0, 4.4) .. (\argAx, 4.7);
+
+\fill[Maroon!85] (\argFx, 3.0) circle (3.5pt);
+\fill[Maroon!85] (\argTx, 2.2) circle (3.5pt);
+\fill[Maroon!85] (\argNx, 2.8) circle (3.5pt);
+\fill[Maroon!85] (\argAx, 4.7) circle (3.5pt);
+
+\node[anchor=south, font=\tiny, color=Maroon!85] at (\argFx, 3.15) {$\mathfrak{S}(F)$};
+\node[anchor=west, font=\tiny, color=Maroon!85] at (\argTx+0.18, 2.2) {$\mathfrak{S}(T)$};
+\node[anchor=south, font=\tiny, color=Maroon!85] at (\argNx, 2.95) {$\mathfrak{S}(N)$};
+\node[anchor=south, font=\tiny, color=Maroon!85] at (\argAx, 4.85) {$\mathfrak{S}(A)$};
+
+\node[anchor=west, font=\scriptsize\itshape, color=Maroon!75] at (3.5, 1.4) {sezione $\mathfrak{S}$};
+
+% Connessione nabla
+\foreach \x/\h in {\argFx/3.0, \argTx/2.2, \argNx/2.8}{
+  \draw[->, color=Maroon!70, line width=0.7pt,
+        decoration={snake, amplitude=0.35mm, segment length=2.2mm, post length=0.8mm}, decorate]
+    (\x+0.15, \h-0.25) .. controls (\x+0.5, \h*0.5) and (\x+0.3, 0.5) .. (\x+0.05, 0.12);
+}
+
+\draw[color=black!30, line width=0.7pt, dashed]
+  (\argAx+0.15, 4.5) .. controls (\argAx+0.5, 3.0) and (\argAx+0.4, 2.2) .. (\argAx+0.3, 1.8);
+\draw[color=Maroon!85, line width=1.4pt] (\argAx+0.05, 1.55) -- (\argAx+0.65, 2.05);
+\draw[color=Maroon!85, line width=1.4pt] (\argAx+0.05, 2.05) -- (\argAx+0.65, 1.55);
+\node[font=\tiny, color=Maroon!85, anchor=west] at (\argAx+0.75, 1.8) {filtro$\to 0$};
+
+\node[anchor=west, font=\scriptsize\itshape, color=black!60] at (5.7, 0.5)
+  {trasporto $\nabla = -\lambda\cdot\mathrm{threat}$};
+
+\end{tikzpicture}
+
+\caption[Il fibrato del sogno]{%
+\textbf{Il fibrato del sogno.} La base $P$ contiene gli argomenti del pool
+($F, T, N, A$). Sopra ogni argomento $c$ si erge la fibra $\mathbb{R}_{\geq 0}$.
+La sezione $\mathfrak{S}$ assegna a ciascun argomento un'intensità sognata
+$\mathfrak{S}(c)$ --- un punto sulla fibra, fuori dalla base. La connessione
+$\nabla = -\lambda \cdot \mathrm{threat}(c)$ trasporta la sezione sulla base.
+Sotto la soglia $\theta$, il filtro è debole: $\mathfrak{S}(F), \mathfrak{S}(T),
+\mathfrak{S}(N)$ pesano effettivamente nella selezione di $\kappa$ (frecce
+ondulate). Sopra soglia, il filtro azzera il trasporto: $\mathfrak{S}(A)$
+può essere arbitrariamente alto --- la sezione raggiunge qui il massimo ---
+e tuttavia sulla base non arriva nulla. È la \emph{soglia di cancellazione
+del sogno}: per $A$ ad alta minaccia, l'esecuzione di $\mathcal{L}_P$ è
+determinata dalla sola legge, indipendentemente da quanto la persona che
+sogna sogni davvero quel destinatario. La sezione $\mathfrak{S}$ resta
+sull'altro lato del fibrato. La sua opacità non è cifratura della base:
+è differenza di tipo tra base e fibra.}
+\label{fig:fibrato-sogno}
+\end{figure}
 
 Tre osservazioni sul costrutto. La prima formale, la seconda metodologica, la terza fenomenologica.
 
