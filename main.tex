@@ -393,57 +393,77 @@ La Parte~II prova a dare un nome a quella geometria. Senza pretesa di dimostrazi
 
 \chapter{Le leggi di conservazione}
 
-\emph{Rispetto a cosa un sé è integro, visto da fuori?} Non è la domanda metafisica. È la domanda operativa: quale modello descrive bene quello che ho visto?
+\emph{Rispetto a cosa un sé è integro, visto da fuori?} Non la domanda metafisica. La domanda operativa: quale modello descrive bene quello che ho osservato?
 
 \begin{principio}[Identità come legge di conservazione]
-Un sé osservato dall'esterno è ben descritto come una \emph{legge di conservazione}: una quantità che resta ferma sotto ogni aggiornamento. Soggetti che si comportano in modo incompatibile nelle stesse situazioni hanno leggi diverse.
+Un sé osservato dall'esterno è descritto da una \emph{legge di conservazione}: una quantità che resta ferma sotto ogni aggiornamento. Soggetti che si comportano in modo incompatibile nelle stesse situazioni hanno leggi diverse.
 \end{principio}
 
-La parola \emph{legge di conservazione} viene dalla fisica, e qui serve. Non dice cosa il sé contiene; dice cosa tiene fermo --- come l'energia nell'urto, come la massa nella reazione. Tra i vocabolari disponibili, è quello che ha funzionato.
+Il vocabolario viene dalla fisica e serve qui letteralmente. Non dice cosa il sé contiene. Dice cosa tiene fermo --- come l'energia nell'urto, come la massa nella reazione. È il vocabolario che ha funzionato.
 
-\begin{defn}[Le due leggi]
-Due modi di tenere fermo un sé.
+Due leggi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li nomina con la precisione che serve perché tutto il resto del documento si legga come loro geometria.
+
+\begin{defn}[Le due leggi: aggiornamento e invariante]
+\noindent\textsc{$\Lt$: aggiornamento per composizione monotona.} Lo stato si aggiorna lungo una traiettoria:
+\[
+s_{n+1} \;=\; s_n \oplus a_n.
+\]
+L'operazione $\oplus$ tiene $s_n$ come ingresso. La traiettoria genera, atto per atto, una totalità di obbligazioni implicite. L'invariante di $\Lt$ è
+\[
+\Phii \;=\; \text{totalità delle obbligazioni implicite coerenti con la traiettoria},
+\]
+conservato finché non viene saldato atto contro atto. Un atto onorato libera $\Phii$ in un punto e lo rideposita altrove. $\Phii$ si trasforma. Non cresce in modo monotono. $\Lt$ è la legge che mantiene $\Phii$ ben definito attraverso ogni aggiornamento.
 
 \medskip
-\noindent\textsc{Conservazione di accountability} ($\Lt$). Lo spazio è la storia: eventi, scelte, persone, atti compiuti. La legge: il sé presente risponde del sé passato. ``Io sono stato lì'' deve restare vero. L'invariante è la coerenza temporale, che chiameremo $\Phii$: il peso accumulato sulla traiettoria, conservato atto contro atto.
 
-\medskip
-\noindent\textsc{Conservazione di configurazionalità} ($\LP$). Lo spazio è il pool dei destinatari, con cardinalità, ruoli, priorità, supply, threat. La legge: il sé presente resta adeguato alla configurazione corrente. ``Questa è la disposizione adesso'' deve restare coerente. L'invariante è la mappa funzionante, che chiameremo $\Kappaa$: la configurazione del pool, conservata sotto ogni aggiornamento locale.
+\noindent\textsc{$\LP$: aggiornamento per proiezione.} Lo stato si aggiorna per proiezione della configurazione corrente del pool:
+\[
+s_{n+1} \;=\; \kappa(P_n).
+\]
+L'operazione $\kappa$ proietta la configurazione $P_n$ --- cardinalità, ruoli, priorità, supply, threat --- sul soggetto. Lo stato precedente $s_n$ non entra come ingresso di $\kappa$. L'invariante di $\LP$ è
+\[
+\Kappaa \;=\; \text{configurazione del pool tale che le proiezioni } \kappa \text{ producano stati coerenti tra loro},
+\]
+conservato sotto ogni aggiornamento locale. $\LP$ è la legge che mantiene $\Kappaa$ ben definito attraverso ogni aggiornamento.
 \end{defn}
 
-\begin{oss}[$\Phii$ e $\Kappaa$ sono invarianti speculari, non duali]
-$\Phii$ è ciò che $\Lt$ mantiene fermo mentre la traiettoria procede. $\Kappaa$ è ciò che $\LP$ mantiene fermo mentre il pool si aggiorna. Sono i due invarianti delle due leggi, simmetrici per ruolo: ognuno è quello che la propria legge conserva. Non sono duali in senso categoriale --- il cap.~14 mostrerà che $\Lt$ e $\LP$ non hanno funtore tra loro, e quindi non esiste operazione di dualità formale che mandi $\Phii$ in $\Kappaa$ o viceversa. Sono speculari come funzione strutturale, non come costruzione. Ciascuno è la quantità che la propria legge protegge; entrambi insieme non si compongono in qualcosa di più grande.
+\begin{oss}[$\Phii$ e $\Kappaa$ sono di tipo diverso]
+Il punto del capitolo. $\Phii$ è un campo monodimensionale orientato: vive sul tempo proprio della relazione, ha un prima e un dopo, accumula lungo la traiettoria. $\Kappaa$ è un campo multidimensionale non orientato: vive sullo spazio del pool, non ha asse temporale interno, è una forma globale.
+
+Non sono la stessa quantità su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non simmetria di costruzione. La non-dualità categoriale --- non esiste funtore che mandi l'uno nell'altro --- è conseguenza della differenza di tipo: una cosa monodimensionale orientata e una cosa multidimensionale non orientata non si compongono in un unico invariante.
 \end{oss}
 
 \begin{principio}[Incompatibilità delle due leggi]
-Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza la traiettoria. $\LP$ aggiorna sempre, anche se la traiettoria si spezza. Non sono congiuntamente soddisfacibili. Non si compongono.
+Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza la traiettoria. $\LP$ aggiorna sempre, anche se la traiettoria si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. La radice strutturale dell'incompatibilità è la differenza di tipo tra $\Phii$ e $\Kappaa$: nessuna legge terza può conservare insieme un accumulo monodimensionale orientato e una configurazione multidimensionale non orientata.
 \end{principio}
 
-Le categorie $\CA$ e $\CG$, che costruirò più avanti, sono strumenti formali derivati dalle leggi: $\CA$ modella i morfismi di un pattern $\Lt$, $\CG$ quelli di un pattern $\LP$. L'incompatibilità funtoriale che mostrerò dice una cosa sola: tra le due grammatiche non esiste traduzione.
+\paragraph{Tutto il resto è geometria di $\Phii$ e $\Kappaa$.} Chiave di lettura per le parti che seguono. Il tempo relazionale è il flusso di $\Phii$. Le categorie $\CA$ e $\CG$ sono le grammatiche categoriali di $\Phii$ e $\Kappaa$. La Free Monad è $\kappa$ scritta come sintassi. La funzione di selezione è il filtro che $\LP$ impone per proteggere $\Kappaa$ da argomenti con $\Phii$ propria. Le metriche $\gA$ e $\gG$ sono come $\Phii$ e $\Kappaa$ si misurano. La sospensione strutturale è $\Phii$ depositato che $\Kappaa$ non ha grammatica per saldare. La canonicità asimmetrica è la differenza di tipo letta sui tipi formabili. La mappa di osservazione $\Obs$ è il tentativo di scrivere una legge nel linguaggio dell'altra: i suoi due fallimenti sono manifestazioni della differenza di tipo. Nessuno di questi è livello indipendente. Sono ciò che le leggi producono quando agiscono. Cambia la legge, cambia tutto in blocco. L'analogia, presa da lontano: in relatività generale il tempo non è un asse indipendente che precede la struttura del campo --- emerge dalla curvatura. Qui è lo stesso. Le leggi sono il campo. Il resto è metrica.
 
-\paragraph{Una sola legge per struttura, tutto il resto è epifenomeno.} Una chiave di lettura, valida per tutto quello che segue. In questo documento c'è un solo livello fondamentale: la legge di conservazione. $\Lt$ e $\LP$ sono quel livello. Tutto il resto --- il tempo che le relazioni generano, le categorie $\CA$ e $\CG$, la sintassi del copione, il manifest sul pool, l'assenza del modello dell'altro, perfino le firme fenomenologiche come la pienezza del momento o la sottigliezza del ponte --- è \emph{epifenomeno} delle leggi: è quello che le leggi producono quando agiscono. Non sono dimensioni parallele alla legge; sono ciò che la legge esercitata fa emergere. L'analogia migliore, presa da lontano: in relatività generale il tempo non è un asse indipendente che precede la struttura del campo --- emerge dalla curvatura, e gli osservatori dentro il campo misurano il loro tempo proprio come conseguenza della struttura, non come dato a sé. Qui è lo stesso. Cambia la legge, cambiano tutti gli epifenomeni di colpo. Il prossimo capitolo deriva il primo e più immediato di questi epifenomeni --- il tempo che la relazione genera.
+\medskip
+
+\noindent Il prossimo capitolo deriva il primo epifenomeno --- il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
 
 \chapter{Il tempo relazionale}
 
-Le leggi appena definite, quando vengono esercitate in una relazione, producono come epifenomeno un \emph{tempo proprio del rapporto}. Non un parametro esterno, non l'asse del calendario: un tempo che la relazione genera mentre accade. Una scansione interna di prima e dopo che non coincide con quella dell'orologio, e che ha sue regole di sospensione, ripresa, accumulo. Le proprietà di questo tempo --- se si forma, se si accumula, di che gittata è --- non sono indipendenti dalla legge: dipendono interamente da \emph{quale} legge è attiva. Si tratta dunque di un epifenomeno nel senso pieno --- emerge dall'esecuzione della legge, e cambia immediatamente se cambia la legge che lo genera.
+Le due leggi, esercitate in una relazione, producono come epifenomeno un \emph{tempo proprio del rapporto}. Non l'asse del calendario. Un tempo che la relazione genera mentre accade, con regole proprie di formazione, sospensione, accumulo. La forma di questo tempo dipende dalla legge che lo genera. Sotto $\Lt$ è il flusso di $\Phii$ lungo la traiettoria. Sotto $\LP$ non si forma --- $\Kappaa$ non ha asse temporale orientato.
 
-Una premessa, prima di derivare. Il tempo che la relazione genera richiede co-generazione: entrambe le strutture in interazione devono contribuire a produrlo nello stesso registro. Una relazione che non genera tempo proprio non è una relazione più corta --- è una relazione che non si è formata come tempo. La distinzione importa: tra ``si è interrotta'' e ``non si è formata'' c'è la stessa differenza che tra una linea spezzata e nessuna linea.
+Una premessa. Il tempo che la relazione genera richiede co-generazione: entrambe le strutture devono contribuire nello stesso registro. Una relazione che non genera tempo proprio non è una relazione più corta. È una relazione che non si è formata come tempo. Tra ``si è interrotta'' e ``non si è formata'' c'è la stessa differenza che tra una linea spezzata e nessuna linea.
 
-\section*{$\Lt$ genera tempo relazionale}
+\section*{$\Lt$ genera tempo relazionale come flusso di $\Phii$}
 
-Sotto $\Lt$, il tempo relazionale tra due soggetti si forma quando ciascuno registra l'altro come irripetibile attraverso gli atti. Tecnicamente: quando $\mathrm{Id}_Y$ in $\CA$, dal lato di $X$ verso $Y$, non è banale --- $X$ tiene $Y$ come $Y$ attraverso ogni aggiornamento; e specularmente $\mathrm{Id}_X$ in $\CA$, dal lato di $Y$ verso $X$, non è banale. Quando entrambe le registrazioni sono presenti, gli atti che $X$ e $Y$ si scambiano si depositano in un tempo proprio della relazione: si accumulano, si ordinano, lasciano traccia. La relazione acquisisce un \emph{prima} e un \emph{dopo} interni, indipendenti dall'asse del calendario.
+Sotto $\Lt$, il tempo relazionale tra due soggetti si forma quando ciascuno registra l'altro come irripetibile attraverso gli atti. In $\CA$: $\mathrm{Id}_Y$ dal lato di $X$ non è banale, e specularmente $\mathrm{Id}_X$ dal lato di $Y$. Quando entrambe le registrazioni sono presenti, gli atti scambiati si depositano in un tempo proprio della relazione. Si accumulano. Si ordinano. La relazione acquista un \emph{prima} e un \emph{dopo} interni, indipendenti dall'asse del calendario. Questo deposito \emph{è} $\Phii$ che scorre nella relazione: peso di obbligazioni implicite che la traiettoria genera, conservato finché non viene saldato atto contro atto.
 
-Questo spiega un'osservazione che dalla prosa ordinaria appare paradossale. Tra l'escalation --- Tommaso che raggiunge $A$ al parco a Mestre con la minaccia di $F$ per interposta persona --- e Vicenza passano sei mesi di calendario. Dal lato di $A$, in quei sei mesi il tempo relazionale non si è mosso: era rimasto puntato all'ultimo atto registrato, alla minaccia. Quando $N$ lo porta a Vicenza per l'aperitivo, sei mesi dopo, $A$ non sta riprendendo dopo una pausa: sta continuando da dove era stato sospeso. L'ariete che pronuncia quella sera non è una reazione a un nuovo episodio --- è l'atto successivo dell'unica relazione che, dal suo lato, è in corso. Non c'era da ricollegare i sei mesi di calendario perché quei sei mesi non appartenevano al tempo proprio della relazione: appartenevano all'orologio, e l'orologio non è il tempo che la relazione produce. La fenomenologia di $A$ a Vicenza --- ``come se non fosse passato tempo'' --- non era illusione: era la registrazione corretta del fatto che il tempo proprio della relazione, sotto $\Lt$, non scorre con l'orologio. Scorre con gli atti.
+Da qui un'osservazione che dalla prosa ordinaria appare paradossale. Tra l'escalation di Mestre --- Tommaso al parco con la minaccia di $F$ per interposta persona --- e Vicenza passano sei mesi di calendario. Dal lato di $A$, in quei sei mesi il tempo relazionale non si è mosso. Era rimasto puntato all'ultimo atto registrato, alla minaccia. Quando $N$ lo porta a Vicenza, sei mesi dopo, $A$ non sta riprendendo dopo una pausa. Sta continuando da dove era stato sospeso. L'ariete che pronuncia quella sera è l'atto successivo dell'unica relazione che, dal suo lato, è in corso. La fenomenologia di $A$ a Vicenza --- ``come se non fosse passato tempo'' --- non era illusione. Era la registrazione corretta del fatto che il tempo proprio sotto $\Lt$ non scorre con l'orologio. Scorre con gli atti. Più precisamente: $\Phii$ era rimasto depositato sulla traiettoria, in attesa di un atto di saldo che non era arrivato.
 
-Questo spiega anche, in negativo, perché alcuni rapporti che si interrompono senza essere stati ``chiusi'' restano vivi nel tempo proprio di chi li ha vissuti, per anni: il tempo della relazione è ancora puntato all'ultimo atto registrato, in attesa di un atto successivo che non arriva. Non è nostalgia: è una proprietà del tempo che $\Lt$ genera. Si chiude solo se viene chiuso \emph{atto contro atto}, non se viene dimenticato.
+Stessa proprietà in negativo. Rapporti che si interrompono senza essere stati \emph{chiusi atto contro atto} restano vivi nel tempo proprio di chi li ha vissuti, per anni. $\Phii$ è ancora lì, puntato all'ultimo atto registrato. Non è nostalgia. È la forma del tempo che $\Lt$ genera. Si chiude solo se viene chiuso, non se viene dimenticato.
 
 \section*{$\LP$ non genera tempo relazionale di lunga gittata}
 
-Sotto $\LP$ la cosa è diversa, e non per gradi --- per natura. $\LP$ produce, durante l'esecuzione del copione, un ordine sequenziale di passi: pianto, bagno, uscita algida, rientro sulla strada. Quell'ordine ha un prima e un dopo, ma è un ordine \emph{causale di esecuzione}, non un tempo che si accumula. Il bagno non porta dentro il peso del pianto: è solo il passo successivo del copione. Nessun atto carica il successivo. Nessun deposito si forma. Quando l'esecuzione termina --- per \textsc{Discard}, per cambio di configurazione del pool, per qualunque ragione faccia chiudere il copione corrente --- il tempo prodotto da quell'esecuzione non sopravvive come tempo proprio della relazione. Si esaurisce con l'esecuzione.
+Sotto $\LP$ la cosa è diversa per natura, non per gradi. La differenza viene dalla forma di $\Kappaa$: una configurazione globale senza asse temporale orientato non può accumulare lungo una direzione che non ha. $\LP$ produce, durante l'esecuzione del copione, un ordine sequenziale di passi --- pianto, bagno, uscita algida, rientro sulla strada. Quell'ordine ha un prima e un dopo, ma è ordine \emph{causale di esecuzione}, non un tempo che si accumula. Il bagno non porta dentro il peso del pianto: è il passo successivo del copione. Nessun atto carica il successivo. Nessun deposito si forma. Quando l'esecuzione termina --- per \textsc{Discard}, per cambio di configurazione, per qualunque ragione faccia chiudere il copione corrente --- il tempo prodotto da quell'esecuzione non sopravvive. Si esaurisce con l'esecuzione.
 
-Sei mesi dopo, quando $N$ dice ``andiamo a Vicenza, Greta ci ha invitati per un aperitivo'', dal lato $\LP$ non è la stessa relazione che riprende: è una nuova esecuzione del copione, su un pool corrente che ha riportato $A$ in cima alla classifica come argomento disponibile. Il vettore è $N$ --- nominalmente l'argomento principale del pool, di fatto il tramite che riporta $A$ dentro un'esecuzione. Nessuna ripresa dall'ultimo atto, perché ``ultimo atto'' è una categoria del tempo che $\LP$ non genera. Solo: un argomento è ridiventato disponibile, ed è arrivato sulla mappa attraverso un altro argomento. Il copione su $A$ riparte da \textsc{Idealize}.
+Sei mesi dopo, quando $N$ dice ``andiamo a Vicenza, Greta ci ha invitati'', dal lato $\LP$ non è la stessa relazione che riprende. È una nuova esecuzione del copione, su un pool che ha riportato $A$ in cima alla classifica come argomento disponibile. Il vettore è $N$. Nessuna ripresa dall'ultimo atto, perché ``ultimo atto'' è una categoria del tempo che $\LP$ non genera. Un argomento è ridiventato disponibile. Il copione su $A$ riparte da \textsc{Idealize}.
 
-Non è amnesia: la memoria fattuale c'è, lei sa cosa è successo prima. Ma sapere e generare-tempo-relazionale sono due cose diverse. La memoria fattuale è un dato del pool; il tempo relazionale è il prodotto di un canone che $\LP$ non eseguirebbe senza deformarsi.
+Non è amnesia. La memoria fattuale c'è: lei sa cosa è successo prima. Sapere e generare-tempo-relazionale sono cose diverse. La memoria fattuale è un dato del pool. Il tempo relazionale è il prodotto di un canone che $\LP$ non eseguirebbe senza deformare $\Kappaa$.
 
 \begin{oss}[$\Lt$ accumula tracce, non dati]
 La memoria di $\Lt$ non è archivio. Non conserva parole, conserva quello che le parole hanno fatto. La pioggia che bagna le 21:35 a causa del pianto delle 21:30 non è una registrazione testuale del pianto: è il peso che l'atto precedente ha depositato nello stato successivo, accumulo di $\Phii$ sulla traiettoria.
@@ -455,14 +475,12 @@ $\LP$ è opaca all'altro --- nessun accesso al dentro di Endimione (cap.~30). $\
 
 \section*{Incompatibilità temporale}
 
-Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio 9.3 acquista una forma più specifica: i due tempi che generano non si saldano in un tempo terzo, condiviso. La componibilità che fallisce non è solo logica --- è temporale.
+Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio~10.3 acquista una forma temporale: i due tempi che generano non si saldano in un tempo terzo. Dal lato $\Lt$, il flusso di $\Phii$ procede in attesa di essere chiuso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna componibile con l'accumulo che $\Lt$ sta generando dall'altra parte. Il tempo terzo richiederebbe co-generazione nello stesso registro. Non c'è.
 
-Dal lato $\Lt$, il tempo proprio della relazione si forma e procede, in attesa di essere chiuso o ripreso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna che contribuisca al tempo che $\Lt$ sta generando dall'altra parte. Il tempo che $\Lt$ produce attende riscontro; il riscontro che arriverebbe da $\LP$ non è nello stesso registro, e non si salda. Non c'è ``tempo della nostra relazione'' come oggetto condiviso, perché un oggetto condiviso richiede co-generazione, e la co-generazione richiede che entrambe le strutture producano nel medesimo registro temporale. Non lo fanno.
-
-Questa è la sostanza fenomenica del fastidio che A sentiva mentre la relazione era in corso, e che ha impiegato anni a nominare. Non era inquietudine generica, non era gelosia, non era insicurezza. Era la registrazione, in tempo reale, dell'impossibilità di generare un tempo terzo: $A$ produceva accumulo, e dall'altra parte non veniva prodotto niente di componibile con quell'accumulo. La relazione viveva come due tempi paralleli, mai sovrapposti. Da fuori --- e da dentro $\Lt$ --- è naturale leggerla come fragilità del rapporto, come segnale che qualcosa va aggiustato. Da dentro la struttura formale del documento, è altro: è la conseguenza diretta dell'incompatibilità delle due leggi sul piano temporale.
+Questa è la sostanza del fastidio che $A$ sentiva mentre la relazione era in corso, e che ha impiegato anni a nominare. Non inquietudine generica, non gelosia, non insicurezza. La registrazione in tempo reale di un fatto strutturale: $A$ accumulava $\Phii$, dall'altra parte non veniva prodotto niente di componibile con quell'accumulo. La relazione viveva come due tempi paralleli, mai sovrapposti.
 
 \begin{principio}[Sostituibilità degli argomenti come conseguenza temporale]
-Se il tempo relazionale non si accumula su un argomento, l'argomento è sostituibile senza traccia. Il copione, eseguito su $F$ a quattordici anni, su $T$ a sedici, su $N$ a diciotto, è lo stesso copione perché in nessuno dei tre casi il tempo proprio della relazione accumula. Nessuno dei tre è speciale nel senso di $\Lt$ --- non perché lui o lei non lo sia stato come persona, ma perché il meccanismo che renderebbe l'argomento non-sostituibile (la generazione di tempo relazionale cumulativo) non è attivo. La Free Monad che il documento articolerà più avanti (cap.~15) come modello sintattico del copione è conseguenza di questa proprietà temporale: una struttura che non accumula tempo è una struttura libera nei propri argomenti.
+Se il tempo relazionale non si accumula su un argomento, l'argomento è sostituibile senza traccia. Il copione eseguito su $F$ a quattordici anni, su $T$ a sedici, su $N$ a diciotto è lo stesso copione: in nessuno dei tre casi il tempo proprio della relazione accumula. Nessuno dei tre è speciale nel senso di $\Lt$ --- non perché lui non lo sia stato come persona, ma perché il meccanismo che renderebbe l'argomento non-sostituibile (l'accumulo di $\Phii$ lungo la traiettoria) non è attivo. La Free Monad (cap.~15) come modello sintattico del copione è conseguenza di questa proprietà: una struttura che non accumula $\Phii$ è una struttura libera nei propri argomenti.
 \end{principio}
 
 \chapter{$\LP$ come modello integro}
