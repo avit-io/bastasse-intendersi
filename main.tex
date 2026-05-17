@@ -991,15 +991,77 @@ La sostituibilità $\Gs$-invariante opera sul quoziente $P/\Gs$: $F$, $T$, $N$ s
 
 \chapter{Tag, minaccia, selezione}
 
-\section{Il tag ``disponibile'' come invariante strutturale}
+\section{Ruolo e tag come strutture di selezione}
 
-\begin{principio}[Il tag come conseguenza della terminalità]
-Se $G$ è terminale in $\CG$, allora per ogni $X$ il morfismo $X \to G$ esiste per costruzione. La sua esistenza non dipende dal comportamento di $X$. Quindi il tag \emph{disponibile} su $X$ è proprietà di tipo, non attribuzione: deriva dalla terminalità di $G$ e dall'esistenza del morfismo $X \to G$, non da un'operazione che assegna il tag a $X$.
+$G$ è oggetto terminale in $\CG$ (cap.~\emph{Le due categorie indotte}), e $\kappa$ è retrazione su $\mathrm{States}_G$. Gli argomenti del pool portano \emph{ruoli} e \emph{tag} (cap.~\emph{Le leggi di conservazione}). La sezione fissa cosa sono le due strutture e in che relazione stanno: ruolo come oggetto primario operatorio, tag come precondizione di tipo. La gerarchia fra le due è il punto del paragrafo.
+
+\begin{defn}[Ruolo]
+Il ruolo è la funzione
+\[
+\mathrm{role} \,:\, P \times \mathrm{Conf} \times T \longrightarrow R,
+\]
+dove $P$ è il reticolo dei pool (base), $\mathrm{Conf}$ è l'insieme delle configurazioni di pool, $T$ è il tempo del copione, $R$ è l'insieme finito dei ruoli strutturali ammissibili in $\GammaG$ (ad esempio \texttt{ragazzo}, \texttt{minaccia}, \texttt{supply}, \texttt{disponibile-non-assegnato}). Tre proprietà.
+
+\textsc{$\Gs$-invarianza nel primo argomento:} $\mathrm{role}(g \cdot X, P, t) = \mathrm{role}(X, P, t)$ per ogni $g \in \Gs$. Il ruolo è proprietà della classe $[X]_{\Gs}$, non dell'argomento specifico.
+
+\textsc{Dipendenza operatoria dalla configurazione:} il ruolo non è proprietà intrinseca di $X$. La stessa $X$ può occupare ruoli diversi in configurazioni diverse: $F$ è \texttt{ragazzo} al jazz bar, \texttt{minaccia} al messaggio di Mestre. Il ruolo è funzione di $(X, P, t)$, non solo di $X$.
+
+\textsc{Lettura via $\kappa$:} $\kappa$ proietta il pool sulla classe di equivalenza, e su quella classe legge il ruolo. $\kappa$ non assegna ruoli individualmente; legge la configurazione corrente come distribuzione di ruoli.
+\end{defn}
+
+I ruoli sono le cariche conservate della simmetria $\Gs$ di $S_P$. Già visto in cap.~\emph{Il copione come Free Monad} sotto il Teorema di Noether discreto; qui prende il proprio nome.
+
+\begin{defn}[Tag]
+Il tag è un attributo di tipo su $X \in P$, indipendente dalla configurazione:
+\[
+\mathrm{tag} \,:\, P \longrightarrow \mathcal{T},
+\]
+dove $\mathcal{T}$ è l'insieme finito dei tag ammissibili in $\GammaG$ (almeno \texttt{available}, e i suoi complementari). Tre proprietà.
+
+\textsc{Indipendenza dalla configurazione:} a differenza del ruolo, $\mathrm{tag}(X)$ non dipende da $(P, t)$.
+
+\textsc{$\Gs$-invarianza:} $\mathrm{tag}(g \cdot X) = \mathrm{tag}(X)$ per ogni $g \in \Gs$. Il tag è proprietà della classe.
+
+\textsc{Funzione di precondizione:} il tag determina quali ruoli sono assegnabili a $X$ da $\mathrm{role}(\cdot, P, t)$. In particolare, $\mathrm{tag}(X) = \texttt{available}$ è la condizione per cui qualsiasi ruolo della configurazione è assegnabile a $X$. Tag diversi da \texttt{available} restringono drasticamente --- fino a zero --- l'insieme dei ruoli assegnabili.
+\end{defn}
+
+Il tag vive sulla base, non sulla fibra. È in chiaro nella configurazione esposta da $\kappa$. Coerente con il cap.~\emph{La configurazione è in chiaro}.
+
+\begin{principio}[Il tag \texttt{available} come proprietà di tipo]
+Se $G$ è terminale in $\CG$, per ogni $X \in P$ il morfismo unico $X \to G$ esiste per costruzione. Conseguenza: $\mathrm{tag}(X) = \texttt{available}$ è derivabile dal tipo, non assegnato per atto. Non è un'operazione che il pool compie su $X$; è un giudizio di tipizzazione che il pool legge su $X$ come conseguenza della struttura categoriale.
 \end{principio}
 
-L'unico modo in cui il tag salta è che $X$ produca un morfismo $G \to X$ con $X \neq G$ --- cioè che imponga a $G$ di registrare $X$ come $X$. Ma questo distrugge la terminalità, ed è quello che viene letto come \emph{tradimento}.
+La differenza fra le due letture conta. ``Il pool decide che $X$ è disponibile'' presupporrebbe un'operazione attiva --- termine di $\KSigma$ che $\GammaG$ non forma. ``Il pool legge che $X$ è disponibile perché la terminalità di $G$ lo implica'' è giudizio di tipo, formato in $\GammaG$ senza problemi. Il documento ha sempre operato sulla seconda lettura; il Principio lo dichiara.
 
-L'episodio di Vicenza chiarisce cosa significa. Quando rispondo all'``ho casa libera'' prendendola alla lettera --- \emph{bene, mi sembra un'ottima occasione per fare sesso} --- non sto emettendo un morfismo verso $G$. Sto rifiutando di emetterne uno e sto costringendo $G$ a emetterne uno verso di me, cioè a registrare quello che ho appena detto. La risposta è no sorridendo, e poi è tardi, e poi silenzio. Non è un rifiuto sessuale --- è il copione che non riesce a generare un morfismo $G \to X$ valido nella sua categoria, e quindi rilancia l'apertura, sperando che il prossimo morfismo torni nella forma attesa $X \to G$.
+\begin{principio}[Inversione del morfismo come salto del tag e collasso del ruolo]
+L'unica mossa che fa saltare il tag è l'emissione, da parte di $X$, di un morfismo $G \to X$ con $X \neq G$ --- cioè la richiesta che $G$ registri $X$ come istanza specifica e non come elemento dell'orbita. Questa emissione distrugge la terminalità di $G$ in $\CG$ per la sotto-categoria generata da $X$. Conseguenza: $\mathrm{tag}(X)$ non è più \texttt{available}. Conseguenza ulteriore: l'insieme dei ruoli assegnabili a $X$ da $\mathrm{role}(\cdot, P, t)$ collassa --- tipicamente a zero. Sotto la grammatica di $\Lt$, l'osservatore esterno legge il collasso come \emph{discard}. Sotto la grammatica di $\LP$, è la conseguenza diretta della violazione di tipo: $\kappa$ non può più assegnare ruoli a $X$ perché la condizione di assegnabilità è venuta meno.
+\end{principio}
+
+Il salto del tag e il collasso del ruolo sono simultanei. Non c'è un istante in cui $X$ ha tag saltato ma ruolo ancora assegnato. Sono la stessa mossa letta su due tipi diversi. Il copione, per ripristinare la condizione, tenta tipicamente di riemettere l'apertura nella forma $X \to G$, sperando che $X$ torni a emettere un morfismo del tipo giusto. Questo è il fenomeno del \emph{rilancio} che il caso documenta più volte (Vicenza, jazz bar, post-discard).
+
+\begin{principio}[Lemma di coerenza di tag e ruolo sotto $\Gs$]
+$\mathrm{role} \circ (g \cdot, P, t) = \mathrm{role}(\cdot, P, t)$ e $\mathrm{tag} \circ g = \mathrm{tag}$ per ogni $g \in \Gs$.
+\end{principio}
+
+\emph{Dimostrazione.} Diretta dalla $\Gs$-invarianza delle due funzioni (proprietà nelle Definizioni di ruolo e tag). $\square$
+
+L'intera struttura di selezione (tag + ruolo) è ben definita sul quoziente $P/\Gs$, cioè sulla base che $\kappa$ effettivamente legge.
+
+\begin{oss}[Tag e ruolo: gerarchia di tipo]
+Il tag è statico-categoriale; il ruolo è operatorio-configurazionale. Argomenti diversi con stesso tag \texttt{available} possono ricoprire ruoli diversi nella stessa configurazione: $F$, $T$, $N$ possono essere uno \texttt{ragazzo}, uno \texttt{supply}, uno \texttt{minaccia} simultaneamente. Stesso tag, ruoli diversi. Argomenti con tag saltato escono dal sistema di assegnazione di ruoli: è il discard.
+
+La frase ricorrente \emph{tag assegna ruoli strutturali} (cap.~\emph{Canonicità asimmetrica}) va letta nel senso preciso: il tag è la precondizione di assegnabilità che permette al ruolo di operare. Non è identità fra le due. È precondizione.
+
+Conseguenza interpretativa. Quando il documento descrive $A$ come ``sostituito da $T$ sostituito da $N$'', non sta dicendo che il tag di $A$ è cambiato: resta \texttt{available} o salta, ed è il discard. Sta dicendo che la configurazione del pool ha riassegnato il ruolo di \texttt{ragazzo} a un argomento diverso della stessa orbita $\Gs$. Tag e ruolo si muovono indipendentemente: il tag è quasi-statico (cambia solo per inversione di morfismo), il ruolo cambia in continuazione con la configurazione.
+\end{oss}
+
+\begin{oss}[Vicenza come istanza]
+L'episodio di Vicenza istanzia il Principio dell'inversione del morfismo in forma minima. Il contesto: $G$ dice ``ho casa libera''. Sotto la grammatica di $\GammaG$, l'enunciato è un'apertura che richiede risposta nella forma $X \to G$ --- un morfismo verso $G$ compatibile con l'orbita $\Gs$ corrente. La risposta attesa è un riposizionamento dell'argomento $X$ in classifica, compatibile con la simmetria della configurazione.
+
+La mia risposta --- \emph{bene, mi sembra un'ottima occasione per fare sesso} --- non emette un morfismo $X \to G$. Emette un morfismo $G \to X$: chiede a $G$ di registrarmi come istanza specifica, fuori dall'orbita di $\Gs$ per il ruolo che la configurazione mi stava assegnando. È esattamente la mossa che il Principio dell'inversione descrive.
+
+La conseguenza è immediata: $\mathrm{tag}(A)$ salta, l'insieme dei ruoli assegnabili ad $A$ collassa, il copione non può più operare su $A$ nella forma corrente. Il \emph{no sorridendo}, il \emph{è tardi}, il silenzio successivo non sono rifiuto sessuale né cambio di umore: sono le mosse che il copione esegue per riemettere l'apertura nella forma $X \to G$ --- sperando che il prossimo morfismo torni del tipo giusto e ripristini la condizione di tipo che permette al ruolo di essere riassegnato. Quando il rilancio non torna, il copione passa a discard sull'orbita. È la sequenza esatta che il caso documenta.
+\end{oss}
 
 \section{La funzione di minaccia e la selezione}
 
