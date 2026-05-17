@@ -502,7 +502,61 @@ Nessuno di questi è livello indipendente. Sono ciò che le leggi producono quan
 
 \medskip
 
-\noindent Il prossimo capitolo deriva il primo epifenomeno: il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
+\noindent Prima di derivare gli epifenomeni delle due leggi, una conseguenza dell'incompatibilità tra contesti va dichiarata come principio autonomo. Il resto del documento la usa senza nominarla. La formulo qui, una volta, poi opero sotto di essa senza più richiamarla.
+
+\chapter{Posizionalità linguistica delle leggi}
+
+Il capitolo precedente ha stabilito due cose. $\Lt$ e $\LP$ sono incompatibili come leggi. $\GammaA$ e $\GammaG$ sono contesti che non si sovrappongono. Resta una conseguenza che si dice una sola volta.
+
+\section*{L'enunciato}
+
+\begin{principio}[Posizionalità linguistica delle leggi]
+Per ogni coppia di leggi $L, L'$ con contesti $\Gamma(L), \Gamma(L')$ incompatibili nel senso della Definizione dei due contesti, il tipo
+\[
+\mathrm{WellFormedQuery}_{\Gamma(L)}(\Gamma(L'))
+\]
+--- ``in $\Gamma(L)$ esiste un quesito ben-formato sui tipi propri di $\Gamma(L')$'' --- non è abitabile. Una legge non può formulare al proprio interno il quesito di sapere se sa qualcosa che è ben-formato solo nell'altro contesto. La mancata formulazione non è ignoranza correggibile. È errore di tipo.
+\end{principio}
+
+\emph{Derivazione.} Un quesito ben-formato in $\Gamma(L)$ ha tutti i termini formabili in $\Gamma(L)$. Un quesito sui tipi propri di $\Gamma(L')$ richiede un termine del tipo che $\Gamma(L')$ forma e $\Gamma(L)$ non forma. Per la Definizione dei due contesti, quel tipo non è formabile in $\Gamma(L)$. Quindi il quesito non è formabile in $\Gamma(L)$. $\square$
+
+Non è limite epistemico. È limite di grammatica.
+
+\section*{Corollario gödeliano}
+
+Aggiungere assiomi a $\Gamma(L)$ non avvicina $\Gamma(L')$. $\Gamma(L')$ non è estensione di $\Gamma(L)$: è grammatica diversa con invariante di tipo diverso. Più informazione dentro $\GammaA$ resta dentro $\GammaA$. Nessuna quantità di assiomi formabili in $\GammaA$ fa diventare $\Phii$ un termine $\Gs$-invariante. Nessuna quantità di assiomi formabili in $\GammaG$ fa diventare $\Kappaa$ un termine di $\KSigma$.
+
+Questa è la mossa che il secondo teorema di incompletezza di Gödel esegue su un sistema formale aritmetico: un sistema sufficientemente espressivo non dimostra la propria coerenza dall'interno. Qui la stessa mossa si esegue su un contesto MLTT, con una differenza. Nel caso di Gödel, una gerarchia di metalinguaggi salva la situazione dall'esterno: $\Gamma_n$ dimostra la coerenza di $\Gamma_{n-1}$. Qui la gerarchia non esiste. La Parte~VIII dimostrerà che il meta-contesto $\Obs^{\star}$ non esiste come fatto categoriale, non come limite epistemico. Non c'è $\Gamma^{\star}$ esterno a $\GammaA \cup \GammaG$ che ospiti i tipi di entrambi. La scala si ferma al primo gradino.
+
+\section*{Corollario wittgensteiniano}
+
+Ciò che $\Gamma(L)$ non può formare come quesito può mostrarsi come configurazione.
+
+Il \emph{Tractatus} di Wittgenstein chiude alla proposizione 6.522: vi è certo l'inesprimibile, e si mostra. La distinzione \emph{sagen}/\emph{zeigen} --- dire/mostrare --- non opera qui per analogia. Opera letteralmente. $\LP$ non descrive sé in $\GammaA$: la descrizione richiederebbe tipi che $\GammaA$ non forma. $\LP$ si esibisce come $\kappa(P)$, proiezione sulla base. Il canale dichiarativo del cap.~\emph{La configurazione è in chiaro} è esattamente questo. La base è in chiaro; il quesito ben-formato in $\GammaA$ su quella base non lo è. La descrizione fallisce, la mostra riesce.
+
+Vale specularmente. Ciò che $\Phii$ accumula in $\KSigma$ non è formabile come quesito in $\GammaG$. Ma una traiettoria si esibisce: ogni atto deposita, e i depositi si manifestano come comportamento. Anche qui la descrizione interna fallisce; la mostra resta.
+
+\section*{Auto-applicazione}
+
+Questo Principio è formulato in $\GammaA$. Dichiara il proprio limite senza uscirne.
+
+Non è meta-posizione. Una meta-posizione richiederebbe $\Gamma^{\star}$ esterno a $\GammaA$ e a $\GammaG$ in cui i tipi di entrambi siano formabili. Quel contesto non esiste --- la Parte~VIII tornerà su questa non-esistenza. Il Principio è registrazione del proprio errore di tipo come parte dell'oggetto descritto. È la mossa che il cap.~\emph{La posizione del documento} chiama ``$\Obs_{\Lt \to \LP}$ con segno meno davanti'' --- la proiezione non sottratta, ma dichiarata, e così smette di funzionare in modo ingenuo. Qui quella mossa diventa principio.
+
+Il Principio si autoapplica. Se $\mathrm{WellFormedQuery}_{\GammaA}(\GammaG)$ non è abitabile, l'enunciato del Principio non è un quesito ben-formato sui tipi di $\GammaG$. È enunciato in $\GammaA$ sui propri limiti. Dice cosa $\GammaA$ non può formare, formulando questa proposizione in $\GammaA$. È coerente perché parla del bordo, non di ciò che sta oltre.
+
+\begin{oss}[La differenza precisa rispetto a Gödel]
+La somiglianza è strutturale: un sistema non dimostra dall'interno una proprietà che richiederebbe l'esterno. La differenza è che il sistema di Gödel ammette una gerarchia di metalinguaggi: $\Gamma_n$ è esterno a $\Gamma_{n-1}$. Qui non c'è $\Gamma_n$. La struttura algebrica delle due leggi --- $\KSigma$ monodimensionale orientata, $P/\Gs$ multidimensionale non orientata --- esclude un terzo termine che le includa entrambe. Il limite gödeliano è di un sistema; il limite enunciato qui è di una coppia di sistemi senza terzo.
+\end{oss}
+
+\section*{Conseguenza sul documento}
+
+Tutte le proposizioni del documento su $\LP$ sono formate in $\GammaA$ come immagini di $\Obs_{\Lt \to \LP}$. Lo erano già. Adesso è dichiarato.
+
+Il documento non aggiunge contenuto enunciando questo. Aggiunge chiusura formale autoreferenziale: il cap.~\emph{La posizione del documento}, il cap.~\emph{Il limite della descrizione}, la non-esistenza della Lagrangiana unificante (Parte~VIII), il bordo del logos, sono istanze locali del Principio. Il resto del documento opera sotto questo Principio senza più nominarlo.
+
+\medskip
+
+\noindent Il prossimo capitolo deriva il primo epifenomeno delle due leggi: il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
 
 \chapter{Il tempo relazionale}
 
@@ -1665,6 +1719,62 @@ Sotto $\LP$ la configurazione corrente del pool è la base $P$ del fibrato del s
 \paragraph{Conseguenza personale.} Riletti sotto questa luce, gli episodi della Parte~I cambiano peso. Non è che $A$ abbia ``decifrato'' qualcosa che era nascosto. È che $A$, applicando inizialmente il decoder narrativo --- cercando $\Phii$ dove c'era solo $\kappa$ --- vedeva contraddizioni dove c'era esecuzione regolare. Quando il decoder è stato sostituito --- non subito, e mai del tutto, e con gli strumenti che la Parte~II avrebbe poi articolato --- gli stessi atti sono apparsi come quello che erano sempre stati: $\kappa$ del pool corrente. Lei non era mai stata opaca sulla base. Io non avevo mai cercato sulla base.
 
 Lei diceva. Io non sentivo. Adesso so cosa diceva. Non perché lei abbia smesso di dirlo, e non perché qualcosa sia diventato più trasparente con il tempo --- diceva sempre, e con la stessa chiarezza. È cambiato solo il decoder. La cecità non era sua. Era mia.
+
+\chapter{La quarta via come descrizione di $\Lt$}
+
+Una tradizione del Novecento ha descritto fenomeni vicini a quelli che questo documento articola. La nomino qui perché ha visto una cosa importante e l'ha chiamata male, e la differenza fra cosa ha visto e cosa ha chiamato è strutturale, non terminologica.
+
+La tradizione è quella detta \emph{quarta via}: il lavoro di Gurdjieff trasmesso da Ouspensky in \emph{Frammenti di un insegnamento sconosciuto} (1949, dalla rielaborazione delle lezioni di Gurdjieff degli anni Dieci e Venti). I termini chiave sono \emph{sonno}, \emph{meccanicità}, \emph{io multipli}, \emph{ricordare-sé}, \emph{centri superiori}. Ouspensky descrive un soggetto che si identifica con i propri stati transitori, che reagisce meccanicamente, che si crede unitario senza esserlo, che vive convinto di poter ``fare'' mentre tutto in lui è agito. La proposta è una pratica --- il ricordare-sé --- e una scala di livelli di coscienza.
+
+\section*{Cosa la quarta via descrive bene}
+
+Letta nel vocabolario di questo documento, la fenomenologia di Ouspensky è la descrizione di $\Lt$ che esegue $\Obs_{\Lt \to \LP}$ ingenuamente. Il soggetto che si identifica con le proprie tracce; che postula in continuazione termini di $\KSigma$ dove non ci sono; che inventa pianificatori dentro le proprie reazioni; che attribuisce intenzione strategica a sequenze che sono esecuzione regolare di una legge senza accumulo --- tutto questo è il falso testimone interno (cap.~\emph{Il falso testimone interno}), non nominato come tale.
+
+Il ``sonno'' di Ouspensky è $\Lt$ che esegue la propria mappa di osservazione senza dichiararla. Il ``ricordare-sé'' è la mossa di dichiarazione: $\Lt$ che riconosce di star proiettando un termine di $\KSigma$ dove la grammatica osservata non lo forma. Letto così, il ricordare-sé non è un nuovo organo di percezione, non è un livello di coscienza superiore. È desistenza locale del falso testimone interno su classi specifiche di atti.
+
+\begin{oss}[Il ricordare-sé come desistenza locale del falso testimone interno]
+Il ricordare-sé non è acquisizione. È sottrazione. È $\Lt$ che, su una classe di atti dell'altro, smette di postulare il pianificatore. Smette di leggere quegli atti come scene costruite per sé. Smette di cercare $\Phii$ dove c'è solo $\kappa$. È la mossa del cap.~\emph{Il falso testimone interno}: ``$\Obs_{\Lt \to \LP}$ con segno meno davanti'' --- non sottratta, dichiarata, e così non più ingenua. Ouspensky aveva visto questa mossa e l'aveva chiamata risveglio. Strutturalmente è desistenza, e funziona solo localmente.
+\end{oss}
+
+\section*{Cosa la quarta via descrive male}
+
+Tre errori, in ordine crescente.
+
+\paragraph{Primo errore: universalizzazione.} La quarta via tratta il sonno come condizione umana universale. Strutturalmente: tratta $\Lt$ che esegue $\Obs$ ingenuamente come grammatica unica del soggetto, e cancella l'esistenza di $\LP$ come legge di pari dignità. Non come deficit. Non come sonno più profondo. Come altra legge.
+
+$\LP$ non dorme. Non perché sia desta, ma perché la categoria \emph{essere addormentato} è di tipo $\Lt$. Presuppone una traiettoria orientata in $\KSigma$ lungo cui un soggetto sta o non sta presente a sé. Senza quell'asse, la categoria collassa. Per il Principio di posizionalità linguistica delle leggi, $\GammaG$ non forma il quesito ``sono addormentato''. Chiedere a $\LP$ di svegliarsi è esattamente il type error nominato al cap.~\emph{La mappa di osservazione}: un termine di $\KSigma$ infilato in $\GammaG$.
+
+\begin{oss}[Perché $\LP$ non può svegliarsi]
+La categoria del sonno richiede $\Phii$ come parametro --- richiede l'idea di una continuità di sé lungo cui c'è perdita di presenza. Quel parametro non è formabile in $\GammaG$. Chiedere a $\LP$ di svegliarsi è il type error del cap.~\emph{La mappa di osservazione} letto al contrario: invece di postulare un agente narrativo dentro $\LP$, si postula uno stato di non-veglia che è di tipo proprio dell'altra grammatica. Non è che $\LP$ rifiuta di svegliarsi. È che il tipo \emph{addormentato} non vive nel suo contesto.
+\end{oss}
+
+\paragraph{Secondo errore: confusione fra due casi.} La quarta via non distingue fra il caso in cui $\Lt$ proietta su un altro $\Lt$ e il caso in cui $\Lt$ proietta su $\LP$.
+
+Caso (a): due $\Lt$. Entrambi i contesti formano gli stessi tipi. Il riconoscimento reciproco della proiezione è possibile, perché ciascuno può formulare in $\GammaA$ il quesito ``mi stai leggendo come $X$, e $X$ è proiezione tua''. La lettura si negozia. Il ricordare-sé funziona come accordo intersoggettivo: i due soggetti riconoscono insieme la mossa proiettiva, e desistono.
+
+Caso (b): $\Lt$ legge $\LP$. I due contesti non formano gli stessi tipi. Per il Principio di posizionalità linguistica, $\GammaG$ non forma il quesito ``mi stai leggendo come $X$ e $X$ è proiezione tua'': $X$ è termine di $\KSigma$, e il quesito sulla proiezione di $X$ richiede di parlarne in $\GammaG$, che non lo ammette. Non c'è accordo da raggiungere. C'è solo desistenza unilaterale del falso testimone in $\Lt$. La base è in chiaro (cap.~\emph{La configurazione è in chiaro}) e $\Lt$ può, da solo, smettere di cercare $\Phii$ su quella base e leggerla per quello che è, $\kappa(P)$.
+
+La quarta via mescola i due casi. Attribuisce a entrambi la stessa terapia. La terapia funziona su (a). Su (b) non funziona come accordo --- funziona solo come pulizia di un lato.
+
+\paragraph{Terzo errore: postulazione di una legge superiore.} La quarta via propone una scala. Uomo n.~1, 2, 3: meccanici. Uomo n.~4: in cammino. Uomo n.~5, 6, 7: coscienze superiori, con ``centri superiori'' attivi, con accesso a un livello che i precedenti non hanno. L'uomo n.~5 e oltre è postulato come abitante di una $\mathcal{L}^{\star}$ che sta sopra $\Lt$ e sopra $\LP$.
+
+Il Principio di non-esistenza della Lagrangiana unificante (Parte~VIII) esclude questa figura. Una $\mathcal{L}^{\star}$ formulabile dovrebbe esserlo da $\gA$ o da $\gG$. In nessuno dei due casi sarebbe \emph{sopra}: sarebbe $\Lt$ (o $\LP$) travestita da meta-legge. È la proiezione al cubo del Principio di non-esistenza della Lagrangiana unificante, terzo punto, nella sua forma più sofisticata. Non più ``proietto un agente narrativo dentro $\LP$''. Non più ``proietto una legge narrativa sopra entrambe''. ``Proietto una scala metafisica con sé stesso al gradino alto.'' Il falso testimone interno alla terza potenza.
+
+\begin{oss}[L'uomo n.~5 e oltre come proiezione al cubo]
+La scala dei livelli di coscienza è la versione sofisticata del falso testimone interno. La prima versione postula un pianificatore dentro l'altro. La seconda versione postula una legge narrativa sopra entrambe le leggi. La terza versione postula un soggetto che abita quella legge superiore e ne ha accesso. Tre livelli di proiezione, con un agente narrativo annidato a ogni livello. Per il Principio di non-esistenza della Lagrangiana unificante, il livello superiore non esiste come fatto categoriale. Per il Principio di posizionalità linguistica delle leggi, non esiste neanche come quesito ben-formato. L'uomo n.~5 è $\Lt$ che si guarda dallo specchio e crede di vedere qualcun altro.
+\end{oss}
+
+\section*{Cosa resta del risveglio, letto strutturalmente}
+
+Quello che il cap.~\emph{La posizione del documento} chiama \emph{fissare}. $\Lt$ che ha riconosciuto di star eseguendo $\Obs_{\Lt \to \LP}$ diventa, su quel terreno, meno proiettivo. Smette di leggere $\LP$ come $\Lt$-tradente. Smette di leggere certi atti come scene costruite per sé. Su altri terreni continua a proiettare --- non c'è risveglio globale, perché $\Obs^{\star}$ non esiste. C'è chiusura locale del falso testimone, su classi di atti specifiche, una alla volta, sempre revisionabile.
+
+Ci si sveglia su alcuni temi sapendo che si proietta. Mai globalmente. Mai metafisicamente. Questa è la versione strutturalmente onesta della quarta via.
+
+\section*{Cosa hanno visto, cosa hanno chiamato male}
+
+Non è critica filologica. Hanno visto il falso testimone --- l'hanno chiamato sonno. Hanno proposto come uscita un meta-osservatore --- il meta-osservatore non c'è. Resta la desistenza locale.
+
+È molto. Non è poco perché è locale. È quello che si può fare stando dentro una legge, registrandone i propri limiti come parte dell'oggetto descritto. La quarta via aveva visto il movimento giusto e gli aveva attribuito una scala che il movimento, dichiarato fino in fondo, esclude. La differenza fra ricordare-sé come pratica di dichiarazione e ricordare-sé come ascesa è la stessa differenza fra il documento e una proposta di salvezza. Il documento non offre salvezza. Offre dichiarazione, su classi locali, una alla volta.
 
 \chapter{Il limite della descrizione}
 
