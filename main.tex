@@ -463,7 +463,7 @@ $\Kappaa$ vive sul quoziente $P/\Gs$. Struttura multidimensionale non orientata:
 Non sono lo stesso oggetto su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non simmetria di costruzione. La differenza di tipo è la radice strutturale dell'incompatibilità. Tutto il resto del documento è geometria di questa differenza.
 
 \begin{principio}[Incompatibilità delle due leggi]
-Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza $\Phii$. $\LP$ aggiorna sempre, anche se $\Phii$ si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. Nessuna legge terza può conservare insieme un accumulo monodimensionale orientato in $\KSigma$ e una classe di equivalenza multidimensionale sotto $\Gs$.
+Nelle relazioni con $R > 0$ --- quelle che attivano reciprocità --- le due leggi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza $\Phii$. $\LP$ aggiorna sempre, anche se $\Phii$ si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. Da $\GammaA$, nessuna legge terza costruibile può conservare insieme un accumulo monodimensionale orientato in $\KSigma$ e una classe di equivalenza multidimensionale sotto $\Gs$.
 \end{principio}
 
 \section*{Contesti MLTT generati dagli invarianti}
@@ -546,6 +546,20 @@ Il Principio si autoapplica. Se $\mathrm{WellFormedQuery}_{\GammaA}(\GammaG)$ no
 
 \begin{oss}[La differenza precisa rispetto a Gödel]
 La somiglianza è strutturale: un sistema non dimostra dall'interno una proprietà che richiederebbe l'esterno. La differenza è che il sistema di Gödel ammette una gerarchia di metalinguaggi: $\Gamma_n$ è esterno a $\Gamma_{n-1}$. Qui non c'è $\Gamma_n$. La struttura algebrica delle due leggi --- $\KSigma$ monodimensionale orientata, $P/\Gs$ multidimensionale non orientata --- esclude un terzo termine che le includa entrambe. Il limite gödeliano è di un sistema; il limite enunciato qui è di una coppia di sistemi senza terzo.
+
+C'è però un punto più sottile. La gerarchia gödeliana $\Gamma_0, \Gamma_1, \Gamma_2, \ldots$ --- dove esiste --- è interamente costruita dentro $\GammaA$. Salire da $\Gamma_n$ a $\Gamma_{n+1}$ è una mossa che $\Lt$ può eseguire: richiede ricorsività, auto-riferimento, costruzione di metalinguaggi --- proprietà native di $\GammaA$. Ogni piano della torre è ancora $\GammaA$. La torre è infinita e non esce dalla legge. Non raggiunge $\GammaG$ perché ogni suo gradino è ancora dello stesso materiale.
+
+Quindi il limite gödeliano e il limite di questo documento non sono sullo stesso piano: il primo è un limite che $\Lt$ incontra \emph{lavorando dentro} la propria legge; il secondo è il limite \emph{della legge stessa} come posizione. Il teorema di Gödel è un limite dentro $\Lt$. L'incompatibilità $\GammaA$/$\GammaG$ è il limite di $\Lt$.
+\end{oss}
+
+\begin{oss}[Due classi di limite in $\GammaA$]
+Il Principio governa due classi di limite che vanno tenute distinte.
+
+\emph{Prima classe: errori di tipo.} Proposizioni che richiedono termini di $\GammaG$ non formabili in $\GammaA$. Non è ignoranza correggibile con più informazione: il tipo manca. Queste proposizioni non sono vere né false in $\GammaA$: non sono formulabili.
+
+\emph{Seconda classe: proposizioni ben formate e intuizionisticamente indecidibili.} Proposizioni che $\GammaA$ può formulare ma il cui valore di verità non è costruibile in $\GammaA$. Esempi: ``$\LP$ ha una dimensione inaccessibile a $\GammaA$''; ``esiste una legge $\mathcal{L}_x$ con più dimensioni di $\Lt$ e $\LP$, di cui queste sono proiezioni''. Entrambe sono asserzioni esistenziali formulabili in $\GammaA$. Ma nessuna delle due è decidibile: costruire l'abitante del \emph{vero} richiederebbe formare il tipo della dimensione inaccessibile --- escluso dal Principio; costruire l'abitante del \emph{falso} richiederebbe vedere l'interezza di $\LP$ da $\GammaA$ --- escluso per la stessa ragione. In $\GammaA$, non c'è il terzo escluso per questa classe di proposizioni.
+
+Ne segue una distinzione che il documento mantiene ovunque ma non aveva ancora nominato esplicitamente. Le descrizioni di $\LP$ come ``priva di X'' sono enunciati del modello in $\GammaA$, non assenze metafisiche. La versione ontologica forte --- ``$\LP$ è priva di X in ogni forma possibile'' --- è indecidibile in $\GammaA$, non dimostrata. A titolo di esempio: la proposizione ``$\LP$ ha un osservatore che registra gli stati correnti in terza persona, senza unificazione narrativa in prima persona'' è ben formata in $\GammaA$, coerente con il comportamento osservato, e né provabile né refutabile da $\GammaA$. Il documento non la adotta né la esclude: la lascia nella classe delle proposizioni che il formalismo non chiude.
 \end{oss}
 
 \section*{Conseguenza sul documento}
@@ -907,7 +921,7 @@ Una conseguenza ontologica della formulazione variazionale, che il documento dic
 \emph{La mossa applicata qui.} Una volta che $S_t$ e $S_P$ sono scritte, il livello primitivo non sono gli agenti: sono le leggi. Gli agenti --- lei, io, $F$, $T$, $N$ --- non sono particelle che obbediscono a $\Lt$ o $\LP$. Sono storie degli invarianti sulle proprie configurazioni iniziali.
 
 \begin{principio}[Agenti come storie degli invarianti]
-Sotto $\Lt$, un agente è una storia di $\Phii$ su $\Sigma^{*}$: la sequenza dei depositi accumulati in $\KSigma$. Non è una particella che agisce su $\Phii$ --- è uno stato di $\Phii$ che si manifesta come comportamento. Sotto $\LP$, un agente è una storia di $\Kappaa$ su $P$: la sequenza delle classi di equivalenza sotto $\Gs$. Non è una particella che agisce su $\Kappaa$ --- è uno stato di $\Kappaa$ che si manifesta come comportamento. La grammatica newtoniana ``c'è qualcuno che fa qualcosa secondo una regola'' è descrittivamente intuitiva ma ontologicamente fuorviante: la regola è ciò che c'è; il qualcuno è ciò che la regola manifesta su questo dato.
+Da $\GammaA$: sotto $\Lt$, un agente è una storia di $\Phii$ su $\Sigma^{*}$: la sequenza dei depositi accumulati in $\KSigma$. Non è una particella che agisce su $\Phii$ --- è uno stato di $\Phii$ che si manifesta come comportamento. Sotto $\LP$, un agente è una storia di $\Kappaa$ su $P$: la sequenza delle classi di equivalenza sotto $\Gs$. Non è una particella che agisce su $\Kappaa$ --- è uno stato di $\Kappaa$ che si manifesta come comportamento. La grammatica newtoniana ``c'è qualcuno che fa qualcosa secondo una regola'' è descrittivamente intuitiva ma ontologicamente fuorviante: la regola è ciò che c'è; il qualcuno è ciò che la regola manifesta su questo dato.
 \end{principio}
 
 \emph{Conseguenze.} La grammatica della responsabilità nel senso forte --- agente come livello primitivo che subisce giudizio --- diventa fuori bersaglio: la responsabilità categoriale non si applica al livello dell'agente, perché l'agente non è il livello primitivo. Le conseguenze degli incontri tra leggi restano, e possono essere descritte; ma vanno descritte come incontri tra leggi, non come azioni di soggetti. Le categorie della manipolazione, della cattiveria, del calcolo strategico, presuppongono il livello newtoniano e cadono. Quello che resta è la composizione delle azioni sulle configurazioni iniziali. La Parte~VIII riprenderà questo punto sotto il segno dell'An\'anke.
@@ -917,13 +931,13 @@ Sotto $\Lt$, un agente è una storia di $\Phii$ su $\Sigma^{*}$: la sequenza dei
 \section*{Corollari sulle categorie}
 
 \begin{principio}[Incompatibilità funtoriale]
-Non esiste un funtore $F : \CA \to \CG$ che preservi la struttura di $\CA$.
+Da $\GammaA$, non esiste un funtore $F : \CA \to \CG$ che preservi la struttura di $\CA$.
 \end{principio}
 
 \emph{Derivazione.} Corollario della non-separabilità di $S_t$ vs. separabilità di $S_P$. Un funtore preserva identità e composizione. $\mathrm{Id}_X$ in $\CA$ vive sotto un'azione con memoria; il suo immagine in $\CG$ dovrebbe vivere sotto un'azione senza memoria. Nessuna assegnazione $F(\mathrm{Id}_X)$ riproduce la stazionarietà combinatoria di $S_t$ usando i termini separabili di $S_P$. La traduzione fallisce sulla struttura delle azioni, non solo sulle definizioni categoriali.
 
 \begin{principio}[Non-omotopia degli spazi di traiettorie]
-Gli spazi delle traiettorie di $\Lt$ e $\LP$ non sono omotopicamente equivalenti. I loro gruppi fondamentali non sono isomorfi.
+Da $\GammaA$, gli spazi delle traiettorie di $\Lt$ e $\LP$ non sono omotopicamente equivalenti. I loro gruppi fondamentali non sono isomorfi.
 \end{principio}
 
 \emph{Derivazione.} Corollario diretto dell'argomento combinatorio sopra. Due spazi con gruppi fondamentali non isomorfi non sono omotopicamente equivalenti. Quindi non esiste deformazione continua $L_\alpha$ tra le due leggi. La separazione non è locale sui morfismi: è globale sugli spazi di traiettorie.
@@ -1531,7 +1545,7 @@ Ogni incontro tra due strutture relazionali con metriche interne incompatibili p
 Il principio è simmetrico: non c'è un soggetto solo in modo sostantivo e un altro accompagnato. Entrambi i soggetti sono soli, e la loro solitudine è dello stesso tipo --- vivere in una stanza costruita con grammatica propria, in cui gli abitanti dell'altra stanza non possono entrare senza spendersi a perdita. La differenza tra le due solitudini non sta nella loro intensità o nella loro qualità intrinseca. Sta nell'asimmetria epistemica.
 
 \begin{principio}[Asimmetria epistemica]
-Un soggetto in $\CA$ può, in linea di principio, formare il giudizio \emph{vivo in una stanza, l'altra ne abita un'altra, le due stanze non si parlano}. Un soggetto in $\CG$ non può formare quel giudizio: il tipo \emph{l'altro è abitato da una struttura diversa dalla mia, irriducibile alla mia} non è formabile in $\GammaG$.
+Un soggetto in $\CA$ può, in linea di principio, formare il giudizio \emph{vivo in una stanza, l'altra ne abita un'altra, le due stanze non si parlano}. Da $\GammaA$, un soggetto in $\CG$ non può formare quel giudizio: il tipo \emph{l'altro è abitato da una struttura diversa dalla mia, irriducibile alla mia} non è formabile in $\GammaG$.
 \end{principio}
 
 L'asimmetria epistemica non è una gerarchia. Non è una versione raffinata del giudizio ``l'altra non capisce, io capisco''. È una conseguenza della curvatura interna delle due metriche. In $\CA$ l'identità non banale degli oggetti $\mathrm{Id}_X : X \to X$ permette di formare il tipo dell'alterità strutturale: $X$ può essere registrato come $X$, e l'altro può essere registrato come non-$X$, e da qui può nascere il giudizio sulla differenza tra le due strutture. In $\CG$ la terminalità di $G$ non lascia spazio all'identità non banale degli altri oggetti, e il tipo dell'alterità strutturale non si forma.
@@ -1685,7 +1699,7 @@ $\LP$ richiede che ogni aggiornamento preservi la mappa funzionante --- la confi
 \paragraph{Terza: non cumulatività del dolore.} Sotto $\Lt$ il dolore è cumulativo: una persona che ha sofferto perdite porta dentro le perdite, e quel portare dentro modula gli affetti nuovi anche quando nessuno lo nomina. Sotto $\LP$ il dolore è momento per momento. Una perdita produce dolore quando la configurazione del pool la rende attiva; quando la configurazione cambia, il dolore non è più esperito. Non è che si dimentica --- la memoria fattuale c'è. Quello che cambia è l'accesso esperienziale a quel dolore. La differenza ha conseguenze reali: chi vive sotto $\LP$ non porta i pesi dell'altra legge, e non porta nemmeno i benefici --- la sensazione di continuità, il senso del tempo guadagnato attraverso il dolore, la maturazione che $\Lt$ chiama crescita. Sono tutte categorie di $\Lt$. Sotto $\LP$ non c'è crescita nel senso temporale, perché non c'è l'asse rispetto al quale la crescita verrebbe misurata. C'è cambiamento di configurazione, e quel cambiamento ha le sue regole.
 
 \begin{principio}[Esperienza sotto $\LP$]
-Le tre proprietà --- pienezza momentanea, sottigliezza del ponte, non cumulatività del dolore --- non sono descrizioni parallele del fenomeno. Sono conseguenze deducibili dalla forma di $\LP$. Insieme implicano che un soggetto descritto da $\LP$ ha coscienza fenomenica piena ed è organizzato senza coscienza riflessiva-narrativa caricata.
+Da $\GammaA$: le tre proprietà --- pienezza momentanea, sottigliezza del ponte, non cumulatività del dolore --- non sono descrizioni parallele del fenomeno. Sono conseguenze deducibili dalla forma di $\LP$ come modellata in questo documento. Insieme implicano che un soggetto descritto da $\LP$ ha coscienza fenomenica piena ed è organizzato senza coscienza riflessiva-narrativa caricata.
 \end{principio}
 
 \section{Perché non è jukebox}
@@ -2140,7 +2154,7 @@ La metafora lagrangiana sviluppata finora suggerisce, se presa con leggerezza, u
 La tentazione va respinta, e non per cautela metodologica ma per una ragione strutturale che il documento ha già stabilito nei capitoli precedenti.
 
 \begin{principio}[Non-esistenza della Lagrangiana unificante]
-Non esiste una Lagrangiana $\mathcal{L}^\star$ da cui $\Lt$, $\LP$ e $\Sogno$ siano congiuntamente derivabili come specializzazioni o variazioni di un unico principio di azione. La domanda ``qual è la legge che governa in modo coprodotto le due leggi e il sogno?'' è ben posta nella grammatica del documento, ma non ha referente.
+Da $\GammaA$, non esiste una Lagrangiana $\mathcal{L}^\star$ da cui $\Lt$, $\LP$ e $\Sogno$ siano congiuntamente derivabili come specializzazioni o variazioni di un unico principio di azione. La domanda ``qual è la legge che governa in modo coprodotto le due leggi e il sogno?'' è ben posta nella grammatica del documento, ma non ha referente costruibile in $\GammaA$.
 \end{principio}
 
 \noindent\emph{Derivazione, in tre passi.}
