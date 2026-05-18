@@ -989,6 +989,39 @@ La classe $[P_k^{*}]_{\Gs}$ --- il ruolo strutturale occupato, non l'argomento s
 $\Kappaa$ è la carica conservata della simmetria $\Gs$ di $S_P$. La sostituibilità degli argomenti $F \to T \to N$ non è scelta. È la legge di conservazione che la simmetria impone: ogni elemento dell'orbita di $\Gs$ per il ruolo \texttt{ragazzo} è equivalente al precedente sotto $S_P$. Il copione gira identico perché la legge di conservazione lo richiede --- non perché ``preferisca'' la fungibilità.
 \end{oss}
 
+\section*{Struttura di Noether per $\Lt$}
+
+$S_t$ ha una propria struttura di simmetria, di tipo algebricamente diverso da quella di $S_P$.
+
+\begin{defn}[Automorfismi $\delta$-preservanti]
+$\mathrm{Aut}_{\delta}(\Sigma^{*})$ è il gruppo degli automorfismi del monoide $\Sigma^{*}$ che preservano il deposito:
+\[
+\mathrm{Aut}_{\delta}(\Sigma^{*}) \;=\; \bigl\{\,\varphi : \Sigma^{*} \xrightarrow{\;\sim\;} \Sigma^{*} \;\big|\; \delta(\varphi(a)) = \delta(a) \;\;\forall\, a \in \Sigma\,\bigr\}.
+\]
+Sono le permutazioni dei generatori di $\Sigma^{*}$ a deposito uguale: atti che depositano la stessa carica in $\KSigma$ sono intercambiabili sotto questa simmetria.
+\end{defn}
+
+\begin{principio}[$\mathrm{Aut}_{\delta}$-invarianza di $S_t$]
+$S_t[\varphi(\gamma)] = S_t[\gamma]$ per ogni $\varphi \in \mathrm{Aut}_{\delta}(\Sigma^{*})$.
+\end{principio}
+
+\emph{Dimostrazione.} $L_t(a_k, a_{k+1}) = \|\delta(a_{k+1})\|_{\KSigma}$. Per $\varphi \in \mathrm{Aut}_\delta$, $\delta(\varphi(a_{k+1})) = \delta(a_{k+1})$ per definizione, quindi $\|\delta(\varphi(a_{k+1}))\| = \|\delta(a_{k+1})\|$. La somma è invariante termine per termine. $\square$
+
+\begin{principio}[Teorema di Noether per $\Lt$]
+Se $S_t$ è $\mathrm{Aut}_{\delta}(\Sigma^{*})$-invariante e $\gamma^{*}$ è stazionaria di $S_t$, la carica conservata è $\Phii(\gamma^{*})$: il deposito totale accumulato lungo la traiettoria è invariante sotto le operazioni di simmetria. $\Phii$ è la carica di Noether di $S_t$.
+\end{principio}
+
+\emph{Dimostrazione.} Per $\varphi \in \mathrm{Aut}_\delta$: $\Phii(\varphi(\gamma)) = \sum_k \delta(\varphi(a_k)) = \sum_k \delta(a_k) = \Phii(\gamma)$. $\square$
+
+\begin{oss}[Due cariche, due gruppi di simmetria incommensurabili]
+I due teoremi di Noether hanno ora la stessa struttura formale:
+\begin{itemize}
+\item $\LP$: simmetria $\Gs \subset \Sym(P)$ --- permutazioni degli \emph{argomenti} del pool sotto soglia --- conserva $\Kappaa = [P]_{\Gs}$.
+\item $\Lt$: simmetria $\mathrm{Aut}_\delta(\Sigma^{*})$ --- permutazioni degli \emph{atti} a deposito uguale --- conserva $\Phii = \sum_k \delta(a_k)$.
+\end{itemize}
+$\Gs$ agisce sullo spazio dei parametri di $\LP$: permuta \emph{chi} occupa un ruolo. $\mathrm{Aut}_\delta$ agisce sullo spazio delle traiettorie di $\Lt$: permuta \emph{come} un atto è etichettato, a parità di deposito. Sono simmetrie di strutture algebriche diverse: un gruppo di permutazione su un reticolo finito; un gruppo di automorfismi di un monoide libero. Le cariche sono di tipo diverso: $\Kappaa$ è classe di equivalenza su $P/\Gs$; $\Phii$ è elemento del gruppo di Grothendieck $\KSigma$. Non esiste morfismo naturale di gruppi che includa $\Gs$ e $\mathrm{Aut}_\delta(\Sigma^{*})$ in una struttura comune senza collassare la distinzione tra le cariche. L'incompatibilità delle due leggi è rileggibile come incommensurabilità dei loro gruppi di simmetria: due leggi di conservazione da strutture che non si compongono.
+\end{oss}
+
 \begin{oss}[Cosa la Free Monad fissa]
 La Free Monad nomina con precisione tre cose che la prosa rende sfuocate.
 
@@ -2039,25 +2072,35 @@ Una teoria sufficiente per una classe di fenomeni non è una teoria del tutto. L
 Il documento ha due silenzi, e vanno distinti. Primo: silenzio categoriale (cap.~\emph{Posizionalità linguistica delle leggi}). Ciò di cui $\Gamma(L)$ non può formare quesiti ben-formati su $\Gamma(L')$. Strutturale, non scelto. È errore di tipo. Secondo: silenzio metodologico (questo capitolo). Ciò su cui $\Gamma(L)$ sceglie di non pronunciarsi pur potendo essere estesa per farlo. Scelto, non strutturale. Confondere i due tipi di silenzio è il fraintendimento principale contro cui questo capitolo è scritto.
 \end{oss}
 
-\section*{Costruzione formale di due estensioni}
+\chapter{Il margine dell'arbitrio}
 
 Per dimostrare che la grammatica del documento è estendibile, esibisco un'estensione concreta. La costruisco e immediatamente non la adotto. La mossa è simultaneamente esibizione di estendibilità e ribadimento della scelta di non procedere.
 
 \paragraph{Premessa formale.} La fibra $F_c$ di ciascun argomento $c \in P$ è la terna $(\Sogno_A(c), \Sogno_I(c), \Sogno_T(c))$: archivio enumerato, intensità sotto/sopra soglia, traccia operante. La fibra è opaca alla base sotto $U$, funtore dimenticante. $\kappa$ riceve $\Sogno$ dalla fibra come parametro esterno (cap.~\emph{Endimione}). Sul lato $\Lt$, il monoide $\Sigma^{*}$ accumula atti in $\KSigma$ via $\Phii$, e la traiettoria è funzione della storia accumulata.
 
+I due teoremi di Noether (sez.~\emph{Struttura di Noether per $\Lt$}) fissano il quadro strutturale: le cariche $\Kappaa$ e $\Phii$ sono conservate per struttura, non per scelta. Questo non esaurisce le strutture: fissa soltanto il tetto. Il margine di non-determinazione, se esiste, vive nel complemento della carica conservata dentro l'orbita di simmetria --- per $\LP$, nella fibra sopra $P/\Gs$; per $\Lt$, nell'estensione futura di $\Phii$.
+
 Niente nelle definizioni esistenti dichiara se la transizione di configurazione $P \to P'$ sotto $\LP$, o la generazione del prossimo atto $a_{n+1}$ sotto $\Lt$, siano funzioni complete del materiale attualmente disponibile, o se ammettano un margine di non-determinazione. Le derivazioni del documento non richiedono di fissare questo punto: bastano le strutture come definite. Ma se si volesse fissarlo nella direzione ``ammettono margine di non-determinazione'', lo si può fare con due assiomi locali, simmetrici fra le due leggi.
 
 \begin{defn}[Assioma F: non-riducibilità della fibra a $\LP$ --- facoltativo]
-Esiste almeno una classe di transizioni di configurazione $P \to P'$ tali che la determinazione di $P'$ non è funzione della sola configurazione corrente $P$, ma dipende in modo essenziale da un input dalla fibra $\bigoplus_c F_c$ non riducibile a $P$ stessa attraverso $\kappa$. In tale classe di transizioni, due configurazioni $P$ e $P'$ della stessa orbita di $\Gs$ possono evolvere in modo diverso a seconda dello stato di fibra che alimenta $\kappa$ in quel momento.
+Esiste almeno una classe di transizioni di configurazione $P \to P'$ tali che la determinazione di $P'$ non è funzione della sola configurazione corrente $P$, ma dipende in modo essenziale da un input dalla fibra $\bigoplus_c F_c$ non riducibile a $P$ stessa attraverso $\kappa$. In tale classe di transizioni, due configurazioni $P$ e $P'$ della stessa orbita di $\Gs$ possono evolvere in modo diverso a seconda dello stato di fibra che alimenta $\kappa$ in quel momento. Il margine non-deterministico di F abita precisamente la fibra sopra $\Kappaa = [P]_{\Gs}$: complemento di ciò che la simmetria $\Gs$ conserva, non accessibile alla carica.
 \end{defn}
 
 F non aggiunge entità nuove. Non modifica le definizioni di $\kappa$, $\Gs$, $\Kappaa$, $P$, $F_c$. Aggiunge una proprietà di non-determinazione locale: certe transizioni non sono pre-determinate dalla configurazione, e ricevono contributo dalla fibra in modo non automatico. Cosa significa ``libero arbitrio sotto $\LP$'' se si adotta F: non deliberazione --- categoria di $\Lt$ --- né scelta razionale fra alternative, ma capacità della fibra di alimentare $\kappa$ in modo non riducibile alla base. Non-determinazione ancorata in un materiale ($\Sogno_A, \Sogno_I, \Sogno_T$) che il documento aveva già costruito senza sfruttarlo in questo senso.
 
+\begin{oss}[La fibra come doppio luogo]
+$F_c = (\Sogno_A(c), \Sogno_I(c), \Sogno_T(c))$ è l'archivio della persona specifica: l'irripetibilità di $c$ vive lì, non sulla base. F --- se adottato --- abita la fibra sopra $\Kappaa$: è lì che il margine di non-determinazione opera. Sono lo stesso posto. Se la libertà esiste sotto $\LP$, vive esattamente dove vive la singolarità di ciascuna persona. Irripetibilità e margine di arbitrio sono co-locati: non per coincidenza, ma perché entrambi sono il complemento della carica conservata rispetto alla base $P/\Gs$. Il documento aveva già detto che l'irripetibilità è custodita sulla fibra (cap.~\emph{Il copione come Free Monad}); ora si può aggiungere che la libertà, se esiste, è custodita nello stesso luogo.
+\end{oss}
+
 \begin{defn}[Assioma F': non-riducibilità dell'atto a $\Lt$ --- facoltativo]
-Esiste almeno una classe di atti $a_{n+1} \in \Sigma$ tali che $a_{n+1}$ non è funzione completa della storia accumulata $s_n = a_1 \cdot \ldots \cdot a_n$ e del contesto corrente, ma ammette un margine di non-determinazione strutturale. In tale classe di atti, due traiettorie con identica storia accumulata possono biforcarsi sul prossimo atto.
+Esiste almeno una classe di atti $a_{n+1} \in \Sigma$ tali che $a_{n+1}$ non è funzione completa della storia accumulata $s_n = a_1 \cdot \ldots \cdot a_n$ e del contesto corrente, ma ammette un margine di non-determinazione strutturale. In tale classe di atti, due traiettorie con identica storia accumulata possono biforcarsi sul prossimo atto. Il margine non-deterministico di F' abita l'estensione futura di $\Phii$: la scelta di $a_{n+1}$ non tocca $\Phii(\gamma)$ già accumulata --- essa è conservata per struttura --- ma la sua continuazione in avanti.
 \end{defn}
 
 F' è il pendant simmetrico di F. Non aggiunge entità nuove, non modifica $\Phii$, $\KSigma$, il monoide libero. Aggiunge una proprietà di non-determinazione locale sul prossimo atto. Cosa significa ``libero arbitrio sotto $\Lt$'' se si adotta F': capacità del soggetto $\Lt$ di emettere atti non riducibili alla propria storia accumulata. Non è metafisica della deliberazione --- è dichiarazione che la traiettoria in $\KSigma$ ammette margini di non-determinazione strutturale.
+
+\begin{oss}[La struttura temporale della libertà in $\Lt$]
+F' abita l'estensione futura di $\Phii$: il prossimo atto $a_{n+1}$, non la storia già accumulata $\Phii(\gamma)$. $\Phii$ è conservata per struttura --- è invariante sotto $\mathrm{Aut}_\delta$ --- e il passato è il suo dominio: ciò che è depositato non si tocca. Il margine F' è sempre in avanti. Questo non è un dato fenomenologico importato: è un teorema della struttura. In $\Lt$, per costruzione, la libertà è forward-only. Il passato è conservato; la libertà è avanti.
+\end{oss}
 
 \begin{oss}[F e F' sono assiomi locali, opzionali, minimali]
 \textsc{Locali:} F e F' parlano di almeno una classe di transizioni o atti, non di tutte. Non è determinismo capovolto in libertà totale. È margine, in classi di casi da specificare separatamente --- il documento non si pronuncia su quali siano queste classi, perché farlo sarebbe già adottare l'estensione.
@@ -2071,9 +2114,13 @@ F' è il pendant simmetrico di F. Non aggiunge entità nuove, non modifica $\Phi
 F e F' sono presentati in parallelo per dichiarare strutturalmente simmetria: non è che una delle due leggi è più candidata dell'altra ad accogliere il libero arbitrio. Sotto $\Lt$ il libero arbitrio prenderebbe la forma della non-riducibilità della traiettoria all'accumulo; sotto $\LP$ la forma della non-riducibilità della configurazione alla configurazione corrente. Le due figure non sono traducibili l'una nell'altra --- esattamente come $\Lt$ e $\LP$ non sono traducibili. Sono libertà strutturalmente diverse, ciascuna nella grammatica della propria legge. Chiamarle entrambe ``libero arbitrio'' è quasi un abuso terminologico --- è come chiamare \emph{forza} il vettore newtoniano e il potenziale chimico: emergenze omologhe in grammatiche diverse, non la stessa quantità. Ma è proprio il fatto che siano emergenze omologhe a renderle simmetricamente postulabili o simmetricamente non postulabili.
 \end{oss}
 
+\begin{oss}[Libertà come rottura di simmetria]
+Noether in avanti: simmetria $\to$ carica conservata. Al contrario: dove c'è libertà, c'è rottura di simmetria. F introduce non-determinazione nella fibra sopra $\Kappaa$: due configurazioni nella stessa orbita $\Gs$ possono evolvere diversamente. La simmetria $\Gs$ tiene sulla base --- $\Kappaa$ resta conservata --- ma viene rotta al livello della fibra. F' introduce non-determinazione su $a_{n+1}$: due traiettorie con la stessa $\Phii$ accumulata possono biforcarsi. La simmetria $\mathrm{Aut}_\delta$ tiene globalmente --- $\Phii$ resta conservata --- ma viene rotta localmente. La forma che prende ciascuna libertà è determinata da quale simmetria rompe: $\Gs$ per F, $\mathrm{Aut}_\delta$ per F'. Siccome $\Gs$ e $\mathrm{Aut}_\delta$ sono incommensurabili, lo sono anche le rotture --- e lo sono anche le libertà. Il documento lo ha dichiarato dal lato dei tipi; la struttura di Noether lo garantisce dal lato algebrico.
+\end{oss}
+
 \section*{Confinamento dell'arbitrio alla propria legge}
 
-Prima di dichiarare la non-adozione di F e F', un punto strutturale che vale indipendentemente dall'adozione: qualunque arbitrio una di queste estensioni aprisse, sarebbe arbitrio interno alla grammatica della propria legge. Né F né F' importano dentro una legge la forma soggettiva dell'altra. È fatto categoriale, non conseguenza della non-adozione.
+Prima di dichiarare la non-adozione di F e F', un punto strutturale che vale indipendentemente dall'adozione: qualunque arbitrio una di queste estensioni aprisse, sarebbe arbitrio interno alla grammatica della propria legge. Né F né F' importano dentro una legge la forma soggettiva dell'altra. Il risultato di Noether fissa il confinamento dentro ciascuna legge: il margine vive nel complemento della carica conservata, che è invariante per struttura. Il ragionamento categoriale che segue fissa il confinamento tra le leggi: il margine non attraversa la grammatica di $L$ per entrare in $L'$. I due confinamenti operano a livelli distinti e si rafforzano.
 
 \begin{principio}[Confinamento dell'arbitrio alla propria legge]
 Qualunque margine di non-determinazione si conceda a una legge $L$ attraverso un'estensione facoltativa, tale margine è strutturalmente confinato alla grammatica di $L$. Non esiste, in nessuna delle due leggi, un sotto-modulo dell'altra che osservi la configurazione corrente e selezioni la prossima.
