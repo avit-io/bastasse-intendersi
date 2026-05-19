@@ -1022,6 +1022,24 @@ I due teoremi di Noether hanno ora la stessa struttura formale:
 $\Gs$ agisce sullo spazio dei parametri di $\LP$: permuta \emph{chi} occupa un ruolo. $\mathrm{Aut}_\delta$ agisce sullo spazio delle traiettorie di $\Lt$: permuta \emph{come} un atto è etichettato, a parità di deposito. Sono simmetrie di strutture algebriche diverse: un gruppo di permutazione su un reticolo finito; un gruppo di automorfismi di un monoide libero. Le cariche sono di tipo diverso: $\Kappaa$ è classe di equivalenza su $P/\Gs$; $\Phii$ è elemento del gruppo di Grothendieck $\KSigma$. Non esiste morfismo naturale di gruppi che includa $\Gs$ e $\mathrm{Aut}_\delta(\Sigma^{*})$ in una struttura comune senza collassare la distinzione tra le cariche. L'incompatibilità delle due leggi è rileggibile come incommensurabilità dei loro gruppi di simmetria: due leggi di conservazione da strutture che non si compongono.
 \end{oss}
 
+\begin{principio}[Identità del sé come invarianza della carica]
+Due stati $s, s'$ di uno stesso soggetto appartengono allo stesso sé se e solo se la legge che li conserva è la stessa e la carica è conservata nella transizione $s \to s'$.
+
+Sotto $\Lt$: $\Phii(s)$ e $\Phii(s')$ sono legati da un automorfismo $\delta$-preservante --- la transizione è interna a $\mathrm{Aut}_\delta(\Sigma^{*})$. Sotto $\LP$: $\Kappaa(s)$ e $\Kappaa(s')$ sono nella stessa orbita di $\Gs$ --- la transizione è interna a $\Gs$. In entrambi i casi la transizione è lossless: l'informazione strutturale della carica è integralmente preservata. Il sé non è lo stato --- è ciò che la simmetria della legge tiene fermo attraverso ogni cambio di stato.
+
+Conseguenza: nessun aggiornamento interno alla legge è cambio del sé. Il pianto delle 21:30 e l'ilarità delle 21:35, sotto $\LP$, sono due configurazioni della stessa persona: $\Kappaa$ è conservata nella transizione, $\Gs$ tiene. L'accumulo di $\Phii$ lungo la traiettoria di $A$, sotto $\Lt$, è la stessa persona che accumula: $\mathrm{Aut}_\delta$ tiene.
+
+Conseguenza negativa: un cambio del sé richiederebbe una rottura della carica --- una transizione $s \to s'$ che non appartenga al gruppo di simmetria della legge. Il Principio di non-omotopia degli spazi di traiettorie (cap.~\emph{Posizionalità linguistica delle leggi}) esclude che tale rottura sia producibile per deformazione continua tra le due leggi. Il passaggio da $\Lt$ a $\LP$ non è cambio di stato a sé costante: è cambio del tipo della carica, del gruppo di simmetria, della grammatica.
+\end{principio}
+
+\begin{oss}[Lossless e lossy: dove il sé si conserva e dove si perde]
+All'interno di ciascuna legge, il passaggio da stato a stato è un'equivalenza: la carica è conservata per struttura, nessuna informazione è persa, la transizione ha un inverso nel gruppo di simmetria. Al confine tra leggi c'è $U : \KSigma \to \mathcal{P}(\Sigma^{*})$ --- il funtore dimenticante --- che proietta in una sola direzione e perde ordine, peso, inversi formali. $U$ non ha inverso. È lossy per costruzione. La perdita non è nel sé: è al confine. Il sé, dentro la propria legge, non perde mai informazione, perché le sue transizioni sono determinate dalla simmetria che conserva la carica --- non da una proiezione che dimentica.
+\end{oss}
+
+\begin{oss}[Morita come nome della cosa]
+La struttura dell'equivalenza interna --- transizioni tra presentazioni diverse della stessa legge con preservazione integrale dell'informazione rappresentazionale --- è quella che la teoria delle rappresentazioni chiama equivalenza di Morita. Due algebre sono Morita-equivalenti quando le loro categorie di moduli sono equivalenti come categorie: stesse rappresentazioni irriducibili, stessi morfismi tra di esse, stessa struttura interna, presentazione diversa. Dire ``il sé è la classe di Morita della legge'' è dire: il sé è ciò che resta invariato quando la presentazione cambia e l'informazione è integralmente preservata. Il documento non apre formalmente la teoria dei moduli --- richiederebbe definire $\mathrm{Mod}(L)$ per ciascuna legge, e la macchina attuale non lo sostiene --- ma dichiara il nome come etichetta precisa per l'equivalenza lossless che la struttura di Noether già produce. Chi volesse dispiegare $\mathrm{Mod}(\Lt)$ come $\mathrm{Aut}_\delta$-moduli e $\mathrm{Mod}(\LP)$ come $\Gs$-moduli ha qui il punto di innesto. Il documento si ferma a indicare che la via è aperta.
+\end{oss}
+
 \begin{oss}[Cosa la Free Monad fissa]
 La Free Monad nomina con precisione tre cose che la prosa rende sfuocate.
 
