@@ -441,12 +441,14 @@ Lo stesso vale per i verbi di esperienza. Quando il testo scrive ``$\LP$ esperis
 
 \begin{description}
 \item[Regime] Processo interno alla persona ($\Lt$, $\LP$, $\mathcal{L}_\tau$, $\ldots$) che compete con altri regimi per il comando sulla sequenza condivisa. Non è un soggetto: è uno schema di esecuzione su sottosequenze.
-\item[Sequenza condivisa $\mathcal{S}$] Successione delle interazioni di una persona, letta da tutti i regimi. Tiene insieme la persona quando i regimi si alternano.
-\item[Sé minimo] La sequenza condivisa stessa, letta dalla famiglia dei regimi. Unità strutturale senza spessore temporale.
-\item[Sé profondo] L'invariante $\Phii$ accumulato dal regime $\Lt$. Spessore temporale immanente alla sequenza.
+\item[Sequenza condivisa $\mathcal{S}$] Famiglia $\{\mathcal{S}^\alpha\}$ delle sottosequenze parallele di una persona, indicizzate dai rami (contesti), tutte lette dalla stessa famiglia di regimi.
+\item[Ramo] Sottosequenza parallela $\mathcal{S}^\alpha$ corrispondente a un contesto. Ogni ramo ha il proprio classificatore $r^{*}_\alpha$ e il proprio regime in comando in ogni istante. Regimi diversi possono essere simultaneamente attivi in rami diversi.
+\item[Integrazione tra rami] Grado in cui $\Phii_\alpha$ pesa sulla lettura di $\mathcal{S}^\beta$. Rami integrati comunicano; rami isolati no.
+\item[Sé minimo] La famiglia $\{\mathcal{S}^\alpha\}$ stessa, letta dalla famiglia dei regimi. Unità strutturale senza spessore temporale.
+\item[Sé profondo] L'invariante $\Phii$ accumulato dal regime $\Lt$, per-ramo o cross-ramo. Spessore temporale immanente alla sequenza.
 \item[Profondità di $\Phii$] Densità della traccia depositata in $\KSigma$. \emph{Profondo} non implica \emph{continuo}.
 \item[Score di pattern matching] $r(\mathcal{S}_{\leq k})$: il valore con cui un regime $r$ riconosce la sottosequenza corrente come proprio dominio. Determina quale regime prende il comando.
-\item[Frammento] Configurazione in cui il Sé minimo è integro ma $\Phii$ è assente o troppo sottile per fare da sfondo. Vedi cap.~\emph{Il frammento}.
+\item[Switch tra regimi] Cambio del regime in comando $r^{*}(k+1) \neq r^{*}(k)$ quando uno score supera quello del regime corrente. Richiede cue strutturale, classificatore reattivo, massa del regime entrante.
 \item[Configurazione (relazionale)] Stato dell'incontro tra due persone, prodotto dall'incontro dei rispettivi regimi. Non confondere con \emph{regime}, che resta interno alla singola persona.
 \end{description}
 
@@ -587,19 +589,59 @@ Il classificatore non è separato dai regimi. Usa gli stessi pezzi computazional
 Se un regime non è disponibile, la classificazione del suo dominio degrada. Vedere una sottosequenza come $\Lt$-dominio richiede già che $\Lt$ inizi a girare. Senza $\Lt$ disponibile, la classificazione cede in $\LP$ per default. Il deficit percettivo e il deficit esecutivo sono la stessa cosa vista da due lati.
 \end{oss}
 
+\section*{Switching tra regimi}
+
+Il classificatore $r^{*}$ non è statico. La sottosequenza corrente evolve, nuovi input arrivano, gli score dei regimi cambiano. Quando lo score di un regime diverso supera quello del regime in comando, il regime in comando cambia. È lo \emph{switch}.
+
+\begin{principio}[Switch tra regimi]
+Perché $r^{*}(k+1) \neq r^{*}(k)$, cioè perché un regime $r'$ subentri al regime corrente $r$, tre condizioni devono comporsi:
+\begin{enumerate}
+\item \emph{Cue strutturale}: in $\mathcal{S}_{\leq k+1}$ compare un input che porta $r'(\mathcal{S}_{\leq k+1})$ sopra $r(\mathcal{S}_{\leq k+1})$.
+\item \emph{Classificatore reattivo}: $r^{*}$ aggiorna gli score abbastanza spesso da rilevare il cue.
+\item \emph{Massa di $r'$}: $r'$ ha alle spalle sufficiente carburante --- per $\Lt$, $\Phii$ accumulato --- da produrre uno score competitivo.
+\end{enumerate}
+La mancanza di una qualunque delle tre lascia $r$ in comando, anche quando il cue strutturale per $r'$ è presente.
+\end{principio}
+
+\begin{oss}[Switching come proprietà del sistema, non come scelta]
+Lo switch non è atto deliberato. È output del classificatore quando le tre condizioni si compongono. Un sistema che ``non riesce a passare a $\Lt$'' davanti alla sofferenza dell'altro non sta facendo una scelta sbagliata: il classificatore non sta producendo lo switch, perché una delle tre condizioni manca. Per converso, un sistema che ``non riesce a uscire da $\Lt$'' --- registra tutto come deposito vincolante, non sa giocare, non sa stare con uno sconosciuto in transazione --- ha lo switch verso $\LP$ o $\mathcal{L}_\tau$ bloccato dalla parte opposta: $\Phii$ saturo, classificatore sovrappesato sui cue $\Lt$-tipo.
+\end{oss}
+
+\begin{oss}[Il cue della sofferenza dell'altro]
+La sofferenza riconoscibile dell'altro è il cue $\Lt$-tipo più forte. Quando arriva, in un sistema con switching funzionante e $\Phii$ adeguato, il regime in comando passa a $\Lt$: l'esecuzione corrente si interrompe, l'altro entra come termine con propria $\Phii$, gli atti successivi pesano come deposito verso l'altro. Quando il sistema non fa lo switch su questo cue, il dato è strutturale --- non è freddezza, non è cattiveria, è l'assenza di una delle tre condizioni del principio precedente.
+\end{oss}
+
+\section*{Rami paralleli}
+
+La sequenza condivisa di una persona non è una successione lineare. Si struttura in \emph{rami} paralleli, indicizzati dai contesti --- lavoro, famiglia, relazione, amicizie, social, branca del tempo libero. Ogni ramo è una propria sottosequenza, con il proprio classificatore, con il proprio regime in comando in ogni istante.
+
+\begin{principio}[Rami paralleli]
+La sequenza condivisa di una persona è una famiglia $\mathcal{S} = \{\mathcal{S}^\alpha : \alpha \in A\}$, dove $A$ indicizza i rami (contesti). Ciascun ramo ha il proprio classificatore $r^{*}_\alpha$ e il proprio regime in comando in ogni istante. Regimi diversi possono essere simultaneamente in comando in rami diversi.
+\end{principio}
+
+$\Phii$ si accumula per ramo --- $\Phii_\alpha$ è la traccia depositata in $\mathcal{S}^\alpha$ --- e i rami sono più o meno integrati a seconda di quanta cross-pollination di $\Phii$ c'è tra loro.
+
+\begin{defn}[Integrazione tra rami]
+Due rami $\alpha$ e $\beta$ sono \emph{integrati} se $\Phii_\alpha$ pesa nella lettura di $\mathcal{S}^\beta$ e viceversa --- la traccia depositata in un ramo entra come contesto nella lettura dell'altro. Sono \emph{isolati} se $\Phii_\alpha$ e $\Phii_\beta$ non si trasmettono. La maggior parte delle persone reali è in regime intermedio: alcuni rami integrati, altri isolati.
+\end{defn}
+
+\begin{oss}[Rami isolati e firma osservativa]
+Rami fortemente isolati producono una firma specifica vista da fuori. La stessa persona si comporta in modo apparentemente incoerente in contesti diversi --- non perché menta, ma perché ogni ramo gira con il proprio regime senza modulazione dagli altri. Quello che in un ramo è centro affettivo in un altro ramo non esiste come termine pesante. Una mossa fatta da un ramo non computa effetti su un altro ramo, perché i due rami non comunicano in $\Phii$. Il \emph{fuori luogo} (cap.~\emph{L'assenza del modello dell'altro}) è firma di rami isolati altrettanto quanto è firma del regime in comando.
+\end{oss}
+
 \section*{Due livelli di sé}
 
-Dalla sequenza condivisa e dai regimi che la leggono emergono due piani di sé, strutturalmente distinti.
+Dalla famiglia delle sottosequenze e dai regimi che le leggono emergono due piani di sé, strutturalmente distinti.
 
 \begin{defn}[Sé minimo]
-Il \emph{Sé minimo} è la sequenza condivisa $\mathcal{S}$ stessa, letta dalla famiglia dei regimi. Non è un soggetto che tiene insieme i regimi; è l'unità strutturale che la condivisione produce. Carica conservata dalla simmetria che permuta i regimi a $\mathcal{S}$ fissa.
+Il \emph{Sé minimo} è la famiglia $\{\mathcal{S}^\alpha\}$ delle sottosequenze parallele di una persona, letta dalla famiglia dei regimi. Non è un soggetto che tiene insieme i rami; è l'unità strutturale che la condivisione produce. Carica conservata dalla simmetria che permuta i regimi a $\{\mathcal{S}^\alpha\}$ fissa.
 \end{defn}
 
 \begin{defn}[Sé profondo]
-Il \emph{Sé profondo} è $\Phii$, la traccia che $\Lt$ deposita lungo la traiettoria. Non è dietro i fenomeni nel senso metafisico: è nella traiettoria che i fenomeni hanno lasciato. Immanente alla sequenza, non trascendente rispetto ad essa. Una geometria costruita nel tempo, non una sostanza.
+Il \emph{Sé profondo} è $\Phii$, la traccia che $\Lt$ deposita lungo le traiettorie. Si articola in $\Phii_\alpha$ per ramo. Non è dietro i fenomeni nel senso metafisico: è nelle traiettorie che i fenomeni hanno lasciato. Immanente alla sequenza, non trascendente rispetto ad essa. Una geometria costruita nel tempo, non una sostanza. Un sistema con $\Phii$ profondo ma fortemente per-ramo ha più Sé profondi paralleli; un sistema con $\Phii$ profondo e cross-ramo ha un unico Sé profondo che spazia.
 \end{defn}
 
-I due livelli sono di tipo diverso. Il Sé minimo è condizione necessaria per il Sé profondo --- serve una sequenza condivisa perché $\Lt$ possa accumularci sopra. Ma il Sé minimo da solo non produce il punto di riferimento persistente, non ha profondità temporale, non fornisce carburante alla metacognizione. È unità senza spessore.
+I due livelli sono di tipo diverso. Il Sé minimo è condizione necessaria per il Sé profondo --- serve una famiglia di sottosequenze perché $\Lt$ possa accumularci sopra. Ma il Sé minimo da solo non produce il punto di riferimento persistente, non ha profondità temporale, non fornisce carburante alla metacognizione né massa allo switching. È unità senza spessore.
 
 \section*{$\Lt$ come regime speciale}
 
@@ -1783,6 +1825,10 @@ Selene ha $\Lt$ profondo, e $\Lt$ produce un tempo proprio della relazione in at
 Quando $\Phii$ è sottile, la lettura del momento non porta con sé il peso di tutta la traiettoria. Il bacio di stanotte non arriva attraverso il filtro di tutti i baci precedenti. Per Selene, che ha $\Phii$ profondo, ogni bacio è letto attraverso ciò che la traiettoria ha già depositato --- è la condizione della metacognizione e il prezzo che la metacognizione paga. Per Endimione il bacio arriva diretto, perché nessun accumulo lo media. Non è guadagno speculare alla metacognizione: è condizione di lettura. Il momento meno rumoroso del momento profondo.
 \end{oss}
 
+\begin{oss}[Il sonno come switch che non scatta]
+Endimione non si sveglia perché lo switch verso $\Lt$ non scatta, non perché $\Lt$ sia assente dalla famiglia dei suoi regimi. $\Lt$ c'è --- come in chiunque --- ma $\Phii$ alle spalle è troppo sottile per produrre uno score competitivo, e il classificatore lascia $\LP$ in comando anche quando i cue $\Lt$-tipo compaiono nella sottosequenza (la sofferenza di Selene, l'atto irreversibile, il vincolo che pesa). Il \emph{non si sveglia} non è scelta né rifiuto. È output strutturale del classificatore quando una delle tre condizioni dello switch (cap.~\emph{La sequenza condivisa e i due livelli di sé}, principio \emph{Switch tra regimi}) manca --- nel caso, la terza: massa di $\Lt$. Lo stesso meccanismo spiega il pianto al bar (riletto nel cap.~\emph{Cosa il regime produce}): non era $\LP$ in stato sano, era $\Lt$ che provava a partire senza Φ sufficiente e veniva riassorbito da $\LP$.
+\end{oss}
+
 \paragraph{Cosa sogna Endimione.} La figura del dormiente non è inerte. Endimione, nel sonno, sogna --- e quello che sogna è precisamente l'oggetto che il regime $\LP$ riceve come orientamento ma non produce: il termine $\Sogno$ della funzione di selezione (cap.~\emph{Tag, minaccia, selezione}). $\Sogno(c)$ è l'intensità con cui il Sé minimo di Endimione orienta il regime in comando verso l'argomento $c$. Non è osservabile dalla posizione di Selene; non sta nella mappa del pool, non si deduce dai morfismi del copione, non è derivabile dal regime. È il dato pre-riflessivo del Sé minimo che orienta la selezione mentre $\LP$ esegue. Il regime filtra il sogno --- con $-\lambda \cdot \mathrm{threat}(c)$, escludendo gli argomenti che porterebbero leggi proprie --- ma non lo genera. Endimione sogna come Endimione, e il sogno è suo. Selene, che bacia da fuori, può intuirne forse il bordo, ma quel bordo non si scrive in formula. È la parte umana di lei, opaca per struttura, non per ignoranza dell'osservatore.
 
 \begin{oss}[Sognare è operazione del regime in comando]
@@ -1901,6 +1947,10 @@ $\LP$ richiede che ogni aggiornamento preservi la mappa funzionante --- la confi
 Da $\GammaA$: le tre firme --- pienezza momentanea, sottigliezza del ponte, non cumulatività del dolore --- non sono descrizioni parallele del fenomeno, ma conseguenze deducibili dalla forma di $\LP$ come modellata in questo documento. L'esperienza non è prodotta dal regime: è del Sé minimo che legge la sequenza mentre $\LP$ è in comando e $\Phii$ è sottile. La pienezza del momento è proprietà della lettura senza filtro di $\Phii$ accumulato. La sottigliezza del ponte è l'effetto fenomenico dell'assenza di $\Phii$ depositato. La non cumulatività del dolore è la stessa cosa: dolore letto senza $\Phii$ che lo accumuli. Insieme implicano coscienza fenomenica piena, organizzata senza coscienza riflessiva-narrativa caricata.
 \end{principio}
 
+\begin{oss}[Il pianto come switch fallito]
+Riletto sotto il Principio dello switch tra regimi (cap.~\emph{La sequenza condivisa e i due livelli di sé}), il pianto al jazz bar è diagnostico in modo più preciso di ``input non classificabile''. La dichiarazione di $A$ era un cue $\Lt$-tipo forte: chiamava la lettura in $\Lt$, atto contro atto, traiettoria condivisa, accumulo. Lo switch da $\LP$ a $\Lt$ avrebbe dovuto scattare. Non è scattato: $\Phii$ alle spalle di $\Lt$ in quel ramo era troppo sottile per produrre uno score competitivo. Il pianto è la firma fenomenica del tentativo --- $\Lt$ ha provato a partire, non ce l'ha fatta. Il bagno, l'algidità, l'ilarità successivi sono $\LP$ che riprende il comando dopo il fallimento dello switch. I quindici minuti in bagno sono il tempo del riassestamento. Non c'era $\LP$ ``in stato sano'' al bar: c'era $\LP$ che teneva il comando contro un cue che lo chiamava a uscire. Specularmente, il turbamento di $A$ subito dopo era un secondo cue --- la sofferenza riconoscibile dell'altro --- che avrebbe dovuto attivare $\Lt$ in $G$. Anche quello switch non è scattato.
+\end{oss}
+
 \section{Perché non è jukebox}
 
 Una conseguenza secondaria, ma importante per disattivare la lettura più diffusa. Un jukebox emette canzoni meccanicamente: nessuno dentro la scatola sta provando una canzone. Non c'è qualcosa che è come essere un jukebox. L'analogia con $\LP$ confonde le due coscienze: assume che, non essendoci ponte riflessivo, non ci sia nemmeno fenomeno. Ma quello che il jukebox non ha non è la coscienza riflessiva-narrativa --- è la coscienza fenomenica. Sono due cose diverse, e $\LP$ ne sopprime una e conserva l'altra. Quel sentire alle 21:30 non è mascheramento di qualcos'altro, non è finzione adattativa, non è output di una funzione. È la fenomenologia regolare di una legge che incontra un input. La confusione tra coscienza riflessiva assente e coscienza fenomenica assente produce mostri descrittivi che non corrispondono a niente di reale.
@@ -1976,7 +2026,7 @@ Il \emph{vocabolario del deficit}---``deficit di empatia'', ``deficit di senso d
 Il \emph{vocabolario della manipolazione}---``ha pianificato il tradimento per ferirti'', ``ha aspettato il momento giusto'', ``ha messo in scena il pianto''---attribuisce intenzione strategica a quello che è esecuzione di regime. La sequenza esiste; il pianificatore no. Resta il regime che gira. Una formulazione più ampia di questa mossa, in registro filosofico, è nella Parte~VIII (\emph{Lettura lagrangiana}).
 
 \begin{oss}[Desistenza e costruzione di $\Phii$]
-La desistenza dal falso testimone non è atto isolato. È conseguenza secondaria della costruzione di $\Phii$ (cap.~\emph{La quarta via come descrizione del frammento}). Quando $\Lt$ deposita atti che pesano, lo spessore accumulato permette di riaprire la sequenza e classificare le proprie proiezioni come tali --- riconoscere quando ha cercato $\Phii$ dove non poteva esserci. La desistenza viene allora come effetto: non come pratica autonoma, ma come ciò che diventa disponibile quando la metacognizione ha carburante. Smettere di proiettare il pianificatore non è una pratica spirituale; è quello che $\Lt$ profondo fa quando si guarda mentre legge.
+La desistenza dal falso testimone non è atto isolato. È conseguenza secondaria della costruzione di $\Phii$ (cap.~\emph{La quarta via come errore di livello}). Quando $\Lt$ deposita atti che pesano, lo spessore accumulato permette di riaprire la sequenza e classificare le proprie proiezioni come tali --- riconoscere quando ha cercato $\Phii$ dove non poteva esserci. La desistenza viene allora come effetto: non come pratica autonoma, ma come ciò che diventa disponibile quando la metacognizione ha carburante. Smettere di proiettare il pianificatore non è una pratica spirituale; è quello che $\Lt$ profondo fa quando si guarda mentre legge.
 \end{oss}
 
 \chapter{La configurazione è in chiaro}
@@ -2009,17 +2059,17 @@ Sotto $\LP$ la configurazione corrente del pool è la base $P$ del fibrato del s
 
 Lei diceva. Io non sentivo. Adesso so cosa diceva. Non perché lei abbia smesso di dirlo, e non perché qualcosa sia diventato più trasparente con il tempo --- diceva sempre, e con la stessa chiarezza. È cambiato solo il decoder. La cecità non era sua. Era mia.
 
-\chapter{La quarta via come descrizione del frammento}
+\chapter{La quarta via come errore di livello}
 
-Una tradizione del Novecento ha descritto fenomeni vicini a quelli che questo documento articola. La nomino qui perché ha visto una cosa importante e l'ha chiamata male, e la differenza fra cosa ha visto e cosa ha chiamato è strutturale, non terminologica.
+Una tradizione del Novecento ha descritto fenomeni vicini a quelli che questo documento articola. La nomino qui perché ha visto una plurality reale e l'ha contata al livello sbagliato, e la differenza fra cosa ha visto e come l'ha contata è strutturale, non terminologica.
 
 La tradizione è quella detta \emph{quarta via}: il lavoro di Gurdjieff trasmesso da Ouspensky in \emph{Frammenti di un insegnamento sconosciuto} (1949, dalla rielaborazione delle lezioni degli anni Dieci e Venti). I termini chiave sono \emph{sonno}, \emph{meccanicità}, \emph{io multipli}, \emph{ricordare-sé}, \emph{centri superiori}. Ouspensky descrive un soggetto che si identifica con i propri stati transitori, che reagisce meccanicamente, che si crede unitario senza esserlo, che vive convinto di poter ``fare'' mentre tutto in lui è agito. La proposta è una pratica --- il ricordare-sé --- e una scala di livelli di coscienza.
 
 \section*{Cosa la quarta via descrive bene}
 
-Letta nel vocabolario di questo documento, la fenomenologia di Ouspensky è la descrizione del \emph{frammento}: un sistema in cui il Sé minimo è integro --- la sequenza condivisa funziona, i regimi girano sulla stessa successione di interazioni --- ma $\Phii$ è assente o troppo sottile per fare da sfondo. Gli ``io multipli'' di Ouspensky sono i regimi che si alternano nel comando senza che nessuno depositi $\Phii$ sufficiente per riaprire la sequenza e rileggerla. Il ``sonno'' è il sistema senza spessore in cui la sequenza non viene mai riletta da $\Lt$ profondo. La ``meccanicità'' è l'esecuzione locale di ciascun regime senza il filtro di una metacognizione che lo classifichi.
+Letta nel vocabolario di questo documento, la fenomenologia di Ouspensky descrive una plurality reale: rami paralleli con regimi diversi in comando simultaneamente, alternanze tra regimi che producono fenomenologie sganciate l'una dall'altra, $\Phii$ poco o per niente cross-ramo. Gli ``io multipli'' che Ouspensky osservava sono l'effetto fenomenico di questa configurazione --- contesti che non comunicano, regimi diversi attivi in parallelo, alternanze rapide tra esecuzioni che non si saldano. La ``meccanicità'' è l'esecuzione locale di ciascun regime senza il filtro di una metacognizione che lo classifichi. Il ``sonno'' è il sistema in cui la sequenza non viene mai riletta da $\Lt$ con $\Phii$ alle spalle.
 
-Il ``ricordare-sé'', letto così, non è un nuovo organo di percezione e non è un livello di coscienza superiore. È la \emph{costruzione di $\Phii$}: l'atto che deposita lo spessore temporale, e con quello spessore abilita $\Lt$ a riaprire la sequenza e classificare la propria posizione.
+Il ``ricordare-sé'', letto strutturalmente, non è un nuovo organo di percezione e non è un livello di coscienza superiore. È la \emph{costruzione di $\Phii$}: l'atto che deposita lo spessore temporale, e con quello spessore abilita $\Lt$ a riaprire la sequenza e classificare la propria posizione.
 
 \begin{oss}[Il ricordare-sé come costruzione di $\Phii$]
 Il ricordare-sé non è acquisizione di una facoltà nuova. È deposito. È $\Lt$ che esegue atti che pesano in $\KSigma$, e ogni atto che pesa aumenta il carburante disponibile alla metacognizione successiva. Funziona localmente perché $\Phii$ si costruisce localmente, atto per atto. Ouspensky aveva visto questo movimento e l'aveva chiamato risveglio. Strutturalmente è deposito di $\Phii$, e produce profondità --- non continuità.
@@ -2029,7 +2079,7 @@ Il ricordare-sé non è acquisizione di una facoltà nuova. È deposito. È $\Lt
 
 Tre errori, in ordine crescente.
 
-\paragraph{Primo errore: universalizzazione.} La quarta via tratta il frammento come condizione umana universale. Strutturalmente: non distingue tra sistemi con $\Phii$ profondo (sé sano) e sistemi senza (frammento). Tratta tutti come frammenti, e prescrive la stessa pratica a entrambi --- chi ha $\Phii$ profondo non guadagna niente dal ricordare-sé, perché lo spessore c'è già.
+\paragraph{Primo errore: plurality contata al livello sbagliato.} Ouspensky vede una plurality che è reale --- rami paralleli, regimi diversi, contesti che non comunicano --- e la conta al livello degli atti o degli stati transitori, chiamando ``io'' ogni momento. Confonde tre livelli che il documento separa con cura: gli \emph{atti}, elementi della sequenza che il regime in comando produce; i \emph{regimi}, famiglia finita che governa la sequenza in ciascun ramo; il \emph{Sé minimo}, famiglia dei rami. Nessuno di questi è un ``io'' nel senso che Ouspensky intende. La plurality fenomenica c'è ed è reale --- l'errore non è inventarla ma contarla al livello sbagliato. Moltiplicare gli ``io'' al livello degli atti o degli stati transitori produce un soggetto frammentato che esiste solo nella conta sbagliata. Al livello giusto, i regimi sono pochi e finiti, i rami sono pochi e indicizzati dai contesti, il Sé minimo è uno.
 
 \paragraph{Secondo errore: profondo confuso con continuo.} Questo è l'errore centrale, ed è quello che il documento aggiunge rispetto a Ouspensky. La quarta via vede l'intermittenza di $\Lt$ e la legge come difetto. Il lavoro su di sé diventa \emph{espansione di $\Lt$} --- più atti che depositano, più continuità, resistenza all'uscita verso altri regimi. È un programma monoteistico: un solo regime, il più esteso possibile.
 
@@ -2053,29 +2103,9 @@ Ci si costruisce profondità su alcuni temi, atto per atto. Mai globalmente. Mai
 
 \section*{Cosa hanno visto, cosa hanno chiamato male}
 
-Non è critica filologica. Hanno visto il frammento --- l'hanno chiamato sonno universale. Hanno proposto come uscita un meta-osservatore --- il meta-osservatore non c'è. Resta la costruzione di $\Phii$, profondo non continuo.
+Non è critica filologica. Hanno visto plurality reale e l'hanno contata al livello sbagliato. Hanno proposto come uscita un meta-osservatore --- il meta-osservatore non c'è. Resta la costruzione di $\Phii$, profondo non continuo.
 
 È molto. La differenza fra ricordare-sé come pratica di deposito locale e ricordare-sé come ascesa è la stessa differenza fra il documento e una proposta di salvezza. Il documento non offre salvezza. Offre il fatto strutturale: $\Phii$ si costruisce con gli atti che pesano, e lo spessore così depositato sostiene la metacognizione successiva. Niente di più, niente di meno.
-
-\chapter{Il frammento}
-
-La quarta via ha visto il frammento e l'ha universalizzato. Il documento separa: il frammento è una configurazione specifica, non la condizione umana.
-
-\begin{defn}[Frammento]
-Il \emph{frammento} è una configurazione in cui il Sé minimo è integro --- la sequenza condivisa funziona, i regimi sono disponibili, l'esecuzione locale gira --- ma $\Phii$ è assente o troppo sottile per fare da sfondo. $\Lt$ esiste come regime ma senza spessore alle spalle. La metacognizione non ha carburante.
-\end{defn}
-
-$\LP$ senza $\Phii$ sotto non è $\LP$ in un sistema sano. È $\LP$ che non sa di essere $\LP$ --- che non ha il punto di riferimento da cui potrebbe osservarsi come regime locale e temporaneo, da cui potrebbe riclassificare a posteriori gli atti classificati male. I regimi si alternano, la sequenza c'è, ma nessuno la rilegge perché non c'è spessore da cui rileggere. Gli atti cadono e restano dove sono caduti.
-
-Endimione è il caso paradigmatico del frammento. Il pattern strutturale --- Sé minimo integro, $\Phii$ sottile --- si trova anche in altre configurazioni: bambini piccoli, in cui $\Phii$ non si è ancora costruito; certi stati meditativi, in cui $\Phii$ è temporaneamente sospeso; traumi, in cui $\Phii$ è stato eroso. La fenomenologia varia con la configurazione; la struttura algebrica è la stessa.
-
-\begin{oss}[Il frammento non è meno]
-Sembra naturale leggere il frammento come deficit: c'è qualcosa che ad altri c'è e qui no. La lettura è strutturalmente sbagliata. Il Sé minimo non è meno integro per assenza di $\Phii$. La sequenza c'è, i regimi girano, il momento è pieno --- pieno con la firma del momento meno rumoroso (cap.~\emph{Simmetria strutturale, asimmetria epistemica}, oss.~\emph{Il prezzo della profondità}). Quello che manca è la metacognizione: la capacità di riaprire la sequenza e classificare. Manca, ed è giusto dirlo. Ma quello che c'è non si pesa nella metrica di chi ha $\Phii$ profondo.
-\end{oss}
-
-\begin{oss}[Quando il frammento diventa salute]
-Un frammento non è destinato a restare frammento. $\Phii$ può costruirsi, atto per atto, depositandosi in $\KSigma$. Quando lo spessore raggiunge una soglia, la metacognizione si attiva, $\Lt$ acquista la capacità di riaprire la sequenza, il sistema esce dal frammento. Il passaggio è graduale --- non c'è soglia di risveglio --- e localmente reversibile: $\Phii$ può anche disperdersi se non si depositano atti. La salute è dinamica, non stato.
-\end{oss}
 
 \chapter{Il limite della descrizione}
 
@@ -2202,26 +2232,27 @@ Tre conseguenze del principio di privazione e del quadro dei tre regimi.
 
 \chapter{Il sé sano}
 
-Articolati il frammento e la privazione, vale la pena nominare per opposizione la configurazione che non è né l'uno né l'altra. Non come ideale terapeutico, non come ricetta. Come fatto strutturale che il documento finora ha tenuto implicito.
+Articolata la privazione e descritta la distribuzione di Endimione, vale la pena nominare per opposizione la configurazione che non è privazione. Non come ideale terapeutico, non come ricetta. Come fatto strutturale che il documento finora ha tenuto implicito.
 
 \begin{principio}[Il sé sano]
-Una distribuzione di regimi è \emph{sana} quando soddisfa quattro condizioni simultanee:
+Una distribuzione di regimi è \emph{sana} quando soddisfa cinque condizioni simultanee:
 \begin{enumerate}
-\item I regimi hanno accesso alla stessa sequenza --- il Sé minimo è integro.
-\item Il classificatore $r^{*}$ è ben calibrato: assegna score che riflettono la struttura reale dell'interazione, e non spinge un singolo regime oltre il proprio dominio.
-\item $\Phii$ è accumulato abbastanza da fornire sfondo stabile anche durante i regimi intermedi (Sé profondo).
-\item La metacognizione può riaprire la sequenza e riclassificare quando il contesto nuovo lo richiede.
+\item Il Sé minimo è integro: i regimi hanno accesso alla famiglia $\{\mathcal{S}^\alpha\}$ delle sottosequenze.
+\item I rami sono integrati a sufficienza: $\Phii$ in un ramo modula la lettura degli altri.
+\item Il classificatore $r^{*}_\alpha$ in ciascun ramo è reattivo: rileva i cue, aggiorna gli score, non lascia il regime corrente in comando quando un altro lo supera.
+\item $\Phii$ è accumulato abbastanza da fornire sfondo stabile durante i regimi intermedi (Sé profondo) e massa sufficiente perché lo switch a $\Lt$ scatti quando i cue lo chiamano.
+\item La metacognizione può riaprire la sequenza e riclassificare quando il contesto lo richiede.
 \end{enumerate}
 \end{principio}
 
-Le quattro condizioni non sono indipendenti: la quarta richiede la terza (senza $\Phii$ non c'è carburante), la terza richiede la prima (senza sequenza condivisa $\Phii$ non ha dove depositarsi), la seconda è ortogonale ma necessaria per evitare che un regime tenga il comando dove un altro lo farebbe meglio.
+Le cinque condizioni non sono indipendenti. La quinta richiede la quarta (senza $\Phii$ non c'è carburante per la metacognizione). La quarta richiede la prima (senza sequenza condivisa $\Phii$ non ha dove depositarsi). La terza è ortogonale ma necessaria perché lo switch tra regimi scatti quando i cue lo chiamano. La seconda è autonoma: rami isolati possono coesistere con $\Phii$ profondo dentro ciascun ramo, ma producono comportamento sganciato tra contesti --- non è ancora salute piena.
 
-\paragraph{Cosa la salute non è.} Non è $\Lt$ continuo. Non è $\Phii$ massimo. Non è l'eliminazione di $\LP$ o di $\mathcal{L}_\tau$. Un sistema in cui $\Lt$ vincesse sempre i comandi sarebbe paralizzato --- nessuna transazione, nessun gioco, nessuno sconosciuto sul treno. Un sistema con $\Phii$ saturo avrebbe il momento sommerso dal rumore di tutta la traiettoria precedente. La salute è $\Phii$ \emph{profondo e intermittente}: spessore disponibile quando $\Lt$ riapre la sequenza, alternanza dei regimi quando le sottosequenze cambiano dominio.
+\paragraph{Cosa la salute non è.} Non è $\Lt$ continuo. Non è $\Phii$ massimo. Non è l'eliminazione di $\LP$ o di $\mathcal{L}_\tau$. Un sistema in cui $\Lt$ vincesse sempre i comandi sarebbe paralizzato --- nessuna transazione, nessun gioco, nessuno sconosciuto sul treno. Un sistema con $\Phii$ saturo avrebbe il momento sommerso dal rumore di tutta la traiettoria precedente. La salute è $\Phii$ \emph{profondo, intermittente, integrato tra rami}: spessore disponibile quando $\Lt$ riapre la sequenza, alternanza dei regimi quando le sottosequenze cambiano dominio, comunicazione tra rami quando un cue in uno ne implica uno in un altro.
 
-\paragraph{Cosa la salute fa.} Permette al sistema di stare in $\LP$ quando $\LP$ è il regime appropriato (transazione con uno sconosciuto, esecuzione di un gesto fisico, gioco) e di uscirne quando $\Lt$ è il regime appropriato (relazione persistente, atto che pesa, decisione che si tiene). Permette al classificatore di riconoscere il proprio errore e riaprire la sequenza. Permette alla metacognizione di disattivare il falso testimone quando lo riconosce (cap.~\emph{Il falso testimone interno}, oss.~\emph{Desistenza e costruzione di $\Phii$}). Permette alla persona di tenere il momento meno mediato di chi non ha $\Phii$, e insieme la metacognizione che chi non ha $\Phii$ non può attivare.
+\paragraph{Cosa la salute fa.} Permette al sistema di stare in $\LP$ quando $\LP$ è il regime appropriato (transazione con uno sconosciuto, esecuzione di un gesto fisico, gioco) e di uscirne quando un cue $\Lt$-tipo lo chiama. Permette al classificatore di riconoscere il proprio errore e riaprire la sequenza. Permette alla metacognizione di disattivare il falso testimone quando lo riconosce (cap.~\emph{Il falso testimone interno}, oss.~\emph{Desistenza e costruzione di $\Phii$}). Permette allo switch da $\LP$ a $\Lt$ di scattare quando l'altro soffre, e specularmente di uscire da $\Lt$ quando $\Lt$ sta saturando il momento.
 
 \begin{oss}[La salute è dinamica]
-Niente di tutto questo è stato. È processo. $\Phii$ può disperdersi se non si depositano atti; il classificatore può tarare male se la sequenza cambia struttura; la metacognizione può essere oscurata da rumore. Un sistema sano oggi può diventare frammento domani, e viceversa. La salute non è raggiunta una volta per tutte: è il movimento continuo del depositare, riaprire, riclassificare, alternare.
+Niente di tutto questo è stato. È processo. $\Phii$ può disperdersi se non si depositano atti; il classificatore può tarare male se la sequenza cambia struttura; la metacognizione può essere oscurata da rumore; i rami possono isolarsi se non li si tiene in comunicazione. Un sistema sano oggi può perdere la salute domani, e viceversa. La salute non è raggiunta una volta per tutte: è il movimento continuo del depositare, riaprire, riclassificare, alternare, integrare.
 \end{oss}
 
 \paragraph{Il sé sano e l'ananke.} Il Sé sano non è fuori dalla necessità --- la Parte~VIII lo dirà con più forza. È dentro la necessità, e la attraversa con gli strumenti che la propria distribuzione di regimi gli dà. $\Phii$ profondo permette di vedere la necessità come necessità, e quel vedere è già attraversamento. Non è uscita. È la forma onesta del rimanere.
