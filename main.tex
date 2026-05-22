@@ -462,36 +462,7 @@ Un regime osservato dall'esterno è descritto da una \emph{legge di conservazion
 
 Il vocabolario viene dalla fisica e serve qui letteralmente. Non dice cosa il regime contiene. Dice cosa tiene fermo --- come l'energia nell'urto, come la massa nella reazione. È il vocabolario che ha funzionato.
 
-Due regimi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li costruisce. Tutto il resto del documento è geometria di questa costruzione.
-
-\section*{Regime: definizione}
-
-Prima delle due istanze, la forma generale di un regime come oggetto matematico.
-
-\begin{defn}[Regime]
-Un \emph{regime} è la quintupla
-\[
-r \;=\; \bigl(\,\mathcal{X}_r,\; T_r,\; G_r,\; \mathcal{I}_r,\; s_r\,\bigr)
-\]
-dove:
-\begin{enumerate}
-\item $\mathcal{X}_r$ è lo \emph{spazio degli stati}: il tipo in cui vive lo stato del sistema mentre $r$ esegue;
-\item $T_r$ è la \emph{regola di aggiornamento} dello stato; il suo tipo specifico è caratteristico del regime, dichiarato istanza per istanza;
-\item $G_r$ è il \emph{gruppo di simmetria}: trasformazioni di $\mathcal{X}_r$ con cui $T_r$ commuta;
-\item $\mathcal{I}_r \,:\, \mathcal{X}_r \to M_r$ è la \emph{carica conservata}: $G_r$-invariante, preservata da $T_r$, a valori in un codominio $M_r$ con la struttura algebrica che permette di parlare di accumulo, equivalenza o ordinamento secondo il regime;
-\item $s_r \,:\, \mathcal{S}_{\leq k} \to \mathbb{R}_{\geq 0}$ è lo \emph{score di pattern matching} sulla sequenza condivisa $\mathcal{S}$ (cap.~seguente).
-\end{enumerate}
-\end{defn}
-
-Le prime quattro componenti sono la struttura algebrica del regime: come si descrive matematicamente cosa il regime tiene fermo. La quinta lega il regime alla sequenza condivisa --- ogni regime produce un peso sul presente, il regime con peso più alto prende il comando. Il meccanismo è articolato nel capitolo seguente.
-
-Tre cose la definizione non fissa, e non deve. Lo spazio $\mathcal{X}_r$ può essere monoide, reticolo, varietà --- la scelta è prerogativa del regime. La regola $T_r$ può prendere input dalla sequenza (in $\Lt$ concatena un atto $a \in \Sigma$) o essere proiezione autonoma sullo stato corrente (in $\LP$ retrae il pool su $\mathrm{States}_G$ senza che lo stato precedente entri). Il codominio $M_r$ della carica varia in conseguenza: gruppo abeliano per accumulo, quoziente per equivalenza, reticolo per ordinamento. Quello che la definizione fissa è la \emph{forma di un regime come oggetto matematico}: per essere chiamato regime, $r$ deve avere queste cinque componenti, e $\mathcal{I}_r$ deve essere effettivamente conservato da $T_r$ sotto $G_r$.
-
-La metrica $\mu_r$ con cui il regime misura distanze sullo spazio degli stati (cap.~\emph{La metrica come tensore della legge}) e il contesto MLTT $\Gamma(\mathcal{I}_r)$ delle assunzioni formabili (sezione finale di questo capitolo) sono \emph{derivati} dalla quintupla, non componenti primarie. Stessa cosa per la lagrangiana discreta $S_r$ e la sua simmetria (cap.~\emph{Calcolo variazionale discreto e Noether}): si costruisce sopra $(T_r, G_r, \mathcal{I}_r)$, non li sostituisce.
-
-\medskip
-
-Limite. La definizione descrive cosa è un regime come legge di conservazione osservata dall'esterno --- struttura algebrica integrale. Non dice cosa è il regime dal lato del Sé minimo che lo esegue: la grana fenomenica è oggetto della Parte~V, non della definizione. Il bordo del logos è qui: il regime come oggetto matematico è interamente specificato; quello che resta fuori è dichiarato fuori, non lasciato vago. Quando la prosa narrativa scrive ``il regime sente'', ``il regime cerca'', si veda la nota di lettura sui verbi attivi ed esperienziali in apertura di Parte~II.
+Due regimi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li costruisce, prima ciascuno per sé, poi nella forma comune che entrambi presentano una volta accostati.
 
 \section*{$\Lt$: strutture algebriche}
 
@@ -515,9 +486,7 @@ L'invariante è l'omomorfismo di gruppi
 \]
 $\Phii$ non cresce in modo monotono. Si trasforma. Un saldo $a^{-1}$ riporta indietro $\delta(a)$ e ridistribuisce.
 
-$\Lt$ è il regime che mantiene $\Phii$ ben definito attraverso ogni aggiornamento. Ogni atto deposita; ogni saldo ridistribuisce; la totalità del deposito è l'invariante.
-
-Nella forma della definizione: $\mathcal{X}_{\Lt} = \Sigma^{*}$, $T_{\Lt}(s, a) = s \cdot a$, $G_{\Lt} = \mathrm{Aut}_\delta(\Sigma^{*})$ (cap.~\emph{Calcolo variazionale discreto e Noether}), $\mathcal{I}_{\Lt} = \Phii$ a valori in $\KSigma$. Lo score $s_{\Lt}$ è definito nel capitolo seguente.
+$\Lt$ è il regime che mantiene $\Phii$ ben definito attraverso ogni aggiornamento. Ogni atto deposita; ogni saldo ridistribuisce; la totalità del deposito è l'invariante. Il gruppo di simmetria sotto cui $\Phii$ è conservata --- $\mathrm{Aut}_\delta(\Sigma^{*})$, gli automorfismi di $\Sigma^{*}$ che preservano il deposito --- è costruito esplicitamente nel cap.~\emph{Calcolo variazionale discreto e Noether}.
 
 \section*{$\LP$: strutture algebriche}
 
@@ -543,7 +512,25 @@ Permutare due argomenti sotto soglia non cambia la proiezione. Il pool è classe
 
 $\LP$ è il regime che mantiene $\Kappaa$ ben definito attraverso ogni aggiornamento.
 
-Nella forma della definizione: $\mathcal{X}_{\LP} = P$, $T_{\LP}(P_n) = \kappa(P_n)$ (proiezione autonoma, lo stato precedente non entra), $G_{\LP} = \Gs$, $\mathcal{I}_{\LP} = \Kappaa$ a valori in $P/\Gs$. Lo score $s_{\LP}$ è definito nel capitolo seguente.
+\section*{Regime: la forma comune}
+
+Le due costruzioni hanno presentato gli stessi tipi di oggetti, nello stesso ordine. Spazio degli stati --- $\Sigma^{*}$, $P$. Regola di aggiornamento --- concatenazione di un atto, proiezione autonoma del pool. Gruppo di simmetria --- $\mathrm{Aut}_\delta(\Sigma^{*})$, $\Gs$. Carica conservata, invariante della simmetria e preservata dalla regola --- $\Phii$ a valori in $\KSigma$, $\Kappaa$ a valori in $P/\Gs$. La forma comune è già nella stanza.
+
+A cui si aggiunge una quinta coordinata che il capitolo seguente articolerà: il peso con cui ciascun regime riconosce il presente come proprio dominio --- è quel peso a determinare quale regime prende il comando sulla sequenza condivisa.
+
+\begin{defn}[Regime]
+Un \emph{regime} è la quintupla
+\[
+r \;=\; \bigl(\,\mathcal{X}_r,\; T_r,\; G_r,\; \mathcal{I}_r,\; s_r\,\bigr),
+\]
+con $\mathcal{X}_r$ spazio degli stati, $T_r$ regola di aggiornamento, $G_r$ gruppo di simmetria con cui $T_r$ commuta, $\mathcal{I}_r : \mathcal{X}_r \to M_r$ carica $G_r$-invariante e preservata da $T_r$, $s_r : \mathcal{S}_{\leq k} \to \mathbb{R}_{\geq 0}$ score di pattern matching sulla sequenza condivisa $\mathcal{S}$ (cap.~seguente).
+\end{defn}
+
+$\Lt$ e $\LP$ sono le due istanze che il capitolo ha appena costruito. La definizione registra la forma comune --- non la inventa.
+
+\medskip
+
+Limite. La definizione descrive il regime come legge di conservazione osservata dall'esterno: struttura algebrica integrale. Quello che resta fuori --- la grana fenomenica del Sé minimo che esegue il regime --- è dichiarato fuori, non lasciato vago; vive nella Parte~V, non in questa definizione. Quando la prosa narrativa scrive ``il regime sente'', ``il regime cerca'', si veda la nota di lettura sui verbi attivi ed esperienziali in apertura di Parte~II.
 
 \section*{$\Phii$ e $\Kappaa$ sono di tipo diverso}
 
