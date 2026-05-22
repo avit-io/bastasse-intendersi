@@ -466,13 +466,15 @@ Due regimi. Due aggiornamenti. Due invarianti di tipo diverso. Il capitolo li co
 
 \section*{$\Lt$: strutture algebriche}
 
-Lo spazio degli stati di $\Lt$ è il monoide libero non commutativo $(\Sigma^{*}, \cdot, \varepsilon)$ generato dagli atti. Una traiettoria è una parola $a_1 a_2 \ldots a_n$ in $\Sigma^{*}$. L'aggiornamento è concatenazione:
+Un atto compiuto resta. Il suo peso non si dimentica finché un altro atto non lo salda --- e il saldo non cancella, ridistribuisce. La sequenza degli atti accumula in un'unica grandezza in cui ogni atto pesa con la propria direzione, e l'ordine in cui sono stati compiuti conta. È la materia di $\Lt$.
+
+Lo spazio degli stati è il monoide libero non commutativo $(\Sigma^{*}, \cdot, \varepsilon)$ generato dagli atti. Una traiettoria è una parola $a_1 a_2 \ldots a_n$ in $\Sigma^{*}$. L'aggiornamento è concatenazione:
 \[
 s_{n+1} \;=\; s_n \cdot a_n.
 \]
-L'operazione non commuta. L'ordine degli atti conta.
+L'operazione non commuta: l'ordine degli atti conta. La libertà del monoide registra l'irripetibilità degli atti --- non c'è relazione di equivalenza che identifichi due atti distinti come lo stesso.
 
-Lo spazio delle obbligazioni è il gruppo di Grothendieck $\KSigma$ del monoide. La costruzione aggiunge inversi formali: per ogni atto $a$ esiste $a^{-1}$ con $\delta(a^{-1}) = -\delta(a)$. Un atto di saldo libera $\Phii$ in un punto e lo rideposita altrove. Il gruppo è il dominio dove la conservazione si può scrivere.
+Lo spazio delle obbligazioni è il gruppo di Grothendieck $\KSigma$ del monoide. La costruzione aggiunge inversi formali: per ogni atto $a$ esiste $a^{-1}$ con $\delta(a^{-1}) = -\delta(a)$. Il saldo libera il deposito in un punto e lo rideposita altrove. Il gruppo è il dominio dove la conservazione si può scrivere.
 
 Il deposito è un'applicazione
 \[
@@ -484,9 +486,11 @@ L'invariante è l'omomorfismo di gruppi
 \[
 \Phii \,:\, \Sigma^{*} \longrightarrow \KSigma, \qquad \Phii(a_1 \ldots a_n) \;=\; \delta(a_1) + \cdots + \delta(a_n).
 \]
-$\Phii$ non cresce in modo monotono. Si trasforma. Un saldo $a^{-1}$ riporta indietro $\delta(a)$ e ridistribuisce.
+$\Phii$ non cresce in modo monotono: si trasforma. Un saldo $a^{-1}$ riporta indietro $\delta(a)$ e ridistribuisce. La totalità del deposito --- somma vettoriale in $\KSigma$, non somma monotona di pesi --- è l'invariante. $\Lt$ è il regime che la mantiene ben definita attraverso ogni aggiornamento. Il gruppo di simmetria sotto cui $\Phii$ è conservata --- $\mathrm{Aut}_\delta(\Sigma^{*})$, gli automorfismi di $\Sigma^{*}$ che preservano $\delta$ --- è costruito esplicitamente nel cap.~\emph{Calcolo variazionale discreto e Noether}.
 
-$\Lt$ è il regime che mantiene $\Phii$ ben definito attraverso ogni aggiornamento. Ogni atto deposita; ogni saldo ridistribuisce; la totalità del deposito è l'invariante. Il gruppo di simmetria sotto cui $\Phii$ è conservata --- $\mathrm{Aut}_\delta(\Sigma^{*})$, gli automorfismi di $\Sigma^{*}$ che preservano il deposito --- è costruito esplicitamente nel cap.~\emph{Calcolo variazionale discreto e Noether}.
+\medskip
+
+Quello che la struttura predice. Un atto, una volta depositato, non scompare con il tempo: resta in $\KSigma$ finché un atto inverso non lo ridistribuisce --- da qui la sospensione strutturale di obbligazioni non saldate (cap.~\emph{La sospensione strutturale}). La concatenazione non commutativa predice l'irripetibilità: due atti distinti restano distinti come elementi del monoide, anche quando $\delta$ assegna loro lo stesso deposito; la simmetria che permuta atti a deposito uguale è $\mathrm{Aut}_\delta$, non l'identità su $\Sigma^{*}$. Il tempo che il regime genera è il flusso di $\Phii$ lungo la traiettoria (cap.~\emph{Il tempo relazionale}): tempo proprio della sequenza, non tempo di calendario --- una traiettoria può restare relazionalmente ferma per mesi se nessun atto pesa, e muoversi rapidamente quando gli atti si concatenano. La chiusura di un'obbligazione è atto contro atto, non dimenticanza: il regime non ha operazione di cancellazione, solo di ridistribuzione.
 
 \section*{$\LP$: strutture algebriche}
 
