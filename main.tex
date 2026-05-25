@@ -744,35 +744,71 @@ Il documento non aggiunge contenuto enunciando questo. Aggiunge chiusura formale
 
 \medskip
 
-\noindent Il prossimo capitolo deriva il primo epifenomeno delle due leggi: il tempo che la relazione genera, che sotto $\Lt$ è il flusso di $\Phii$ e che sotto $\LP$ non si forma.
+\noindent Il prossimo capitolo genera, sul clock del sé minimo, il tempo che le due leggi producono come 1-forme delle rispettive cariche --- una formula sola, due specializzazioni di tipo diverso che sullo stesso substrato non si incollano in un tempo terzo.
 
 \chapter{Il tempo relazionale}
 
-Le due leggi, esercitate in una relazione, producono come epifenomeno un \emph{tempo proprio del rapporto}. Non l'asse del calendario. Un tempo che la relazione genera mentre accade, con regole proprie di formazione, sospensione, accumulo. La forma di questo tempo dipende dalla legge che lo genera. Sotto $\Lt$ è il flusso di $\Phii$ lungo la traiettoria. Sotto $\LP$ è di tipo diverso: ordine causale di esecuzione del copione, senza accumulo né orientamento --- la differenza è di tipo, come quella tra $\Phii$ e $\Kappaa$ stessi.
+Le due leggi non producono un tempo proprio come epifenomeno postulato. Lo generano come 1-forma sul clock del sé minimo, con una formula universale; le due istanze --- $\Lt$ e $\LP$ --- sono le sue specializzazioni alle rispettive cariche, e sullo stesso substrato non si incollano.
 
-Una premessa. Il tempo che la relazione genera richiede co-generazione: entrambe le strutture devono contribuire nello stesso registro. Una relazione che non genera tempo proprio non è una relazione più corta. È una relazione che non si è formata come tempo. Tra ``si è interrotta'' e ``non si è formata'' c'è la stessa differenza che tra una linea spezzata e nessuna linea.
+\section*{$t$, il clock del sé minimo}
 
-\section*{$\Lt$ genera tempo relazionale come flusso di $\Phii$}
+Il sé minimo è la sequenza $\mathcal{S} = (i_1, i_2, \ldots)$ delle interazioni. Il suo clock è l'indice $t \in \mathbb{N}$ delle interazioni; tra due consecutive, $dt = 1$. Non è clock postulato dall'esterno: è la cardinalità della sequenza, ed esiste perché la sequenza esiste. Il sé minimo \emph{è} la sequenza; dunque il clock \emph{è} il sé minimo. Quanto di più dato si dia --- non si genera, perché è il substrato su cui ogni generazione si misura.
 
-Sotto $\Lt$, il tempo relazionale tra due soggetti si forma quando ciascuno registra l'altro come irripetibile attraverso gli atti. In $\CA$: $\mathrm{Id}_Y$ dal lato di $X$ non è banale, e specularmente $\mathrm{Id}_X$ dal lato di $Y$. Ogni atto $a$ scambiato deposita $\delta(a)$ in $\KSigma$. La sequenza dei depositi genera un ordinamento interno alla relazione --- prima e dopo --- indipendente dal calendario. Questo è $\Phii$ che scorre nella relazione: l'invariante si trasforma atto per atto, e quella trasformazione è il tempo proprio.
+\section*{Formula universale del tempo relazionale}
 
-Da qui un'osservazione che dalla prosa ordinaria appare paradossale. Tra l'escalation di Mestre --- Tommaso al parco con la minaccia di $F$ per interposta persona --- e Vicenza passano sei mesi di calendario. Dal lato di $A$, in quei sei mesi il tempo relazionale non si è mosso. Era rimasto puntato all'ultimo atto registrato, alla minaccia. Quando $N$ lo porta a Vicenza, sei mesi dopo, $A$ non sta riprendendo dopo una pausa. Sta continuando da dove era stato sospeso. L'ariete che pronuncia quella sera è l'atto successivo dell'unica relazione che, dal suo lato, è in corso. La fenomenologia di $A$ a Vicenza --- ``come se non fosse passato tempo'' --- non era illusione. Era la registrazione corretta del fatto che il tempo proprio sotto $\Lt$ non scorre con l'orologio. Scorre con gli atti. Più precisamente: $\Phii$ era rimasto depositato sulla traiettoria, in attesa di un atto di saldo che non era arrivato.
+Una legge $L$ è la quintupla $(\mathcal{X}_L, T_L, G_L, \mathcal{I}_L, s_L)$ con carica $\mathcal{I}_L : \mathcal{X}_L \to M_L$. Su $M_L$ la distanza naturale --- norma del gruppo abeliano se $M_L$ è gruppo abeliano, metrica discreta se $M_L$ è insieme privo di struttura ulteriore canonicamente data, una volta fissata coerentemente nel resto del documento --- è essa stessa parte della struttura forzata di $M_L$.
 
-Stessa proprietà in negativo. Rapporti che si interrompono senza essere stati \emph{chiusi atto contro atto} restano vivi nel tempo proprio di chi li ha vissuti, per anni. $\Phii$ è ancora lì, puntato all'ultimo atto registrato. Non è nostalgia. È la forma del tempo che $\Lt$ genera. Si chiude solo se viene chiuso, non se viene dimenticato.
+Il \emph{tempo relazionale generato da $L$} sul clock del sé minimo è la 1-forma:
+\[
+d\tau^{L}(t) \;:=\; d_{M_L}\bigl(\mathcal{I}_L(s_{t+1}),\; \mathcal{I}_L(s_t)\bigr) \cdot dt.
+\]
+La formula non è scelta. È l'unica 1-forma che (i) dipende solo dall'invariante della legge, (ii) si annulla quando l'invariante non transita, (iii) è additiva sulle transizioni elementari del clock, (iv) usa la distanza naturale di $M_L$. Le quattro condizioni esprimono insieme la nozione stessa di ``tempo che una legge genera dal proprio invariante''; la forzano.
 
-\section*{Il tempo sotto $\LP$: ordine causale senza accumulo}
+\section*{Specializzazione: $\tau^{\Lt}$, lunghezza d'arco di $\Phii$}
 
-Sotto $\LP$ il tempo è di tipo diverso, non assente. $\kappa(P_n)$ non porta memoria di $\kappa(P_{n-1})$: lo stato precedente non entra come ingresso di $\kappa$. $\Kappaa$ non ha asse temporale orientato. Quello che $\LP$ produce è una successione di riconfigurazioni del pool, con un prima e un dopo causale ma senza accumulo: tempo discreto senza inerzia, non flusso di $\Phii$. La differenza tra i due tempi è di tipo, come tra $\Phii$ e $\Kappaa$ stessi --- orientato e accumulato da una parte, non orientato e classe di equivalenza dall'altra.
+Per $\Lt$, $\mathcal{I}_{\Lt} = \Phii$ a valori in $\KSigma$, gruppo abeliano la cui distanza naturale è la norma:
+\[
+d_{\KSigma}\bigl(\Phii_{t+1},\, \Phii_t\bigr) \;=\; \|\Phii_{t+1} - \Phii_t\| \;=\; \|\delta(a_t)\|.
+\]
+La formula universale dà
+\[
+d\tau^{\Lt}(t) \;=\; \|\delta(a_t)\|_{\KSigma}\, dt,
+\]
+e l'integrale lungo una sottosequenza è la lunghezza d'arco di $\Phii$ in $\KSigma$:
+\[
+\tau^{\Lt}[t_0, t_1] \;=\; \sum_{t = t_0}^{t_1 - 1} \|\delta(a_t)\|.
+\]
+Tempo relazionale fermo quando nessun atto pesa nella sottosequenza --- $\|\delta\| = 0$, $\tau^{\Lt}$ non avanza. Tempo che avanza con i pesi --- un atto che pesa molto sposta $\tau^{\Lt}$ molto. Un saldo non lo riporta indietro: è esso stesso atto, $\|\delta\|$ è non negativa, la lunghezza d'arco è insensibile alla direzione del passo in $\KSigma$. Le chiusure sono atti, non sottrazioni di tempo.
 
-Quando il documento scrive ``$\LP$ non genera tempo relazionale'', va inteso così: non \emph{il} tempo relazionale di $\Phii$. Tempo, sotto $\LP$, c'è --- è il numero di riconfigurazioni successive del pool, ed è quello che permette di dire che il bagno viene dopo il pianto, l'uscita dopo il bagno. È solo un tempo che non sostiene la reciprocità nello stesso registro di $\Lt$: non accumula, non orienta, non sopravvive all'esecuzione.
+\medskip
 
-$\LP$ produce, durante l'esecuzione del copione, un ordine sequenziale di passi --- pianto, bagno, uscita algida, rientro sulla strada. Quell'ordine ha un prima e un dopo, ma è ordine \emph{causale di esecuzione}, non un tempo che si accumula. Il bagno non porta dentro il peso del pianto: è il passo successivo del copione. Nessun atto carica il successivo. Nessun deposito si forma. Quando l'esecuzione termina, il tempo prodotto da quell'esecuzione non sopravvive. Si esaurisce con l'esecuzione.
+La fenomenologia che la Parte~I lascia leggere è coerente con la formula. Sei mesi di calendario tra l'escalation di Mestre --- Tommaso al parco con la minaccia di $F$ per interposta persona --- e Vicenza: dal lato di $A$, nessun atto nella sottosequenza condivisa con $G$ in quell'intervallo, $\|\delta\| = 0$, $\tau^{\Lt}_{A,G}$ fermo. Quando $N$ lo porta a Vicenza, $A$ non riprende dopo una pausa --- continua dal punto in cui $\tau^{\Lt}$ si era arrestato. L'ariete è l'atto successivo della stessa traiettoria. La fenomenologia ``come se non fosse passato tempo'' è la lettura corretta del formalismo. Stessa proprietà in negativo: rapporti che si interrompono senza essere stati chiusi atto contro atto restano sospesi nel $\tau^{\Lt}$ di chi li ha vissuti, per anni --- $\Phii$ è ancora lì, puntato all'ultimo atto registrato, e $\tau^{\Lt}$ con esso. Non è nostalgia. È la forma del tempo che la formula universale genera su $\Lt$: si chiude solo se viene chiuso, non se viene dimenticato, perché $\KSigma$ non ammette zeri spontanei.
 
-Sei mesi dopo, quando $N$ dice ``andiamo a Vicenza, Greta ci ha invitati'', dal lato $\LP$ non è la stessa relazione che riprende. È una nuova esecuzione del copione, su un pool che ha riportato $A$ in cima alla classifica come argomento disponibile. Il vettore è $N$. Nessuna ripresa dall'ultimo atto, perché ``ultimo atto'' è una categoria del tempo che $\LP$ non genera. Un argomento è ridiventato disponibile. Il copione su $A$ riparte da \textsc{Idealize}.
+\section*{Specializzazione: $\tau^{\LP}$, conteggio dei salti di classe}
 
-Sull'altro lato, $\Phii$ è rimasto depositato in $\KSigma$ in attesa di un atto di saldo. In G $\Lt$ esiste come regime ma con $\Phii$ sottile: non ha il carburante per riaprire la sequenza, riconoscere l'accumulo dell'altro come accumulo, e produrre atti di saldo nello stesso registro. La sospensione non è psicologica. È strutturale: asimmetria di profondità di $\Phii$ tra le due distribuzioni.
+Per $\LP$, $\mathcal{I}_{\LP} = \Kappaa$ a valori in $P/\Gs$, insieme quoziente privo di struttura aggiuntiva canonicamente data, la cui distanza naturale è la metrica discreta:
+\[
+d_{\mathrm{disc}}\bigl([P], [P']\bigr) \;=\; \mathbb{1}_{[P] \neq [P']}.
+\]
+La formula universale dà
+\[
+d\tau^{\LP}(t) \;=\; \mathbb{1}_{[P_{t+1}]_{\Gs} \,\neq\, [P_t]_{\Gs}} \cdot dt,
+\]
+e l'integrale lungo una sottosequenza è il conteggio dei salti di classe:
+\[
+\tau^{\LP}[t_0, t_1] \;=\; \#\bigl\{t \in [t_0, t_1) : [P_{t+1}]_{\Gs} \neq [P_t]_{\Gs}\bigr\}.
+\]
+Nessun accumulo di peso: ogni transizione vale $1$, non scomponibile in frazioni --- l'aritmetica della metrica discreta è il conteggio, non l'addizione di magnitudini. Nessuna direzione privilegiata: la metrica discreta è simmetrica.
 
-Non è amnesia. La memoria fattuale c'è: lei sa cosa è successo prima. Sapere e generare-tempo-relazionale sono cose diverse. La memoria fattuale è un dato del pool. Il tempo relazionale è il prodotto di un canone che $\LP$ non eseguirebbe senza deformare $\Kappaa$.
+\medskip
+
+La fenomenologia. Una nuova configurazione del pool è una transizione di classe: $\tau^{\LP}$ avanza di $1$. Una configurazione stabile è $d\tau^{\LP} = 0$. Tra Mestre e Vicenza, sei mesi di calendario, dal lato $\LP$ di $G$ sono avvenute molte transizioni di classe su altri argomenti --- $T$ è entrato nel ruolo che era stato di $F$, altri argomenti si sono mossi --- e $\tau^{\LP}$ è avanzato per ognuna. Quando $N$ riporta $A$ in cima alla classifica, è una nuova transizione di classe --- $d\tau^{\LP} = 1$, una sola, isolata.
+
+Quel salto non è ``ripresa della stessa relazione che $A$ stava aspettando''. È nuova esecuzione del copione, perché ``ripresa'' è categoria di $\tau^{\Lt}$ --- accumulo che riparte da dove si era fermato --- non di $\tau^{\LP}$, dove ogni transizione è un passo isolato. Il copione su $A$ riparte da \textsc{Idealize}, non da dove si era interrotto: lungo $\tau^{\LP}$, ``interrotto'' non è categoria formabile.
+
+Sull'altro lato, $\Phii$ è rimasto depositato in $\KSigma$ in attesa di un atto di saldo. In $G$, $\Lt$ esiste come regime ma con $\Phii$ sottile: non ha il carburante per riaprire la sequenza, riconoscere l'accumulo dell'altro come accumulo, e produrre atti di saldo nello stesso registro. La sospensione non è psicologica --- è asimmetria di profondità di $\Phii$ tra le due distribuzioni.
+
+Non è amnesia. La memoria fattuale c'è: lei sa cosa è successo prima. Sapere e generare $\tau^{\Lt}$ sono cose diverse. La memoria fattuale è un dato del pool. $\tau^{\Lt}$ è il prodotto di una formula universale che $\LP$, sulla propria carica, non può produrre senza deformare $\Kappaa$ in una struttura che non gli è propria.
 
 \begin{oss}[$\Lt$ accumula tracce, non dati]
 La memoria di $\Lt$ non è archivio. Non conserva parole, conserva quello che le parole hanno fatto. La pioggia che bagna le 21:35 a causa del pianto delle 21:30 non è una registrazione testuale del pianto: è il peso che l'atto precedente ha depositato nello stato successivo, accumulo di $\Phii$ sulla traiettoria.
@@ -913,11 +949,21 @@ pannelli è la differenza di tipo tra $\Phi$ e $\mathrm{K}$.}
 \label{fig:traiettorie}
 \end{figure}
 
-\section*{Incompatibilità temporale}
+\section*{I due tempi non si incollano}
 
-Quando una struttura $\Lt$ e una struttura $\LP$ entrano in relazione, il Principio di incompatibilità delle due leggi (cap.~\emph{Le leggi di conservazione}) acquista una forma temporale: i due tempi che generano non si saldano in un tempo terzo. Dal lato $\Lt$, il flusso di $\Phii$ procede in attesa di essere chiuso atto contro atto. Dal lato $\LP$, esecuzioni locali si succedono senza accumulo, ognuna integra nei propri termini, nessuna componibile con l'accumulo che $\Lt$ sta generando dall'altra parte. Il tempo terzo richiederebbe co-generazione nello stesso registro. Non c'è.
+$\tau^{\Lt}$ ha valori in $\mathbb{R}_{\geq 0}$ via la norma del gruppo abeliano: continuo, additivo per pesi, sensibile alla magnitudine di $\delta$; la sua aritmetica naturale è la somma e la lunghezza. $\tau^{\LP}$ ha valori in $\mathbb{N}$ via la metrica discreta del quoziente: conteggio, non additivo per pesi, una transizione vale uno e non si scompone in frazioni; la sua aritmetica naturale è la cardinalità.
 
-Questa è la sostanza del fastidio che $A$ sentiva mentre la relazione era in corso, e che ha impiegato anni a nominare. Non inquietudine generica, non gelosia, non insicurezza. La registrazione in tempo reale di un fatto strutturale: $A$ accumulava $\Phii$, dall'altra parte non veniva prodotto niente di componibile con quell'accumulo. La relazione viveva come due tempi paralleli, mai sovrapposti.
+La differenza non è scelta. È la differenza di tipo tra i codomini delle cariche --- $\KSigma$ gruppo abeliano con norma, $P/\Gs$ insieme quoziente con metrica discreta --- propagata al differenziale temporale dalla stessa formula universale. Una formula, due tempi di tipo diverso, perché due cariche di tipo diverso.
+
+Un terzo tempo $\tau^{\star}$ che incollasse $\tau^{\Lt}$ e $\tau^{\LP}$ richiederebbe una legge $\mathcal{L}^{\star}$ con carica $\mathcal{I}^{\star} : \mathcal{X}^{\star} \to M^{\star}$ tale che proiezioni $M^{\star} \to \KSigma$ e $M^{\star} \to P/\Gs$ preservino le rispettive strutture metriche. Per il Principio di incompatibilità dei due regimi (cap.~\emph{Le leggi di conservazione}), nessuna costruzione di tale $\mathcal{L}^{\star}$ è ammissibile in $\GammaA$. La non-incollatura non è un fatto temporale aggiuntivo: è il Principio di incompatibilità tradotto, attraverso la formula universale, dal codominio della carica al codominio del differenziale.
+
+\begin{principio}[Non-incollatura dei due tempi relazionali]
+I tempi $\tau^{\Lt}$ e $\tau^{\LP}$, generati dalla stessa formula universale sul clock $t$ del sé minimo, vivono nelle metriche naturali dei codomini delle rispettive cariche --- $\mathbb{R}_{\geq 0}$ continuo-additivo, $\mathbb{N}$ discreto-conteggio. Non esiste un terzo tempo che li riceva preservando le rispettive strutture. La non-incollatura è la geometria temporale del Principio di incompatibilità dei due regimi.
+\end{principio}
+
+\medskip
+
+Questa è la sostanza del fastidio che $A$ sentiva mentre la relazione era in corso, e che ha impiegato anni a nominare. Non inquietudine generica, non gelosia, non insicurezza. La registrazione in tempo reale di un fatto strutturale: $A$ accumulava $\tau^{\Lt}$ lungo una traiettoria orientata in $\KSigma$; dall'altra parte $\tau^{\LP}$ contava salti di classe in $P/\Gs$ senza peso. I due tempi correvano sullo stesso $t$ e non si incollavano. La relazione viveva come due tempi paralleli sul medesimo substrato, mai sovrapponibili in un terzo.
 
 \begin{principio}[Sostituibilità degli argomenti come $\Gs$-invarianza]
 Se $\Kappaa$ è conservata sotto $\Gs$, nessun argomento sotto soglia lascia traccia distinta in $\Kappaa$. La sostituzione di $F$ con $T$, di $T$ con $N$, non altera $\Kappaa$: $F$, $T$, $N$ sono nella stessa orbita di $\Gs$ per il ruolo \texttt{ragazzo}. Il copione eseguito su $F$ a quattordici anni, su $T$ a sedici, su $N$ a diciotto è lo stesso copione: gli argomenti sono parametri della proiezione $\kappa$, non oggetti che $\kappa$ tenga distinti. La Free Monad (cap.~15) come modello sintattico è conseguenza di questa proprietà: una struttura la cui invariante è $\Gs$-invariante è una struttura libera nei propri argomenti sotto soglia.
