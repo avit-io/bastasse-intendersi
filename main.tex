@@ -2387,15 +2387,15 @@ Una routine è atto eseguito a cadenza regolare. La sveglia alle sette. Il caff�
 
 \paragraph{Specifica.} Dati esterni: una \emph{lunghezza del ciclo} $n \in \mathbb{N} \cup \{\infty\}$ e una mappa di posizione $\mathrm{pos} : \mathcal{I}_c \to \mathbb{Z}/n\mathbb{Z}$ (o $\mathrm{pos} : \mathcal{I}_c \to \mathbb{Z}$ se $n = \infty$). L'arricchimento è
 \[
-  \sigma_{\Lr_n}(J) \;=\; (\mathbb{Z}/n\mathbb{Z},\, \mathrm{pos}|_J).
+  \sigma_{\mathcal{L}_{r,n}}(J) \;=\; (\mathbb{Z}/n\mathbb{Z},\, \mathrm{pos}|_J).
 \]
-Categoria target: gruppo ciclico finito (o $\mathbb{Z}$ per $n = \infty$). Carica: $\Phii^{\Lr_n}_J : J \to \mathbb{Z}/n\mathbb{Z}$, la posizione stessa. Gruppo di simmetria: traslazione $\mathbb{Z}/n\mathbb{Z}$ (oppure $\{1\}$ per routine rigide).
+Categoria target: gruppo ciclico finito (o $\mathbb{Z}$ per $n = \infty$). Carica: $\Phii^{\mathcal{L}_{r,n}}_J : J \to \mathbb{Z}/n\mathbb{Z}$, la posizione stessa. Gruppo di simmetria: traslazione $\mathbb{Z}/n\mathbb{Z}$ (oppure $\{1\}$ per routine rigide).
 
 \paragraph{$\Lr$ come famiglia parametrica.} Il parametro $n$ percorre $\mathbb{N} \cup \{\infty\}$. Due limiti estremali sono interessanti.
 
-\emph{$n = 1$.} $\mathbb{Z}/1 = \{0\}$, gruppo banale. Ogni atto va alla stessa classe. Il codominio della carica collassa a un punto. La struttura ha la forma di una proiezione su un singoletto: in questo limite, $\Lr_1$ realizza l'arricchimento di un $\LP$ degenere, con pool ridotto a una sola configurazione e $\Kappaa$ costante.
+\emph{$n = 1$.} $\mathbb{Z}/1 = \{0\}$, gruppo banale. Ogni atto va alla stessa classe. Il codominio della carica collassa a un punto. La struttura ha la forma di una proiezione su un singoletto: in questo limite, $\mathcal{L}_{r,1}$ realizza l'arricchimento di un $\LP$ degenere, con pool ridotto a una sola configurazione e $\Kappaa$ costante.
 
-\emph{$n = \infty$.} Il ciclo si srotola in $\mathbb{Z}$, gruppo abeliano libero di rango uno. Ogni atto ha posizione unica e l'ordine totale è preservato. La struttura ha la forma di una traiettoria orientata in un gruppo libero: in questo limite, $\Lr_\infty$ realizza l'arricchimento di un $\Lt$ con alfabeto a un solo atto e $\delta$ unitario.
+\emph{$n = \infty$.} Il ciclo si srotola in $\mathbb{Z}$, gruppo abeliano libero di rango uno. Ogni atto ha posizione unica e l'ordine totale è preservato. La struttura ha la forma di una traiettoria orientata in un gruppo libero: in questo limite, $\mathcal{L}_{r,\infty}$ realizza l'arricchimento di un $\Lt$ con alfabeto a un solo atto e $\delta$ unitario.
 
 \paragraph{Onestà sul limite.} I due limiti sono esatti solo per casi degeneri di $\Lt$ e $\LP$ --- alfabeto singolo da una parte, pool singolo dall'altra. Non sono affermazioni di isomorfismo generale. Quello che $\Lr$ esibisce è una scala continua di torsione del codominio della carica, e $\Lt$ e $\LP$ stanno alle due estremità della scala come tipi-limite: libertà piena del codominio nel caso di $\Lt$, banalità piena nel caso di $\LP$. La famiglia non sussume le due leggi --- le contestualizza in uno spazio più grande dove ne sono i bordi naturali.
 
@@ -2459,7 +2459,7 @@ Il framework non valuta la legge. Valuta l'incontro tra legge e contesto. Una pe
 
 La categoria delle leggi candidate ha struttura matematica trattabile, o resta fenomenologia?
 
-Una possibile struttura: morfismi tra leggi come trasformazioni naturali tra arricchimenti, $\sigma_{L_1} \Rightarrow \sigma_{L_2}$. L'incompatibilità strutturale (cap.~\emph{Le leggi di conservazione}) ne è l'opposto: assenza di trasformazione naturale che preservi le due cariche. La famiglia parametrica $\{\Lr_n\}$ suggerisce che alcune leggi appaiono come limiti di altre. La torsione di $\Lo$, la libertà di $\Lt$, la finitezza ciclica di $\Lr$, la riduzione del gruppo in $\Lf$, la retroazione in $\Ld$ suggeriscono una classificazione per struttura algebrica del codominio della carica e per tipo di azione del gruppo di simmetria.
+Una possibile struttura: morfismi tra leggi come trasformazioni naturali tra arricchimenti, $\sigma_{L_1} \Rightarrow \sigma_{L_2}$. L'incompatibilità strutturale (cap.~\emph{Le leggi di conservazione}) ne è l'opposto: assenza di trasformazione naturale che preservi le due cariche. La famiglia parametrica $\{\mathcal{L}_{r,n}\}_{n}$ suggerisce che alcune leggi appaiono come limiti di altre. La torsione di $\Lo$, la libertà di $\Lt$, la finitezza ciclica di $\Lr$, la riduzione del gruppo in $\Lf$, la retroazione in $\Ld$ suggeriscono una classificazione per struttura algebrica del codominio della carica e per tipo di azione del gruppo di simmetria.
 
 Non c'è qui la pretesa di una teoria. È riconoscimento che lo spazio delle leggi è più grande di $\{\Lt, \LP\}$ e che il framework lo organizza naturalmente. La domanda --- se questa organizzazione regga come categoria matematica trattabile, con morfismi e limiti rigorosi, o se resti fenomenologia che esibisce la sola sintassi delle proprie quaterne --- resta aperta. La rifondazione si è fermata al punto in cui ha potuto essere onesta. Quello che segue richiederebbe lavoro algebrico ulteriore --- e nuovo materiale fenomenico per sostenerlo.
 
