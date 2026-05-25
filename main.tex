@@ -588,106 +588,49 @@ Nessuno di questi è livello indipendente. Sono ciò che i regimi producono quan
 
 \medskip
 
-\chapter{La sequenza condivisa e i due livelli di sé}
+\chapter{Il fascio sulla sequenza}
 
-Le due leggi appena costruite non sono leggi di due persone. Sono regimi che ogni persona ospita. La differenza tra $A$ e $G$ --- e tra qualunque coppia di soggetti --- non è che uno esegua $\Lt$ e l'altro $\LP$. È che, sulla stessa famiglia di regimi, i due hanno distribuzioni di score e profondità di $\Phii$ diverse.
+Le due leggi non sono leggi di due persone. Sono regimi che ogni persona ospita. Resta da dire come convivono --- su cosa girano, e cosa rispondono.
 
-Da questa premessa segue tutto il resto del documento. Il capitolo la articola.
+Quello su cui girano è la sequenza delle interazioni $\mathcal{S} = (i_1, i_2, \ldots)$ che attraversano la persona. Ogni regime legge tutta la sequenza, sempre. Non c'è partizione, non c'è dominio esclusivo.
 
-\section*{La sequenza condivisa}
+Quello che rispondono è quanto di sé un regime riconosce in una sottosequenza data. Per Yoneda, un regime non è entità in sé che i sondaggi interrogano: è il pattern stesso delle risposte ai sondaggi che la sequenza propone. $\Lt$ è il funtore dei sondaggi ``questa sottosequenza ha deposito accumulato?''. $\LP$ è il funtore dei sondaggi ``questo pool è proiettabile sotto $\Gs$?''. Cambia il sondaggio, cambia il pattern; e il regime, in quel pattern, è.
 
-I regimi non hanno domini esclusivi. Tutti leggono tutta la sequenza di interazioni, sempre. Quello che determina quale regime governa non è una partizione dello spazio delle interazioni ma il \emph{peso del pattern matching}: ogni regime produce uno score sulla sottosequenza corrente, e il regime con score più alto prende il comando.
-
-\begin{principio}[Sequenza condivisa]
-Sia $\mathcal{S} = (i_1, i_2, \ldots)$ la sequenza delle interazioni di una persona. Ogni regime $r \in \{\Lt, \LP, \mathcal{L}_\tau, \ldots\}$ è una mappa $r : \mathcal{S}_{\leq k} \to \mathbb{R}_{\geq 0}$ che assegna a ogni sottosequenza uno \emph{score di pattern matching}. Il regime in comando al passo $k$ è
+\begin{defn}[Il fascio della persona]
+Sulla sequenza $\mathcal{S}$, organizzata in aperti che sono sottosequenze indicizzate dai contesti --- lavoro, famiglia, relazione, una conversazione, un'estate ---, la famiglia dei regimi $\mathrm{Reg} = \{\Lt, \LP, \mathcal{L}_\tau, \ldots\}$ definisce un fascio $\mathcal{F}$: a ogni aperto $U \subseteq \mathcal{S}$ associa il pattern delle valutazioni dei regimi su $U$,
 \[
-r^{*}(k) \;=\; \arg\max_r \, r(\mathcal{S}_{\leq k}).
+\mathcal{F}(U) \;=\; \bigl(\,r(U)\,\bigr)_{r \in \mathrm{Reg}}.
 \]
-\end{principio}
-
-Un atto classificato in tempo reale come $\LP$ resta nella sequenza e può essere riclassificato dopo. La metacognizione non è un regime separato: è la capacità di riaprire la sequenza e ricomputare $r^{*}$ con contesto più lungo e altri regimi più attivi.
-
-Il classificatore non è separato dai regimi. Usa gli stessi pezzi computazionali. Riconoscere una sottosequenza come dominio di un regime è già l'inizio dell'esecuzione di quel regime --- i circuiti di $r$ cominciano ad attivarsi mentre $r$ legge la sequenza.
-
-\begin{oss}[Deficit percettivo = deficit esecutivo]
-Se un regime non è disponibile, la classificazione del suo dominio degrada. Vedere una sottosequenza come $\Lt$-dominio richiede già che $\Lt$ inizi a girare. Senza $\Lt$ disponibile, la classificazione cede in $\LP$ per default. Il deficit percettivo e il deficit esecutivo sono la stessa cosa vista da due lati.
-\end{oss}
-
-\section*{Switching tra regimi}
-
-Il classificatore $r^{*}$ non è statico. La sottosequenza corrente evolve, nuovi input arrivano, gli score dei regimi cambiano. Quando lo score di un regime diverso supera quello del regime in comando, il regime in comando cambia. È lo \emph{switch}.
-
-\begin{principio}[Switch tra regimi]
-Perché $r^{*}(k+1) \neq r^{*}(k)$, cioè perché un regime $r'$ subentri al regime corrente $r$, tre condizioni devono comporsi:
-\begin{enumerate}
-\item \emph{Cue strutturale}: in $\mathcal{S}_{\leq k+1}$ compare un input che porta $r'(\mathcal{S}_{\leq k+1})$ sopra $r(\mathcal{S}_{\leq k+1})$.
-\item \emph{Classificatore reattivo}: $r^{*}$ aggiorna gli score abbastanza spesso da rilevare il cue.
-\item \emph{Massa di $r'$}: $r'$ ha alle spalle sufficiente carburante --- per $\Lt$, $\Phii$ accumulato --- da produrre uno score competitivo.
-\end{enumerate}
-La mancanza di una qualunque delle tre lascia $r$ in comando, anche quando il cue strutturale per $r'$ è presente.
-\end{principio}
-
-\begin{oss}[Switching come proprietà del sistema, non come scelta]
-Lo switch non è atto deliberato. È output del classificatore quando le tre condizioni si compongono. Un sistema che ``non riesce a passare a $\Lt$'' davanti alla sofferenza dell'altro non sta facendo una scelta sbagliata: il classificatore non sta producendo lo switch, perché una delle tre condizioni manca. Per converso, un sistema che ``non riesce a uscire da $\Lt$'' --- registra tutto come deposito vincolante, non sa giocare, non sa stare con uno sconosciuto in transazione --- ha lo switch verso $\LP$ o $\mathcal{L}_\tau$ bloccato dalla parte opposta: $\Phii$ saturo, classificatore sovrappesato sui cue $\Lt$-tipo.
-\end{oss}
-
-\begin{oss}[Il cue della sofferenza dell'altro]
-La sofferenza riconoscibile dell'altro è il cue $\Lt$-tipo più forte. Quando arriva, in un sistema con switching funzionante e $\Phii$ adeguato, il regime in comando passa a $\Lt$: l'esecuzione corrente si interrompe, l'altro entra come termine con propria $\Phii$, gli atti successivi pesano come deposito verso l'altro. Quando il sistema non fa lo switch su questo cue, il dato è strutturale --- non è freddezza, non è cattiveria, è l'assenza di una delle tre condizioni del principio precedente.
-\end{oss}
-
-\section*{Rami paralleli}
-
-La sequenza condivisa di una persona non è una successione lineare. Si struttura in \emph{rami} paralleli, indicizzati dai contesti --- lavoro, famiglia, relazione, amicizie, social, branca del tempo libero. Ogni ramo è una propria sottosequenza, con il proprio classificatore, con il proprio regime in comando in ogni istante.
-
-\begin{principio}[Rami paralleli]
-La sequenza condivisa di una persona è una famiglia $\mathcal{S} = \{\mathcal{S}^\alpha : \alpha \in A\}$, dove $A$ indicizza i rami (contesti). Ciascun ramo ha il proprio classificatore $r^{*}_\alpha$ e il proprio regime in comando in ogni istante. Regimi diversi possono essere simultaneamente in comando in rami diversi.
-\end{principio}
-
-$\Phii$ si accumula per ramo --- $\Phii_\alpha$ è la traccia depositata in $\mathcal{S}^\alpha$ --- e i rami sono più o meno integrati a seconda di quanta cross-pollination di $\Phii$ c'è tra loro.
-
-\begin{defn}[Integrazione tra rami]
-Due rami $\alpha$ e $\beta$ sono \emph{integrati} se $\Phii_\alpha$ pesa nella lettura di $\mathcal{S}^\beta$ e viceversa --- la traccia depositata in un ramo entra come contesto nella lettura dell'altro. Sono \emph{isolati} se $\Phii_\alpha$ e $\Phii_\beta$ non si trasmettono. La maggior parte delle persone reali è in regime intermedio: alcuni rami integrati, altri isolati.
+La persona è $\mathcal{F}$ --- non la sequenza nuda, non un regime singolo, il fascio.
 \end{defn}
 
-\begin{oss}[Rami isolati e firma osservativa]
-Rami fortemente isolati producono una firma specifica vista da fuori. La stessa persona si comporta in modo apparentemente incoerente in contesti diversi --- non perché menta, ma perché ogni ramo gira con il proprio regime senza modulazione dagli altri. Quello che in un ramo è centro affettivo in un altro ramo non esiste come termine pesante. Una mossa fatta da un ramo non computa effetti su un altro ramo, perché i due rami non comunicano in $\Phii$. Il \emph{fuori luogo} (cap.~\emph{L'assenza del modello dell'altro}) è firma di rami isolati altrettanto quanto è firma del regime in comando.
-\end{oss}
+L'apparato che si sarebbe tentati di postulare --- score di pattern matching, classificatore separato, switch a tre condizioni, massa, cue tipato, rami paralleli, integrazione --- cristallizza in un'unica struttura. Lo \emph{score} di $r$ su una sottosequenza è la valutazione $r(U)$, niente in più. Il \emph{regime in comando} su $U$ è il funtore con peso più alto nello stalk locale di $\mathcal{F}$: lettura, non oggetto autonomo. Lo \emph{switch} passando da $U_k$ a $U_{k+1}$ è il trasporto della sezione lungo l'inclusione --- il pattern si restringe, cambia. Le tre condizioni del passaggio --- cue strutturale, reattività, massa --- sono coordinate dello stesso trasporto: la posizione dell'aperto vicino, la frequenza del sondaggio, il peso della coomologia accumulata dietro il funtore entrante. I \emph{rami paralleli} sono gli aperti indicizzati dai contesti; l'\emph{integrazione} è la condizione di incollamento di $\mathcal{F}$ sui rami che si intersecano. Geometria del sito, non parametri da postulare.
 
 \section*{Due livelli di sé}
 
-Dalla famiglia delle sottosequenze e dai regimi che le leggono emergono due piani di sé, strutturalmente distinti.
+Un fascio è già due cose: il sito da cui si parte e la classe che si accumula sopra. I due livelli di sé sono questi.
 
 \begin{defn}[Sé minimo]
-Il \emph{Sé minimo} è la famiglia $\{\mathcal{S}^\alpha\}$ delle sottosequenze parallele di una persona, letta dalla famiglia dei regimi. Non è un soggetto che tiene insieme i rami; è l'unità strutturale che la condivisione produce. Carica conservata dalla simmetria che permuta i regimi a $\{\mathcal{S}^\alpha\}$ fissa.
+Il \emph{Sé minimo} è il sito $\mathcal{S}$ con le sue partizioni in contesti. Quello che ogni risposta del fascio presuppone, prima di qualunque regime. Non soggetto che tiene insieme; dato base che tutto pone.
 \end{defn}
 
 \begin{defn}[Sé profondo]
-Il \emph{Sé profondo} è $\Phii$, la traccia che $\Lt$ deposita lungo le traiettorie. Si articola in $\Phii_\alpha$ per ramo. Non è dietro i fenomeni nel senso metafisico: è nelle traiettorie che i fenomeni hanno lasciato. Immanente alla sequenza, non trascendente rispetto ad essa. Una geometria costruita nel tempo, non una sostanza. Un sistema con $\Phii$ profondo ma fortemente per-ramo ha più Sé profondi paralleli; un sistema con $\Phii$ profondo e cross-ramo ha un unico Sé profondo che spazia.
+Il \emph{Sé profondo} è $\Phii$ in quanto classe di coomologia di $\mathcal{F}$ sotto la simmetria $\mathrm{Aut}_\delta(\Sigma^{*})$. Registra la traccia che $\Lt$ deposita nella struttura del sito --- non i contenuti, la geometria di ciò che è stato attraversato.
 \end{defn}
 
-I due livelli sono di tipo diverso. Il Sé minimo è condizione necessaria per il Sé profondo --- serve una famiglia di sottosequenze perché $\Lt$ possa accumularci sopra. Ma il Sé minimo da solo non produce il punto di riferimento persistente, non ha profondità temporale, non fornisce carburante alla metacognizione né massa allo switching. È unità senza spessore.
+I due sono di tipo diverso. Il primo è il sito; il secondo, una classe sopra il sito. Il primo è condizione del secondo --- senza sequenza non c'è coomologia su cui questa pesi. Il secondo non si deriva dal primo: un sito ricco può portare classi coomologiche piccole, una traiettoria modesta può portarne di profonde.
 
 \section*{$\Lt$ come regime speciale}
 
-$\Lt$ non è il regime più importante nel senso che dovrebbe avere score più alto in assoluto. È intermittente per design. Un sistema che non sa uscire da $\Lt$ non può trattare uno sconosciuto sul treno come una transazione, non può lanciare una palla senza registrarla come deposito vincolante.
-
-$\Lt$ è speciale per una ragione architettonica: è l'unico regime che per costruzione lascia una traccia che pesa sul prossimo atto. $\Phii$ è omomorfismo che accumula --- ogni esecuzione di $\Lt$ aggiunge qualcosa che rimane nella struttura della traiettoria. Non nei contenuti della memoria episodica, ma nella geometria di ciò che è stato attraversato.
-
-Gli altri regimi operano sulla sequenza ma non producono punto di riferimento persistente oltre il momento. $\LP$ proietta sul pool corrente e si chiude lì. Solo $\Lt$ lascia $\Phii$.
+Tra i funtori di $\mathrm{Reg}$, $\Lt$ ha una posizione che $\LP$ e gli altri non hanno: è l'unico la cui valutazione locale lascia una classe di coomologia globale non banale. $\LP$ proietta sul pool corrente e si chiude nello stalk --- niente residuo che pesi su un aperto adiacente. $\Lt$ deposita, e il deposito \emph{è} la classe del fascio sotto $\mathrm{Aut}_\delta$. Il Sé profondo è coomologia di $\Lt$; non c'è un Sé profondo di $\LP$.
 
 \section*{Profondo, non continuo}
 
-\begin{principio}[Profondità e continuità di $\Lt$]
-Un $\Lt$ \emph{profondo} significa che $\Phii$ è disponibile quando $\Lt$ si riattiva. L'accumulo non si è disperso durante i regimi intermedi. La traiettoria ha spessore anche se non era in primo piano. Un $\Lt$ \emph{continuo} significherebbe $\Lt$ sempre attivo, sempre in esecuzione. Impossibile e indesiderabile.
-\end{principio}
+Profondità e continuità sono indipendenti. \emph{Profondità} è norma stabile della classe coomologica attraverso il trasporto della sezione. \emph{Continuità} sarebbe supporto totale della sezione di $\Lt$ sul sito --- $\Lt$ sempre in lettura, sempre in comando. Impossibile e indesiderabile.
 
-Quando $\Lt$ è intermittente in un sistema sano, l'uscita verso altri regimi non cancella $\Phii$. Lo sospende. Quando $\Lt$ si riattiva, trova l'accumulo intatto da dove l'aveva lasciato --- più pesante di prima, perché anche i regimi intermedi hanno aggiunto sequenza che $\Lt$ potrà riclassificare.
+Su un sito reale arrivano sondaggi che chiedono di $\LP$ o di $\mathcal{L}_\tau$, e la sezione di $\Lt$ si restringe agli aperti dove fa lavoro. Quello che la mantiene profonda non è essere in lettura sempre: è che la classe non si disperde quando la sezione si sospende su un aperto. Sospensione è restrizione, non cancellazione --- il trasporto attraverso un aperto in cui altri regimi rispondono lascia la classe intatta. Quando la sezione di $\Lt$ si ricontrae, ritrova la classe da dove l'aveva lasciata.
 
-La metacognizione ha carburante per rimanere attiva anche durante $\LP$ perché $\Lt$ le ha costruito una base. Non è l'esecuzione corrente il problema --- sono i dati strutturali assenti che non producono un io in prima persona.
-
-\begin{oss}[Rumore di $\Phii$ sul momento]
-Il Sé profondo non è gratuito. Ogni atto di $\Lt$ che deposita aggiunge spessore a $\Phii$, e $\Phii$ pesa sulla lettura del presente: la sottosequenza corrente viene letta attraverso ciò che la traiettoria ha già accumulato. Più $\Phii$ è denso, più la lettura porta con sé il proprio passato. È la condizione della metacognizione --- e il prezzo che paga. Un sistema con $\Phii$ sottile legge il momento con meno rumore strutturale: il presente arriva più diretto, perché nessun accumulo lo media.
-\end{oss}
+Il rumore è il prezzo della profondità. Una classe densa pesa sul sondaggio corrente: la lettura del momento si fa più mediata. È la condizione della metacognizione, ed è il suo costo. Un fascio con classe piccola legge il momento più direttamente, perché nessun accumulo lo media. Non un'altra grammatica di esserci --- il fatto fisico che una classe pesa.
 
 \bigskip
 
