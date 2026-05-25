@@ -454,83 +454,111 @@ Lo stesso vale per i verbi di esperienza. Quando il testo scrive ``$\LP$ esperis
 
 \chapter{Le leggi di conservazione}
 
-Dalla materia della Parte~I affiorano due leggi. La prima --- $\Lt$ --- è la legge dell'accumulo: un atto compiuto pesa, e il peso resta finché un altro atto non lo ridistribuisce. La seconda --- $\LP$ --- è la legge della proiezione: lo stato si aggiorna proiettando sul pool corrente, e di ciò che era prima non porta peso. Le due leggi non si derivano da una macchina sottostante. Si nominano dove la materia le ha lasciate leggere.
+La Parte~I lascia osservazioni che si raccolgono in due famiglie. Le famiglie non si sovrappongono. Per ciascuna, le proprietà osservate definiscono un problema universale di cui esiste un'unica soluzione, fino a isomorfismo canonico. Il capitolo legge le due soluzioni. Le leggi di conservazione non vengono postulate --- vengono forzate dalle proprietà a essere ciò che sono.
 
-Il formalismo che segue ne dà la forma precisa. Letta a fondo, ciascuna legge è una legge di conservazione: tiene ferma una grandezza sotto ogni aggiornamento. Il vocabolario viene dalla fisica e serve qui letteralmente --- come l'energia nell'urto, come la massa nella reazione. Non dice cosa la legge contiene. Dice cosa tiene ferma.
+\section*{Prima famiglia: l'accumulo orientato}
 
-\begin{principio}[Legge di conservazione]
-Una legge è di conservazione quando ha una grandezza che resta ferma sotto ogni aggiornamento del sistema su cui è letta. La grandezza --- la \emph{carica} --- è invariante sotto la simmetria della legge. Leggi distinte conservano grandezze di tipo diverso. Una persona ne ospita più d'una --- $\Lt$ e $\LP$ in primis; il capitolo seguente articola la forma in cui convivono sulla sequenza delle interazioni.
-\end{principio}
+Quattro proprietà, leggibili nella Parte~I.
 
-Due leggi. Due aggiornamenti. Due cariche di tipo diverso. Il capitolo le nomina, prima ciascuna per sé, poi nella forma comune che entrambe presentano una volta accostate.
+\emph{Gli atti compiuti pesano.} Una dichiarazione, una volta detta, resta agli atti; il magone, una volta passato sulla soglia tra due sguardi, è agli atti; le parole al jazz bar, una volta pronunciate, sono agli atti. Atti compiuti non si tolgono.
 
-\section*{$\Lt$: strutture algebriche}
+\emph{L'ordine determina il significato.} La frase \emph{ho il ragazzo} detta agli SMS, sulla porta, prima del bar, avrebbe chiuso la sequenza in un punto; detta sulla soglia dopo il pianto, il bagno, l'ilarità con Tommaso, il succhiotto, la sigilla in un altro. Lo stesso atto in posizione diversa è un atto diverso.
 
-Un atto compiuto resta. Il suo peso non si dimentica finché un altro atto non lo salda --- e il saldo non cancella, ridistribuisce. La sequenza degli atti accumula in un'unica grandezza in cui ogni atto pesa con la propria direzione, e l'ordine in cui sono stati compiuti conta. È la materia di $\Lt$.
+\emph{I saldi ridistribuiscono senza cancellare.} L'ariete a Vicenza non toglie la dichiarazione al jazz bar; la ricolloca dove diventa leggibile come mossa dentro un sistema di assi che non vinceva. La non-reazione al compleanno non toglie il pianto del jazz bar; lo ricolloca come configurazione già letta abbastanza volte. Niente sparisce. Tutto si ridistribuisce.
 
-Lo spazio degli stati è il monoide libero non commutativo $(\Sigma^{*}, \cdot, \varepsilon)$ generato dagli atti. Una traiettoria è una parola $a_1 a_2 \ldots a_n$ in $\Sigma^{*}$. L'aggiornamento è concatenazione:
-\[
-s_{n+1} \;=\; s_n \cdot a_n.
-\]
-L'operazione non commuta: l'ordine degli atti conta. La libertà del monoide registra l'irripetibilità degli atti --- non c'è relazione di equivalenza che identifichi due atti distinti come lo stesso.
-
-Lo spazio delle obbligazioni è il gruppo di Grothendieck $\KSigma$ del monoide. La costruzione aggiunge inversi formali: per ogni atto $a$ esiste $a^{-1}$ con $\delta(a^{-1}) = -\delta(a)$. Il saldo libera il deposito in un punto e lo rideposita altrove. Il gruppo è il dominio dove la conservazione si può scrivere.
-
-Il deposito è un'applicazione
-\[
-\delta \,:\, \Sigma \longrightarrow \KSigma.
-\]
-A ogni atto $a$ associa quello che l'atto deposita.
-
-L'invariante è l'omomorfismo di gruppi
-\[
-\Phii \,:\, \Sigma^{*} \longrightarrow \KSigma, \qquad \Phii(a_1 \ldots a_n) \;=\; \delta(a_1) + \cdots + \delta(a_n).
-\]
-$\Phii$ non cresce in modo monotono: si trasforma. Un saldo $a^{-1}$ riporta indietro $\delta(a)$ e ridistribuisce. La totalità del deposito --- somma vettoriale in $\KSigma$, non somma monotona di pesi --- è l'invariante. $\Lt$ è il regime che la mantiene ben definita attraverso ogni aggiornamento. Il gruppo di simmetria sotto cui $\Phii$ è conservata --- $\mathrm{Aut}_\delta(\Sigma^{*})$, gli automorfismi di $\Sigma^{*}$ che preservano $\delta$ --- è costruito esplicitamente nel cap.~\emph{Calcolo variazionale discreto e Noether}.
+\emph{Atti distinti restano distinti.} La porta non è il bar; il bar non è il giardino della mattina dopo; il giardino non è Vicenza; Vicenza non è Canottaggio. Ognuno tiene la propria posizione, irripetibile, nella sequenza.
 
 \medskip
 
-Quello che la struttura predice. Un atto, una volta depositato, non scompare con il tempo: resta in $\KSigma$ finché un atto inverso non lo ridistribuisce --- da qui la sospensione strutturale di obbligazioni non saldate (cap.~\emph{La sospensione strutturale}). La concatenazione non commutativa predice l'irripetibilità: due atti distinti restano distinti come elementi del monoide, anche quando $\delta$ assegna loro lo stesso deposito; la simmetria che permuta atti a deposito uguale è $\mathrm{Aut}_\delta$, non l'identità su $\Sigma^{*}$. Il tempo che il regime genera è il flusso di $\Phii$ lungo la traiettoria (cap.~\emph{Il tempo relazionale}): tempo proprio della sequenza, non tempo di calendario --- una traiettoria può restare relazionalmente ferma per mesi se nessun atto pesa, e muoversi rapidamente quando gli atti si concatenano. La chiusura di un'obbligazione è atto contro atto, non dimenticanza: il regime non ha operazione di cancellazione, solo di ridistribuzione.
+Le quattro proprietà definiscono un problema universale.
 
-\section*{$\LP$: strutture algebriche}
+\emph{Problema.} Cercasi una struttura $(S, \cdot, \varepsilon)$ --- insieme con composizione associativa e identità --- equipaggiata con un'inclusione $\iota : \Sigma \hookrightarrow S$ degli atti elementari, tale che ogni applicazione $f : \Sigma \to M$ verso un qualsiasi monoide $M$ si estenda in modo \emph{unico} a un omomorfismo $\bar f : S \to M$ con $\bar f \circ \iota = f$.
 
-Lo spazio dei pool è un reticolo finito $(P, \leq)$, ordinamento per priorità. Gli elementi del pool sono argomenti con ruoli e tag.
+L'unicità è la traduzione algebrica precisa di ``atti distinti restano distinti, l'ordine conta'': qualunque identificazione tra parole, qualunque commutatività, qualunque relazione tra atti distinti farebbe moltiplicare le estensioni ammissibili o ne escluderebbe l'esistenza, contraddicendo l'unicità.
 
-L'aggiornamento è una proiezione
+\emph{Soluzione, unica fino a isomorfismo canonico.} Il monoide libero $(\Sigma^{*}, \cdot, \varepsilon)$, con $\iota$ inclusione delle lettere come parole di lunghezza uno. $\Sigma^{*}$ non è scelto --- è forzato dalle proprietà osservate.
+
+\medskip
+
+La terza proprietà --- saldi ridistribuiscono senza cancellare --- non vive nel monoide. Richiede inversi: per ogni atto $a$, un saldo $a^{-1}$ che libera il peso senza farlo sparire dalla totalità dell'accumulo. Definisce un secondo problema universale.
+
+\emph{Problema.} Cercasi un gruppo $K$ e un omomorfismo $\eta : \Sigma^{*} \to K$ tale che ogni omomorfismo $\Sigma^{*} \to H$ verso un gruppo si fattorizzi in modo \emph{unico} attraverso $\eta$.
+
+\emph{Soluzione, unica fino a isomorfismo canonico.} Il gruppo di Grothendieck $\KSigma$, con $\eta$ canonica. L'esistenza degli inversi formali in $\KSigma$ con preservazione della somma totale è esattamente la condizione caratterizzante del gruppo --- la stessa che le proprietà osservate hanno richiesto.
+
+\medskip
+
+Il dato concreto fornito dalla Parte~I è l'applicazione
 \[
-\kappa \,:\, P \longrightarrow \mathrm{States}_G,
+\delta \,:\, \Sigma \longrightarrow \KSigma,
 \]
-retrazione: esiste $\iota : \mathrm{States}_G \to P$ con $\kappa \circ \iota = \mathrm{id}_{\mathrm{States}_G}$. Lo stato $s_{n+1} = \kappa(P_n)$. Lo stato precedente $s_n$ non entra come ingresso di $\kappa$.
-
-Il gruppo di simmetria del sistema è
+che a ogni atto associa il suo deposito. La proprietà universale del monoide libero forza $\delta$ a estendersi in un \emph{unico} omomorfismo
 \[
-\Gs \;=\; \Sym(\{c \in P : \mathrm{threat}(c) < \theta\}).
+\Phii \,:\, \Sigma^{*} \longrightarrow \KSigma, \qquad \Phii(a_1 \ldots a_n) \;=\; \delta(a_1) + \cdots + \delta(a_n).
 \]
-Le permutazioni degli argomenti sotto soglia, con ruoli e tag fissi. Sopra soglia, l'argomento esce dall'azione del gruppo: la minaccia rompe la simmetria.
-
-L'invariante è la $\Gs$-invarianza di $\kappa$:
+$\Phii$ non viene inventato. Non c'è scelta nel passaggio dal deposito al suo invariante traiettoriale: è l'unica estensione possibile. Il gruppo di simmetria sotto cui $\Phii$ è conservata è univocamente individuato come stabilizzatore di $\delta$:
 \[
-\Kappaa \,:\quad \kappa(g \cdot P) \;=\; \kappa(P) \quad \text{per ogni } g \in \Gs,\; \text{per ogni } P.
+\mathrm{Aut}_\delta(\Sigma^{*}) \;=\; \{\sigma \in \mathrm{Aut}(\Sigma^{*}) : \delta \circ \sigma = \delta\}.
 \]
-Permutare due argomenti sotto soglia non cambia la proiezione. Il pool è classe di equivalenza modulo $\Gs$; $\kappa$ legge la classe, non gli elementi.
+Tutto e solo ciò che permuta gli atti lasciando invariato il deposito.
 
-$\LP$ è il regime che mantiene $\Kappaa$ ben definito attraverso ogni aggiornamento.
+\medskip
 
-\section*{Regime: la forma comune}
+L'oggetto univocamente individuato dalla prima famiglia è la quaterna $(\Sigma^{*},\, \cdot,\, \mathrm{Aut}_\delta,\, \Phii)$. Una grandezza $\Phii$ a valori in un gruppo, ferma sotto un gruppo di simmetria, preservata dalla regola di aggiornamento del sistema: è la forma di una legge di conservazione. La parola nomina la forma forzata, non aggiunge contenuto. La chiameremo $\Lt$.
 
-Le due costruzioni hanno presentato gli stessi tipi di oggetti, nello stesso ordine. Spazio degli stati --- $\Sigma^{*}$, $P$. Regola di aggiornamento --- concatenazione di un atto, proiezione autonoma del pool. Gruppo di simmetria --- $\mathrm{Aut}_\delta(\Sigma^{*})$, $\Gs$. Carica conservata, invariante della simmetria e preservata dalla regola --- $\Phii$ a valori in $\KSigma$, $\Kappaa$ a valori in $P/\Gs$. La forma comune è già nella stanza.
+\medskip
 
-A cui si aggiunge una quinta coordinata che il capitolo seguente articolerà: la valutazione che ciascuna legge dà su ogni sottosequenza --- il pattern delle risposte attraverso cui, per Yoneda, la legge si lascia identificare.
+Quello che la struttura forzata predice cristallizza le connessioni con il resto del documento. Un atto, una volta depositato, resta in $\KSigma$ finché un atto inverso non lo ridistribuisce: la sospensione strutturale di obbligazioni non saldate (cap.~\emph{La sospensione strutturale}) è esattamente questa permanenza in un gruppo che ammette inversi ma non zeri. L'irripetibilità degli atti è la libertà del monoide --- la simmetria che permuta atti a deposito uguale è $\mathrm{Aut}_\delta$, non l'identità su $\Sigma^{*}$. Il tempo che $\Lt$ genera è il flusso di $\Phii$ lungo la traiettoria (cap.~\emph{Il tempo relazionale}): tempo proprio della sequenza, non tempo di calendario. La chiusura di un'obbligazione è atto contro atto, non dimenticanza --- il regime non ha operazione di cancellazione, solo di ridistribuzione, perché la proprietà universale di $\KSigma$ ammette inversi, non zeri.
+
+\section*{Seconda famiglia: la proiezione invariante}
+
+Tre proprietà, leggibili nella Parte~I.
+
+\emph{Lo stato si rifà sul presente.} La mattina dopo il jazz bar, \emph{vieni in centro, anche Tommaso}: la sera prima non entra come ingrediente nello stato in cui la frase si presenta. A Vicenza, dopo un pomeriggio di monologo su T, \emph{ho casa libera}: T, appena descritto, non entra come ingrediente nello stato in cui la frase si presenta. Lo stato corrente non ha la sequenza come ingresso.
+
+\emph{Argomenti diversi occupano la stessa posizione senza spostare la configurazione.} F a sedici anni, T sei mesi dopo: descritti con la stessa funzione --- portatori di fiori dopo la crisi, autonomia bassa, presenza ferma. La minaccia al parco è veicolata da Tommaso: F è argomento del messaggio, Tommaso veicolo; il giorno dopo Tommaso può tornare argomento di un'altra configurazione mentre F non è più citato. Permutare argomenti sotto soglia lascia il letto della configurazione fermo.
+
+\emph{La configurazione si espone come tale.} La foto nuda a $N$ arriva ad $A$ in doccia per propagazione: $N$ amico di $A$, $N$ mostra. Non c'è canale, non c'è destinatario, non c'è atto di trasmissione. Il compleanno con $T$ accanto e $N$ in posizione alta non è scena costruita per $A$. La configurazione, esistendo, è leggibile dal pool che la contiene. Gli stati non sono interni: abitano il pool.
+
+\medskip
+
+Le tre proprietà definiscono un problema universale.
+
+\emph{Problema.} Sia $(P, \leq)$ il reticolo finito dei pool --- argomenti con ruoli e tag, ordinati per priorità --- e sia
+\[
+\Gs \;=\; \Sym\bigl(\{c \in P : \mathrm{threat}(c) < \theta\}\bigr)
+\]
+il gruppo che permuta gli argomenti sotto soglia di minaccia. Cercasi un'applicazione di aggiornamento $T : P \to \mathrm{States}_G$ che soddisfi: (i) dipendenza dal solo presente --- $T$ è funzione del pool corrente; (ii) $\Gs$-invarianza --- $T(g \cdot P) = T(P)$ per ogni $g \in \Gs$, per ogni $P$; (iii) esposizione --- $\mathrm{States}_G \subseteq P$ con inclusione $\iota : \mathrm{States}_G \hookrightarrow P$, e $T \circ \iota = \mathrm{id}$.
+
+I vincoli (i) e (ii) implicano, per la proprietà universale del quoziente, che $T$ si fattorizza in modo \emph{unico} attraverso la proiezione canonica $\pi : P \twoheadrightarrow P/\Gs$, come $T = \bar T \circ \pi$ con $\bar T : P/\Gs \to \mathrm{States}_G$ univocamente determinata. Il vincolo (iii) forza $T$ a essere retrazione, e $\bar T$ biiezione su $\mathrm{States}_G$.
+
+\emph{Soluzione, unica fino a isomorfismo canonico.} La retrazione $\Gs$-invariante $\kappa : P \to \mathrm{States}_G$, con sezione $\iota$. Lo stato $s_{n+1} = \kappa(P_n)$; lo stato precedente $s_n$ non entra come ingresso di $\kappa$, perché la proprietà universale lo esclude.
+
+L'invariante che il sistema conserva è la classe del pool modulo $\Gs$, univocamente determinata:
+\[
+\Kappaa(P) \;:=\; [P]_{\Gs} \;\in\; P/\Gs.
+\]
+$\kappa$ legge la classe, non gli elementi --- esattamente perché la classe è ciò che la $\Gs$-invarianza forza $\kappa$ a leggere.
+
+\medskip
+
+L'oggetto univocamente individuato dalla seconda famiglia è la quaterna $(P,\, \kappa,\, \Gs,\, \Kappaa)$. Una grandezza $\Kappaa$ a valori in $P/\Gs$, ferma sotto $\Gs$, preservata da $\kappa$: è la forma di una legge di conservazione. La chiameremo $\LP$.
+
+\section*{Regime: lo schema delle proprietà universali}
+
+Le due famiglie, ciascuna per la propria via universale, hanno individuato oggetti con lo stesso schema in quattro coordinate. Spazio degli stati come soluzione di una proprietà universale --- libertà del monoide nella prima, quoziente sotto invarianza nella seconda. Regola di aggiornamento come unica mappa che i vincoli forzano --- estensione omomorfica da $\delta$, retrazione $\Gs$-invariante dipendente dal solo presente. Gruppo di simmetria univocamente individuato --- stabilizzatore di $\delta$, azione di permutazione sotto soglia. Carica conservata univocamente determinata come invariante --- $\Phii$ a valori in $\KSigma$, $\Kappaa$ a valori in $P/\Gs$.
+
+La forma non è ``comune'' nel senso debole di una somiglianza scoperta a posteriori dopo aver costruito le due leggi per altra via. È lo schema delle proprietà universali che ogni legge di conservazione, per costruzione, deve esibire: ciascuna delle quattro coordinate è la risposta univoca a un problema universale. A questo si aggiunge una quinta coordinata, che il capitolo seguente articola --- la valutazione $s_r$ con cui ogni legge si lascia identificare attraverso il pattern delle sue risposte sulla sequenza. Per Yoneda, la legge \emph{è} questo pattern.
 
 \begin{defn}[Regime]
 Un \emph{regime} $r$ è il pattern delle sue cinque coordinate:
 \[
 r \;=\; \bigl(\,\mathcal{X}_r,\; T_r,\; G_r,\; \mathcal{I}_r,\; s_r\,\bigr),
 \]
-spazio degli stati $\mathcal{X}_r$, regola di aggiornamento $T_r$, gruppo di simmetria $G_r$ con cui $T_r$ commuta, carica $\mathcal{I}_r : \mathcal{X}_r \to M_r$ $G_r$-invariante e preservata da $T_r$, valutazione $s_r$ sulla sequenza delle interazioni $\mathcal{S}$ (cap.~seguente). Per Yoneda, $r$ non è un'entità in sé descritta dalle cinque coordinate: \emph{è} il pattern che le coordinate, lette insieme, esibiscono.
+spazio degli stati $\mathcal{X}_r$ univocamente individuato da una proprietà universale; regola di aggiornamento $T_r$ univocamente determinata dai vincoli osservati; gruppo di simmetria $G_r$ univocamente individuato come stabilizzatore o azione; carica $\mathcal{I}_r : \mathcal{X}_r \to M_r$ univocamente determinata come invariante di $G_r$ preservato da $T_r$; valutazione $s_r$ sulla sequenza delle interazioni $\mathcal{S}$ (cap.~seguente). Per Yoneda, $r$ \emph{è} il pattern che le cinque coordinate, lette insieme, esibiscono.
 \end{defn}
 
-$\Lt$ e $\LP$ sono le due istanze appena nominate. La definizione registra il pattern comune --- non lo inventa, non lo postula.
+$\Lt$ e $\LP$ sono le due istanze appena lette dalla materia. La quintupla registra lo schema --- non lo inventa, non lo postula.
 
 \medskip
 
@@ -538,13 +566,13 @@ Limite. Le cinque coordinate nominano la forma di una legge di conservazione oss
 
 \section*{$\Phii$ e $\Kappaa$ sono di tipo diverso}
 
-Questo è il punto del capitolo.
+La differenza di tipo tra le due cariche è conseguenza diretta della non-sovrapposizione delle due famiglie di proprietà osservate.
 
-$\Phii$ vive su $\KSigma$. Struttura monodimensionale orientata: ha un prima e un dopo, accumula lungo traiettorie, ammette inversi che ridistribuiscono.
+$\Phii$ vive su $\KSigma$. Struttura monodimensionale orientata: ha un prima e un dopo --- l'ordine degli atti conta --- accumula lungo traiettorie, ammette inversi che ridistribuiscono. Le quattro proprietà della prima famiglia sono direzionali; la freccia del tempo è dentro le proprietà osservate, non aggiunta sopra di esse.
 
-$\Kappaa$ vive sul quoziente $P/\Gs$. Struttura multidimensionale non orientata: invariante sotto permutazioni degli argomenti, nessun asse temporale, nessuna nozione di accumulo.
+$\Kappaa$ vive sul quoziente $P/\Gs$. Struttura multidimensionale non orientata: invariante sotto permutazioni degli argomenti, nessun asse temporale, nessuna nozione di accumulo. Le tre proprietà della seconda famiglia sono permutazionali; l'assenza di freccia è dentro le proprietà osservate, non aggiunta sopra di esse.
 
-Non sono lo stesso oggetto su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non simmetria di costruzione. La differenza di tipo è la radice strutturale dell'incompatibilità. Tutto il resto del documento è geometria di questa differenza.
+Non sono lo stesso oggetto su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso, e questa differenza riflette esattamente la non-sovrapposizione delle due famiglie di proprietà osservate --- famiglie senza proprietà ponte. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non di costruzione. La differenza di tipo è la radice strutturale dell'incompatibilità. Tutto il resto del documento è geometria di questa differenza.
 
 \begin{principio}[Incompatibilità dei due regimi]
 Quando $\Lt$ e $\LP$ sono entrambi attivi su sottosequenze che richiedono reciprocità --- relazioni con $R > 0$ --- i due regimi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza $\Phii$. $\LP$ aggiorna sempre, anche se $\Phii$ si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. Da $\GammaA$, nessun regime terzo costruibile può conservare insieme un accumulo monodimensionale orientato in $\KSigma$ e una classe di equivalenza multidimensionale sotto $\Gs$.
