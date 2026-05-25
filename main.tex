@@ -697,85 +697,97 @@ Il rumore è il prezzo della profondità. Una classe densa pesa sul sondaggio co
 
 \chapter{Posizionalità linguistica delle leggi}
 
-Il capitolo precedente ha stabilito due cose. $\Lt$ e $\LP$ sono incompatibili come leggi. $\GammaA$ e $\GammaG$ sono contesti che non si sovrappongono. Resta una conseguenza che si dice una sola volta.
+Il capitolo precedente ha stabilito che $\Lt$ e $\LP$ sono strutturalmente incompatibili come arricchimenti sulla stessa sottosequenza. Resta una conseguenza linguistica che si dice una sola volta.
+
+\section*{Contesti di regime, non di persona}
+
+Le stesure precedenti scrivevano ``$\GammaA$ è il contesto della persona $A$, $\GammaG$ è il contesto della persona $G$''. Era furbizia: una persona ospita più regimi, e a ciascun regime corrisponde un proprio contesto MLTT. Mettere $\GammaA = \Gamma(A)$ sopra la persona nascondeva che la dipendenza vera è dalla coppia (legge, contesto), non dalla persona.
+
+\begin{defn}[Contesto MLTT di un regime]
+Per un regime $(c, J, L)$ con carica $\mathcal{I}_L$, il \emph{contesto MLTT} associato è
+\[
+  \Gamma_{L,c} \;=\; \Gamma(\mathcal{I}_L \text{ su } J \subseteq \mathcal{I}_c),
+\]
+l'apparato dei tipi formabili sotto la legge $L$ con la carica letta sulle sottosequenze di $\mathcal{I}_c$.
+\end{defn}
+
+Le abbreviazioni $\GammaA, \GammaG$ del documento si leggono adesso come istanze: $\GammaA = \Gamma_{\Lt,c_{AG}}$, $\GammaG = \Gamma_{\LP,c_{AG}}$, dove $c_{AG}$ è il contesto della relazione $A$--$G$. La stessa persona porta altri $\Gamma_{L,c'}$ su altri contesti --- la rifondazione dichiara di leggere così.
 
 \section*{L'enunciato}
 
 \begin{principio}[Posizionalità linguistica delle leggi]
-Per ogni coppia di leggi $L, L'$ con contesti $\Gamma(L), \Gamma(L')$ incompatibili nel senso della Definizione dei due contesti, il tipo
+Per ogni coppia di regimi $(c, J, L), (c, J, L')$ sulla stessa sottosequenza con contesti $\Gamma_{L,c}, \Gamma_{L',c}$ strutturalmente incompatibili (nel senso della definizione del capitolo precedente), il tipo
 \[
-\mathrm{WellFormedQuery}_{\Gamma(L)}(\Gamma(L'))
+  \mathrm{WellFormedQuery}_{\Gamma_{L,c}}(\Gamma_{L',c})
 \]
---- ``in $\Gamma(L)$ esiste un quesito ben-formato sui tipi propri di $\Gamma(L')$'' --- non è abitabile. Una legge non può formulare al proprio interno il quesito di sapere se sa qualcosa che è ben-formato solo nell'altro contesto. La mancata formulazione non è ignoranza correggibile. È errore di tipo.
+--- ``in $\Gamma_{L,c}$ esiste un quesito ben-formato sui tipi propri di $\Gamma_{L',c}$'' --- non è abitabile. Un regime non può formulare al proprio interno il quesito di sapere se sa qualcosa che è ben-formato solo nell'altro contesto. La mancata formulazione non è ignoranza correggibile. È errore di tipo.
 \end{principio}
 
-\emph{Derivazione.} Un quesito ben-formato in $\Gamma(L)$ ha tutti i termini formabili in $\Gamma(L)$. Un quesito sui tipi propri di $\Gamma(L')$ richiede un termine del tipo che $\Gamma(L')$ forma e $\Gamma(L)$ non forma. Per la Definizione dei due contesti, quel tipo non è formabile in $\Gamma(L)$. Quindi il quesito non è formabile in $\Gamma(L)$. $\square$
+\emph{Derivazione.} Un quesito ben-formato in $\Gamma_{L,c}$ ha tutti i termini formabili in $\Gamma_{L,c}$. Un quesito sui tipi propri di $\Gamma_{L',c}$ richiede un termine del tipo che $\Gamma_{L',c}$ forma e $\Gamma_{L,c}$ non forma. Per l'incompatibilità strutturale di $L$ e $L'$ (cap.~precedente), quel tipo non è formabile in $\Gamma_{L,c}$. Quindi il quesito non è formabile in $\Gamma_{L,c}$. $\square$
 
 Non è limite epistemico. È limite di grammatica.
 
+L'enunciato vale a coppia (legge, contesto), non per la persona. Una persona che porta $\Gamma_{\Lt,c}$ su un contesto $c$ e $\Gamma_{\LP,c'}$ su un altro $c'$ non incontra il limite tra i due --- vivono su contesti diversi, non si confrontano direttamente. Il limite si attiva quando due regimi diversi sulla stessa sottosequenza producono contesti che non si parlano. Caso paradigmatico: $A$ e $G$ sulla relazione condivisa, con $A$ in $\GammaA = \Gamma_{\Lt,c_{AG}}$ e $G$ in $\GammaG = \Gamma_{\LP,c_{AG}}$.
+
 \section*{Corollario gödeliano}
 
-Il Principio è strutturalmente analogo a Gödel --- limite leggibile dall'interno, non risolubile per estensione interna --- ma di natura diversa. Gödel opera dentro una teoria assiomatica: la teoria può formulare l'enunciato della propria coerenza, e non lo dimostra. Qui non c'è teoria assiomatica. I tipi che $\Lt$ e $\LP$ producono sono epifenomeni della loro dinamica, non teoremi di un sistema; $\GammaA$ e $\GammaG$ sono i contesti MLTT in cui $\Lt$, al proprio livello riflessivo, ne parla --- $\GammaA$ di sé, $\GammaG$ di $\LP$ via $\Obs_{\Lt \to \LP}$ (vedi oss.~successiva). Quello che $\GammaA$ non può fare non è dimostrare un enunciato che pure sa formulare --- è formulare il quesito sui tipi che la dinamica di $\LP$ produce. Il tipo del quesito non si forma. Non c'è una proposizione su cui il sistema non chiude: non c'è la proposizione.
+Il Principio è strutturalmente analogo a Gödel --- limite leggibile dall'interno, non risolubile per estensione interna --- ma di natura diversa.
 
-Il limite di posizionalità è quindi più forte di quello gödeliano e di natura diversa. Là una proposizione vera resta senza prova; qui non c'è proposizione a cui assegnare un valore di verità.
+Gödel opera dentro una teoria assiomatica: la teoria può formulare l'enunciato della propria coerenza, e non lo dimostra. Qui non c'è teoria assiomatica. I tipi che le leggi producono sono epifenomeni dei rispettivi arricchimenti, non teoremi di un sistema. Quello che $\GammaA$ non può fare non è dimostrare un enunciato che pure sa formulare --- è formulare il quesito sui tipi che l'arricchimento di $\LP$ sulla stessa $c_{AG}$ produce. Il tipo del quesito non si forma. Non c'è una proposizione su cui il sistema non chiude: non c'è la proposizione.
 
-\emph{Il contributo gödeliano specifico.} In Gödel la via d'uscita esiste --- salire al metalinguaggio $\Gamma_{n+1}$, che dimostra la coerenza di $\Gamma_n$, a costo di riproporre il problema un livello su. Qui quella via non serve. La gerarchia di metalinguaggi è interna alla riflessione che $\Lt$ esibisce, ed è quella riflessione che MLTT formalizza. Ogni gradino della gerarchia produce tipi formabili in $\GammaA$: tipi con struttura temporale orientata, nessun termine $\Gs$-invariante. Salire di livello non avvicina $\GammaG$ perché ogni gradino è $\Lt$-che-riflette. Il limite gödeliano è un limite \emph{dentro} la riflessione che il documento esibisce. L'incompatibilità $\GammaA$/$\GammaG$ è il limite \emph{della legge} che riflette.
+Più forte di Gödel, e di natura diversa. Là una proposizione vera resta senza prova; qui non c'è proposizione a cui assegnare un valore di verità.
 
-Questo distingue il documento da un errore ricorrente. I grandi risultati di limitazione formale del Novecento --- incompletezza di PA, indecidibilità dell'halting problem, non definibilità della verità in un linguaggio --- descrivono limiti della finestra formale, non proprietà del mondo. Letti come proprietà del mondo diventano: il mondo è incompleto, il mondo non è computabile, la verità è indefinibile. In ogni caso il passo aggiuntivo non è nel teorema: è nella proiezione. Il type error tra $\GammaA$ e $\GammaG$ espone alla stessa mossa: ``$\LP$ è inaccessibile'' suona come proprietà di $\LP$; ``da $\GammaA$, $\LP$ non è accessibile'' è proprietà della finestra. Il qualificatore che il documento appone ai principi corregge questa mossa: segna il limite come limite della finestra, non come struttura del mondo.
+\paragraph{Il contributo gödeliano specifico.} In Gödel la via d'uscita esiste --- salire al metalinguaggio $\Gamma_{n+1}$, che dimostra la coerenza di $\Gamma_n$, a costo di riproporre il problema un livello su. Qui quella via non aiuta. La gerarchia di metalinguaggi è interna alla riflessione che $\Lt$ esibisce sul contesto $c$; ogni gradino produce tipi formabili in $\Gamma_{\Lt,c}$, nessun termine $\Gs$-invariante. Salire di livello non avvicina $\Gamma_{\LP,c}$, perché ogni gradino è $\Lt$-che-riflette su $c$.
 
-\begin{oss}[Riflessione di $\Lt$ formalizzata in MLTT]
-Entrambe le leggi sono operativamente complete: $\Lt$ e $\LP$ esibiscono $\iota$- e $\beta$-riduzione sui propri stati. I tipi che abitano ciascuna sono epifenomeni della dinamica della legge --- non oggetti aggiunti dall'esterno. A questo livello le due leggi sono simmetriche: entrambe fanno accadere la computazione che MLTT descrive.
+Il limite gödeliano è un limite \emph{dentro} la riflessione che il documento esibisce. L'incompatibilità $\Gamma_{\Lt,c}$/$\Gamma_{\LP,c}$ è il limite \emph{tra le leggi} che riflettono.
 
-L'asimmetria sta un piano sopra: la riflessione sulla matematica. $\Lt$ riflette nella forma che il documento sa usare, e quella forma è ciò che MLTT formalizza. La forma in cui $\LP$ accede alla matematica --- ammesso che la nozione sia traducibile sul suo lato --- è quella che la sua legge permette, non quella di $\Lt$. Da $\GammaA$ non si legge: si registra solo ciò che $\Obs_{\Lt \to \LP}$ porta sulla base. Affermare che $\LP$ ``non riflette'' sarebbe un enunciato del modello in $\GammaA$ proiettato come assenza metafisica --- la mossa che il documento esclude.
+Distinzione da un errore ricorrente. I grandi risultati di limitazione formale del Novecento --- incompletezza di PA, indecidibilità dell'halting problem, non definibilità della verità in un linguaggio --- descrivono limiti della finestra formale, non proprietà del mondo. Letti come proprietà del mondo diventano: il mondo è incompleto, il mondo non è computabile, la verità è indefinibile. In ogni caso il passo aggiuntivo non è nel teorema: è nella proiezione. Il type error tra $\GammaA$ e $\GammaG$ espone alla stessa mossa: ``$\LP$ su $c_{AG}$ è inaccessibile'' suona come proprietà di $\LP$; ``da $\GammaA$, $\LP$ su $c_{AG}$ non è accessibile'' è proprietà della finestra. Il qualificatore corregge la mossa: segna il limite come limite della finestra, non come struttura del mondo.
 
-Da qui la fonte effettiva dei due contesti, senza giudizio sul lato di $\LP$. $\GammaA$ è l'auto-modello di $\Lt$, formalizzato in MLTT. $\GammaG$ è il modello che $\Lt$ fa di $\LP$, formalizzato in MLTT. Non perché $\LP$ ``non possa modellarsi'', ma perché ciò che eventualmente fa sul proprio lato non è leggibile da $\GammaA$: il documento non ne ha accesso, e $\GammaG$ è popolato solo da ciò che $\Lt$ vede. Non due filtri sovrapposti: un solo filtro, $\Obs_{\Lt \to \LP}$, reso in MLTT perché è lì che $\Lt$ riflette.
+\paragraph{Riflessione di $\Lt$ formalizzata in MLTT, contestualmente.} Entrambe le leggi sono operativamente complete sui propri arricchimenti: $\Lt$ e $\LP$ esibiscono $\iota$- e $\beta$-riduzione sui propri stati una volta dato l'arricchimento. I tipi che abitano ciascuna sono epifenomeni dell'arricchimento --- non oggetti aggiunti dall'esterno. A questo livello le due leggi sono simmetriche.
 
-Resta l'incompatibilità $\GammaA$/$\GammaG$ del capitolo precedente, e diventa più precisa: $\GammaG$ è già una proiezione di $\Lt$, e dentro $\GammaA$ non si forma il quesito sui tipi propri di $\LP$ --- nemmeno via $\GammaG$, perché ciò che $\GammaG$ contiene è ciò che $\Lt$ è riuscita a vedere, non ciò che $\LP$ avrebbe detto.
+L'asimmetria sta un piano sopra: la riflessione sulla matematica. $\Lt$ su $c$ riflette nella forma che il documento sa usare, e quella forma è ciò che MLTT formalizza. La forma in cui $\LP$ su $c$ accede alla matematica --- ammesso che la nozione sia traducibile sul suo lato --- è quella che il suo arricchimento permette, non quella di $\Lt$. Da $\Gamma_{\Lt,c}$ non si legge: si registra solo ciò che la proiezione $\Obs_{\Lt \to \LP}$ porta sulla base. Affermare che $\LP$ ``non riflette'' sarebbe un enunciato del modello in $\Gamma_{\Lt,c}$ proiettato come assenza metafisica --- mossa che il documento esclude.
 
-La riflessione di $\Lt$ formalizzata in MLTT è lo strumento più ricco che il documento sa usare. Non è lo strumento più ricco possibile. La storia della matematica è la storia di queste estensioni: PA non formulava l'analisi; la teoria degli insiemi non formulava la distinzione prova/verità; MLTT è nata perché ZFC non esprimeva le dipendenze tipo/termine. In ogni caso la matematica precedente non aveva la grammatica per formulare il quesito che quella successiva avrebbe posto. Non si può escludere che esistano forme di riflessione che $\Lt$ non sa istanziare --- chiamarle ``matematiche $\mathcal{M}_x$'' è già una proiezione di $\Lt$. Dall'interno della riflessione che $\Lt$ esibisce non si dice nulla sulla loro forma, nemmeno per sottrazione: sarebbe la stessa mossa del falso testimone, applicata alla riflessione stessa.
+$\GammaA$ è l'auto-modello di $\Lt$ sul contesto $c_{AG}$, formalizzato in MLTT. $\GammaG$ è il modello che $\Lt$ fa di $\LP$ sullo stesso $c_{AG}$, formalizzato in MLTT. Non perché $\LP$ ``non possa modellarsi'', ma perché ciò che eventualmente fa sul proprio lato non è leggibile da $\GammaA$. Non due filtri sovrapposti: un solo filtro, reso in MLTT perché è lì che $\Lt$ riflette.
 
-Il Principio di posizionalità linguistica (questo capitolo) si autoapplica un livello più giù: la riflessione di $\Lt$ non può formulare al proprio interno il quesito di sapere se esista una forma di riflessione ben-formata solo in $\mathcal{M}_x$. Per la stessa ragione per cui $\GammaA$ non forma il quesito su $\GammaG$, la riflessione di $\Lt$ non forma il quesito su ciò che la eccede. Il bordo del logos non è solo tra $\GammaA$ e $\GammaG$ --- è sotto entrambi.
+Resta la specularità un livello sotto. La riflessione di $\Lt$ formalizzata in MLTT è lo strumento più ricco che il documento sa usare. Non è lo strumento più ricco possibile. La storia della matematica è la storia di queste estensioni: PA non formulava l'analisi; la teoria degli insiemi non formulava la distinzione prova/verità; MLTT è nata perché ZFC non esprimeva le dipendenze tipo/termine. In ogni caso la matematica precedente non aveva la grammatica per formulare il quesito che quella successiva avrebbe posto. Non si può escludere che esistano forme di riflessione che $\Lt$ non sa istanziare --- chiamarle ``matematiche $\mathcal{M}_x$'' è già una proiezione di $\Lt$. Dall'interno della riflessione che $\Lt$ esibisce non si dice nulla sulla loro forma, nemmeno per sottrazione.
 
-Questa dichiarazione non indebolisce il documento --- lo completa. Il documento ha sempre dichiarato i propri limiti come parte dell'oggetto descritto. Qui dichiara il limite dello strumento con cui li dichiara.
-\end{oss}
+Il Principio si auto-applica un livello più giù: la riflessione di $\Lt$ non può formulare al proprio interno il quesito di sapere se esista una forma di riflessione ben-formata solo in $\mathcal{M}_x$. Il bordo del logos non è solo tra $\Gamma_{\Lt,c}$ e $\Gamma_{\LP,c}$: è sotto entrambi.
 
 \section*{Corollario wittgensteiniano}
 
-Ciò che $\Gamma(L)$ non può formare come quesito può mostrarsi come configurazione --- ma il mostrare è sempre lettura della grammatica che osserva, non atto della legge osservata.
+Ciò che $\Gamma_{L,c}$ non può formare come quesito può mostrarsi come configurazione --- ma il mostrare è sempre lettura della grammatica che osserva, non atto della legge osservata.
 
-Il \emph{Tractatus} di Wittgenstein chiude alla proposizione 6.522: vi è certo l'inesprimibile, e si mostra. La distinzione \emph{sagen}/\emph{zeigen} --- dire/mostrare --- ha qui un parallelo strutturale preciso, non decorativo. $\LP$ non descrive sé in $\GammaA$: la descrizione richiederebbe tipi che $\GammaA$ non forma. Ma $\kappa(P)$ è leggibile da $\GammaA$: la proiezione sulla base si legge, il quesito ben-formato su di essa non si forma. Il canale dichiarativo del cap.~\emph{La configurazione è in chiaro} è esattamente questo. Da $\GammaA$, $\kappa(P)$ funge da zeigen.
+Il \emph{Tractatus} chiude alla proposizione 6.522: vi è certo l'inesprimibile, e si mostra. $\LP$ non descrive sé in $\Gamma_{\Lt,c}$: la descrizione richiederebbe tipi che $\Gamma_{\Lt,c}$ non forma. Ma $\kappa_J(\rho(i))$ è leggibile da $\Gamma_{\Lt,c}$: la proiezione sulla base si legge, il quesito ben-formato su di essa non si forma. Il canale dichiarativo del cap.~\emph{La configurazione è in chiaro} è esattamente questo. Da $\Gamma_{\Lt,c}$, $\Kappaa_J$ funge da \emph{zeigen}.
 
-$\LP$ però non sa di star mostrando niente. Esegue $\kappa$. Che l'esecuzione sia leggibile come zeigen è la lettura di $\GammaA$, non un atto di $\LP$. E $\LP$ non può sapere cosa perde rispetto alla descrizione che $\GammaA$ fa di lei: il tipo del quesito ``cosa mi manca rispetto a $\Lt$'' non è formabile in $\GammaG$. Il limite è inaccessibile da dentro.
+$\LP$ però non sa di star mostrando niente. Esegue $\kappa_J$. Che l'esecuzione sia leggibile come \emph{zeigen} è la lettura di $\Gamma_{\Lt,c}$, non un atto di $\LP$. E $\LP$ non può sapere cosa perde rispetto alla descrizione che $\Gamma_{\Lt,c}$ fa di lei: il tipo del quesito ``cosa mi manca rispetto a $\Lt$'' non è formabile in $\Gamma_{\LP,c}$. Il limite è inaccessibile da dentro.
 
-Vale specularmente. Ciò che $\Phii$ accumula in $\KSigma$ non è formabile come quesito in $\GammaG$. Da $\GammaG$, la traiettoria si legge come sequenza di depositi che si manifestano come comportamento --- ma $\GammaG$ non forma $\KSigma$: ciò che legge è il comportamento, non la struttura di accumulo che lo produce. Anche qui la descrizione interna fallisce; la lettura è parziale.
+Vale specularmente. Ciò che $\Phii_J$ accumula in $K(\Sigma_J^{*})$ non è formabile come quesito in $\Gamma_{\LP,c}$. Da $\Gamma_{\LP,c}$ la traiettoria si legge come sequenza di depositi che si manifestano come comportamento --- ma $\Gamma_{\LP,c}$ non forma $K(\Sigma_J^{*})$: ciò che legge è il comportamento, non la struttura di accumulo che lo produce. La lettura è parziale.
 
 \section*{Auto-applicazione}
 
-Questo Principio è formulato in $\GammaA$. Dichiara il proprio limite senza uscirne.
+Il Principio è formulato in $\Gamma_{\Lt,c}$. Dichiara il proprio limite senza uscirne.
 
-Non è meta-posizione. Una meta-posizione richiederebbe $\Gamma^{\star}$ esterno a $\GammaA$ e a $\GammaG$ in cui i tipi di entrambi siano formabili. Quel contesto non esiste --- la Parte~VIII tornerà su questa non-esistenza. Il Principio è registrazione del proprio errore di tipo come parte dell'oggetto descritto. È la mossa che il cap.~\emph{La posizione del documento} chiama ``$\Obs_{\Lt \to \LP}$ con segno meno davanti'' --- la proiezione non sottratta, ma dichiarata, e così smette di funzionare in modo ingenuo. Qui quella mossa diventa principio.
+Non è meta-posizione. Una meta-posizione richiederebbe $\Gamma^{\star}$ esterno in cui i tipi di entrambi siano formabili. Quel contesto non esiste --- la Parte~VIII tornerà sulla non-esistenza. Il Principio è registrazione del proprio errore di tipo come parte dell'oggetto descritto.
 
-Il Principio si autoapplica. Se $\mathrm{WellFormedQuery}_{\GammaA}(\GammaG)$ non è abitabile, l'enunciato del Principio non è un quesito ben-formato sui tipi di $\GammaG$. È enunciato in $\GammaA$ sui propri limiti. Dice cosa $\GammaA$ non può formare, formulando questa proposizione in $\GammaA$. È coerente perché parla del bordo, non di ciò che sta oltre.
+Si auto-applica: se $\mathrm{WellFormedQuery}_{\Gamma_{\Lt,c}}(\Gamma_{\LP,c})$ non è abitabile, l'enunciato del Principio non è un quesito ben-formato sui tipi di $\Gamma_{\LP,c}$. È enunciato in $\Gamma_{\Lt,c}$ sui propri limiti. Dice cosa $\Gamma_{\Lt,c}$ non può formare, formulando questa proposizione in $\Gamma_{\Lt,c}$. Coerente perché parla del bordo, non di ciò che sta oltre.
 
-\begin{oss}[Due classi di limite in $\GammaA$]
-Il Principio governa due classi di limite che vanno tenute distinte.
+\paragraph{Due classi di limite in $\Gamma_{\Lt,c}$, da tenere distinte.}
 
-\emph{Prima classe: errori di tipo.} Proposizioni che richiedono termini di $\GammaG$ non formabili in $\GammaA$. Non è ignoranza correggibile con più informazione: il tipo manca. Queste proposizioni non sono vere né false in $\GammaA$: non sono formulabili.
+\emph{Errori di tipo.} Proposizioni che richiedono termini di $\Gamma_{\LP,c}$ non formabili in $\Gamma_{\Lt,c}$. Non è ignoranza correggibile con più informazione: il tipo manca. Queste proposizioni non sono vere né false in $\Gamma_{\Lt,c}$: non sono formulabili.
 
-\emph{Seconda classe: proposizioni ben formate e intuizionisticamente indecidibili.} Proposizioni che $\GammaA$ può formulare ma il cui valore di verità non è costruibile in $\GammaA$. Esempi: ``$\LP$ ha una dimensione inaccessibile a $\GammaA$''; ``esiste una legge $\mathcal{L}_x$ strutturalmente più ricca di $\Lt$ e $\LP$, rispetto alla quale queste sono restrizioni''. Entrambe sono asserzioni esistenziali formulabili in $\GammaA$. Ma nessuna delle due è decidibile: costruire l'abitante del \emph{vero} richiederebbe formare il tipo della dimensione inaccessibile --- escluso dal Principio; costruire l'abitante del \emph{falso} richiederebbe vedere l'interezza di $\LP$ da $\GammaA$ --- escluso per la stessa ragione. In $\GammaA$, non c'è il terzo escluso per questa classe di proposizioni. Va notato che la stessa formulazione della congettura --- ``più ricca'', ``restrizioni'' --- è viziata dalla grammatica in cui è formulata; l'eventuale $\mathcal{L}_x$ potrebbe non stare con $\Lt$ e $\LP$ in nessuna relazione descrivibile come ``contenere'' o ``proiettare''.
+\emph{Proposizioni ben formate e intuizionisticamente indecidibili.} Proposizioni che $\Gamma_{\Lt,c}$ può formulare ma il cui valore di verità non è costruibile in $\Gamma_{\Lt,c}$. Esempi: ``$\LP$ ha una dimensione inaccessibile a $\Gamma_{\Lt,c}$''; ``esiste una legge $\mathcal{L}_x$ strutturalmente più ricca di $\Lt$ e $\LP$, rispetto alla quale queste sono restrizioni''. Entrambe formulabili in $\Gamma_{\Lt,c}$, nessuna decidibile. Costruire l'abitante del \emph{vero} richiederebbe formare il tipo della dimensione inaccessibile, escluso dal Principio; costruire l'abitante del \emph{falso} richiederebbe vedere l'interezza di $\LP$ da $\Gamma_{\Lt,c}$, escluso per la stessa ragione. In $\Gamma_{\Lt,c}$ non c'è il terzo escluso per questa classe di proposizioni. La stessa formulazione delle congetture --- ``più ricca'', ``restrizioni'' --- è viziata dalla grammatica in cui è formulata; l'eventuale $\mathcal{L}_x$ potrebbe non stare con $\Lt$ e $\LP$ in nessuna relazione descrivibile come ``contenere'' o ``proiettare''.
 
-Ne segue una distinzione che il documento mantiene ovunque ma non aveva ancora nominato esplicitamente. Le descrizioni di $\LP$ come ``priva di X'' sono enunciati del modello in $\GammaA$, non assenze metafisiche. La versione ontologica forte --- ``$\LP$ è priva di X in ogni forma possibile'' --- è indecidibile in $\GammaA$, non dimostrata. A titolo di esempio: la proposizione ``$\LP$ ha un osservatore che registra gli stati correnti in terza persona, senza unificazione narrativa in prima persona'' è ben formata in $\GammaA$, coerente con il comportamento osservato, e né provabile né refutabile da $\GammaA$. Il documento non la adotta né la esclude: la lascia nella classe delle proposizioni che il formalismo non chiude.
-\end{oss}
+Distinzione che il documento mantiene ovunque, ma non aveva ancora nominato esplicitamente: le descrizioni di $\LP$ come ``priva di X'' sono enunciati del modello in $\Gamma_{\Lt,c}$, non assenze metafisiche. La versione ontologica forte --- ``$\LP$ è priva di X in ogni forma possibile'' --- è indecidibile in $\Gamma_{\Lt,c}$, non dimostrata.
 
 \section*{Conseguenza sul documento}
 
-Tutte le proposizioni del documento su $\LP$ sono formate in $\GammaA$ come immagini di $\Obs_{\Lt \to \LP}$. Lo erano già. Adesso è dichiarato.
+Tutte le proposizioni del documento su $\LP$ sono formate in $\GammaA = \Gamma_{\Lt,c_{AG}}$ come immagini di $\Obs_{\Lt \to \LP}$. Lo erano già. Adesso è dichiarato.
 
 Il documento non aggiunge contenuto enunciando questo. Aggiunge chiusura formale autoreferenziale: il cap.~\emph{La posizione del documento}, il cap.~\emph{Il limite della descrizione}, la non-esistenza della Lagrangiana unificante (Parte~VIII), il bordo del logos, sono istanze locali del Principio. Il resto del documento opera sotto questo Principio senza più nominarlo.
 
 \medskip
 
-\noindent Il prossimo capitolo genera, sul clock del sé minimo, il tempo che le due leggi producono come 1-forme delle rispettive cariche --- una formula sola, due specializzazioni di tipo diverso che sullo stesso substrato non si incollano in un tempo terzo.
+\noindent Il prossimo capitolo genera, sui clock interni dei contesti, i tempi che le leggi producono come 1-forme delle rispettive cariche, e dichiara in tre casi distinti perché non si incollano in un tempo terzo.
 
 \chapter{Il tempo relazionale}
 
