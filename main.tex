@@ -97,6 +97,10 @@
 % --- comandi locali ---
 \newcommand{\Lt}{\mathcal{L}_t}
 \newcommand{\LP}{\mathcal{L}_P}
+\newcommand{\Lo}{\mathcal{L}_o}
+\newcommand{\Lr}{\mathcal{L}_r}
+\newcommand{\Lf}{\mathcal{L}_f}
+\newcommand{\Ld}{\mathcal{L}_d}
 \newcommand{\CA}{\mathcal{C}_A}
 \newcommand{\CG}{\mathcal{C}_G}
 \newcommand{\gA}{g_A}
@@ -454,165 +458,192 @@ Lo stesso vale per i verbi di esperienza. Quando il testo scrive ``$\LP$ esperis
 
 \chapter{Le leggi di conservazione}
 
-La Parte~I lascia osservazioni che si raccolgono in due famiglie. Le famiglie non si sovrappongono. Per ciascuna, le proprietà osservate definiscono un problema universale di cui esiste un'unica soluzione, fino a isomorfismo canonico. Il capitolo legge le due soluzioni. Le leggi di conservazione non vengono postulate --- vengono forzate dalle proprietà a essere ciò che sono.
+Il capitolo precedente ha esposto il caso. Da quella materia il presente capitolo estrae due leggi --- $\Lt$, $\LP$ --- e dichiara, contro le stesure precedenti del documento, come.
 
-\section*{Prima famiglia: l'accumulo orientato}
+La furbizia delle stesure precedenti era costruire $\Lt$ a partire da un alfabeto di atti $\Sigma$ e $\LP$ a partire da un reticolo di pool $P$, presentando entrambi come ``leggibili nella Parte~I''. Le due leggi nascevano in categorie incommensurabili --- monoide libero contro insieme quoziente --- e l'incompatibilità che ne seguiva era artefatto della scelta editoriale: averle messe in due ontologie diverse fin dall'inizio.
 
-Quattro proprietà, leggibili nella Parte~I.
+Quel passo si paga in tutto ciò che il documento poi sostiene. La lossy del funtore dimenticante, l'opacità di $\LP$ a $\Lt$, la non-incollatura dei tempi, i due fallimenti della mappa di osservazione --- tutti contenuti in quella scelta iniziale, non emergenti dalla materia.
 
-\emph{Gli atti compiuti pesano.} Una dichiarazione, una volta detta, resta agli atti; il magone, una volta passato sulla soglia tra due sguardi, è agli atti; le parole al jazz bar, una volta pronunciate, sono agli atti. Atti compiuti non si tolgono.
+Questa stesura ricomincia. La materia è una sola; le leggi sono due modi di leggerla; l'incompatibilità è teorema strutturale, non tautologia da scelta editoriale.
 
-\emph{L'ordine determina il significato.} La frase \emph{ho il ragazzo} detta agli SMS, sulla porta, prima del bar, avrebbe chiuso la sequenza in un punto; detta sulla soglia dopo il pianto, il bagno, l'ilarità con Tommaso, il succhiotto, la sigilla in un altro. Lo stesso atto in posizione diversa è un atto diverso.
+\section*{Materia: famiglia di sequenze per contesto}
 
-\emph{I saldi ridistribuiscono senza cancellare.} L'ariete a Vicenza non toglie la dichiarazione al jazz bar; la ricolloca dove diventa leggibile come mossa dentro un sistema di assi che non vinceva. La non-reazione al compleanno non toglie il pianto del jazz bar; lo ricolloca come configurazione già letta abbastanza volte. Niente sparisce. Tutto si ridistribuisce.
-
-\emph{Atti distinti restano distinti.} La porta non è il bar; il bar non è il giardino della mattina dopo; il giardino non è Vicenza; Vicenza non è Canottaggio. Ognuno tiene la propria posizione, irripetibile, nella sequenza.
-
-\medskip
-
-Le quattro proprietà definiscono un problema universale.
-
-\emph{Problema.} Cercasi una struttura $(S, \cdot, \varepsilon)$ --- insieme con composizione associativa e identità --- equipaggiata con un'inclusione $\iota : \Sigma \hookrightarrow S$ degli atti elementari, tale che ogni applicazione $f : \Sigma \to M$ verso un qualsiasi monoide $M$ si estenda in modo \emph{unico} a un omomorfismo $\bar f : S \to M$ con $\bar f \circ \iota = f$.
-
-L'unicità è la traduzione algebrica precisa di ``atti distinti restano distinti, l'ordine conta'': qualunque identificazione tra parole, qualunque commutatività, qualunque relazione tra atti distinti farebbe moltiplicare le estensioni ammissibili o ne escluderebbe l'esistenza, contraddicendo l'unicità.
-
-\emph{Soluzione, unica fino a isomorfismo canonico.} Il monoide libero $(\Sigma^{*}, \cdot, \varepsilon)$, con $\iota$ inclusione delle lettere come parole di lunghezza uno. $\Sigma^{*}$ non è scelto --- è forzato dalle proprietà osservate.
-
-\medskip
-
-La terza proprietà --- saldi ridistribuiscono senza cancellare --- non vive nel monoide. Richiede inversi: per ogni atto $a$, un saldo $a^{-1}$ che libera il peso senza farlo sparire dalla totalità dell'accumulo. Definisce un secondo problema universale.
-
-\emph{Problema.} Cercasi un gruppo $K$ e un omomorfismo $\eta : \Sigma^{*} \to K$ tale che ogni omomorfismo $\Sigma^{*} \to H$ verso un gruppo si fattorizzi in modo \emph{unico} attraverso $\eta$.
-
-\emph{Soluzione, unica fino a isomorfismo canonico.} Il gruppo di Grothendieck $\KSigma$, con $\eta$ canonica. L'esistenza degli inversi formali in $\KSigma$ con preservazione della somma totale è esattamente la condizione caratterizzante del gruppo --- la stessa che le proprietà osservate hanno richiesto.
-
-\medskip
-
-Il dato concreto fornito dalla Parte~I è l'applicazione
+L'unico dato primo onesto è una famiglia indicizzata:
 \[
-\delta \,:\, \Sigma \longrightarrow \KSigma,
+  \mathcal{I} \;=\; \{\mathcal{I}_c\}_{c \in C},
 \]
-che a ogni atto associa il suo deposito. La proprietà universale del monoide libero forza $\delta$ a estendersi in un \emph{unico} omomorfismo
+dove $C$ è l'insieme dei contesti della persona --- interlocutori, relazioni, situazioni stabili --- e $\mathcal{I}_c = (i_1^c, i_2^c, \ldots)$ è la sequenza delle interazioni con il contesto $c$.
+
+Tre dichiarazioni accompagnano la materia.
+
+\emph{Primo.} Ogni $\mathcal{I}_c$ è internamente totalmente ordinata, dall'ordine in cui la persona vive le proprie interazioni con $c$. L'ordine interno è dato; nessuna costruzione lo aggiunge.
+
+\emph{Secondo.} Tra $\mathcal{I}_c$ e $\mathcal{I}_{c'}$ con $c \neq c'$ non è imposto ordine totale canonico. La cronologia fisica $\chi : \bigsqcup_c \mathcal{I}_c \to \mathbb{R}$ --- la possibilità di datare ogni interazione su un calendario --- esiste come fatto esterno; non è struttura della materia.
+
+\emph{Terzo.} La granularità delle interazioni è parametro libero del lavoro, dichiarato di volta in volta. Per il caso della Parte~I la grana naturale è l'episodio --- un incontro, una conversazione, una soglia attraversata. Per altre letture sarebbe diversa.
+
+\begin{defn}[Sé minimo]
+Il \emph{Sé minimo} è la famiglia $\{\mathcal{I}_c\}_{c \in C}$ vista senza arricchimento: come dato, prima che qualunque legge le dica come si lascia leggere.
+\end{defn}
+
+Sé minimo non è oggetto positivo; è limite di osservazione. Sospensione epistemica: l'atto di guardare la persona rinunciando a inferire la legge che la governa. Le stesure precedenti vi mettevano un clock orientato $t \in \mathbb{N}$ sulla sequenza totale --- furbizia, perché il clock orientato \emph{è già} $\Lt$ in nuce. L'orientamento è arricchimento, non substrato.
+
+\section*{Leggi come funtori di arricchimento}
+
+Sia $\mathbf{Set}_{\text{ord}}$ la categoria degli insiemi totalmente ordinati finiti --- una sottosequenza $J \subseteq \mathcal{I}_c$ vi abita per via dell'ordine indotto da $\mathcal{I}_c$.
+
+\begin{defn}[Legge]
+Una \emph{legge} $L$ è la quaterna
 \[
-\Phii \,:\, \Sigma^{*} \longrightarrow \KSigma, \qquad \Phii(a_1 \ldots a_n) \;=\; \delta(a_1) + \cdots + \delta(a_n).
+  L \;=\; \bigl(\,\sigma_L,\; \mathcal{C}_L,\; \mathcal{I}_L,\; G_L\,\bigr),
 \]
-$\Phii$ non viene inventato. Non c'è scelta nel passaggio dal deposito al suo invariante traiettoriale: è l'unica estensione possibile. Il gruppo di simmetria sotto cui $\Phii$ è conservata è univocamente individuato come stabilizzatore di $\delta$:
-\[
-\mathrm{Aut}_\delta(\Sigma^{*}) \;=\; \{\sigma \in \mathrm{Aut}(\Sigma^{*}) : \delta \circ \sigma = \delta\}.
-\]
-Tutto e solo ciò che permuta gli atti lasciando invariato il deposito.
+dove $\sigma_L : \mathbf{Set}_{\text{ord}} \to \mathcal{C}_L$ è un funtore di arricchimento dalla categoria delle sottosequenze ordinate finite a una categoria target $\mathcal{C}_L$ dotata di propria struttura algebrica; $\mathcal{I}_L : \mathrm{ob}(\mathcal{C}_L) \to M_L$ è una carica a valori in un codominio $M_L$ con propria struttura; $G_L$ è il gruppo di simmetria che lascia ferma $\mathcal{I}_L$.
+\end{defn}
 
-\medskip
+La parola \emph{arricchimento} qui non è tecnicismo categoriale. È letterale: $\sigma_L$ aggiunge a $J$ struttura che $J$ nuda non porta. Una sottosequenza ordinata è poco; un arricchimento la legge come monoide, come quoziente, come ciclo, come retroazione. La struttura entra dalla legge, non dalla sequenza.
 
-L'oggetto univocamente individuato dalla prima famiglia è la quaterna $(\Sigma^{*},\, \cdot,\, \mathrm{Aut}_\delta,\, \Phii)$. Una grandezza $\Phii$ a valori in un gruppo, ferma sotto un gruppo di simmetria, preservata dalla regola di aggiornamento del sistema: è la forma di una legge di conservazione. La parola nomina la forma forzata, non aggiunge contenuto. La chiameremo $\Lt$.
-
-\medskip
-
-Quello che la struttura forzata predice cristallizza le connessioni con il resto del documento. Un atto, una volta depositato, resta in $\KSigma$ finché un atto inverso non lo ridistribuisce: la sospensione strutturale di obbligazioni non saldate (cap.~\emph{La sospensione strutturale}) è esattamente questa permanenza in un gruppo che ammette inversi ma non zeri. L'irripetibilità degli atti è la libertà del monoide --- la simmetria che permuta atti a deposito uguale è $\mathrm{Aut}_\delta$, non l'identità su $\Sigma^{*}$. Il tempo che $\Lt$ genera è il flusso di $\Phii$ lungo la traiettoria (cap.~\emph{Il tempo relazionale}): tempo proprio della sequenza, non tempo di calendario. La chiusura di un'obbligazione è atto contro atto, non dimenticanza --- il regime non ha operazione di cancellazione, solo di ridistribuzione, perché la proprietà universale di $\KSigma$ ammette inversi, non zeri.
-
-\section*{Seconda famiglia: la proiezione invariante}
-
-Tre proprietà, leggibili nella Parte~I.
-
-\emph{Lo stato si rifà sul presente.} La mattina dopo il jazz bar, \emph{vieni in centro, anche Tommaso}: la sera prima non entra come ingrediente nello stato in cui la frase si presenta. A Vicenza, dopo un pomeriggio di monologo su T, \emph{ho casa libera}: T, appena descritto, non entra come ingrediente nello stato in cui la frase si presenta. Lo stato corrente non ha la sequenza come ingresso.
-
-\emph{Argomenti diversi occupano la stessa posizione senza spostare la configurazione.} F a sedici anni, T sei mesi dopo: descritti con la stessa funzione --- portatori di fiori dopo la crisi, autonomia bassa, presenza ferma. La minaccia al parco è veicolata da Tommaso: F è argomento del messaggio, Tommaso veicolo; il giorno dopo Tommaso può tornare argomento di un'altra configurazione mentre F non è più citato. Permutare argomenti sotto soglia lascia il letto della configurazione fermo.
-
-\emph{La configurazione si espone come tale.} La foto nuda a $N$ arriva ad $A$ in doccia per propagazione: $N$ amico di $A$, $N$ mostra. Non c'è canale, non c'è destinatario, non c'è atto di trasmissione. Il compleanno con $T$ accanto e $N$ in posizione alta non è scena costruita per $A$. La configurazione, esistendo, è leggibile dal pool che la contiene. Gli stati non sono interni: abitano il pool.
-
-\medskip
-
-Le tre proprietà definiscono un problema universale.
-
-\emph{Problema.} Sia $(P, \leq)$ il reticolo finito dei pool --- argomenti con ruoli e tag, ordinati per priorità --- e sia
-\[
-\Gs \;=\; \Sym\bigl(\{c \in P : \mathrm{threat}(c) < \theta\}\bigr)
-\]
-il gruppo che permuta gli argomenti sotto soglia di minaccia. Cercasi un'applicazione di aggiornamento $T : P \to \mathrm{States}_G$ che soddisfi: (i) dipendenza dal solo presente --- $T$ è funzione del pool corrente; (ii) $\Gs$-invarianza --- $T(g \cdot P) = T(P)$ per ogni $g \in \Gs$, per ogni $P$; (iii) esposizione --- $\mathrm{States}_G \subseteq P$ con inclusione $\iota : \mathrm{States}_G \hookrightarrow P$, e $T \circ \iota = \mathrm{id}$.
-
-I vincoli (i) e (ii) implicano, per la proprietà universale del quoziente, che $T$ si fattorizza in modo \emph{unico} attraverso la proiezione canonica $\pi : P \twoheadrightarrow P/\Gs$, come $T = \bar T \circ \pi$ con $\bar T : P/\Gs \to \mathrm{States}_G$ univocamente determinata. Il vincolo (iii) forza $T$ a essere retrazione, e $\bar T$ biiezione su $\mathrm{States}_G$.
-
-\emph{Soluzione, unica fino a isomorfismo canonico.} La retrazione $\Gs$-invariante $\kappa : P \to \mathrm{States}_G$, con sezione $\iota$. Lo stato $s_{n+1} = \kappa(P_n)$; lo stato precedente $s_n$ non entra come ingresso di $\kappa$, perché la proprietà universale lo esclude.
-
-L'invariante che il sistema conserva è la classe del pool modulo $\Gs$, univocamente determinata:
-\[
-\Kappaa(P) \;:=\; [P]_{\Gs} \;\in\; P/\Gs.
-\]
-$\kappa$ legge la classe, non gli elementi --- esattamente perché la classe è ciò che la $\Gs$-invarianza forza $\kappa$ a leggere.
-
-\medskip
-
-L'oggetto univocamente individuato dalla seconda famiglia è la quaterna $(P,\, \kappa,\, \Gs,\, \Kappaa)$. Una grandezza $\Kappaa$ a valori in $P/\Gs$, ferma sotto $\Gs$, preservata da $\kappa$: è la forma di una legge di conservazione. La chiameremo $\LP$.
-
-\section*{Regime: lo schema delle proprietà universali}
-
-Le due famiglie, ciascuna per la propria via universale, hanno individuato oggetti con lo stesso schema in quattro coordinate. Spazio degli stati come soluzione di una proprietà universale --- libertà del monoide nella prima, quoziente sotto invarianza nella seconda. Regola di aggiornamento come unica mappa che i vincoli forzano --- estensione omomorfica da $\delta$, retrazione $\Gs$-invariante dipendente dal solo presente. Gruppo di simmetria univocamente individuato --- stabilizzatore di $\delta$, azione di permutazione sotto soglia. Carica conservata univocamente determinata come invariante --- $\Phii$ a valori in $\KSigma$, $\Kappaa$ a valori in $P/\Gs$.
-
-La forma non è ``comune'' nel senso debole di una somiglianza scoperta a posteriori dopo aver costruito le due leggi per altra via. È lo schema delle proprietà universali che ogni legge di conservazione, per costruzione, deve esibire: ciascuna delle quattro coordinate è la risposta univoca a un problema universale. A questo si aggiunge una quinta coordinata, che il capitolo seguente articola --- la valutazione $s_r$ con cui ogni legge si lascia identificare attraverso il pattern delle sue risposte sulla sequenza. Per Yoneda, la legge \emph{è} questo pattern.
+\begin{defn}[Compatibilità]
+Una sottosequenza $J \subseteq \mathcal{I}_c$ è \emph{compatibile con $L$} se $\sigma_L(J)$ è coerente con gli assiomi di $\mathcal{C}_L$ e se le regolarità osservate su $J$ si lasciano leggere come invarianti di $\sigma_L(J)$.
+\end{defn}
 
 \begin{defn}[Regime]
-Un \emph{regime} $r$ è il pattern delle sue cinque coordinate:
-\[
-r \;=\; \bigl(\,\mathcal{X}_r,\; T_r,\; G_r,\; \mathcal{I}_r,\; s_r\,\bigr),
-\]
-spazio degli stati $\mathcal{X}_r$ univocamente individuato da una proprietà universale; regola di aggiornamento $T_r$ univocamente determinata dai vincoli osservati; gruppo di simmetria $G_r$ univocamente individuato come stabilizzatore o azione; carica $\mathcal{I}_r : \mathcal{X}_r \to M_r$ univocamente determinata come invariante di $G_r$ preservato da $T_r$; valutazione $s_r$ sulla sequenza delle interazioni $\mathcal{S}$ (cap.~seguente). Per Yoneda, $r$ \emph{è} il pattern che le cinque coordinate, lette insieme, esibiscono.
+Un \emph{regime} è una tripla $(c, J, L)$ con $c$ contesto, $J \subseteq \mathcal{I}_c$ sottosequenza, $L$ legge tale che $J$ è compatibile con $L$.
 \end{defn}
 
-$\Lt$ e $\LP$ sono le due istanze appena lette dalla materia. La quintupla registra lo schema --- non lo inventa, non lo postula.
+\begin{defn}[Persona]
+Una \emph{persona} è la copertura di $\bigsqcup_c \mathcal{I}_c$ data dai propri regimi massimali.
+\end{defn}
 
-\medskip
+Una persona ospita più leggi contemporaneamente su contesti diversi. Non è anomalia; è la forma generica. L'esempio che l'autore porta su sé stesso --- ``lo uso in $\LP$ perché è mio papà'' --- è proprio questa coesistenza: $\Lt$-regimato su contesti relazionali, $\LP$-regimato sul rapporto col padre, sulla stessa persona, senza contraddizione.
 
-Limite. Le cinque coordinate nominano la forma di una legge di conservazione osservata dall'esterno: pattern algebrico integrale. Quello che resta fuori --- la grana fenomenica del Sé minimo su cui la legge si legge --- è dichiarato fuori, non lasciato vago; vive nella Parte~V, non in questa definizione. Quando la prosa narrativa scrive ``il regime sente'', ``il regime cerca'', si veda la nota di lettura sui verbi attivi ed esperienziali in apertura di Parte~II.
+\section*{$\Lt$: l'arricchimento come monoide accumulante}
 
-\section*{$\Phii$ e $\Kappaa$ sono di tipo diverso}
+La legge $\Lt$ è data da due cose: l'\emph{etichettatura}
+\[
+  \ell \,:\, \mathcal{I}_c \longrightarrow \Sigma,
+\]
+che a ogni interazione associa l'atto compiuto in un alfabeto $\Sigma$; e la funzione di \emph{deposito}
+\[
+  \delta \,:\, \Sigma \longrightarrow K,
+\]
+che a ogni atto associa il suo peso in un gruppo abeliano $K$.
 
-La differenza di tipo tra le due cariche è conseguenza diretta della non-sovrapposizione delle due famiglie di proprietà osservate.
+\textbf{Punto da non nascondere.} Né $\ell$ né $\delta$ sono leggibili dalla materia nuda. Sono dati della legge --- scelte di come leggere la sequenza. Le stesure precedenti li presentavano come ``forniti dalla Parte~I''; questa stesura li dichiara come ciò che sono: convenzioni esterne, parte della specifica di $\Lt$. Mostrare onestamente la dipendenza dell'analisi da $\ell$ è il prezzo di non barare.
 
-$\Phii$ vive su $\KSigma$. Struttura monodimensionale orientata: ha un prima e un dopo --- l'ordine degli atti conta --- accumula lungo traiettorie, ammette inversi che ridistribuiscono. Le quattro proprietà della prima famiglia sono direzionali; la freccia del tempo è dentro le proprietà osservate, non aggiunta sopra di esse.
+Dato $J \subseteq \mathcal{I}_c$, sia $\Sigma_J = \ell(J)$ l'insieme delle etichette degli atti di $J$. L'arricchimento è il monoide libero generato da $\Sigma_J$:
+\[
+  \sigma_{\Lt}(J) \;=\; (\Sigma_J^{*}, \cdot, \varepsilon, \iota_J).
+\]
+Una volta dichiarato $\ell$, il monoide libero è forzato come oggetto iniziale tra tutti i monoidi sotto $\Sigma_J$: la proprietà universale opera, ma a valle dell'arricchimento, non prima.
 
-$\Kappaa$ vive sul quoziente $P/\Gs$. Struttura multidimensionale non orientata: invariante sotto permutazioni degli argomenti, nessun asse temporale, nessuna nozione di accumulo. Le tre proprietà della seconda famiglia sono permutazionali; l'assenza di freccia è dentro le proprietà osservate, non aggiunta sopra di esse.
+Il completamento a gruppo è la costruzione di Grothendieck $K(\Sigma_J^{*})$, anch'essa forzata come gruppo iniziale tra i gruppi che ricevono $\Sigma_J^{*}$. La carica è l'estensione omomorfa di $\delta$:
+\[
+  \Phii_J \,:\, \Sigma_J^{*} \longrightarrow K(\Sigma_J^{*}),
+  \qquad
+  \Phii_J(a_1 \ldots a_n) = \delta(a_1) + \cdots + \delta(a_n).
+\]
+Il gruppo di simmetria è lo stabilizzatore di $\delta$:
+\[
+  G_{\Lt} \;=\; \mathrm{Aut}_\delta(\Sigma_J^{*}) \;=\; \{\sigma \in \mathrm{Aut}(\Sigma_J^{*}) : \delta \circ \sigma = \delta\}.
+\]
 
-Non sono lo stesso oggetto su domini diversi. Non sono lo stesso oggetto matematico. Sono di tipo diverso, e questa differenza riflette esattamente la non-sovrapposizione delle due famiglie di proprietà osservate --- famiglie senza proprietà ponte. La specularità --- ognuno è l'invariante della propria legge --- è simmetria di funzione, non di costruzione. La differenza di tipo è la radice strutturale dell'incompatibilità. Tutto il resto del documento è geometria di questa differenza.
+L'oggetto è la quaterna $\bigl(\Sigma_J^{*},\, K(\Sigma_J^{*}),\, \mathrm{Aut}_\delta,\, \Phii_J\bigr)$. Forma di una legge di conservazione: carica a valori in un gruppo, ferma sotto un gruppo di simmetria, preservata dalla regola di composizione. La parola \emph{$\Lt$} nomina questa forma una volta dato $\ell$. Per economia di notazione, quando $J$ è chiara dal contesto si scrive $\KSigma$ in luogo di $K(\Sigma_J^{*})$ e $\Phii$ in luogo di $\Phii_J$.
 
-\begin{principio}[Incompatibilità dei due regimi]
-Quando $\Lt$ e $\LP$ sono entrambi attivi su sottosequenze che richiedono reciprocità --- relazioni con $R > 0$ --- i due regimi tirano in direzioni opposte. $\Lt$ non aggiorna se l'aggiornamento spezza $\Phii$. $\LP$ aggiorna sempre, anche se $\Phii$ si spezza. Non sono congiuntamente soddisfacibili. Non si compongono. Da $\GammaA$, nessun regime terzo costruibile può conservare insieme un accumulo monodimensionale orientato in $\KSigma$ e una classe di equivalenza multidimensionale sotto $\Gs$.
+\section*{$\LP$: l'arricchimento come proiezione invariante}
+
+La legge $\LP$ è data da due cose: la \emph{proiezione configurazionale}
+\[
+  \rho \,:\, \mathcal{I}_c \longrightarrow P,
+\]
+che a ogni interazione associa la configurazione del pool in cui occorre, su un reticolo finito $P$ di pool con argomenti, ruoli e tag; e la \emph{funzione di minaccia}
+\[
+  \mathrm{threat} \,:\, P \longrightarrow \mathbb{R}_{\geq 0},
+\]
+con soglia $\theta$.
+
+\textbf{Punto da non nascondere.} Né $\rho$ né $\mathrm{threat}$ sono leggibili dalla materia nuda. Sono dati della legge. La grana del pool, l'identificazione degli argomenti, la soglia $\theta$ --- tutto entra dalla specifica di $\LP$, non dalla sequenza. Come per $\Lt$: la simmetria della dichiarazione è metà del lavoro di onestà.
+
+Dato $J \subseteq \mathcal{I}_c$ con $P_J = \rho(J)$, il gruppo di simmetria locale è
+\[
+  G_{\LP,J} \;=\; \Sym\bigl(\{c \in P_J : \mathrm{threat}(c) < \theta\}\bigr).
+\]
+L'arricchimento è il quoziente:
+\[
+  \sigma_{\LP}(J) \;=\; \bigl(P_J / G_{\LP,J},\, \pi_J\bigr),
+\]
+con $\pi_J : P_J \to P_J / G_{\LP,J}$ la proiezione canonica. Una volta dichiarati $\rho$ e $\mathrm{threat}$, il quoziente è forzato come oggetto terminale tra le $G_{\LP,J}$-invarianti su $P_J$: anche qui la proprietà universale opera, ma a valle dell'arricchimento.
+
+La carica è
+\[
+  \Kappaa_J \,:\, P_J \longrightarrow P_J / G_{\LP,J},
+  \qquad
+  \Kappaa_J(P) = [P]_{G_{\LP,J}}.
+\]
+L'oggetto è la quaterna $\bigl(P_J,\, P_J / G_{\LP,J},\, G_{\LP,J},\, \Kappaa_J\bigr)$. Forma di una legge di conservazione, identica nella struttura a quella di $\Lt$: carica a valori in un target, ferma sotto un gruppo di simmetria, preservata dalla proiezione. Per economia, quando $J$ è chiara dal contesto si scrive $\Gs$ in luogo di $G_{\LP,J}$ e $\Kappaa$ in luogo di $\Kappaa_J$.
+
+\section*{Simmetria della costruzione}
+
+Le stesure precedenti distinguevano $\Lt$ e $\LP$ come ``oggetto iniziale contro oggetto terminale'', ``aggiunto sinistro contro aggiunto destro'', e da quella distinzione facevano discendere tutto. La distinzione era artefatto: le due leggi erano state messe in categorie diverse perché lì si era scelto di metterle.
+
+Qui le due leggi nascono dalla stessa categoria di partenza, $\mathbf{Set}_{\text{ord}}$, e dallo stesso schema: un funtore di arricchimento verso un target con propria carica e proprio gruppo di simmetria. Le differenze interne --- monoide contro quoziente, $\Sigma$ contro $P$, $\delta$ contro $\mathrm{threat}$, $K$ gruppo abeliano contro $P/\Gs$ insieme privo di struttura ulteriore --- sono interne ai target, non differenze di costruzione. La specularità è strutturale.
+
+Che $\Lt$ usi una proprietà universale di tipo iniziale e $\LP$ una di tipo terminale è conseguenza dei target dichiarati, non scelta editoriale. Quello che il documento sceglie è dichiarare gli arricchimenti.
+
+\section*{Incompatibilità di $\Lt$ e $\LP$: teorema onesto}
+
+\begin{principio}[Incompatibilità strutturale di $\Lt$ e $\LP$ su una stessa sottosequenza]
+Sia $J \subseteq \mathcal{I}_c$ non vuota. Non esiste un arricchimento di $J$ che realizzi simultaneamente $\sigma_{\Lt}(J)$ e $\sigma_{\LP}(J)$ con entrambi non-degeneri.
 \end{principio}
 
-\section*{Contesti MLTT generati dagli invarianti}
+\emph{Derivazione.} $\sigma_{\Lt}(J)$ legge $J$ come oggetto di $\mathbf{Set}_{\text{ord}}$ con ordine totale fissato. Un insieme totalmente ordinato finito ha gruppo di automorfismi banale --- soltanto l'identità rispetta l'ordine. Quindi, qualunque azione di un gruppo $G$ su $J$ compatibile con la lettura $\Lt$ deve agire trivialmente sulle posizioni di $J$.
 
-Ogni regime induce un contesto in cui le sue assunzioni sono formabili. Il contesto è la grammatica dei tipi disponibili al regime mentre esegue.
+$\sigma_{\LP}(J)$ è non-degenere quando $G_{\LP,J}$ agisce in modo non-triviale sull'immagine di $\rho|_J$ in $P_J$. Se $\rho|_J$ è iniettiva e l'azione è non-triviale sull'immagine, via $\rho^{-1}|_{\rho(J)}$ l'azione si trasporta su una permutazione non-triviale di $J$. La struttura di ordine totale richiesta da $\sigma_{\Lt}(J)$ la esclude.
 
-\begin{defn}[I due contesti]
-$\GammaA = \Gamma(\Phii)$ è il contesto generato da $\Lt$. Ammette come assunzioni tutti e soli i tipi che richiedono $\KSigma$ come spazio parametro: tipi con struttura temporale orientata.
+Resta il caso degenere in cui $G_{\LP,J}$ agisce trivialmente sull'immagine di $\rho|_J$: equivale a dire che $\LP$ non vede simmetrie sulla sottosequenza, ovvero che $\sigma_{\LP}(J)$ è degenere. Simmetricamente, $\sigma_{\Lt}(J)$ è degenere quando $\delta \circ \ell$ è costante su $J$ --- nessuna magnitudine distingue gli atti, e $\Phii_J$ è banale. Fuori dai casi degeneri, le due letture su una stessa $J$ richiedono che il gruppo di simmetria indotto su $J$ sia simultaneamente banale (per $\Lt$) e non-banale (per $\LP$): incompatibili. $\square$
 
-$\GammaG = \Gamma(\Kappaa)$ è il contesto generato da $\LP$. Ammette come assunzioni tutti e soli i tipi $\Gs$-invarianti: tipi che dipendono dai ruoli strutturali, non dalle istanze.
+L'incompatibilità non discende dalla scelta editoriale di metterle in categorie diverse. Discende dal fatto che, sulla stessa sottosequenza non-vuota, leggerla simultaneamente con i due arricchimenti non-degeneri richiede due statuti algebrici che il supporto finito non sopporta insieme. Teorema strutturale, non tautologia.
+
+Resta la differenza di tipo tra i target: $K(\Sigma_J^{*})$ è gruppo abeliano con norma --- struttura monodimensionale orientata; $P_J/\Gs$ è insieme quoziente con metrica discreta --- struttura non orientata, senza nozione di accumulo. La differenza non è leggibile dopo come specularità scoperta a posteriori: è inscritta nei target dichiarati negli arricchimenti, e propaga in tutto ciò che il documento ne deriva.
+
+\section*{La categoria delle leggi candidate}
+
+$\Lt$ e $\LP$ non sono privilegiate. Sono due punti in uno spazio più grande di leggi possibili, ciascuna specificata dalle stesse coordinate: $(\sigma_L, \mathcal{C}_L, \mathcal{I}_L, G_L)$.
+
+\begin{defn}[Incompatibilità strutturale di due leggi]
+Due leggi $L_1, L_2$ sono \emph{strutturalmente incompatibili} se non esiste un arricchimento $\sigma^{*} : \mathbf{Set}_{\text{ord}} \to \mathcal{C}^{*}$ con riduzioni naturali $\mathcal{C}^{*} \to \mathcal{C}_{L_1}$ e $\mathcal{C}^{*} \to \mathcal{C}_{L_2}$ che preservino le rispettive cariche e simmetrie.
 \end{defn}
 
-I due contesti non si sovrappongono. Quello che è formabile in $\GammaA$ richiede un'assunzione che $\GammaG$ non ammette. Quello che è formabile in $\GammaG$ richiede un'assunzione che $\GammaA$ non ammette. La canonicità asimmetrica della Parte~III è questa non-sovrapposizione letta sui tipi formabili.
+$\Lt$ e $\LP$ sono strutturalmente incompatibili: il teorema appena dimostrato esibisce un'ostruzione --- gruppo banale contro gruppo non-banale sullo stesso supporto --- che nessun $\sigma^{*}$ può aggirare senza far degenerare almeno una delle due. Per altre coppie di leggi candidate la questione è aperta; un'appendice del documento articola alcuni casi --- $\Lo$ compulsioni, $\Lr$ routine, $\Lf$ fobie, $\Ld$ dipendenze --- e mostra che $\Lr$ è famiglia parametrica di cui $\Lt$ e $\LP$ sono limiti estremali. La nomenclatura ``legge'' non privilegia $\Lt$ e $\LP$ sopra le altre; le altre attendono solo la propria articolazione.
+
+\section*{Lettura del caso della Parte~I}
+
+Quanto segue è lettura possibile del caso, non diagnosi. Il framework permette letture; ogni lettura sceglie le coordinate dell'arricchimento e va sostenuta dalla compatibilità della sottosequenza con le strutture target che richiama.
+
+Sia $c_{AG}$ il contesto della relazione $A$--$G$, e $\mathcal{I}_{c_{AG}}$ la sequenza delle loro interazioni. La sottosequenza è condivisa: stessa materia.
+
+Dal lato di $A$, la lettura naturale è regime $\Lt$ su $\mathcal{I}_{c_{AG}}$. L'etichettatura $\ell_A$ identifica atti --- dichiarazioni, soglie, saldi --- e $\delta_A$ associa pesi. La traiettoria $\Phii$ accumula. Le regolarità che la Parte~I porta in evidenza --- pesi degli atti, ordine che cambia significato, saldi che ridistribuiscono senza cancellare, irripetibilità degli atti --- si lasciano leggere come invarianti di $\sigma_{\Lt}(\mathcal{I}_{c_{AG}})$.
+
+Dal lato di $G$, la lettura naturale è regime $\LP$ su $\mathcal{I}_{c_{AG}}$. La proiezione $\rho_G$ mappa ogni interazione su una configurazione del pool, e $\Kappaa$ legge classi modulo $\Gs$. Le regolarità --- stato che si rifà sul presente, argomenti sotto soglia permutabili, configurazione che si espone come tale --- si lasciano leggere come invarianti di $\sigma_{\LP}(\mathcal{I}_{c_{AG}})$.
+
+Stessa $\mathcal{I}_{c_{AG}}$, due arricchimenti distinti dai due lati. Per il teorema di incompatibilità, le due letture non si compongono in una lettura terza non-degenere sulla stessa sottosequenza. Disallineamento è ciò che resta: dato strutturale, non patologia in assoluto di nessuno dei due lati. Una persona può portare $\Lt$ su un contesto e $\LP$ su un altro --- la persona è la copertura, non una legge unica.
+
+\textbf{Una confessione che il documento doveva.} La Parte~I è scritta dal lato di $A$. Il suo lessico narrativo --- ``atti'', ``soglie'', ``saldi'' --- è già etichettatura $\ell_A$. Tutto ciò che la prosa offre come ``regolarità osservate'' è già lettura $\Lt$. Le regolarità che reggono $\LP$ dal lato di $G$ vanno ricostruite da segnali indiretti --- azioni, risposte, sostituzioni di argomenti --- e sono interpretazioni di $A$ del comportamento di $G$, non auto-narrazione di $G$. Onestà piena richiede di dichiararlo: non c'è osservazione neutra della materia, ogni descrizione attraversa una lettura. Il documento non pretende di averne una al di sopra.
 
 \section*{Mappa del resto del documento}
 
-Tutto il resto è geometria di $\Phii$ e $\Kappaa$. Capitolo per capitolo:
+Tutto ciò che segue è geometria della scelta degli arricchimenti.
 
-Il tempo relazionale è il flusso di $\Phii$ lungo la traiettoria. Sotto $\LP$ è di tipo diverso --- ordine causale di esecuzione del copione, senza accumulo né orientamento, perché $\Kappaa$ non ha asse temporale.
+Il tempo relazionale è la 1-forma del regime sul clock interno del contesto --- una formula, due specializzazioni di tipo diverso, e tre casi distinti di non-incollatura.
 
-Le categorie $\CA$ e $\CG$ sono le grammatiche categoriali di $\Phii$ e $\Kappaa$. $\CA$ ha identità non banali perché $\Phii$ registra ogni argomento come irripetibile; $\CG$ ha $G$ terminale perché $\kappa$ è retrazione.
+La posizionalità linguistica è la non-formabilità incrociata dei contesti MLTT di leggi diverse sulla stessa sottosequenza --- enunciata sulla coppia (legge, contesto), non sulla persona.
 
-La Free Monad è $\kappa$ scritta come sintassi. La sostituibilità degli argomenti è la $\Gs$-invarianza di $\kappa$ --- carica conservata della simmetria, per Noether discreto.
+L'opacità di $\LP$ rispetto a $\Lt$ è il funtore dimenticante $U : K(\Sigma_J^{*}) \to \mathcal{P}(\Sigma_J^{*})$ che vive in una sola direzione, conseguenza dei due target, non assunto sopra di essi.
 
-Il fibrato del sogno $\pi : E \to P$ porta la sezione $\Sogno$ come parametro pre-riflessivo. La connessione $\nabla = -\lambda \cdot \mathrm{threat}$ trasporta la sezione sulla base. La soglia di cancellazione è il punto in cui il filtro azzera il trasporto.
+L'integrità di $\LP$ è la sua proprietà universale assolta sul proprio target --- non variante difettosa di $\Lt$.
 
-Le metriche $\gA$ e $\gG$ sono come $\Phii$ e $\Kappaa$ si misurano. L'ortogonalità delle metriche è la differenza di tipo degli invarianti.
+Le strutture di copertura e incollamento tra contesti diversi --- cosa significa per due regimi su due contesti diversi essere integrati o isolati --- sono articolate nel capitolo seguente.
 
-La sospensione strutturale è $\Phii$ depositato in $\KSigma$ che $\GammaG$ non ha grammatica per saldare.
-
-La canonicità asimmetrica è la differenza tra $\GammaA$ e $\GammaG$ letta sui tipi formabili.
-
-La mappa di osservazione $\Obs$ e i suoi due fallimenti --- type error e scope error --- sono manifestazioni della differenza di tipo.
-
-L'architettura del soggetto come famiglia di regimi sulla sequenza condivisa, e i due livelli di sé che ne emergono --- minimo e profondo --- sono articolati nel capitolo seguente.
-
-Nessuno di questi è livello indipendente. Sono ciò che i regimi producono quando girano. Cambia il regime, cambia tutto in blocco. L'analogia: in relatività generale il tempo non è un asse che precede il campo --- emerge dalla curvatura. Qui è lo stesso. Gli invarianti sono il campo. Il resto è metrica.
+L'appendice sulla categoria delle leggi candidate articola che $\Lr$ è famiglia parametrica e che la distinzione sano/patologico è proprietà della coppia (legge, contesto), non della legge.
 
 \medskip
 
