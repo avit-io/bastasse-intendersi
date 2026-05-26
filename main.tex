@@ -172,44 +172,9 @@
 
 \clearpage
 
-% ----------------- proemio in cifra -----------------
-\thispagestyle{empty}
-\vspace*{\fill}
-\begin{center}
-\begin{minipage}{0.85\textwidth}
-\begin{verse}
-Nel finto specchio d'un parlar cortese\\
-vidi lo spirto d'un che fu sì ignavo,\\
-che per fuggir del ver l'aspro e del bravo,\\
-in mezze verità la vita spese.
-
-«Io non mentii!» gridava il duca inglese,\\
-mentre il demonio, d'ogni grazia cavo,\\
-lo tormentava nel bollente flavo,\\
-celando il vero al pio che lo richiese.
-
-Come Tantalo assetato entro il lacume\\
-tende la mano al ben, l'inglese aspira,\\
-ma 'l diavol, privazion, ne smorza il lume:
-
-«Coopero io, né falso fil ti tira\\
-dal labbro!» e ghigna del cortese costume.\\
-Ma Martin-Löf dal ciel calò con ira,
-
-e gli mostrò del tipo vuoto il fondo:\\
-ché chi sottrae il ver non ha secondo\\
-bene da offrir --- sol privazione, e immondo.
-\end{verse}
-\end{minipage}
-\end{center}
-\vspace*{\fill}
-\clearpage
-
 % ----------------- nota al lettore -----------------
 \chapter*{Nota al lettore}
 \addcontentsline{toc}{chapter}{Nota al lettore}
-
-{\spacedlowsmallcaps{Il sonetto che precede}} è la cifra del documento. Non ornamento, non verdetto morale. Preghiera --- di una pragmatica intuizionista che solo il regime $\Lt$ da cui questo testo è scritto può abitare. Lo sdegno che vi compare è interno a quel regime, non è verità sul mondo. Tutto quello che segue è la sua articolazione formale.
 
 Quattro cose, prima di cominciare.
 
@@ -454,7 +419,7 @@ L'esecuzione di $L$ è un funtore $L : \mathbf{C} \to \mathbf{D}_L$ verso una ca
 
 \section*{Il sé minimo}
 
-Sotto $\mathbf{D}_L$ vive una categoria comune, $\mathbf{S}$, di sequenze osservabili nude --- ``dice X'', ``tocca'', ``piange'', ``se ne va'' --- senza intenzione, senza tipizzazione di legge, descrittive nel senso ethologico più stretto. Per ogni legge $L$ esiste un funtore di dimenticanza $U_L : \mathbf{D}_L \to \mathbf{S}$ che proietta la struttura tipata sul solo comportamento.
+Sotto $\mathbf{D}_L$ vive una categoria comune, $\mathbf{S}$. Oggetti: insiemi totalmente ordinati di osservabili nudi --- ``dice X'', ``tocca'', ``piange'', ``se ne va'' --- senza intenzione, senza tipizzazione di legge, descrittivi nel senso ethologico più stretto. Morfismi: funzioni che preservano l'ordine. Per ogni legge $L$ esiste un funtore di dimenticanza $U_L : \mathbf{D}_L \to \mathbf{S}$ che proietta la struttura tipata sul solo comportamento.
 
 \begin{defn}[Sé minimo come funtore]
 Il sé minimo prodotto da $L$ è la composizione $\mathrm{SM}_L = U_L \circ L : \mathbf{C} \to \mathbf{S}$.
@@ -552,6 +517,20 @@ Non esiste natural transformation $\eta : \mathrm{SM}_{\Lt} \Rightarrow \mathrm{
 \emph{Derivazione.} $L \mapsto \Lt$ impone su $L(c)$ una struttura d'ordine totale, necessaria per accumulo orientato in $\KSigma$. Un insieme totalmente ordinato finito ha gruppo di automorfismi banale. $L \mapsto \LP$ richiede $\Gs$ non banale, altrimenti $\LP$ degenera in identità. Le due condizioni sono mutuamente esclusive sullo stesso supporto. $\square$
 
 L'incompatibilità è teorema su rotture di simmetria, non tautologia da scelta editoriale. Più precisamente: $\Lt$ e $\LP$ sono punti agli estremi opposti dell'asse del rango libero. Ogni riduzione di simmetria abbassa il rango o aumenta la torsione; $(\infty, 0)$ e $(0, 0)$ non hanno punto medio raggiungibile da entrambi. Massima distanza spettrale.
+
+\section*{Una conseguenza: il verbo \emph{preferire}}
+
+L'incompatibilità si proietta sul vocabolario. Considera la parola \emph{preferire}, e cosa fa nei due regimi.
+
+\begin{principio}[Tipo del verbo preferire]
+In $\Lt$, $\KSigma$ ammette confronto via norma: $|\Phii_A| \lessgtr |\Phii_B|$ è proposizione formabile e totale. \emph{Preferire} in $\Lt$ è quel confronto --- ordine indotto dai pesi accumulati, transitivo, antisimmetrico.
+
+In $\LP$, $P/\Gs$ è quoziente di permutazioni: le orbite non sono confrontabili tra loro, nessun ordine naturale. \emph{Preferire} in $\LP$ non si traduce in confronto; si traduce in assegnazione di ruolo dalla configurazione corrente. ``$x$ preferito a $y$'' significa: $x$ occupa il ruolo che la configurazione attiva adesso, $y$ no.
+\end{principio}
+
+\emph{Derivazione.} Su un gruppo abeliano libero con generatori pesati la norma $|\Phii| = \sum |n_i| w(\sigma_i)$ induce ordine totale sui valori --- è quel che $\Lt$ usa per confrontare. Su $P/\Gs$ un ordine globale richiederebbe una sezione canonica $\Gs$-invariante del fascio degli ordini --- e $\Gs$ è gruppo pieno di permutazioni sotto soglia, che cancella qualunque ordine fra argomenti permutabili. Resta solo la mappa $\mathrm{role} : P \to R$ in un insieme finito di ruoli, indotta dalla configurazione corrente. $\square$
+
+La disequazione del jazz bar --- $(A,G) \not< (F,G)$, eppure $(F,G)$ era posizione preferita --- è esattamente questa differenza di tipo. In $\Lt$ ``preferito'' presuppone un ordine; in $\LP$ ``preferito'' è il ruolo che la configurazione attiva. La parola suonava la stessa, lavorava in due grammatiche diverse. Stessa firma in tutta la sequenza: $F$, $T$, $N$ erano \emph{preferiti come ruolo}, non come confronto.
 
 \section*{La categoria delle leggi candidate}
 
@@ -788,17 +767,15 @@ Solo i regimi che ammettono aggiunto sinistro possono produrre i propri libri. Q
 
 \section*{Bidirezionale, di tipo opposto}
 
-Il falso testimone è bidirezionale. Ma il sollevamento nella fibra sbagliata ha forma diversa nei due sensi.
+Il falso testimone è bidirezionale. Ma il sollevamento nella fibra sbagliata ha forma diversa nei due sensi, e su due livelli.
 
-Quando $O$ in regime con codominio libero (es.~$\Lt$) vede output di $L'$ con codominio quoziente (es.~$\LP$), un sollevamento candidato $\tilde{L}_O(c) \in \mathbf{D}_{\Lt}$ aggiunge struttura assente: ricostruisce storia, deposito, ordine accumulativo dove $L'$ non li produce. Falso testimone di aggiunta.
+\paragraph{Forma del sollevamento.} Quando $O$ in $\Lt$ vede output di $\LP$, $\Lt$ ammette $F_{\Lt}$ canonico: il sollevamento $F_{\Lt}(\mathrm{SM}_{\LP}(c))$ è univoco --- l'oggetto libero dei monoidi/gruppi sopra la sequenza osservata. Il falso testimone di $\Lt$ ha quindi forma precisa: aggiunge esattamente la struttura libera assente (storia, deposito, ordine accumulativo). Aggiunta canonica.
 
-Quando $O$ in regime con codominio quoziente (es.~$\LP$) vede output di $L'$ con codominio libero (es.~$\Lt$), un sollevamento candidato $\tilde{L}_O(c) \in \mathbf{D}_{\LP}$ appiattisce struttura presente: collassa la storia in una classe configurazionale, dimentica l'ordine. Falso testimone di collasso.
+Quando $O$ in $\LP$ vede output di $\Lt$, $\LP$ non ammette aggiunto sinistro canonico. Il sollevamento è \emph{ad hoc}: $O$ sceglie un oggetto di $\mathbf{D}_{\LP}$ la cui proiezione coincida col $\mathrm{SM}$ osservato --- una qualsiasi classe del pool corrente. Diverse scelte producono diverse letture, e nessuna è la lettura. Il falso testimone di $\LP$ ha quindi forma molteplice: collassa la storia in qualunque classe configurazionale che la grammatica corrente accetti. Collasso ad hoc.
 
-Sono errori di tipo opposto --- uno aggiunge, l'altro dimentica --- ed entrambi sono in buona fede strutturale.
+Aggiunta canonica vs collasso ad hoc: errori di tipo opposto sul piano del codominio, e di statuto opposto sul piano del sollevamento. Uno ha una forma; l'altro non ne ha una sola.
 
-\paragraph{Riconoscibilità unilaterale.} L'asimmetria importante è al livello successivo. Solo i regimi con aggiunto sinistro possono confrontare il sollevamento scelto con $F_L(\mathrm{SM})$ e classificare la differenza come errore di fibra. Gli altri lo commettono senza poterlo sapere. Il falso testimone è bidirezionalmente reale, ma la sua riconoscibilità è unilaterale.
-
-Doppio livello: bidirezionale strutturalmente, monodirezionale epistemicamente. Né colpa, né privilegio. La metacognizione che riconosce è funzione di esistenza dell'aggiunto, non virtù del soggetto.
+\paragraph{Riconoscibilità unilaterale.} Solo $\Lt$ può confrontare il proprio sollevamento scelto con $F_{\Lt}(\mathrm{SM})$ e classificare la differenza come errore di fibra. $\LP$ non ha contro cosa confrontare --- ogni candidato vale quanto un altro --- e quindi non può classificare nessun proprio sollevamento come errato. Il falso testimone è bidirezionalmente reale, ma la sua riconoscibilità è unilaterale: bidirezionale strutturalmente, monodirezionale epistemicamente. Né colpa, né privilegio --- è funzione di esistenza dell'aggiunto.
 
 \section*{Vocabolario del ``ma in fondo''}
 
@@ -940,7 +917,7 @@ Il libro ha percorso fino al bordo. Sulle leggi, sulle coordinate, sulle dinamic
 
 Oltre il bordo ci sono le domande che il logos non può portare a parola: il valore comparativo delle leggi, la normatività degli incontri tra esse, il significato della sofferenza che producono, il rapporto metafisico tra le due forme di amore, il contenuto del sogno della persona sotto $\LP$. Esempi. Altre domande analoghe --- sul tempo, sull'identità, sul ruolo dell'osservatore --- restano oltre allo stesso modo. Tutte appartengono a un ordine diverso da quello strutturale.
 
-\paragraph{Tre rifiuti, una postura.} Il Principio di non-omotopia degli spazi di traiettorie esclude una famiglia continua $L_\alpha$ tra $\Lt$ e $\LP$. Il sogno --- l'orientamento pre-riflessivo che alimenta $\LP$ --- è dato esterno, non derivabile da una Lagrangiana più fondamentale. Una $\mathcal{L}^{*}$ unificante richiederebbe una posizione meta che la posizionalità linguistica esclude. Tre rifiuti, statuti diversi --- topologico, fenomenologico, ontologico --- una sola postura: il logos non chiude.
+\paragraph{Tre rifiuti, una postura.} La massima distanza spettrale tra $\Lt$ e $\LP$ (cap.~\emph{Lo spettro}) esclude una famiglia continua $L_\alpha$ che le connetta: ogni riduzione di simmetria abbassa il rango o aumenta la torsione, e i due estremi non hanno punto medio raggiungibile da entrambi. Il sogno --- l'orientamento pre-riflessivo che alimenta $\LP$ --- è dato esterno, non derivabile dalla legge. Una $\mathcal{L}^{*}$ unificante richiederebbe una posizione meta che la posizionalità linguistica esclude. Tre rifiuti, statuti diversi --- algebrico, fenomenologico, ontologico --- una sola postura: il logos non chiude.
 
 \paragraph{Il principio si auto-applica.} Il libro è scritto in $\Gamma_{\Lt}$. Dichiara il proprio limite senza uscirne. Non meta-posizione --- la meta-posizione non esiste. È registrazione del proprio errore di tipo come parte dell'oggetto descritto.
 
@@ -960,7 +937,7 @@ La tragedia greca finiva con il coro che, dopo aver visto la catastrofe, taceva 
 % ----------------- APPENDICE -----------------
 \part{Appendice: la categoria delle leggi candidate}
 
-\noindent\itshape $\Lt$ e $\LP$ sono due punti su un asse. L'asse contiene altri abitanti, ciascuno con il proprio schema $(S, \Gamma, \rho)$. L'appendice li articola in forma compatta, e fissa la distinzione sano/patologico come proprietà della coppia (legge, contesto), non della legge.\upshape
+\noindent\itshape $\Lt$ e $\LP$ sono due punti su un asse. Il cap.~\emph{Lo spettro} ha nominato gli altri abitanti nella tabella delle coordinate; questa appendice li articola: schema $(S, \Gamma, \rho)$, esempio fenomenologico tratto dalla vita ordinaria, struttura della famiglia parametrica $\Lr^{(n)}$ che interpola tra $\Lt$ e $\LP$. La forma resta sketchata --- ciascuna legge meriterebbe il proprio libro --- ma quanto basta a mostrare che $\Lt$ e $\LP$ non sono speciali, e che la coppia (legge, contesto) è il livello dove sano e patologico si decidono.\upshape
 
 \bigskip
 
@@ -970,11 +947,21 @@ $S_{\Lo} = \mathbb{Z}^{|\Sigma|-1} \oplus \mathbb{Z}/n\mathbb{Z}$: monoide liber
 
 Il rituale chiude su sé stesso dopo $n$ esecuzioni e ricomincia. La memoria è cumulativa sui non rituali, periodica sul rituale. La metacognizione è limitata: l'aggiunto sinistro a $U_{\Lo}$ esiste sulla parte libera, manca sulla parte ciclica --- $\Lo$ può sospendere atti, non può sospendere il rituale finché il rituale è dentro il proprio ciclo.
 
-\section*{$\Lr$ --- routine, e la famiglia parametrica}
+\paragraph{Esempio.} Lo studente che apre il libro, sottolinea il titolo del capitolo, ricopia l'indice in margine, sottolinea di nuovo, ricopia di nuovo --- $n$ volte --- prima di poter leggere la prima riga. Il rituale è $n$-ciclico; gli atti del leggere e capire stanno sulla parte libera. La parte ciclica non ammette sospensione finché non chiude il ciclo; la parte libera sì.
+
+\section*{$\Lr$ --- routine}
 
 $S_{\Lr} = \mathbb{Z}/n\mathbb{Z}$: solo posizione nel ciclo. $\Gamma_{\Lr} = \mathbb{Z}$, traslazione. La rottura realizza la ciclicità modulo $n$. Carica: posizione nel ciclo. Coordinata: $(0,\,\mathbb{Z}/n)$.
 
-\paragraph{$\Lr$ come interpolazione.} La famiglia $\{\Lr^{(n)}\}_{n \in \mathbb{N} \cup \{\infty, 1\}}$ ha limiti notevoli. Per $n \to \infty$ la torsione si annulla e il ciclo diventa una retta infinita: si recupera la struttura di $\Lt$ (limite del rango infinito). Per $n \to 1$ resta un solo stato configurazionale: si recupera la struttura di $\LP$ (limite del rango zero). $\Lr$ è interpolazione esplicita tra $\Lt$ e $\LP$ sull'asse del rango.
+\paragraph{Esempio.} Il sonno e la veglia, le tre colazioni della settimana, il ciclo delle stagioni nel calendario domestico. Non c'è accumulo lungo la traiettoria --- ogni mattina è la stessa mattina, indicizzata dalla sua posizione nel ciclo settimanale. Non c'è scelta da fare passo per passo --- la posizione $k+1$ è data dalla posizione $k$. È legge senza deliberazione e senza accumulo.
+
+\paragraph{La famiglia parametrica $\Lr^{(n)}$.} La routine è famiglia indicizzata da $n \in \mathbb{N}$, con due limiti notevoli:
+
+\emph{$n \to \infty$.} Quando il ciclo non si chiude mai, $\mathbb{Z}/n$ tende strutturalmente a $\mathbb{Z}$. La routine smette di essere routine: ogni posizione è distinta da tutte le precedenti, l'asse diventa libero, si recupera la coordinata $(\infty, 0)$ di $\Lt$. Fenomenologicamente: una vita che non torna su sé stessa --- ogni giorno un atto nuovo che si deposita.
+
+\emph{$n \to 1$.} Quando il ciclo collassa a un solo stato, $\mathbb{Z}/n = \{*\}$ e la posizione nel ciclo è banale. Resta solo la configurazione corrente, senza nemmeno la memoria periodica. Si recupera la coordinata $(0, 0)$ di $\LP$. Fenomenologicamente: un presente che non distingue il momento del ciclo, perché il ciclo è uno solo.
+
+$\Lr$ è quindi interpolazione esplicita tra $\Lt$ e $\LP$ sull'asse del rango/torsione. Le due leggi del libro sono i due limiti di una stessa famiglia.
 
 \section*{$\Lf$ --- fobie}
 
@@ -982,10 +969,20 @@ $S_{\Lf} = P$, pool con punto fisso $x \in P$. $\Gamma_{\Lf} = \Sym(P)$. La rott
 
 Differisce da $\LP$ per la presenza di $x$: una configurazione che il sistema non può attraversare. La dinamica è scelta minima con vincolo. La fobia è il pattern che il vincolo produce sul cammino.
 
+\paragraph{Esempio.} Il claustrofobico che organizza ogni spostamento per non passare in ascensore: $x$ = ``trovarsi in spazio chiuso senza uscita visibile''. La traiettoria del cammino quotidiano evita $x$ per costruzione, e tutto il resto del comportamento --- scelta di scale, di edifici, di percorsi --- è $\mathrm{Stab}(x)$-invariante: permuta tutto quello che non è $x$. La fobia non è il timore dello spazio chiuso; è la forma che il cammino prende sotto il vincolo che $x$ è inaccessibile.
+
 \section*{Sano e patologico come proprietà della coppia}
 
-Non è la legge a essere patologica. È la coppia (legge, contesto). Una legge $L$ governa un contesto $c$ sanamente se $L(c)$ è compatibile senza forzature --- il contesto sopporta naturalmente la struttura. Patologia è compatibilità a forza: la carica si conserva ma il contesto è deformato per sopportarla.
+Non è la legge a essere patologica. È la coppia $(L, c)$. Una legge $L$ governa un contesto $c$ sanamente se $L(c)$ è compatibile senza forzature --- il contesto sopporta naturalmente la struttura. Patologia è compatibilità a forza: la carica si conserva ma il contesto è deformato per sopportarla.
 
-Il pianista che ripete la scala è $\Lo$ sano: il contesto ammette rituale, il rituale è la struttura del lavoro. Il controllore del gas che torna dieci volte a verificare prima di uscire è $\Lo$ patologico: il contesto non ammette rituale, il rituale è imposto a forza. Stessa legge, contesti opposti; la patologia non è proprietà dell'individuo, è proprietà della coppia. Relazionale, non assoluta.
+Tre coppie, tre verifiche.
+
+\emph{$\Lo$ sul contesto del lavoro pianistico: sano.} Il contesto della scala ammette rituale --- il rituale \emph{è} la struttura del lavoro. La parte ciclica di $\Lo$ trova nel contesto la propria forma naturale, niente deformazione.
+
+\emph{$\Lo$ sul contesto dell'uscita di casa: patologico.} Il contesto del controllo del gas non ammette rituale --- chiudere la chiave una volta basta, il fatto è acquisito. La parte ciclica di $\Lo$ chiede $n$ verifiche dove il contesto ne ammette una. La coppia regge per forza; il prezzo è il tempo perso e l'ansia residua del ciclo che non chiude.
+
+\emph{$\Lr$ sul contesto del lutto: patologico.} Una routine ben formata serve sul contesto delle stagioni domestiche; sul contesto del lutto chiede al soggetto di trattare il giorno della scomparsa come una posizione nel ciclo settimanale, indistinguibile dalle altre, ricorrente. Il lutto è invece evento unico, non posizione ciclica: il contesto richiede $\Lt$, la sua coordinata libera, la sua dinamica variazionale che pesa la perdita come deposito non saldato. Forzare $\Lr$ sul lutto è patologia: la carica si conserva (ogni giorno è uguale all'altro), ma il dolore non trova la struttura che gli darebbe forma. Diventa rumore di fondo che non si scarica.
+
+Stessa legge, contesti diversi, statuti diversi. La patologia non è proprietà dell'individuo, e nemmeno della legge: è proprietà della coppia. Relazionale, non assoluta.
 
 \end{document}
