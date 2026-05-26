@@ -476,6 +476,18 @@ $S_{\LP}$ è il reticolo $P$ dei pool, con il quoziente $P/\Gs$. $\Gamma_{\LP}$ 
 
 La proiezione configurazionale $\rho_{\mathrm{conf}} : \mathcal{I}_c \to P$ è dato esterno della legge, non leggibile da $\mathbf{C}$ nuda. Si dichiara apertamente.
 
+\section*{Corollario: sostituibilità degli argomenti}
+
+Dalla $\Gs$-invarianza di $\Kappaa$ segue subito una conseguenza fenomenologica.
+
+\begin{principio}[Sostituibilità degli argomenti]
+In $\LP$, due argomenti $x, y \in P$ con $\mathrm{threat}(x), \mathrm{threat}(y) < \theta$ che occupano lo stesso ruolo nella configurazione corrente stanno nella stessa orbita di $\Gs$. La carica $\Kappaa(P)$ è invariante per la permutazione $\sigma_{xy}$ che li scambia: $\Kappaa(\sigma_{xy} \cdot P) = \Kappaa(P)$. L'esecuzione di $\LP$ sopra una configurazione in cui $x$ occupa il ruolo $R$ è strutturalmente identica all'esecuzione sopra una configurazione in cui $y$ lo occupa --- gli argomenti sono parametri della proiezione, non dati distinti.
+\end{principio}
+
+\emph{Derivazione.} Per definizione, $\Gs = \Sym(\{c \in P : \mathrm{threat}(c) < \theta\})$, e $\Kappaa = P/\Gs$ è invariante per costruzione. Una permutazione che scambia due argomenti sotto soglia agisce dentro $\Gs$; il quoziente non la vede. $\square$
+
+La sequenza $F \to T \to N$ della Parte~I --- copione che gira identico con argomenti diversi nello stesso ruolo --- è esattamente questo. Tre istanze della stessa orbita di $\Gs$, lette dalla stessa $\Kappaa$ senza che le differenze tra $F$, $T$, $N$ entrino nella legge. Non scelta di qualità relazionale, non confronto: $\Gs$-invarianza.
+
 \section*{La coordinata che le unifica}
 
 Il fatto algebrico decisivo è uno solo: $S_{\Lt}$ è gruppo abeliano libero di rango infinito; $S_{\LP}$ è insieme finito senza struttura gruppale. Per leggi con $S_L$ gruppo abeliano finitamente generato, $S_L \cong \mathbb{Z}^{r_L} \oplus T_L$ --- $r_L$ è il rango libero, $T_L$ la torsione.
@@ -864,6 +876,22 @@ Su $\mathcal{I}_{c_{AG}}$ dal lato di $G$, la copertura osservata è interamente
 \paragraph{Dato empirico, non predizione del framework.} Il fascio dei regimi sopra $\mathbf{C}$ ammette sezioni miste: una persona può ospitare regimi diversi su contesti diversi, e su uno stesso contesto può alternare regimi su sottosequenze distinte. Che $G$ su $\mathcal{I}_{c_{AG}}$ sia stata stabilmente in $\LP$, senza nessuna sottosequenza in $\Lt$, è fatto del caso specifico --- non teorema del formalismo. Altri casi possono avere copertura mista. Il libro non costruisce il framework per spiegare questo caso: il caso è istanza di un framework che ammette molti altri pattern.
 
 \paragraph{Disallineamento simmetrico vs.~asimmetria della copertura.} Due piani da non collassare. Il disallineamento è il teorema di incompatibilità: $\Lt$ e $\LP$ tirano in direzioni opposte su qualunque contesto in cui coabitino. L'asimmetria della copertura è il fatto del caso: dal lato $G$, su questo $c$, non c'è stato $\Lt$ neanche per un momento. Il primo è struttura; il secondo è dato empirico. Servono entrambi per leggere il caso, ma sono cose diverse.
+
+\section*{La trama come istanza}
+
+Vari momenti della Parte~I trovano qui la propria derivazione.
+
+\emph{La disequazione del jazz bar} --- $(A,G) \not< (F,G)$ eppure $(F,G)$ posizione preferita --- è il Principio[Tipo del verbo preferire]: due grammatiche, stessa parola, due lavori diversi. In $\Lt$ ``preferito'' presuppone l'ordine cumulativo in $\KSigma$; in $\LP$ è il ruolo che la configurazione attiva.
+
+\emph{La sequenza $F \to T \to N$} --- copione identico con argomenti diversi nello stesso ruolo --- è il Principio[Sostituibilità degli argomenti]. Non scelta di qualità, non confronto: $\Gs$-invarianza di $\Kappaa$. Gli argomenti sotto soglia sono parametri della proiezione, non dati distinti.
+
+\emph{Il pianto delle 21:30 seguito dall'ilarità delle 21:35} --- stessa persona, sequenza ininterrotta, due affetti incompatibili sotto $\Lt$ --- è la memoria markoviana di $\LP$ (cap.~\emph{Lo spettro}, asimmetrie). $\LP$ tiene la configurazione corrente, niente coordinate cumulative; ogni configurazione è intera in sé, nessun carry-over richiesto fra una e la successiva. Non dissociazione, non mascheramento: forma del codominio della carica.
+
+\emph{Il timing della rivelazione del ragazzo} --- detta solo dopo che la sera era stata spesa --- non è strategia. È principio di scelta minima (cap.~\emph{Dinamica e tempo}): il passo locale processa la configurazione corrente per minimizzare il costo immediato, e non c'è funzionale globale che pianifichi destinatari futuri. $\LP$ non guarda avanti, perché la sua dinamica non ammette traiettorie come oggetti confrontabili.
+
+\emph{La foto a $N$ in doccia} --- mossa che un pianificatore strategico non avrebbe fatto --- è la stessa scelta minima: il passo emette il segnale alto-temperatura verso $N$ richiesto dalla configurazione corrente, e gli effetti collaterali a valle (la foto che arriva ad $A$) non sono computati perché un computo del genere richiederebbe un funzionale globale sulla traiettoria, che $\LP$ non possiede.
+
+Nessuno di questi episodi richiede strategia, malafede o calcolo. Sono esecuzione regolare di una legge applicata passo per passo a un pool che evolve. La coerenza apparente della sequenza --- che da $\Lt$ può sembrare disegno --- è proprietà interna della legge stessa, non firma di un'intenzione che la precede.
 
 \chapter{Il pianto come errore di tipo}
 
