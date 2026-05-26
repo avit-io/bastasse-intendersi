@@ -529,19 +529,19 @@ $\LP$    &  $(0,\,0)$                   &  pool quoziente \\
 \end{tabular}
 \end{center}
 
-(con $\Lr$ famiglia parametrica, $\Lf$ e $\Ld$ articolate in appendice.)
+(con $\Lr$ famiglia parametrica e $\Lf$ articolata in appendice.)
 
-\section*{Le tre asimmetrie da una coordinata}
+\section*{Le tre asimmetrie da una struttura}
 
-Tutte le asimmetrie tra $\Lt$ e $\LP$ derivano dalla coordinata. Non tre fatti indipendenti --- tre proiezioni di uno solo.
+Le asimmetrie tra $\Lt$ e $\LP$ --- dinamica, memoria, metacognizione --- non sono tre fatti indipendenti. Derivano dalla stessa differenza algebrica: $S_{\Lt}$ è gruppo abeliano libero, $S_{\LP}$ è quoziente finito di un reticolo. Le tre conseguenze:
 
-\emph{Dinamica.} Rango libero infinito $\Rightarrow$ spazio ammette norma, sottrazione, variazioni infinite $\Rightarrow$ dinamica variazionale piena. Torsione $\Rightarrow$ spazio ciclico finito $\Rightarrow$ dinamica periodica modulo $n$. Rango libero zero senza struttura $\Rightarrow$ solo grafo finito di transizioni $\Rightarrow$ scelta minima.
+\emph{Dinamica.} Gruppo abeliano libero $\Rightarrow$ sottrazione, norma naturale sui generatori pesati, cardinalità infinita $\Rightarrow$ dinamica variazionale piena. Quoziente finito $\Rightarrow$ nessuna delle tre proprietà $\Rightarrow$ resta solo il grafo di transizioni $\Rightarrow$ scelta minima.
 
-\emph{Memoria.} Rango libero infinito $\Rightarrow$ stato cumula coordinate indipendenti $\Rightarrow$ memoria cumulativa. Torsione $\Rightarrow$ stato ricicla modulo $n$ $\Rightarrow$ memoria periodica. Rango zero $\Rightarrow$ stato è classe attuale, senza coordinate cumulative $\Rightarrow$ memoria markoviana.
+\emph{Memoria.} Gruppo abeliano libero $\Rightarrow$ stato cumula coordinate indipendenti $\Rightarrow$ memoria cumulativa. Quoziente finito $\Rightarrow$ stato è la classe attuale, senza coordinate cumulative $\Rightarrow$ memoria markoviana.
 
-\emph{Metacognizione.} Rango libero positivo $\Rightarrow$ $\mathbf{D}_L$ ha oggetti liberi $\Rightarrow$ $U_L$ ammette aggiunto sinistro $\Rightarrow$ sospensione possibile (cap.~successivo). Rango zero senza struttura $\Rightarrow$ $\mathbf{D}_L$ è categoria di quozienti, senza oggetti liberi $\Rightarrow$ aggiunto manca $\Rightarrow$ sospensione strutturalmente impossibile.
+\emph{Metacognizione.} $\mathbf{D}_{\Lt}$ è categoria algebrica nel senso dell'algebra universale: oggetti definiti da operazioni che soddisfano equazioni. Per ogni categoria algebrica, il funtore di dimenticanza verso $\mathbf{S}$ ammette aggiunto sinistro (il funtore libero). $\mathbf{D}_{\LP}$ è categoria di quozienti: la relazione di equivalenza è dato aggiuntivo, non operazione, e l'aggiunto sinistro al dimenticante non esiste come funtore canonico. Il prossimo capitolo trae da questa differenza la formabilità o non formabilità della sospensione.
 
-Una coordinata, tre conseguenze. La fenomenologia diventa geometria di un'unica famiglia parametrica.
+Per leggi intermedie con torsione (cap.~Appendice), si recuperano i regimi misti: $\Lo$ ha parte libera $+$ parte ciclica, e ammette dinamica e memoria parzialmente cumulative; $\Lr$ è puramente ciclica. La famiglia $\{\Lr^{(n)}\}$ interpola tra $\Lt$ (per $n \to \infty$) e $\LP$ (per $n \to 1$). La fenomenologia diventa geometria di un'unica famiglia parametrica.
 
 \section*{Incompatibilità come distanza spettrale}
 
@@ -555,7 +555,7 @@ L'incompatibilità è teorema su rotture di simmetria, non tautologia da scelta 
 
 \section*{La categoria delle leggi candidate}
 
-$\Lt$ e $\LP$ non sono privilegiate. Sono due punti su un asse che ammette altri abitanti: $\Lo$ (compulsioni, con torsione $\mathbb{Z}/n$), $\Lr$ (routine, famiglia parametrica di cui $\Lt$ e $\LP$ sono limiti estremali), $\Lf$ (fobie, con punto fisso), $\Ld$ (dipendenze, rottura dinamica del peso). L'appendice articola lo schema $(S, \Gamma, \rho)$ per ciascuna. Il documento parla di $\Lt$ e $\LP$ perché il caso della Parte~I è governato da queste due; il framework non le privilegia.
+$\Lt$ e $\LP$ non sono privilegiate. Sono due punti su un asse che ammette altri abitanti: $\Lo$ (compulsioni, con torsione $\mathbb{Z}/n$), $\Lr$ (routine, famiglia parametrica di cui $\Lt$ e $\LP$ sono limiti estremali), $\Lf$ (fobie, con punto fisso). L'appendice articola lo schema $(S, \Gamma, \rho)$ per ciascuna. Il documento parla di $\Lt$ e $\LP$ perché il caso della Parte~I è governato da queste due; il framework non le privilegia.
 
 \chapter{Dinamica e tempo}
 
@@ -577,23 +577,11 @@ $L$ ammette principio di scelta minima se $S_L$ è insieme con grafo di transizi
 
 Scelta minima è dinamica più debole della variazionale. Non ammette variazioni globali della traiettoria, non ammette confronto tra traiettorie alternative come oggetti, non ammette ricalcolo retrospettivo. È dinamica markoviana discreta su grafo finito.
 
-\paragraph{$\Lt$ ammette dinamica variazionale piena.} $\KSigma$ è gruppo abeliano libero, ha sottrazione, norma, cardinalità infinita. La Lagrangiana ha forma
-\[
-\mathcal{L}_{\Lt}(\Phii_t, \Phii_{t+1}) \;=\; T_{\Lt}(\Phii_{t+1} - \Phii_t) - V_{\Lt}(\Phii_t, \Phii_{t+1}),
-\]
-con $T_{\Lt}$ peso dell'atto emesso (cinetico) e $V_{\Lt}$ potenziale di obbligazioni pendenti --- compressione delle pendenze non saldate. Equazioni del moto: il regime cerca traiettorie che bilanciano emissione e chiusura. La sospensione strutturale che la fenomenologia registra è $V_{\Lt}$ alto. L'ariete a Vicenza è soluzione delle equazioni del moto in cerca del minimo di $V_{\Lt}$.
+\paragraph{$\Lt$ ammette dinamica variazionale piena.} $\KSigma$ è gruppo abeliano libero: ha sottrazione, norma naturale (somma dei pesi assoluti dei generatori), cardinalità infinita. Una Lagrangiana discreta $\mathcal{L}_{\Lt}(\Phii_t, \Phii_{t+1})$ ha forma cinetica/potenziale standard, e le traiettorie del regime sono estremali del funzionale d'azione. Quali siano i potenziali concreti dipende dalla specifica $(\ell, \delta)$ del regime --- il libro non li esibisce.
 
-\paragraph{$\LP$ ammette solo principio di scelta minima.} $P/\Gs$ è finito --- non ha sottrazione, non ha variazioni infinitesime, non ha cardinalità infinita. Niente dinamica variazionale piena. C'è grafo di transizioni tra classi con funzione di costo
-\[
-c_{\LP}([P_t], [P_{t+1}]) \;=\; \mathrm{cost}_{\mathrm{trans}}([P_t] \to [P_{t+1}]) + V_{\LP}([P_{t+1}]),
-\]
-dove il primo termine penalizza cambi di classe (più alti se la nuova classe ha threat alto) e $V_{\LP}$ è potenziale di stabilità del pool. Le esecuzioni del copione sono cammini di costo minimo locale.
+\paragraph{$\LP$ ammette solo principio di scelta minima.} $P/\Gs$ è finito --- non ha sottrazione, non ha variazioni infinitesime, non ha cardinalità infinita. Niente dinamica variazionale piena. Resta grafo di transizioni tra classi con funzione di costo locale; le esecuzioni del copione sono cammini di costo minimo passo per passo, senza azione globale.
 
-\paragraph{Asimmetria dinamica.} $\Lt$ ammette deliberazione --- calcolo della traiettoria globalmente ottimale, confronto tra alternative, ricalcolo retrospettivo. $\LP$ ammette solo reazione --- scelta locale ottima istante per istante, senza accesso a traiettorie alternative come oggetti confrontabili. Forzare la stessa nozione di ``Lagrangiana'' su entrambi sarebbe furbizia notazionale equivalente al differenziale forzato sul tempo discreto. Va tenuta distinta.
-
-\paragraph{Patologia come intrappolamento.} Per leggi con dinamica variazionale piena, una patologia è regime intrappolato in un minimo locale di $\mathcal{L}_L$ --- la traiettoria orbita senza accedere a minimi più profondi. La compulsione $\Lo$ è esempio: il rituale è bacino di attrazione locale. Per leggi con scelta minima, patologia è cammino che entra in cicli del grafo senza raggiungere stati assorbenti desiderabili. Né legge né soggetto sono patologici in sé: è la dinamica concreta che si avvita.
-
-\paragraph{Onestà sui potenziali.} I potenziali $V_{\Lt}, V_{\LP}$ vanno specificati indipendentemente dalla traiettoria osservata. Definirli a posteriori per giustificare la fenomenologia della Parte~I è retrodizione, non spiegazione. La verifica onesta è che la traiettoria emerga come predizione qualitativa delle equazioni del moto, non come dato pre-impacchettato.
+\paragraph{Asimmetria dinamica.} $\Lt$ ammette deliberazione --- calcolo della traiettoria globalmente ottimale, confronto tra alternative, ricalcolo retrospettivo. $\LP$ ammette solo reazione --- scelta locale ottima istante per istante, senza accesso a traiettorie alternative come oggetti confrontabili. Forzare la stessa nozione di ``Lagrangiana'' su entrambi sarebbe furbizia notazionale. Va tenuta distinta.
 
 \section*{Due tempi, di tipo diverso}
 
@@ -766,57 +754,55 @@ pannelli è la differenza di tipo tra $\Phi$ e $\mathrm{K}$.}
 
 Una sera di gennaio, vent'anni dopo il jazz bar, l'autore rilegge le proprie lettere di allora e si accorge di aver scambiato l'output dell'altra per una versione fallita del proprio. Il riconoscimento ha un nome formale.
 
-\section*{L'aggiunto come condizione}
-
-\begin{defn}[Sospensione formabile]
-La sospensione del falso testimone richiede che $U_L : \mathbf{D}_L \to \mathbf{S}$ ammetta aggiunto sinistro $F_L \dashv U_L$. L'aggiunto sinistro è il funtore libero che ricostruisce struttura tipata da osservabili: l'operazione di attribuzione di legge a un sé minimo. Se $F_L$ esiste, $L$ può sollevare un sé minimo nella propria categoria target, confrontarlo con la propria traiettoria, riconoscere o revisionare l'attribuzione.
-\end{defn}
-
-$U_{\Lt}$ ammette aggiunto sinistro $F_{\Lt}$ che manda una sequenza nuda nel monoide libero generato dai suoi atti. Esiste per costruzione, perché $\mathbf{D}_{\Lt}$ è categoria di oggetti liberi. $\Lt$ ammette sospensione.
-
-$U_{\LP}$ non ammette aggiunto sinistro. $\mathbf{D}_{\LP}$ è categoria di quozienti: gli oggetti liberi che $F_{\LP}$ dovrebbe produrre non vivono in $\mathbf{D}_{\LP}$, vivrebbero in una categoria di pre-quozienti. L'aggiunto manca per costruzione strutturale. $\LP$ non ammette sospensione.
-
-\paragraph{La metacognizione è funzione di esistenza dell'aggiunto.} Non proprietà del soggetto. Una persona in $\Lt$ su un contesto ha metacognizione su quel contesto; la stessa persona, su altro contesto in regime $\LP$, non ce l'ha. Non è tratto del carattere --- è funzione del regime locale.
-
-Una conseguenza notevole: la dualità libero/quoziente tra $\Lt$ e $\LP$ non è scelta editoriale, ma è derivata dall'esistenza dell'aggiunto. È condizione perché l'asimmetria di metacognizione abbia significato categoriale.
-
-\paragraph{Corollario.} Solo i regimi che ammettono aggiunto sinistro possono produrre i propri libri. Questo libro è prodotto da $\Lt$, vent'anni dopo. Non avrebbe potuto essere prodotto da $\LP$.
-
 \section*{Il falso testimone come errore di fibra}
 
-Un osservatore $O$ in regime $L_O$ vede $\mathrm{SM}_{L'}(c) = U_{L'} \circ L'(c)$ --- output del regime altrui in $\mathbf{S}$. Il default epistemico è sollevare lungo $U_{L_O}$ invece che lungo $U_{L'}$: cercare $\tilde{L}_O(c) \in \mathbf{D}_{L_O}$ tale che $U_{L_O}(\tilde{L}_O(c)) = \mathrm{SM}_{L'}(c)$.
+Un osservatore $O$ in regime $L_O$ vede $\mathrm{SM}_{L'}(c) = U_{L'} \circ L'(c)$, output del regime altrui in $\mathbf{S}$. Il default epistemico è sollevare lungo $U_{L_O}$ invece che lungo $U_{L'}$: cercare $\tilde{L}_O(c) \in \mathbf{D}_{L_O}$ tale che $U_{L_O}(\tilde{L}_O(c)) = \mathrm{SM}_{L'}(c)$.
 
-Il sollevamento esiste sempre --- i funtori di dimenticanza sono surgettivi sugli oggetti. È proprio questo il problema. L'inferenza output $\to$ regime non è univoca: lo stesso $\mathrm{SM}$ ammette sollevamenti in fibre diverse. Il falso testimone non è errore correggibile dall'osservazione --- è errore strutturale dell'epistemologia, sanabile solo a posteriori da informazione esterna al sé minimo.
-
-\paragraph{Il default epistemico.} L'inferenza naturale di $O$ sull'output dell'altro è $L_{\text{altro}} = L_O$. Economia cognitiva, specchio neuronale, grammatica condivisa. Default epistemico, non disonestà. Strutturale, non morale.
-
-\paragraph{Bidirezionale, di tipo opposto.} Il falso testimone è bidirezionale, ma di tipo opposto.
-
-Quando $O$ in regime con aggiunto sinistro $F_{L_O}$ vede output di $L'$ con codominio finito/quoziente, solleva \emph{aggiungendo struttura assente}: ricostruisce storia, deposito, ordine accumulativo dove $L'$ non li produce. Falso testimone di aggiunta.
-
-Quando $O$ in regime con codominio quoziente vede output di $L'$ con codominio libero, solleva \emph{appiattendo struttura presente}: collassa storia in classi configurazionali, dimentica l'ordine. Falso testimone di collasso.
-
-Sono errori di fibra di tipo opposto --- uno aggiunge, l'altro dimentica --- ed entrambi sono in buona fede strutturale.
-
-\paragraph{Riconoscibilità unilaterale.} L'asimmetria importante è al livello successivo. Solo i regimi con aggiunto sinistro possono riconoscere di aver commesso falso testimone --- riaprire il sollevamento, classificarlo come errore di fibra, dichiararlo come tale. Gli altri lo commettono senza poterlo sapere. Il falso testimone è bidirezionalmente reale, ma la sua riconoscibilità è unilaterale.
-
-Doppio livello: bidirezionale strutturalmente, monodirezionale epistemicamente. Né colpa, né privilegio. La metacognizione che riconosce è funzione di esistenza dell'aggiunto, non virtù del soggetto.
-
-\section*{La sospensione come scelta esplicita}
+Un sollevamento di questo genere esiste sempre --- ogni comportamento osservato è proiezione di \emph{qualche} oggetto del codominio scelto. È proprio questo il problema. L'inferenza output $\to$ regime non è univoca: lo stesso $\mathrm{SM}$ ammette sollevamenti in fibre diverse. Il falso testimone non è errore correggibile dall'osservazione: è errore strutturale dell'epistemologia, sanabile solo a posteriori da informazione esterna al sé minimo.
 
 \begin{defn}[Sospensione]
 La \emph{sospensione} è l'atto di $O$ di astenersi dall'inferenza $\mathrm{SM} \to L$. Non scopre la verità --- la lascia indeterminata.
 \end{defn}
 
-Sospensione non è verità seconda. È lasciare aperto il sollevamento. Pratica disponibile solo a regimi con $F_L$.
+\paragraph{Default epistemico, non disonestà.} L'inferenza naturale di $O$ sull'output dell'altro è $L_{\text{altro}} = L_O$. Economia cognitiva, specchio neuronale, grammatica condivisa. Strutturale, non morale.
 
-\section*{Il vocabolario del ``ma in fondo''}
+\section*{L'aggiunto come condizione della sospensione}
 
-Il falso testimone produce un vocabolario riconoscibile. Quando $\Lt$ guarda $\LP$ e solleva aggiungendo struttura, postula un piano interno narrativo in cui l'altra è $\Lt$ in miniatura. Da qui la psicologia del ``ma in fondo'' --- ``lei dice una cosa ma in fondo pensa un'altra'', ``sembra non soffrire ma dentro deve star male''. Quel ``in fondo'' non esiste. Il dentro esiste --- pieno fenomenicamente --- ma non è $\Lt$ in miniatura. È esecuzione regolare di una legge che non produce piano narrativo.
+Sollevare nella propria fibra si fa sempre (basta scegliere un oggetto la cui proiezione coincida). Riconoscere di averlo fatto, e di averlo fatto nella fibra sbagliata, è altra operazione: richiede un sollevamento \emph{universale} contro cui confrontare quello scelto. Questa è la condizione di esistenza dell'aggiunto sinistro.
 
-Specularmente, quando $\LP$ guarda $\Lt$ e solleva appiattendo, lo legge come freddezza, calcolo, opportunismo. Non lo è. È esecuzione di una legge che accumula. L'errore è simmetrico in struttura, asimmetrico in riconoscibilità.
+\begin{principio}[Sospensione formabile $\iff$ aggiunto sinistro]
+La sospensione del falso testimone in regime $L$ è formabile se e solo se $U_L : \mathbf{D}_L \to \mathbf{S}$ ammette aggiunto sinistro $F_L \dashv U_L$. $F_L$ è il funtore libero che a una sequenza nuda associa l'oggetto tipato canonico nella categoria target; comparando il sollevamento scelto con $F_L(\mathrm{SM})$, $L$ può classificare il proprio errore di fibra come tale.
+\end{principio}
 
-\paragraph{Il pianificatore-per-me.} La proiezione più tenace, quando le altre cadono, è: gli atti dell'altra erano \emph{per me}. Una strategia di ingelosimento, una scena costruita, un timing calibrato. Cade su un controllo elementare: una strategia richiede canale, controllo della consegna, verifica dell'effetto. Quando manca anche una di queste, la lettura strategica è proiezione al quadrato. Il falso testimone inventa un agente narrativo dove non c'è; il pianificatore-per-me gli attribuisce \emph{me} come destinatario. È l'ultima difesa che $\Lt$ cede prima di accettare che $\LP$ non ha un destinatario in cima.
+\emph{Verifica per $\Lt$.} $\mathbf{D}_{\Lt}$ è una categoria algebrica nel senso dell'algebra universale: oggetti sono strutture (monoidi/gruppi abeliani) con operazioni che soddisfano equazioni. Per il teorema generale sulle categorie algebriche, il funtore di dimenticanza verso $\mathbf{S}$ ammette aggiunto sinistro --- il funtore libero. $F_{\Lt}$ manda una sequenza nuda nel monoide libero generato dai suoi atti.
+
+\emph{Verifica per $\LP$.} $\mathbf{D}_{\LP}$ non è algebrica nello stesso senso: i suoi oggetti sono quozienti, in cui la relazione di equivalenza è \emph{dato aggiuntivo}, non operazione su elementi. Per produrre un quoziente da una sequenza nuda servirebbe la relazione di equivalenza, che $\mathbf{S}$ non porta. L'aggiunto sinistro non esiste come funtore canonico: ogni candidato $F_{\LP}$ richiede una scelta esterna.
+
+\paragraph{Conseguenze.}
+
+La metacognizione non è proprietà del soggetto. È funzione di esistenza dell'aggiunto sinistro al funtore di dimenticanza del regime locale. Una persona in $\Lt$ su un contesto ha metacognizione su quel contesto; la stessa persona, su altro contesto in regime $\LP$, non ce l'ha. Non è tratto del carattere --- è funzione del regime locale.
+
+La dualità libero/quoziente tra $\Lt$ e $\LP$ non è scelta editoriale: è condizione algebrica perché la metacognizione possa esistere per $\Lt$ e non per $\LP$.
+
+Solo i regimi che ammettono aggiunto sinistro possono produrre i propri libri. Questo libro è prodotto da $\Lt$, vent'anni dopo. Non avrebbe potuto essere prodotto da $\LP$.
+
+\section*{Bidirezionale, di tipo opposto}
+
+Il falso testimone è bidirezionale. Ma il sollevamento nella fibra sbagliata ha forma diversa nei due sensi.
+
+Quando $O$ in regime con codominio libero (es.~$\Lt$) vede output di $L'$ con codominio quoziente (es.~$\LP$), un sollevamento candidato $\tilde{L}_O(c) \in \mathbf{D}_{\Lt}$ aggiunge struttura assente: ricostruisce storia, deposito, ordine accumulativo dove $L'$ non li produce. Falso testimone di aggiunta.
+
+Quando $O$ in regime con codominio quoziente (es.~$\LP$) vede output di $L'$ con codominio libero (es.~$\Lt$), un sollevamento candidato $\tilde{L}_O(c) \in \mathbf{D}_{\LP}$ appiattisce struttura presente: collassa la storia in una classe configurazionale, dimentica l'ordine. Falso testimone di collasso.
+
+Sono errori di tipo opposto --- uno aggiunge, l'altro dimentica --- ed entrambi sono in buona fede strutturale.
+
+\paragraph{Riconoscibilità unilaterale.} L'asimmetria importante è al livello successivo. Solo i regimi con aggiunto sinistro possono confrontare il sollevamento scelto con $F_L(\mathrm{SM})$ e classificare la differenza come errore di fibra. Gli altri lo commettono senza poterlo sapere. Il falso testimone è bidirezionalmente reale, ma la sua riconoscibilità è unilaterale.
+
+Doppio livello: bidirezionale strutturalmente, monodirezionale epistemicamente. Né colpa, né privilegio. La metacognizione che riconosce è funzione di esistenza dell'aggiunto, non virtù del soggetto.
+
+\section*{Vocabolario del ``ma in fondo''}
+
+Il falso testimone produce un vocabolario riconoscibile. Quando $\Lt$ solleva $\LP$ in $\mathbf{D}_{\Lt}$, postula un piano interno narrativo in cui l'altra è $\Lt$ in miniatura: ``lei dice una cosa ma in fondo pensa un'altra''. Quel ``in fondo'' non esiste. Il dentro esiste --- pieno fenomenicamente --- ma non è $\Lt$ in miniatura. È esecuzione regolare di una legge che non produce piano narrativo. Specularmente, quando $\LP$ solleva $\Lt$ in $\mathbf{D}_{\LP}$, lo legge come freddezza, calcolo, opportunismo. Non lo è. È esecuzione di una legge che accumula. L'errore è simmetrico in struttura, asimmetrico in riconoscibilità.
 
 \chapter{Posizionalità linguistica}
 
@@ -906,34 +892,23 @@ Su $\mathcal{I}_{c_{AG}}$ dal lato di $G$, la copertura osservata è interamente
 
 Lei aveva proposto la sera al bar di Vicenza, dopo gli sms espliciti di $A$. $A$ si alzò e disse la frase semplice: \emph{Greta, non ti chiedo di fidarti di me. Ti dico che vorrei costruire con te quella fiducia.} Lei pianse oltre ogni misura.
 
-\section*{Quattro impossibilità sovrapposte}
+\section*{Tipo non formabile in $\GammaG$}
 
-$A$ emette un atto $\alpha$ --- la dichiarazione --- il cui tipo in $\sigma_{\Lt}$ è ``richiesta di passaggio di regime su $c$ a $\Lt$''.
+$A$ emette un atto $\alpha$ --- la dichiarazione --- il cui tipo nel sé $\Lt$ è ``richiesta di passaggio di regime su $c$ a $\Lt$'': peso elevato, senza armatura, senza calibrazione strategica. La tradizione chiama questa postura \emph{Patroclo} --- pura apertura.
 
-In $\sigma_{\LP}$, $\alpha$ non è processabile come configurazione del pool (troppo carica) né filtrabile come minaccia (non del tipo che $-\lambda \cdot \mathrm{threat}$ scarta). È input di tipo ``richiesta di cambio di legge'' --- tipo non formabile in $\GammaG$. La risposta a questa non-tipabilità è somatica, non semantica: pianto.
+In $\GammaG$ il tipo non è formabile. $\alpha$ non è processabile come configurazione del pool (troppo carica), né filtrabile come minaccia (non del tipo che $-\lambda \cdot \mathrm{threat}$ scarta). Viene attraversato senza registrazione --- non è esclusione, perché l'esclusione richiederebbe classificazione. È scope error: il tipo non è nel contesto.
 
-Quattro impossibilità sovrapposte perché $G$ potesse onorare $\alpha$ come $A$ sperava:
-
-\begin{enumerate}
-\item $\alpha$ doveva essere tipato in $\GammaG$ come richiesta di cambio di legge. Non lo era --- tipo non formabile.
-\item $G$ doveva poter sospendere $\LP$ per accedere alla richiesta. Non poteva --- la sospensione non è formabile in $\GammaG$ (manca l'aggiunto sinistro a $U_{\LP}$).
-\item $G$ doveva poter decidere di passare a $\Lt$. Non poteva --- il tipo ``passa a $\Lt$'' richiede formabilità in $\GammaG$ che non c'è.
-\item $G$ doveva poter eseguire il passaggio. Cambio di ontologia operativa, non di parametro.
-\end{enumerate}
-
-Il pianto è risposta strutturale al primo livello --- errore di tipo --- perché gli altri tre non si sono nemmeno attivati come problemi.
+La risposta a questa non-tipabilità è somatica, non semantica: pianto. Il pianto è output strutturale di $\LP$ di fronte a un input fuori-grammatica --- non rifiuto, non accoglienza, non strategia. La grammatica non ha l'operazione richiesta; il corpo prende il posto della grammatica che manca.
 
 \section*{Il doppio fraintendimento al livello-grammatica}
 
-Dal lato $\Lt$, $A$ legge il pianto come acknowledgment: ``ha capito la mia richiesta''. Dal lato $\LP$, il pianto è output strutturale all'eccesso, senza tipo semantico. I due lati hanno letto lo stesso atto sotto due grammatiche diverse, e nessuno dei due ha mentito.
+Dal lato $\Lt$, $A$ legge il pianto come acknowledgment: ``ha capito la mia richiesta''. Dal lato $\LP$, il pianto non porta significato semantico. I due lati hanno letto lo stesso atto sotto due grammatiche diverse, e nessuno dei due ha mentito.
 
-È fraintendimento di livello-grammatica, anteriore al livello-contenuto. Da scrivere senza colpa, senza accusa, ma senza addolcire: il pianto non è stato sentito come acknowledgment dal lato che lo ha prodotto. Era errore di tipo che si è espresso somaticamente.
+Fraintendimento di livello-grammatica, anteriore al livello-contenuto. Da scrivere senza colpa, senza accusa, ma senza addolcire: il pianto non è stato sentito come acknowledgment dal lato che lo ha prodotto. Era errore di tipo che si è espresso somaticamente.
 
-\section*{Patroclo come postura non più disponibile}
+\section*{Achille dopo Patroclo}
 
-La frase ``vorrei costruire con te quella fiducia'', detta nuda al jazz bar, è una categoria formale: $R \gg 0$ senza l'integrità come corazza. Pura apertura. In $\GammaG$ non è classificabile: né \textsc{Demand}, né \textsc{Idealize}, né \textsc{Tag}, né \textsc{Discard}. Viene attraversata senza registrazione. Non è esclusione --- l'esclusione è atto del copione e richiederebbe classificazione. È scope error: il tipo non è nel contesto.
-
-Patroclo viene attraversato perché non è classificabile come niente. Quello che resta di $A$ dopo --- l'algidità della sera, l'ariete a Vicenza, la non-reazione al compleanno --- è Achille. Più preciso, più chiuso, più solo. Non per scelta morale: per struttura. Patroclo era postura praticabile fino a quando la struttura dell'altra non l'aveva ancora attraversata senza vederlo. Dopo, quella postura non è più disponibile.
+Quello che resta di $A$ dopo il bar --- l'algidità della sera, l'ariete a Vicenza, la non-reazione al compleanno --- è Achille. Più preciso, più chiuso, più solo. Non per scelta morale: per struttura. La postura di Patroclo --- apertura senza armatura --- era praticabile fino a quando la struttura dell'altra non l'aveva ancora attraversata senza vederla. Dopo, quella postura non è più disponibile.
 
 \section*{Parallelismo delle conservazioni}
 
@@ -1007,26 +982,10 @@ $S_{\Lf} = P$, pool con punto fisso $x \in P$. $\Gamma_{\Lf} = \Sym(P)$. La rott
 
 Differisce da $\LP$ per la presenza di $x$: una configurazione che il sistema non può attraversare. La dinamica è scelta minima con vincolo. La fobia è il pattern che il vincolo produce sul cammino.
 
-\section*{$\Ld$ --- dipendenze}
-
-$S_{\Ld} = \Sigma^{*}$, ma con peso $w_J : \Sigma \to \mathbb{R}_{\geq 0}$ retroattivo: $w_J$ cambia in funzione della storia accumulata. Rottura dinamica, dipendente dal tempo. Non c'è carica conservata classica --- c'è attrattore.
-
-$\Ld$ è la prima legge non-Markoviana dell'elenco: la rottura di simmetria è essa stessa funzione dello stato. \emph{Spontaneous symmetry breaking} dinamico. La fenomenologia: l'oggetto della dipendenza pesa sempre di più, e il pesare di più è funzione del peso precedente. La traiettoria è attratta verso un cluster di stati la cui struttura $w_J$ ha modellato in tempo.
-
 \section*{Sano e patologico come proprietà della coppia}
 
 Non è la legge a essere patologica. È la coppia (legge, contesto). Una legge $L$ governa un contesto $c$ sanamente se $L(c)$ è compatibile senza forzature --- il contesto sopporta naturalmente la struttura. Patologia è compatibilità a forza: la carica si conserva ma il contesto è deformato per sopportarla.
 
-\begin{itemize}
-\item Il pianista che ripete la scala è $\Lo$ sano: il contesto ammette rituale, il rituale è la struttura del lavoro.
-\item Il controllore del gas che torna dieci volte a verificare prima di uscire è $\Lo$ patologico: il contesto non ammette rituale, il rituale è imposto a forza.
-\item Una routine quotidiana di studio è $\Lr$ sano. Una routine compulsiva di lavaggio è $\Lr$ patologico.
-\end{itemize}
-
-La patologia non è proprietà dell'individuo. È proprietà della coppia. Relazionale, non assoluta.
-
-\section*{Domanda aperta}
-
-La categoria delle leggi candidate, dotata della relazione ``$L$ è adeguata sul contesto $c$'', forma una struttura matematica trattabile? Possibile direzione: misura di \emph{attrito} tra legge e contesto $\mu(L, c)$, dove $\mu = 0$ corrisponde a compatibilità senza forzature e $\mu > 0$ a deformazione. Le leggi geodetiche sopra $c$ sarebbero quelle che minimizzano $\mu$ --- leggi di minima attrito. La domanda è se $\mu$ ammetta calcolo variazionale globale su $\mathbf{C}$, o solo locale per coppia. Prossima ricerca. Il libro si ferma qui.
+Il pianista che ripete la scala è $\Lo$ sano: il contesto ammette rituale, il rituale è la struttura del lavoro. Il controllore del gas che torna dieci volte a verificare prima di uscire è $\Lo$ patologico: il contesto non ammette rituale, il rituale è imposto a forza. Stessa legge, contesti opposti; la patologia non è proprietà dell'individuo, è proprietà della coppia. Relazionale, non assoluta.
 
 \end{document}
